@@ -9,9 +9,7 @@
     "build": "set NODE_ENV=production&&.\\node_modules\\.bin\\webpack"
   },
   "browserslist": [
-    "last 2 versions",
-    "> 1%",
-    "IE 10"
+    "defaults"
   ],
   "repository": {
     "type": "git",
