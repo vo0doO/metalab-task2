@@ -1,8 +1,7 @@
 {
-  "name": "metalab-task2",
+  "name": "toxin",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "set NODE_ENV=development&&.\\node_modules\\.bin\\webpack serve --open",
     "dev": "set NODE_ENV=development&&.\\node_modules\\.bin\\webpack",
@@ -43,6 +42,7 @@
     "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
+    "copy-webpack-plugin": "^10.2.0",
     "jquery": "^3.6.0"
   }
 }
