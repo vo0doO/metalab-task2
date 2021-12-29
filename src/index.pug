@@ -1,0 +1,20 @@
+include components/logo/logo
+
+
+doctype html
+html(lang='ru', class=pageClass)
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    meta(name='description', content=description)
+    meta(name='keywords', content=keywords)
+    meta(name='msapplication-TileColor', content='#da532c')
+    meta(name='theme-color', content='#ffffff')
+    title #{title}
+  body
+    .ui-kit__logo-wrap
+      +logo({color: "grey", alt: "Alt is work"})
+    .test_image
+      //img(src="./assets/img/logo-colored.svg")
+

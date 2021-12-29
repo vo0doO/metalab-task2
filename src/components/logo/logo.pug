@@ -1,0 +1,13 @@
+mixin logo({color, alt})
+	-
+		let logoClassName = "logo";
+		let logoAlt = "Toxin logo";
+		const logoColors = ["grey", "colored"];
+		const logoExt = ".svg"
+		const logoPathSufix = "./assets/img/"
+
+		if (logoColors.includes(color))
+			logoClassName += "-"+color
+		const logoPath = logoPathSufix+logoClassName+logoExt
+
+	img(src=logoPath, alt=logoAlt)
