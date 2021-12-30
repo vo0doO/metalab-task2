@@ -92,8 +92,8 @@ module.exports = {
     plugins: [
         new CopyPlugin({
             patterns: [
-                { from: path.resolve(__dirname, "src/assets/favicons"), to: "./dst/assets/favicons" },
-                { from: path.resolve(__dirname, "src/assets/img"), to: "./dst/assets/img" },
+                { from: path.resolve(__dirname, "src/assets/favicons"), to: "./assets/favicons" },
+                { from: path.resolve(__dirname, "src/assets/img"), to: "./assets/img" },
             ],
         }),
 
