@@ -3,6 +3,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const CopyPlugin = require("copy-webpack-plugin")
 
+const PATHS = {
+  src: path.resolve(__dirname, 'src'),
+  dist: path.resolve(__dirname, 'dist'),
+}
 
 let mode = 'development'
 if (process.env.NODE_ENV === 'production') {
@@ -13,18 +17,17 @@ console.log(mode + ' mode')
 module.exports = {
     mode: mode,
     devtool: "source-map",
+    externals: {
+        paths: PATHS,
+    },
     entry: {
         scripts: "./src/index.js",
     },
+
     output: {
-        filename: "js/[name].bundle.js",
-        assetModuleFilename: "assets/[name][ext][query]",
+        path: PATHS.dist,
+        filename: '[name].[contenthash].js',
         clean: true,
-        path: path.resolve(__dirname, "./dist"),
-        publicPath: "/",
-        chunkFilename: "chunk.js",
-        hotUpdateMainFilename: "scripts.bundle.js",
-        hotUpdateChunkFilename: "chunk.js"
     },
     optimization: {
         splitChunks: {
@@ -36,7 +39,10 @@ module.exports = {
             {
                 test: /\.pug$/,
                 loader: 'pug-loader',
-                exclude: /(node_modules|bower_comonents)/,
+            },
+            {
+                test: /\.pug$/,
+                loader: 'html-loader',
             },
             {
                 test: /\.m?js$/,
@@ -44,7 +50,8 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        presets: ['@babel/preset-env'],
+                        plugins: ['@babel/plugin-proposal-class-properties'],
                     }
                 }
             },
@@ -96,15 +103,12 @@ module.exports = {
                 { from: path.resolve(__dirname, "src/assets/img"), to: "./assets/img" },
             ],
         }),
-
         new HtmlWebpackPlugin({
-            template: "./src/index.pug",
-            cache: true,
-            favicon: "./src/assets/favicons/favicon.ico",
+            template: "!!pug-loader!/src/index.pug"
         }),
 
         new MiniCssExtractPlugin({
-            filename: "[name].bundle.css"
+            filename: "[name].[contenthash].css"
         }),
     ],
     devServer: {
