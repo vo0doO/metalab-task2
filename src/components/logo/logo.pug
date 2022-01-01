@@ -2,7 +2,7 @@ mixin logo(options)
 	-
 		let logoAlt = "Logo"
 		if (options.alt) logoAlt += options.alt
-		let logoClassName = "logo"
-		logoClassName += options.isGrey ? "-grey" : ""
+		let logoFileName = "logo"
+		logoFileName += options.isGrey ? "-grey" : ""
 
-	img(src=`./assets/img/${logoClassName}.svg`, alt=`${logoAlt} ${logoClassName}`)
+	img(src=`./assets/img/${logoFileName}.svg`, alt=`${logoAlt} ${logoFileName}`)
