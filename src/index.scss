@@ -1,5 +1,9 @@
 @import "utils/style/global";
 
+* {
+  line-height: 1;
+}
+
 html {
   @extend %for-ui-kit-html
 }
