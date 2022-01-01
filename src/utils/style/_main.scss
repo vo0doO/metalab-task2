@@ -1,0 +1,19 @@
+@import "colors";
+
+
+html {
+  box-sizing: border-box;
+  font-size: 14px;
+  color: $DarkShade5;
+  background-color: $BackgroundColorHTML;
+}
+
+body {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
