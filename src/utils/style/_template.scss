@@ -1,3 +1,9 @@
+%for-ui-kit-html {
+  display: flex;
+  justify-content: space-around;
+  min-width: 100vh;
+}
+
 %for-ui-kit-body {
   min-width: 1440px;
   background-color: #ffffff;
@@ -5,9 +11,3 @@
   min-height: 100vh;
 }
 
-%for-ui-kit-html {
-  display: flex;
-  justify-content: space-around;
-  min-width: 100vh;
-  line-height: 1;
-}
