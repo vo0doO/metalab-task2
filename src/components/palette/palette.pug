@@ -3,11 +3,11 @@ mixin palette(options)
       var paletteRectClass = "palette__item__rect"
       var items = options.colors
 
-  .palette
-      each item in items
-        section.palette__item
-          .palette__item__wrap
-            div(class=paletteRectClass + ` palette__item__rect_color-${item.name}`)
-            .palette__item__content
-              h2.palette__item__title=`${item.title}`
-              p.palette__item__description=`${item.rgb}`
+    .palette
+        each item in items
+          section.palette__item
+            .palette__item__wrap
+              div(class=paletteRectClass + ` palette__item__rect_color-${item.name}`)
+              .palette__item__content
+                h2.palette__item__title=`${item.title}`
+                p.palette__item__description=`${item.rgb}`
