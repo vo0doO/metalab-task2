@@ -1,0 +1,34 @@
+mixin palette(options)
+    -
+      var paletteRectClass = "palette__item__rect"
+      var items = options.items
+      items = [{name: "full", title: "Dark Shade 100%", rgb: "#1F2041"},
+        {name: "75", title: "Dark Shade 100%", rgb: "#1F2041"},
+        {name: "50", title: "Dark Shade 100%", rgb: "#1F2041"},
+        {name: "25", title: "Dark Shade 100%", rgb: "#1F2041"},
+        {name: "5", title: "Dark Shade 100%", rgb: "#1F2041"},
+        {name: "primary", title: "Dark Shade 100%", rgb: "#1F2041"},
+        {name: "secondary", title: "Dark Shade 100%", rgb: "#1F2041"}]
+      paletteRectClass += ` palette__item__rect_color-${items[0].name}`
+
+section.palette__item
+  .palette__item__wrap
+    div(class=paletteRectClass)
+    .palette__item__content
+      h2.palette__item__title=`${items[0].title}`
+      p.palette__item__description=`${items[0].rgb}`
+
+
+        //- +colors-group(
+        //-     {
+        //-         items: [
+        //-             {numb: "100", name: "Dark Shade 100%", rgb: "#1F2041"},
+        //-             {numb: "75", name: "Dark Shade 100%", rgb: "#1F2041"},
+        //-             {numb: "50", name: "Dark Shade 100%", rgb: "#1F2041"},
+        //-             {numb: "25", name: "Dark Shade 100%", rgb: "#1F2041"},
+        //-             {numb: "5", name: "Dark Shade 100%", rgb: "#1F2041"},
+        //-             {numb: "primary", name: "Dark Shade 100%", rgb: "#1F2041"},
+        //-             {numb: "secondary", name: "Dark Shade 100%", rgb: "#1F2041"},
+        //-         ]
+        //-     }
+        //- )

@@ -1,19 +1,37 @@
-@import "utils/style/global";
-
-* {
-  line-height: 0;
-}
-
-html {
-  @extend %for-ui-kit-html
-}
-
-body {
-  @extend %for-ui-kit-body
-}
+@import "./components/palette/palette.scss";
 
 .ui-kit {
-  &__logo-wrap {
+  &__logo__wrap {
+    display: inline-block;
     margin: 30px 0 0 30px;
+  }
+
+  &__container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+    max-width: 1160px;
+    padding-left: 10px;
+  }
+
+  &__wrap {
+    padding-top: 63px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (width: 1440px) {
+      justify-content: start;
+    }
+
+    @media (max-width: 860px) {
+      flex-direction: column;
+    }
+
+    @media (max-width: 425px) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
   }
 }

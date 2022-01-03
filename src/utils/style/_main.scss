@@ -3,7 +3,8 @@
 html {
   box-sizing: border-box;
   font-size: 14px;
-  background-color: $BackgroundColorHTML;
+  background-color: $BackgroundColorBody;
+  color: $DarkShade100;
   height: 100vh;
 }
 
@@ -11,7 +12,7 @@ body {
   margin: 0 auto;
   max-width: 1440px;
   height: 100%;
-  background-color: $BackgroundColorBody;
+  background-color: $BackgroundColorHTML;
   font-family: $font-family;
 }
 

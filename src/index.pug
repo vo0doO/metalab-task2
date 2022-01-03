@@ -1,5 +1,7 @@
 include components/head/head
 include components/logo/logo
+    -
+
 
 
 doctype html
@@ -10,6 +12,9 @@ html(lang='ru')
       keywords: 'фронтенд, компоненты, дизайн, стиль, toxin'
   })
   body
-    .ui-kit__main
-        .ui-kit__logo-wrap
-          +logo({isGrey: true, alt: "Toxin logo"})
+    .ui-kit__logo__wrap
+      +logo({isGrey: true, alt: "Toxin logo"})
+    .ui-kit__container
+      .ui-kit__wrap
+        include components/palette/palette
+        +palette({items: []})
