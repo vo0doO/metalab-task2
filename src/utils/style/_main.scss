@@ -1,15 +1,17 @@
 @import "colors";
 
-
 html {
   box-sizing: border-box;
   font-size: 14px;
-  color: $DarkShade100;
   background-color: $BackgroundColorHTML;
+  height: 100vh;
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1440px;
+  height: 100%;
+  background-color: $BackgroundColorBody;
 }
 
 *,
