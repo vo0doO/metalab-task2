@@ -1,6 +1,5 @@
 include components/head/head
 include components/logo/logo
-    -
 
 
 
@@ -17,4 +16,13 @@ html(lang='ru')
     .ui-kit__container
       .ui-kit__wrap
         include components/palette/palette
-        +palette({items: []})
+        +palette({
+            colors: [
+                {name: "max", title: "Dark Shade 100%", rgb: "#1F2041"},
+                {name: "medium", title: "Dark Shade 75%", rgb: "#1F2041"},
+                {name: "middle", title: "Dark Shade 50%", rgb: "#1F2041"},
+                {name: "light", title: "Dark Shade 25%", rgb: "#1F2041"},
+                {name: "min", title: "Dark Shade 5%", rgb: "#1F2041"},
+                {name: "purple", title: "Purple", rgb: "#BC9CFF"},
+                {name: "green", title: "Green", rgb: "#6FCF97"}]
+        })

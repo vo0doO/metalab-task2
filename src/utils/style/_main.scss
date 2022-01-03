@@ -1,11 +1,12 @@
 @import "vars";
 
+
 html {
   box-sizing: border-box;
   font-size: 14px;
   background-color: $BackgroundColorBody;
   color: $DarkShade100;
-  height: 100vh;
+  height: 100%;
 }
 
 body {

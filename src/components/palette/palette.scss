@@ -1,11 +1,21 @@
 @import "src/utils/style/vars";
 
 
+.palette {
+  display: flex;
+  flex-direction: column;
+  height: 610px;
+  width: 281px;
+  justify-content: space-between;
+}
+
 .palette__item {
 
   &__wrap {
     display: flex;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 
   &__rect {
@@ -19,7 +29,7 @@
 
       background-color: $DarkShade100;
 
-      &-full {
+      &-max {
         background-color: $DarkShade100;
       }
 
@@ -35,15 +45,15 @@
         background-color: $DarkShade25;
       }
 
-      &-superlight {
+      &-min {
         background-color: $DarkShade5;
       }
 
-      &-primary {
+      &-purple {
         background-color: $Purple;
       }
 
-      &-secondary {
+      &-green {
         background-color: $Green;
       }
     }

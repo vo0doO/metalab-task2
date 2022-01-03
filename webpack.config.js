@@ -72,27 +72,74 @@ module.exports = {
                 },
             },
             {
-                test: /\.(sa|sc|c)ss$/,
+                test: /\.scss$/,
                 use: [
-                    (mode === 'development') ? "style-loader" : MiniCssExtractPlugin.loader,
-                    "css-loader",
+                    'style-loader',
                     {
-                        loader: "postcss-loader",
+                        loader: 'css-loader',
+                        options: {sourceMap: true},
+                    },
+                    {
+                        loader: 'postcss-loader',
                         options: {
+                            sourceMap: true,
                             postcssOptions: {
                                 plugins: [
-                                    [
-                                        "postcss-preset-env",
-                                        {
-                                            // Options
-                                        },
-                                    ],
+                                    require('autoprefixer'),
+                                    require('postcss-combine-media-query'),
+                                    require('css-mqpacker'),
+                                    require('cssnano')({
+                                        preset: [
+                                            'default',
+                                            {
+                                                discardComments: {
+                                                    removeAll: true,
+                                                },
+                                            },
+                                        ],
+                                    }),
                                 ],
-                            },
+                            }
                         },
                     },
-                    "sass-loader"
-                ]
+                    {
+                        loader: 'sass-loader',
+                        options: {sourceMap: true},
+                    },
+                ],
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {sourceMap: true},
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: true,
+                            postcssOptions: {
+                                plugins: [
+                                    require('autoprefixer'),
+                                    require('postcss-combine-media-query'),
+                                    require('css-mqpacker'),
+                                    require('cssnano')({
+                                        preset: [
+                                            'default',
+                                            {
+                                                discardComments: {
+                                                    removeAll: true,
+                                                },
+                                            },
+                                        ],
+                                    }),
+                                ],
+                            }
+                        },
+                    },
+                ],
             },
         ]
     },
