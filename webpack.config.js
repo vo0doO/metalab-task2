@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const CopyPlugin = require("copy-webpack-plugin")
 
+
 const PATHS = {
   src: path.resolve(__dirname, 'src'),
   dist: path.resolve(__dirname, 'dist'),
@@ -86,9 +87,10 @@ module.exports = {
                             postcssOptions: {
                                 plugins: [
                                     require('autoprefixer'),
+                                    require('postcss-flexbugs-fixes'),
                                     require('postcss-combine-media-query'),
                                     require('css-mqpacker'),
-                                    require('cssnano')({
+                                    require('cssnano'),({
                                         preset: [
                                             'default',
                                             {
