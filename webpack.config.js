@@ -162,9 +162,4 @@ module.exports = {
             filename: "[name].[contenthash].css"
         }),
     ],
-    devServer: {
-        static: {
-            directory: path.join(__dirname, '')
-        }
-    }
 }
