@@ -92,7 +92,7 @@ module.exports = {
                                     require('postcss-flexbugs-fixes'),
                                     require('postcss-combine-media-query'),
                                     require('css-mqpacker'),
-                                    require('cssnano'),({
+                                    require('cssnano')({
                                         preset: [
                                             'default',
                                             {

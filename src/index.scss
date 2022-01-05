@@ -1,6 +1,8 @@
 @import "./components/palette/palette.scss";
+@import "src/utils/style/vars";
 
 .ui-kit {
+  border-block: inherit;
   &__logo__wrap {
     display: inline-block;
     margin: 30px 0 0 30px;
@@ -21,7 +23,46 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    flex-direction: column;
+    flex-direction: row;
     height: 100%;
   }
+}
+
+.typ {
+  position: absolute;
+  width: 428px;
+  height: 322px;
+  left: 719px;
+  top: 21px;
+}
+
+.typ__frame {
+  position: static;
+  width: 428px;
+  height: 322px;
+  left: 0px;
+  top: 0px;
+  margin: 10px 0px;
+}
+
+.typ__item__h1 {
+  owerflow: hidden;
+  padding: 0px;
+  position: static;
+  width: 428px;
+  height: 59px;
+  left: 0px;
+  top: 0px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin-bottom: 51px;
+}
+
+.typ__title {
+  margin: 0 30px;
+}
+
+.typ__item {
+
 }
