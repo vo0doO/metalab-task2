@@ -1,25 +1,37 @@
 @import "src/utils/style/vars";
 
-
+ul.palette {
+  list-style: none;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  height: 610px;
+  justify-content: space-between;
+}
 .palette {
   display: flex;
   flex-direction: column;
   height: 610px;
   width: 281px;
   justify-content: space-between;
+
 }
 
 .palette__item {
+  list-style: none;
 
   &__wrap {
     display: flex;
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
+    
   }
 
   &__rect {
-
+    
     height: 70px;
     width: 70px;
     margin-right: 40px;
@@ -60,6 +72,7 @@
   }
 
   &__title {
+    
     margin: 0;
     padding-top: 1px;
     font-style: normal;
@@ -70,6 +83,7 @@
   }
 
   &__description {
+    
     margin: 0;
     font-size: 19px;
     font-weight: 400;
