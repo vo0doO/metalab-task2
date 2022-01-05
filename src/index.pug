@@ -2,7 +2,6 @@ include components/head/head
 include components/logo/logo
 
 
-
 doctype html
 html(lang='ru')
   +head({
@@ -26,3 +25,5 @@ html(lang='ru')
                 {name: "purple", title: "Purple", rgb: "#BC9CFF"},
                 {name: "green", title: "Green", rgb: "#6FCF97"}]
         })
+        include components/typography/typography
+        +typ({options: []})
