@@ -1,0 +1,29 @@
+mixin typ(options)
+    -
+        let opt = ""
+        opt = options
+        var data = {
+            frame: {}
+        }
+
+    .typ
+      .typ__frame
+        .typ__item.typ__item_h1
+            p.typ__item.typ__title_h1.typ__item_h1 H1
+            p.typ__item.typ__descr_h1.typ__item_h1
+              | This one is the sub-section or
+              | widget title
+        .typ__item.typ__item_h2
+            p.typ__item.typ__title_h2.typ__item_h2 H2
+            p.typ__item.typ__descr_h2.typ__item_h2
+              | Next one is the item title inside
+              | widgets
+        .typ__item.typ__item_h3
+            p.typ__title_h3 H3
+            p.typ__descr_h3
+              |This is a label or CTA text
+        .typ__item.typ__item_body
+            p.typ__title_body Body
+            p.typ__descr_body
+              | This is the body text which is used for most
+              | of the design, like paragraphs, lists, etc.
