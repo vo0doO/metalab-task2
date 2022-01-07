@@ -29,7 +29,7 @@ module.exports = {
 
     output: {
         path: PATHS.dist,
-        filename: '[name].[contenthash].js',
+        filename: 'js/[name].[contenthash].js',
         clean: true,
     },
     optimization: {
@@ -68,7 +68,7 @@ module.exports = {
 
             },
             {
-                test: /\.(woff|woff2|oet|ttf|otf)$/i,
+                test: /\.(woff|svg|woff2|oet|ttf|otf)$/i,
                 type: 'asset/resource',
                 generator: {
                     filename: "assets/fonts/[name][ext][query]",
@@ -77,7 +77,9 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    'style-loader',
+                    process.env.NODE_ENV !== 'production'
+                        ? 'style-loader'
+                        : MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {sourceMap: true},
@@ -159,7 +161,7 @@ module.exports = {
         }),
 
         new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css"
+            filename: "[name].[contenthash].css",
         }),
     ],
 }
