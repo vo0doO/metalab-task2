@@ -1,13 +1,14 @@
 mixin palette(options)
-    -
-      var paletteRectClass = "palette__item__rect"
-      var items = options.colors
+	-
+		let paletteRectClass = "palette__item-rect";
+		let items = options.colors;
 
-    ul.palette
-      each item in items
-        li.section.palette__item
-          .palette__item__wrap
-            div(class=paletteRectClass + ` palette__item__rect_color-${item.name}`)
-            .palette__item__content
-              p.h2.palette__item__title=`${item.title}`
-              p.palette__item__description=`${item.rgb}`
+
+	ul.palette
+		each item in items
+			li.section.palette__item
+				.palette__item-wrap
+					div(class=paletteRectClass + ` palette__item-rect_color-${item.name}`)
+					.palette__item-content
+						p.h2.palette__item-title=`${item.title}`
+						p.palette__item-description=`${item.rgb}`

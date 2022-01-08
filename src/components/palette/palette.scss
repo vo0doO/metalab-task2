@@ -2,43 +2,40 @@
 
 ul.palette {
   list-style: none;
-  padding-left: 0px;
-  margin-bottom: 0px;
-  margin-top: 0px;
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   height: 610px;
   justify-content: space-between;
 }
+
 .palette {
   display: flex;
   flex-direction: column;
   height: 610px;
   width: 281px;
   justify-content: space-between;
-
 }
 
 .palette__item {
   list-style: none;
 
-  &__wrap {
+  &-wrap {
     display: flex;
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
-    
   }
 
-  &__rect {
-    
+  &-rect {
     height: 70px;
     width: 70px;
     margin-right: 40px;
     border-radius: 6px;
 
     &_color {
-
       background-color: $DarkShade100;
 
       &-max {
@@ -71,8 +68,7 @@ ul.palette {
     }
   }
 
-  &__title {
-    
+  &-title {
     margin: 0;
     padding-top: 1px;
     font-style: normal;
@@ -82,12 +78,10 @@ ul.palette {
     letter-spacing: 0;
   }
 
-  &__description {
-    
+  &-description {
     margin: 0;
     font-size: 19px;
     font-weight: 400;
     line-height: 28px;
   }
 }
-
