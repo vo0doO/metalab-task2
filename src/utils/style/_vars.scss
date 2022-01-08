@@ -1,11 +1,10 @@
-$BackgroundColorHTML: #FFFFFF;
-$BackgroundColorBody: #f4f4f6;
-$DarkShade100: rgb(31, 32, 65);
-$DarkShade75: rgba(31, 32, 65, 0.75);
-$DarkShade50: rgba(31, 32, 65, 0.5);
-$DarkShade25: rgba(31, 32, 65, 0.25);
-$DarkShade5: rgba(31, 32, 65, 0.05);
-$Purple: rgba(188, 156, 255, 1);
-$Green: rgba(111, 207, 151, 1);
-
-$font-family: Montserrat, sans-serif;
+$background-color-html: rgb(255 255 255);
+$background-color-body: rgb(244 244 246);
+$dark-shade-100: rgb(31 32 65);
+$dark-shade-75: rgb(31 32 65 / 75%);
+$dark-shade-50: rgb(31 32 65 / 50%);
+$dark-shade-25: rgb(31 32 65 / 25%);
+$dark-shade-5: rgb(31 32 65 / 5%);
+$purple: rgb(188 156 255 / 100%);
+$green: rgb(111 207 151 / 100%);
+$font-family: montserrat, sans-serif;

@@ -1,21 +1,17 @@
 @import "src/utils/style/vars";
 
-* p {
-  margin: 0;
-}
-
 .typ__frame {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 454px;
   height: 322px;
-  justify-content: space-between;
 }
 
 .typ__item {
   display: flex;
-  font-family: "Montserrat", sans-serif;
   font-style: normal;
+  font-family: "Montserrat", sans-serif;
 }
 
 .typ__item_h1 {
@@ -25,82 +21,82 @@
 
 .typ__title_h1 {
   order: 0;
-  color: rgba(31, 32, 65, 0.25);
   width: 50px;
+  color: rgb(31 32 65 / 25%);
   text-indent: 8px;
 }
 
 .typ__descr_h1 {
   order: 1;
-  font-weight: bold;
-  color: $DarkShade100;
   padding-left: 29px;
+  color: $dark-shade-100;
+  font-weight: bold;
 }
 
-
 .typ__item_h2 {
-  font-size: 19px;
-  line-height: 23px;
   order: 1;
   width: 425.8px;
+  font-size: 19px;
+  line-height: 23px;
 }
 
 .typ__title_h2 {
-  order: 0;
-  color: rgba(31, 32, 65, 0.25);
-  text-align: right;
   flex-basis: 69px;
+  order: 0;
+  padding-top: 4px;
   padding-left: 10.6px;
+  color: rgb(31 32 65 / 25%);
+  text-align: right;
 }
 
 .typ__descr_h2 {
   order: 1;
-  font-weight: bold;
-  color: $DarkShade100;
   width: 373px;
   padding-top: 5px;
+  color: $dark-shade-100;
+  font-weight: bold;
 }
 
 .typ__item_h3 {
+  flex-basis: 12px;
+  order: 2;
   font-size: 12px;
   line-height: 15px;
-  order: 2;
-  flex-basis: 12px;
   text-transform: uppercase;
 }
 
 .typ__title_h3 {
   order: 0;
-  text-align: right;
-  color: rgba(31, 32, 65, 0.25);
   width: 37px;
   padding-top: 4px;
+  color: rgb(31 32 65 / 25%);
+  text-align: right;
 }
 
 .typ__descr_h3 {
-  font-weight: bold;
   order: 1;
-  text-transform: uppercase;
-  text-indent: 29px;
   padding-top: 5px;
+  font-weight: bold;
+  text-indent: 29px;
+  text-transform: uppercase;
 }
 
 .typ__item_body {
-  order: 3;
   flex-basis: 51px;
+  order: 3;
   width: 384px;
 }
 
 .typ__title_body {
   order: 0;
-  color: rgba(31, 32, 65, 0.25);
-  line-height: 171%;
   width: 95px;
+  color: rgb(31 32 65 / 25%);
+  line-height: 171%;
 }
 
 .typ__descr_body {
   order: 1;
   width: 450px;
-  color: rgba(31, 32, 65, 0.75);
+  color: rgb(31 32 65 / 75%);
   line-height: 173%;
 }

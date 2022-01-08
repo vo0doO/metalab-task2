@@ -1,19 +1,18 @@
 @import "vars";
 
-
 html {
   box-sizing: border-box;
-  font-size: 14px;
-  background-color: $BackgroundColorBody;
-  color: $DarkShade100;
   height: 100vh;
+  background-color: $background-color-body;
+  color: $dark-shade-100;
+  font-size: 14px;
 }
 
 body {
-  margin: 0 auto;
   max-width: 1440px;
   min-height: 100%;
-  background-color: $BackgroundColorHTML;
+  margin: 0 auto;
+  background-color: $background-color-html;
   font-family: $font-family;
 }
 

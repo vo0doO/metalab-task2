@@ -1,167 +1,167 @@
-const path = require("path")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const CopyPlugin = require("copy-webpack-plugin")
-const presets = require("postcss-preset-env")
-
-
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const presets = require('postcss-preset-env');
 
 const PATHS = {
   src: path.resolve(__dirname, 'src'),
   dist: path.resolve(__dirname, 'dist'),
-}
+};
 
-let mode = 'development'
+let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
-    mode = 'production'
+  mode = 'production';
 }
-console.log(mode + ' mode')
+console.log(mode + ' mode');
 
 module.exports = {
-    mode: mode,
-    devtool: "source-map",
-    externals: {
-        paths: PATHS,
-    },
-    entry: {
-        scripts: "./src/index.js",
-    },
+  mode: mode,
+  devtool: 'source-map',
+  externals: {
+    paths: PATHS,
+  },
+  entry: {
+    scripts: './src/index.js',
+  },
 
-    output: {
-        path: PATHS.dist,
-        filename: 'js/[name].[contenthash].js',
-        clean: true,
+  output: {
+    path: PATHS.dist,
+    filename: 'js/[name].[contenthash].js',
+    clean: true,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
     },
-    optimization: {
-        splitChunks: {
-            chunks: "all"
-        }
-    },
-    module: {
-        rules: [
-            {
-                test: /\.pug$/,
-                loader: 'pug-loader',
-            },
-            {
-                test: /\.pug$/,
-                loader: 'html-loader',
-            },
-            {
-                test: /\.m?js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env'],
-                        plugins: ['@babel/plugin-proposal-class-properties'],
-                    }
-                }
-            },
+  },
+  module: {
+    rules: [
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+      },
+      {
+        test: /\.pug$/,
+        loader: 'html-loader',
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-proposal-class-properties'],
+          },
+        },
+      },
 
-            {
-                test: /\.(png|svg|jpg|jpeg|gif|bmp)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: "assets/img/[name][ext][query]",
-                },
-
-            },
-            {
-                test: /\.(woff|svg|woff2|oet|ttf|otf)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: "assets/fonts/[name][ext][query]",
-                },
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    process.env.NODE_ENV !== 'production'
-                        ? 'style-loader'
-                        : MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {sourceMap: true},
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: true,
-                            postcssOptions: {
-                                plugins: [
-                                    require('autoprefixer'),
-                                    require('postcss-flexbugs-fixes'),
-                                    require('postcss-combine-media-query'),
-                                    require('css-mqpacker'),
-                                    require('cssnano')({
-                                        preset: [
-                                            'default',
-                                            {
-                                                discardComments: {
-                                                    removeAll: true,
-                                                },
-                                            },
-                                        ],
-                                    }),
-                                ],
-                            }
+      {
+        test: /\.(png|svg|jpg|jpeg|gif|bmp)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/img/[name][ext][query]',
+        },
+      },
+      {
+        test: /\.(woff|svg|woff2|oet|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[name][ext][query]',
+        },
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'production' !== process.env.NODE_ENV
+            ? 'style-loader'
+            : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              postcssOptions: {
+                plugins: [
+                  require('autoprefixer'),
+                  require('postcss-flexbugs-fixes'),
+                  require('postcss-combine-media-query'),
+                  require('css-mqpacker'),
+                  require('cssnano')({
+                    preset: [
+                      'default',
+                      {
+                        discardComments: {
+                          removeAll: true,
                         },
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {sourceMap: true},
-                    },
+                      },
+                    ],
+                  }),
                 ],
+              },
             },
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {sourceMap: true},
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: true,
-                            postcssOptions: {
-                                plugins: [
-                                    require('autoprefixer'),
-                                    require('postcss-combine-media-query'),
-                                    require('css-mqpacker'),
-                                    require('cssnano')({
-                                        preset: [
-                                            'default',
-                                            {
-                                                discardComments: {
-                                                    removeAll: true,
-                                                },
-                                            },
-                                        ],
-                                    }),
-                                ],
-                            }
+          },
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: true },
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              postcssOptions: {
+                plugins: [
+                  require('autoprefixer'),
+                  require('postcss-combine-media-query'),
+                  require('css-mqpacker'),
+                  require('cssnano')({
+                    preset: [
+                      'default',
+                      {
+                        discardComments: {
+                          removeAll: true,
                         },
-                    },
+                      },
+                    ],
+                  }),
                 ],
+              },
             },
-        ]
-    },
-    plugins: [
-        new CopyPlugin({
-            patterns: [
-                { from: path.resolve(__dirname, "src/assets/favicons"), to: "./assets/favicons" },
-                { from: path.resolve(__dirname, "src/assets/img"), to: "./assets/img" },
-            ],
-        }),
-        new HtmlWebpackPlugin({
-            template: "!!pug-loader!/src/index.pug"
-        }),
-
-        new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css",
-        }),
+          },
+        ],
+      },
     ],
-}
+  },
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/assets/favicons'),
+          to: './assets/favicons',
+        },
+        { from: path.resolve(__dirname, 'src/assets/img'), to: './assets/img' },
+      ],
+    }),
+    new HtmlWebpackPlugin({
+      template: '!!pug-loader!/src/index.pug',
+    }),
+
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
+  ],
+};

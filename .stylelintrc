@@ -21,7 +21,7 @@
     ],
     "order/properties-alphabetical-order": null,
     "indentation": 2,
-    "max-nesting-depth": 2,
+    "max-nesting-depth": 3,
     "selector-max-type": 1,
     "at-rule-no-unknown": null,
     "selector-no-qualifying-type": [
