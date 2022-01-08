@@ -2,7 +2,6 @@
 @import "/src/utils/style/vars";
 
 .ui-kit {
-  border-block: inherit;
 
   &__logo-wrap {
     display: inline-block;
@@ -19,12 +18,12 @@
     padding-left: 10px;
   }
 
-  &-wrap {
+  &__wrap {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     height: 100%;
-    padding-top: 63px;
+    padding-top: 67px;
   }
 }
