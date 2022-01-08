@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const presets = require('postcss-preset-env');
 
 const PATHS = {
   src: path.resolve(__dirname, 'src'),
@@ -74,9 +73,9 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'production' !== process.env.NODE_ENV
-            ? 'style-loader'
-            : MiniCssExtractPlugin.loader,
+          'production' === process.env.NODE_ENV
+            ? MiniCssExtractPlugin.loader
+            : 'style-loader',
           {
             loader: 'css-loader',
             options: { sourceMap: true },
