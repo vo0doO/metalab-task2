@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "set NODE_ENV=development&&.\\node_modules\\.bin\\webpack serve --open --stats-children --stats-error-details",
+    "start": "set NODE_ENV=development&&.\\node_modules\\.bin\\webpack serve --config webpack.config.js --open --stats-children --stats-error-details",
+    "test": "set NODE_ENV=development&&.webpack serve --config test.config.js --open --stats-children --stats-error-details",
     "dev": "set NODE_ENV=development&&.\\node_modules\\.bin\\webpack",
     "build": "set NODE_ENV=production&&.\\node_modules\\.bin\\webpack --stats-children --stats-error-details",
     "full-reset-cache": "webpack --resolve-roots-reset --resolve-loader-imports-fields-reset --resolve-loader-modules-reset --resolve-loader-imports-fields-reset --resolve-loader-extensions-reset --resolve-loader-description-files-reset"

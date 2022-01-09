@@ -1,6 +1,6 @@
-@import "src/utils/style/vars";
+@import "../../utils/style/vars";
 
-ul.palette {
+ul.color-palette {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,7 +11,7 @@ ul.palette {
   list-style: none;
 }
 
-.palette {
+.color-palette {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,7 +19,7 @@ ul.palette {
   height: 610px;
 }
 
-.palette__item {
+.color-palette__item {
   list-style: none;
 
   &-wrap {
@@ -35,34 +35,34 @@ ul.palette {
     margin-right: 40px;
     border-radius: 6px;
 
-    &_color {
+    &_colour {
       background-color: $dark-shade-100;
 
-      &-max {
+      &_dark-shade100 {
         background-color: $dark-shade-100;
       }
 
-      &-medium {
+      &_dark-shade75 {
         background-color: $dark-shade-75;
       }
 
-      &-middle {
+      &_dark-shade50 {
         background-color: $dark-shade-50;
       }
 
-      &-light {
+      &_dark-shade25 {
         background-color: $dark-shade-25;
       }
 
-      &-min {
+      &_dark-shade5 {
         background-color: $dark-shade-5;
       }
 
-      &-purple {
+      &_purple {
         background-color: $purple;
       }
 
-      &-green {
+      &_green {
         background-color: $green;
       }
     }
