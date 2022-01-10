@@ -13,23 +13,18 @@
     &_dark-shade-100 {
       color: $dark-shade-100;
     }
-
     &_dark-shade-75 {
       color: $dark-shade-75;
     }
-
     &_dark-shade-50 {
       color: $dark-shade-50;
     }
-
     &_dark-shade-25 {
       color: $dark-shade-25;
     }
-
     &_purple {
       color: $purple;
     }
-
     &_green {
       color: $green;
     }
@@ -46,16 +41,16 @@
   }
 
   &_transform {
-    &_upper {
+    &_in-uppercase {
       text-transform: uppercase;
     }
 
-    &_lower {
+    &_in-lowercase {
       text-transform: lowercase;
     }
 
-    &_unset {
-      text-transform: unset;
+    &_none {
+      text-transform: none;
     }
   }
 
@@ -142,11 +137,10 @@ h1 {
   @include text;
 
   &.text {
-    @include text-styles-logic;
-
     font-size: 24px;
     line-height: 29px;
     color: $dark-shade-100;
+    @include text-styles-logic;
   }
 }
 

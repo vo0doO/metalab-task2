@@ -1,43 +1,65 @@
-mixin text()
-  h1(class="text") Hello *(^-^)* World
-  h2(class="text") Hello *(^-^)* World
-  h3(class="text") Hello *(^-^)* World
-  p(class="text")  Hello *(^-^)* World
-  strong(class="text") Hello *(^-^)* World
-  span(class="text") Hello *(^-^)* World
-  small(class="text") Hello *(^-^)* World
 
-  | hellow world
+-
+  var args = {
+    tag: "",  /* <-- required */
+    color:"", /* <-- "" === default tag value */
+    weight: "", /* <-- "" === default tag value */
+    transform: "",  /* <-- "" === default tag value */
+    alignment: "",  /* <-- "" === default tag value */
+    size: "", /* <-- "" === default tag value */
+    lineHeight: "", /* <-- "" === default tag value */
+    text: ""  /* <-- "" === default tag value */
+  }
 
-//size:'', title: false, text:''
-//  - var textSizeVariants = ["h1", "h2", "h3", "body"]
-//    var textClass = 'text'
-//
-//  if (textSizeVariants.include(options.size)) { textClass += '_size_' + options.size }
-//  if (title) {
-//    textClass += "_title"
-//    }
-//
-//  case options.size
-//    when "h1": #[h1(class=textClass) text]
-//    when "h2": #[h2(class=textClass) text]
-//    when "h3": #[h3(class=textClass) text]
-//    when "body07": #[p(class=textClass) text]
-//    when "body05": #[p(class=textClass) text]
-//    when "body02": #[p(class=textClass) text]
-    
-  //if (options.size == "h1") {
-  //  #[h1(class=textClass) text]
-  //}
-  //else if (options.size == "h2") {
-  //  #[h2(class=textClass) text]
-  //}
-  //else if (options.size == "h3") {
-  //  #[h3(class=textClass) text]
-  //}
-  //else if (options.size == "body") {
-  //  #[h3(class=textClass) text]
-  //}
-  //else if (options.size == "h2") {
-  //  p.textClass text
-  //}
+mixin text(args)
+  -
+    var tag = args.tag
+    var color = args.color
+    var weight = args.weight
+    var transform = args.transform
+    var alignment = args.alignment
+    var size = args.size
+    var lineHeight = args.lineHeight
+    var text = args.text
+    var textClass = "text"
+
+    var weights = ["bold", "normal"]
+    var colors = ["dark-shade-100", "dark-shade-75", "dark-shade-50", "dark-shade-25", "dark-shade-5", "purple", "green"]
+    var transformations = ["in-uppercase", "in-lowercase", "none"]
+    var alignments = ["right", "horizontal-center", "left", "top", "bottom", "vertical-center"]
+    var sizes = ["larger", "large", "medium", "small", "smaller"]
+    var lineHeights = ["12px", "14px", "18px", "17px", "117percent", "129percent", "171percent"]
+
+
+    if (colors.includes(color)) {
+      textClass += ` text_color_${color}`
+    }
+
+    if (weights.includes(weight)) {
+      textClass += ` text_weight_${weight}`
+    }
+
+    if (transformations.includes(transform)) {
+      textClass += ` text_transform_${transform}`
+    }
+
+    if (alignments.includes(alignment)) {
+      textClass += ` text_align_${alignment}`
+    }
+
+    if (sizes.includes(size)) {
+      textClass += ` text_size_${size}`
+    }
+
+    if (lineHeights.includes(lineHeight)) {
+      textClass += ` text_line-height_${lineHeight}`
+    }
+
+  case tag
+    when "h1": h1(class=textClass)=text
+    when "h2": h2(class=textClass)=text
+    when "h3": h3(class=textClass)=text
+    when "p": p(class=textClass)=text
+    when "strong": strong(class=textClass)=text
+    when "span": span(class=textClass)=text
+    when "small": small(class=textClass)=text
