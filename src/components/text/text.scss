@@ -1,0 +1,223 @@
+@import "src/utils/style/vars";
+
+@mixin text {
+  display: flex;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+@mixin text-styles-logic {
+  &_color {
+    &_dark-shade-100 {
+      color: $dark-shade-100;
+    }
+    &_dark-shade-75 {
+      color: $dark-shade-75;
+    }
+    &_dark-shade-50 {
+      color: $dark-shade-50;
+    }
+    &_dark-shade-25 {
+      color: $dark-shade-25;
+    }
+    &_purple {
+      color: $purple;
+    }
+    &_green {
+      color: $green;
+    }
+  }
+
+  &_weight {
+    &_bold {
+      font-weight: bold;
+    }
+
+    &_normal {
+      font-weight: normal;
+    }
+  }
+
+  &_transform {
+    &_in-uppercase {
+      text-transform: uppercase;
+    }
+
+    &_in-lowercase {
+      text-transform: lowercase;
+    }
+
+    &_none {
+      text-transform: none;
+    }
+  }
+
+  &_align {
+    &_right {
+      justify-content: right;
+    }
+
+    &_horizontal-center {
+      justify-content: center;
+    }
+
+    &_left {
+      text-align: left;
+    }
+
+    &_top {
+      align-items: flex-start;
+    }
+
+    &_bottom {
+      align-items: flex-end;
+    }
+
+    &_vertical-center {
+      align-items: center;
+    }
+  }
+
+  &_size {
+    &_larger {
+      font-size: 23px;
+    }
+
+    &_large {
+      font-size: 19px;
+    }
+
+    &_medium {
+      font-size: 14px;
+    }
+
+    &_small {
+      font-size: 12px;
+    }
+
+    &_smaller {
+      font-size: 10px;
+    }
+  }
+
+  &_line-height {
+    &_12px {
+      line-height: 12px;
+    }
+
+    &_14px {
+      line-height: 12px;
+    }
+
+    &_18px {
+      line-height: 18px;
+    }
+
+    &_17px {
+      line-height: 17px;
+    }
+
+    &_117percent {
+      line-height: 117%;
+    }
+
+    &_129percent {
+      line-height: 129%;
+    }
+
+    &_171percent {
+      line-height: 117%;
+    }
+  }
+}
+
+h1 {
+  @include text;
+
+  &.text {
+    font-size: 24px;
+    line-height: 29px;
+    color: $dark-shade-100;
+    @include text-styles-logic;
+  }
+}
+
+h2 {
+  @include text;
+
+  &.text {
+    @include text-styles-logic;
+
+    font-size: 19px;
+    line-height: 23px;
+    color: $dark-shade-100;
+  }
+}
+
+h3 {
+  @include text;
+
+  &.text {
+    @include text-styles-logic;
+
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark-shade-100;
+  }
+}
+
+p {
+  @include text;
+
+  &.text {
+    @include text-styles-logic;
+
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 171%;
+    color: $dark-shade-75;
+  }
+}
+
+strong {
+  @include text;
+
+  &.text {
+    @include text-styles-logic;
+
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 129%;
+    color: $dark-shade-75;
+  }
+}
+
+span {
+  @include text;
+
+  &.text {
+    @include text-styles-logic;
+
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 171%;
+    color: $dark-shade-75;
+  }
+}
+
+small {
+  @include text;
+
+  &.text {
+    @include text-styles-logic;
+
+    font-size: 10px;
+    font-weight: normal;
+    line-height: normal;
+    color: $dark-shade-50;
+  }
+}
