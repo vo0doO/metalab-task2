@@ -1,105 +1,67 @@
 @import "src/utils/style/vars";
 
-p {
-  margin-block: 0;
-}
 
-.typography__frame {
+table[class="typography__frame"] {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 454px;
-  height: 322px;
+  height: 400px;
 }
 
-.typography__item {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
+tr, th.typography__item {
   display: flex;
-}
+  height: 81px;
+  justify-items: end;
+  //  align-items: baseline;
+  //}
+  //
+  th.typography__title_h1 {
+    width: 86px;
+    text-indent: 7.6px;
+  }
 
-.typography__item_h1 {
-  font-size: 24px;
-  line-height: normal;
-}
+  .typography__descr_h1 {
+    text-align: start;
+  }
 
-.typography__title_h1 {
-  order: 0;
-  width: 50px;
-  text-indent: 8px;
-  color: $dark-shade-25;
-}
+  th.typography__title_h2 {
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    text-indent: -18px;
+  }
 
-.typography__descr_h1 {
-  font-weight: bold;
-  order: 1;
-  padding-left: 29px;
-  color: $dark-shade-100;
-}
+  th.typography__descr_h2 {
+    width: 373px;
+    text-align: start;
+    padding-top: 29px;
+  }
 
-.typography__item_h2 {
-  font-size: 19px;
-  line-height: normal;
-  order: 1;
-  width: 425.8px; // text-wrap
-}
 
-.typography__title_h2 {
-  flex-basis: 69px; // text-wrap
-  order: 0;
-  padding-top: 4px;
-  padding-left: 10.6px;
-  color: $dark-shade-25;
-}
+  th.typography__title_h3 {
+    width: 37px;
+    padding-top: 4px;
+    text-align: right;
+  }
 
-.typography__descr_h2 {
-  font-weight: bold;
-  order: 1;
-  width: 373px;
-  padding-top: 5px;
-  color: $dark-shade-100;
-}
+  th.typography__descr_h3 {
+    padding-top: 5px;
+    text-indent: 29px;
+  }
 
-.typography__item_h3 {
-  font-size: 12px;
-  line-height: normal;
-  flex-basis: 12px;
-  order: 2;
-  text-transform: uppercase;
-}
+  th.typography__item_body {
+    flex-basis: 51px;
+    width: 384px;
+    height: 100px;
+  }
 
-.typography__title_h3 {
-  order: 0;
-  width: 37px;
-  padding-top: 4px;
-  text-align: right;
-  color: $dark-shade-25;
-}
+  th.typography__title_body {
+    order: 0;
+    width: 95px;
+  }
 
-.typography__descr_h3 {
-  font-weight: bold;
-  order: 1;
-  padding-top: 5px;
-  text-indent: 29px;
-  text-transform: uppercase;
-}
-
-.typography__item_body {
-  flex-basis: 51px;
-  order: 3;
-  width: 384px;
-}
-
-.typography__title_body {
-  line-height: 171%;
-  order: 0;
-  width: 95px;
-  color: rgb(31 32 65 / 25%);
-}
-
-.typography__descr_body {
-  line-height: 173%;
-  order: 1;
-  width: 450px;
-  color: rgb(31 32 65 / 75%);
+  th.typography__descr_body {
+    width: 450px;
+  }
 }

@@ -1,16 +1,14 @@
-
 -
   var args = {
     tag: "",  /* <-- required */
-    color:"", /* <-- "" === default tag value */
+    color: "", /* <-- "" === default tag value */
     weight: "", /* <-- "" === default tag value */
     transform: "",  /* <-- "" === default tag value */
     alignment: "",  /* <-- "" === default tag value */
     size: "", /* <-- "" === default tag value */
     lineHeight: "", /* <-- "" === default tag value */
-    text: ""  /* <-- "" === default tag value */
+    text: "",  /* <-- "" === default tag value */
   }
-
 mixin text(args)
   -
     var tag = args.tag
@@ -29,7 +27,6 @@ mixin text(args)
     var alignments = ["right", "horizontal-center", "left", "top", "bottom", "vertical-center"]
     var sizes = ["larger", "large", "medium", "small", "smaller"]
     var lineHeights = ["12px", "14px", "18px", "17px", "117percent", "129percent", "171percent"]
-
 
     if (colors.includes(color)) {
       textClass += ` text_color_${color}`
@@ -55,11 +52,12 @@ mixin text(args)
       textClass += ` text_line-height_${lineHeight}`
     }
 
-  case tag
-    when "h1": h1(class=textClass)=text
-    when "h2": h2(class=textClass)=text
-    when "h3": h3(class=textClass)=text
-    when "p": p(class=textClass)=text
-    when "strong": strong(class=textClass)=text
-    when "span": span(class=textClass)=text
-    when "small": small(class=textClass)=text
+  .dic(class=wrapperClass)
+    case tag
+      when "h1": h1(class=textClass)=text
+      when "h2": h2(class=textClass)=text
+      when "h3": h3(class=textClass)=text
+      when "p": p(class=textClass)=text
+      when "strong": strong(class=textClass)=text
+      when "span": span(class=textClass)=text
+      when "small": small(class=textClass)=text
