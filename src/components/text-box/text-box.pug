@@ -1,0 +1,37 @@
+wrapper: {
+height: "100%",
+width: "100%",
+paddingLeft: "0px",
+paddindRight: "0px",
+paddingTop: "0px",
+paddingBottom: "0px",
+display: "",
+position: "",
+}
+}
+var wrapperHeight = args.wrapper.height
+var wrapperWidth = args.wrapper.width
+var paddingLeft = args.wrapper.paddingLeft
+var paddingRight = args.wrapper.paddindRight
+var paddingTop = args.wrapper.paddingTop
+var paddingBottom = args.wrapper.paddingBottom
+var display = args.wrapper.display
+var position = args.wrapper.position
+if (wrapperWidth !== "") {
+  wrapperClass += ` text_wrapper_width_${wrapperWidth}`
+}
+if (wrapperHeight !== "") {
+  wrapperClass += ` text_wrapper_height_${wrapperHeight}`
+}
+if (paddingLeft !== "") {
+  wrapperClass += ` text_wrapper_padding-left_${paddingLeft}`
+}
+if (paddingTop !== "") {
+  wrapperClass += ` text_wrapper_padding-top_${paddingTop}`
+}
+if (paddingRight !== "") {
+  wrapperClass += ` text_wrapper_padding-right_${paddingRight}`
+}
+if (paddingBottom !== "") {
+  wrapperClass += ` text_wrapper_padding-bottom_${paddingBottom}`
+}

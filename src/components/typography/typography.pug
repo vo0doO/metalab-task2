@@ -18,8 +18,8 @@ mixin typography(options)
           })
         th.typography__item.typography__descr_h1.typography__item_h1
           +text({tag: "h1", text: "This one is the sub-section or widget title"})
-      tr.typography__item.typography__item_h2
-        th.typography__item.typography__title_h2.typography__item_h2
+      tr.typography__item
+        th.typography__item.typography__title_h2
           +text({
             tag: "h2",
             color: "dark-shade-25",
@@ -27,9 +27,9 @@ mixin typography(options)
             transform: "in-uppercase",
             text:"h2"
           })
-        th.typography__item.typography__descr_h2.typography__item_h2
+        th.typography__item.typography__descr_h2
           +text({tag: "h2", text : "Next one is the item title inside widgets"})
-      tr.typography__item.typography__item_h3
+      tr.typography__item
         th.typography__title_h3
           +text({
             tag: "h3",
