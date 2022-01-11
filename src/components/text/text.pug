@@ -7,7 +7,7 @@
     alignment: "",  /* <-- "" === default tag value */
     size: "", /* <-- "" === default tag value */
     lineHeight: "", /* <-- "" === default tag value */
-    text: "",  /* <-- "" === default tag value */
+    content: "",  /* <-- "" === default tag value */
   }
 mixin text(args)
   -
@@ -18,7 +18,7 @@ mixin text(args)
     var alignment = args.alignment
     var size = args.size
     var lineHeight = args.lineHeight
-    var text = args.text
+    var content = args.content
     var textClass = "text"
 
     var weights = ["bold", "normal"]
@@ -54,10 +54,10 @@ mixin text(args)
 
   .dic(class=wrapperClass)
     case tag
-      when "h1": h1(class=textClass)=text
-      when "h2": h2(class=textClass)=text
-      when "h3": h3(class=textClass)=text
-      when "p": p(class=textClass)=text
-      when "strong": strong(class=textClass)=text
-      when "span": span(class=textClass)=text
-      when "small": small(class=textClass)=text
+      when "h1": h1(class=textClass)=content
+      when "h2": h2(class=textClass)=content
+      when "h3": h3(class=textClass)=content
+      when "p": p(class=textClass)=content
+      when "strong": strong(class=textClass)=content
+      when "span": span(class=textClass)=content
+      when "small": small(class=textClass)=content

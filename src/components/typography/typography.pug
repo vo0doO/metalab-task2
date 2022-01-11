@@ -3,79 +3,52 @@ mixin typography(options)
     let opt = ""
     opt = options
 
-
-  .typography
-    table.typography__frame
-      tr.typography__item.typography__item_h1
-        th.typography__item.typography__title_h1.typography__item_h1
+  table.typography
+    tbody.typography__frame
+      tr.typography__item_h1
+        th.typography__title_h1.typography__item_h1
           include ../text/text
           +text({
             tag: "h1",
             color: "dark-shade-25",
             weight: "normal",
             transform: "in-uppercase",
-            text: "H1",
+            content: "H1",
           })
-        th.typography__item.typography__descr_h1.typography__item_h1
-          +text({tag: "h1", text: "This one is the sub-section or widget title"})
-      tr.typography__item
-        th.typography__item.typography__title_h2
+        th.typography__descr_h1.typography__item_h1
+          +text({tag: "h1", content: "This one is the sub-section or widget title"})
+      tr.typography__item_h2
+        th.typography__title_h2
           +text({
             tag: "h2",
             color: "dark-shade-25",
             weight: "normal",
             transform: "in-uppercase",
-            text:"h2"
+            content: "h2"
           })
-        th.typography__item.typography__descr_h2
-          +text({tag: "h2", text : "Next one is the item title inside widgets"})
-      tr.typography__item
+        th.typography__descr_h2
+          +text({tag: "h2", content: "Next one is the item title inside widgets"})
+      tr.typography__item_h3
         th.typography__title_h3
           +text({
             tag: "h3",
             color: "dark-shade-25",
             weight: "normal",
             transform: "in-uppercase",
-            text: "h3"
+            content: "h3"
           })
         th.typography__descr_h3
-          +text({tag: "h3", text : "This is a label or CTA text"})
-      tr.typography__item.typography__item_body
+          +text({tag: "h3", content: "This is a label or CTA text"})
+      tr.typography__item_body
         th.typography__title_body
           +text({
             tag: "p",
             color: "dark-shade-25",
             weight: "normal",
-            text: "Body"
+            content: "Body"
           })
         th.typography__descr_body
           +text({
             tag: "p",
-            text: "This is the body text which is used for most"+
-                  "of the design, like paragraphs, lists, etc."
+            content: "This is the body text which is used for most of the design, like paragraphs, lists, etc."
           })
-
-
-
-
-  //.typography
-  //  .typography__frame
-  //    .typography__item.typography__item_h1
-  //      p.typography__item.typography__title_h1.typography__item_h1 H1
-  //      p.typography__item.typography__descr_h1.typography__item_h1
-  //        | This one is the sub-section or
-  //        | widget title
-  //    .typography__item.typography__item_h2
-  //      p.typography__item.typography__title_h2.typography__item_h2 H2
-  //      p.typography__item.typography__descr_h2.typography__item_h2
-  //        | Next one is the item title inside
-  //        | widgets
-  //    .typography__item.typography__item_h3
-  //      p.typography__title_h3 H3
-  //      p.typography__descr_h3
-  //        | This is a label or CTA text
-  //    .typography__item.typography__item_body
-  //      p.typography__title_body Body
-  //      p.typography__descr_body
-  //        | This is the body text which is used for most
-  //        | of the design, like paragraphs, lists, etc.

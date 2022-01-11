@@ -1,67 +1,64 @@
 @import "src/utils/style/vars";
 
-
-table[class="typography__frame"] {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 454px;
-  height: 400px;
+table.typography {
+  width: 444px;
+  height: 322px;
+  border-spacing: 0;
 }
 
-tr, th.typography__item {
-  display: flex;
-  height: 81px;
-  justify-items: end;
-  //  align-items: baseline;
-  //}
-  //
-  th.typography__title_h1 {
-    width: 86px;
-    text-indent: 7.6px;
-  }
+tr.typography__item_h1 {
+  vertical-align: top;
+}
 
-  th.typography__descr_h1 {
-    text-align: start;
-  }
+th.typography__title_h1.typography__item_h1 {
+  height: 36px;
+  text-indent: 9px;
+}
 
-  th.typography__title_h2 {
-    align-items: center;
-    justify-content: center;
-    width: 64px;
-    text-indent: -18px;
-  }
+th.typography__descr_h1.typography__item_h1 {
+  padding-left: 29px;
+  text-align: start;
+}
 
-  th.typography__descr_h2 {
-    width: 373px;
-    text-align: start;
-    padding-top: 29px;
-  }
+tr.typography__item_h2 {
+  height: 124px;
+}
 
+th.typography__title_h2 {
+  text-indent: 9px;
+}
 
-  th.typography__title_h3 {
-    width: 37px;
-    padding-top: 4px;
-    text-align: right;
-  }
+th.typography__descr_h2 {
+  padding-top: 24px;
+  padding-left: 28px;
+  text-align: start;
+  vertical-align: middle;
+}
 
-  th.typography__descr_h3 {
-    padding-top: 5px;
-    text-indent: 29px;
-  }
+tr.typography__item_h3 {
+  vertical-align: bottom;
+}
 
-  th.typography__item_body {
-    flex-basis: 51px;
-    width: 384px;
-    height: 100px;
-  }
+th.typography__title_h3 {
+  text-indent: 19px;
+}
 
-  th.typography__title_body {
-    order: 0;
-    width: 95px;
-  }
+th.typography__descr_h3 {
+  text-align: start;
+  text-indent: 27px;
+}
 
-  th.typography__descr_body {
-    width: 450px;
-  }
+tr.typography__item_body {
+  height: 96px;
+}
+
+th.typography__title_body {
+  padding-top: 22px;
+}
+
+th.typography__descr_body {
+  padding-right: 63px;
+  padding-left: 29px;
+  text-align: start;
+  vertical-align: bottom;
 }

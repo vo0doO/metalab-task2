@@ -1,3 +1,10 @@
+main.ui-kit {
+  padding-top: 63px;
+  padding-bottom: 166px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
 .ui-kit {
   &__logo-wrap {
     display: inline-block;
@@ -6,12 +13,11 @@
 
   &__container {
     position: relative;
-    width: 100%;
+    width: 1140px;
     min-width: 320px;
     max-width: 1160px;
     height: 100%;
-    margin: 0 auto;
-    padding-left: 10px;
+    margin: 62px auto;
   }
 
   &__wrap {
@@ -20,7 +26,5 @@
     flex-wrap: wrap;
     justify-content: space-between;
     height: 100%;
-    padding-top: 62px;
-    margin-left: -2px;
   }
 }

@@ -9,21 +9,23 @@ html(lang='ru')
     description: 'Frontend компоненты в фирменном стиле TOXIN',
     keywords: 'фронтенд, компоненты, дизайн, стиль, toxin'
   })
-  body
-    .ui-kit__logo-wrap
-      +logo({isGrey: true, alt: "Toxin logo"})
-    .ui-kit__container
-      .ui-kit__wrap
-        include components/color-palette/color-palette
-        +color-palette({
-          colors: [
-            {name: "dark-shade100", title: "Dark Shade 100%", rgb: "#1F2041"},
-            {name: "dark-shade75", title: "Dark Shade 75%", rgb: "#1F2041"},
-            {name: "dark-shade50", title: "Dark Shade 50%", rgb: "#1F2041"},
-            {name: "dark-shade25", title: "Dark Shade 25%", rgb: "#1F2041"},
-            {name: "dark-shade5", title: "Dark Shade 5%", rgb: "#1F2041"},
-            {name: "purple", title: "Purple", rgb: "#BC9CFF"},
-            {name: "green", title: "Green", rgb: "#6FCF97"}]
-        })
-        include components/typography/typography
-        +typography({options: []})
+  body.ui-kit__body
+    header.ui-kit__header
+      .ui-kit__logo-wrap
+        +logo({isGrey: true, alt: "Toxin logo"})
+    main.ui-kit__main
+      .ui-kit__container
+        .ui-kit__wrap
+          include components/color-palette/color-palette
+          +color-palette({
+            colors: [
+              {name: "dark-shade100", title: "Dark Shade 100%", rgb: "#1F2041"},
+              {name: "dark-shade75", title: "Dark Shade 75%", rgb: "#1F2041"},
+              {name: "dark-shade50", title: "Dark Shade 50%", rgb: "#1F2041"},
+              {name: "dark-shade25", title: "Dark Shade 25%", rgb: "#1F2041"},
+              {name: "dark-shade5", title: "Dark Shade 5%", rgb: "#1F2041"},
+              {name: "purple", title: "Purple", rgb: "#BC9CFF"},
+              {name: "green", title: "Green", rgb: "#6FCF97"}]
+          })
+          include components/typography/typography
+          +typography({options: []})
