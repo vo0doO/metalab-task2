@@ -1,14 +1,16 @@
 mixin color-palette(options)
-	-
-		let colorPaletteRectClass = "color-palette__item-rect";
-		let items = options.colors;
+  -
+    let colorPaletteRectClass = "color-palette__item-rect";
+    let items = options.colors;
 
 
-	ul.color-palette
-		each item in items
-			li.section.color-palette__item
-				.color-palette__item-wrap
-					div(class=colorPaletteRectClass + ` color-palette__item-rect_colour_${item.name}`)
-					.color-palette__item-content
-						h2.color-palette__item-title=`${item.title}`
-						p.color-palette__item-description=`${item.rgb}`
+  ul.color-palette
+    each item in items
+      li.section.color-palette__item
+        .color-palette__item-wrap
+          div(
+            class=colorPaletteRectClass + ` color-palette__item-rect_colour_${item.name}`
+          )
+          .color-palette__item-content
+            h2.color-palette__item-title= `${item.title}`
+            p.color-palette__item-description= `${item.rgb}`
