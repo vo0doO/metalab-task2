@@ -32,7 +32,7 @@
         ]
       }
     ],
-    "scss/at-extend-no-missing-placeholder": null,
+    "scss/at-extend-no-missing-placeholder": [false],
     "font-family-no-missing-generic-family-keyword": null,
     "scss/dollar-variable-colon-newline-after": null
   }

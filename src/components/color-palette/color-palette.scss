@@ -1,9 +1,10 @@
 @import "../../utils/style/vars";
 
-ul.color-palette {
+.color-palette__ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 281px;
   height: 610px;
   margin-top: 0;
   margin-bottom: 0;
@@ -11,31 +12,23 @@ ul.color-palette {
   list-style: none;
 }
 
-.color-palette {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 281px;
-  height: 610px;
-}
-
 .color-palette__item {
   list-style: none;
 
-  &-wrap {
+  &-wrapper {
     display: flex;
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
   }
 
-  &-rect {
+  &-rectangle {
     width: 70px;
     height: 70px;
     margin-right: 40px;
     border-radius: 6px;
 
-    &_colour {
+    &_with-color {
       background-color: $dark-shade-100;
 
       &_dark-shade100 {
@@ -69,18 +62,14 @@ ul.color-palette {
   }
 
   &-title {
-    font-size: 19px;
-    font-weight: 700;
-    font-style: normal;
-    line-height: 28px;
     margin: 0;
     padding-top: 1px;
     letter-spacing: 0;
   }
 
   &-description {
-    font-size: 19px;
     font-weight: 400;
+    font-size: 19px;
     line-height: 28px;
     margin: 0;
   }

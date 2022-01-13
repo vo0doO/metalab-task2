@@ -1,14 +1,17 @@
-mixin color-palette(options)
-	-
-		let colorPaletteRectClass = "color-palette__item-rect";
-		let items = options.colors;
+mixin color-palette(args = { colors: [{ name: "", title: "", rgb: ""}]})
+  -
+    let colorPaletteRectClass = "color-palette__item-rectangle";
 
-
-	ul.color-palette
-		each item in items
-			li.section.color-palette__item
-				.color-palette__item-wrap
-					div(class=colorPaletteRectClass + ` color-palette__item-rect_colour_${item.name}`)
-					.color-palette__item-content
-						h2.color-palette__item-title=`${item.title}`
-						p.color-palette__item-description=`${item.rgb}`
+  ul.color-palette__ul
+    include ../text/text
+    each item in args.colors
+      li.section.color-palette__item
+        .color-palette__item-wrapper
+          div(
+            class=colorPaletteRectClass + ` color-palette__item-rectangle_with-color_${item.name}`
+          )
+          .color-palette__item-content
+            .color-palette__item-title
+              +text({withTag: "h2", withLineHeight: "28px", withContent: `${item.title}`})
+            .color-palette__item-description
+              +text({withTag: "h2", withLineHeight: "28px", withWeight: "normal", withContent: `${item.rgb}`})
