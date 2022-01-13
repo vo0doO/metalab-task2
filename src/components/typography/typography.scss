@@ -1,64 +1,64 @@
 @import "src/utils/style/vars";
 
-table.typography {
+.typography {
   width: 444px;
   height: 322px;
   border-spacing: 0;
 }
 
-tr.typography__item_h1 {
+.typography__item_h1 {
   vertical-align: top;
+  height: 36px;
 }
 
-th.typography__title_h1.typography__item_h1 {
-  height: 36px;
+.typography__title_h1 {
   text-indent: 9px;
 }
 
-th.typography__descr_h1.typography__item_h1 {
+.typography__descr_h1 {
   padding-left: 29px;
   text-align: start;
 }
 
-tr.typography__item_h2 {
+.typography__item_h2 {
   height: 124px;
 }
 
-th.typography__title_h2 {
+.typography__title_h2 {
   text-indent: 9px;
 }
 
-th.typography__descr_h2 {
+.typography__descr_h2 {
+  vertical-align: middle;
   padding-top: 24px;
   padding-left: 28px;
   text-align: start;
-  vertical-align: middle;
 }
 
-tr.typography__item_h3 {
+.typography__item_h3 {
   vertical-align: bottom;
 }
 
-th.typography__title_h3 {
+.typography__title_h3 {
   text-indent: 19px;
 }
 
-th.typography__descr_h3 {
+.typography__descr_h3 {
   text-align: start;
   text-indent: 27px;
 }
 
-tr.typography__item_body {
+.typography__item_body {
   height: 96px;
 }
 
-th.typography__title_body {
+.typography__title_body {
   padding-top: 22px;
 }
 
-th.typography__descr_body {
+.typography__descr_body {
+  vertical-align: bottom;
   padding-right: 63px;
   padding-left: 29px;
   text-align: start;
-  vertical-align: bottom;
 }
