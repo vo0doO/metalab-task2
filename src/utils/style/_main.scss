@@ -1,6 +1,7 @@
 @import "vars";
 
 html {
+  font-family: $font-family;
   font-size: 14px;
   box-sizing: border-box;
   height: 100vh;
@@ -9,7 +10,6 @@ html {
 }
 
 body {
-  font-family: $font-family;
   max-width: 1440px;
   min-height: 100%;
   margin: 0 auto;
