@@ -1,11 +1,9 @@
-mixin color-palette(options)
+mixin color-palette(args = { colors: [{ name: "", title: "", rgb: ""}]})
   -
     let colorPaletteRectClass = "color-palette__item-rect";
-    let items = options.colors;
-
 
   ul.color-palette
-    each item in items
+    each item in args.colors
       li.section.color-palette__item
         .color-palette__item-wrap
           div(
