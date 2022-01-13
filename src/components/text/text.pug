@@ -1,63 +1,44 @@
--
-  var args = {
-    tag: "",  /* <-- required */
-    color: "", /* <-- "" === default tag value */
-    weight: "", /* <-- "" === default tag value */
-    transform: "",  /* <-- "" === default tag value */
-    alignment: "",  /* <-- "" === default tag value */
-    size: "", /* <-- "" === default tag value */
-    lineHeight: "", /* <-- "" === default tag value */
-    content: "",  /* <-- "" === default tag value */
-  }
-mixin text(args)
+mixin text(args={withTag: "", withColor: "", withWeight: "", withTransform: "", withAlign: "", withSize: "", withLineHeight: "", withContent: "",})
   -
-    var tag = args.tag
-    var color = args.color
-    var weight = args.weight
-    var transform = args.transform
-    var alignment = args.alignment
-    var size = args.size
-    var lineHeight = args.lineHeight
-    var content = args.content
-    var textClass = "text"
+    let textClasses = ["text"]
+    let textClass = "text";
+    const tags = ["h1", "h2", "h3", "p", "strong", "span", "small"];
+    const weights = ["bold", "normal"];
+    const colors = ["dark-shade-100", "dark-shade-75", "dark-shade-50", "dark-shade-25", "dark-shade-5", "purple", "green"];
+    const transformations = ["uppercase", "lowercase", "none"];
+    const alignments = ["right", "horizontal-center", "left", "top", "bottom", "vertical-center"];
+    const sizes = ["larger", "large", "medium", "small", "smaller"];
+    const lineHeights = ["12px", "14px", "18px", "17px", "117percent", "129percent", "171percent"];
 
-    var weights = ["bold", "normal"]
-    var colors = ["dark-shade-100", "dark-shade-75", "dark-shade-50", "dark-shade-25", "dark-shade-5", "purple", "green"]
-    var transformations = ["in-uppercase", "in-lowercase", "none"]
-    var alignments = ["right", "horizontal-center", "left", "top", "bottom", "vertical-center"]
-    var sizes = ["larger", "large", "medium", "small", "smaller"]
-    var lineHeights = ["12px", "14px", "18px", "17px", "117percent", "129percent", "171percent"]
-
-    if (colors.includes(color)) {
-      textClass += ` text_color_${color}`
+    if (colors.includes(args.withColor)) {
+      textClass += ` text_with-color_${args.withColor}`
     }
 
-    if (weights.includes(weight)) {
-      textClass += ` text_weight_${weight}`
+    if (weights.includes(args.withWeight)) {
+      textClass += ` text_with-weight_${args.withWeight}`
     }
 
-    if (transformations.includes(transform)) {
-      textClass += ` text_transform_${transform}`
+    if (transformations.includes(args.withTransform)) {
+      textClass += ` text_with-transform_${args.withTransform}`
     }
 
-    if (alignments.includes(alignment)) {
-      textClass += ` text_align_${alignment}`
+    if (alignments.includes(args.withAlign)) {
+      textClass += ` text_with-align_${args.withAlign}`
     }
 
-    if (sizes.includes(size)) {
-      textClass += ` text_size_${size}`
+    if (sizes.includes(args.withSize)) {
+      textClass += ` text_with-size_${args.withSize}`
     }
 
-    if (lineHeights.includes(lineHeight)) {
-      textClass += ` text_line-height_${lineHeight}`
+    if (lineHeights.includes(args.withLineHeight)) {
+      textClass += ` text_with-line-height_${args.withLineHeight}`
     }
 
-  .dic(class=wrapperClass)
-    case tag
-      when "h1": h1(class=textClass)= content
-      when "h2": h2(class=textClass)= content
-      when "h3": h3(class=textClass)= content
-      when "p": p(class=textClass)= content
-      when "strong": strong(class=textClass)= content
-      when "span": span(class=textClass)= content
-      when "small": small(class=textClass)= content
+  case args.withTag
+    when "h1": h1(class=textClass)= args.withContent
+    when "h2": h2(class=textClass)= args.withContent
+    when "h3": h3(class=textClass)= args.withContent
+    when "p": p(class=textClass)= args.withContent
+    when "strong": strong(class=textClass)= args.withContent
+    when "span": span(class=textClass)= args.withContent
+    when "small": small(class=textClass)= args.withContent
