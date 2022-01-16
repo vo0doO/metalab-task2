@@ -1,17 +1,33 @@
 include components/head/head
 include components/logo/logo
+include components/text/text
 
 doctype html
 html(lang='ru')
-  +head({title: 'UI-KIT - TOXIN', description: 'Frontend компоненты в фирменном стиле TOXIN', keywords: 'фронтенд, компоненты, дизайн, стиль, toxin'})
-  body.color-and-type__body
-    header.color-and-type__header
-      .color-and-type__logo-wrap
-        +logo({isGrey: true, alt: "Toxin logo"})
-    main.color-and-type__main
-      .color-and-type__container
-        .color-and-type__wrap
-          include components/color-palette/color-palette
-          +color-palette({ colors: [{name: "dark-shade100", title: "Dark Shade 100%", rgb: "#1F2041"}, { name: "dark-shade75", title: "Dark Shade 75%", rgb: "#1F2041" }, {name: "dark-shade50", title: "Dark Shade 50%", rgb: "#1F2041"}, {name: "dark-shade25", title: "Dark Shade 25%", rgb: "#1F2041"}, { name: "dark-shade5", title: "Dark Shade 5%", rgb: "#1F2041" }, {name: "purple", title: "Purple", rgb: "#BC9CFF"}, {name: "green", title: "Green", rgb: "#6FCF97"}] })
-          include components/typography/typography
-          +typography
+  +head({ title: "UI-KIT - TOXIN", description: "Frontend компоненты в фирменном стиле TOXIN", keywords: "фронтенд, компоненты, дизайн, стиль, toxin" })
+  body.ui-kit__body
+    main.ui-kit__main
+      section.color-and-type
+        .color-and-type__body
+          .color-and-type__header
+            .color-and-type__title
+              +text({ withTag: "small", withContent: "Color&Type" })
+            .color-and-type__logo-wrapper
+              +logo({ isGrey: true, alt: "Toxin logo" })
+          .color-and-type__main
+            .color-and-type__container
+              .color-and-type__wrapper
+                include components/color-palette/color-palette
+                +color-palette({ colors: [ { name: "dark-shade100", title: "Dark Shade 100%", rgb: "#1F2041" }, { name: "dark-shade75", title: "Dark Shade 75%", rgb: "#1F2041" }, { name: "dark-shade50", title: "Dark Shade 50%", rgb: "#1F2041" }, { name: "dark-shade25", title: "Dark Shade 25%", rgb: "#1F2041" }, { name: "dark-shade5", title: "Dark Shade 5%", rgb: "#1F2041" }, { name: "purple", title: "Purple", rgb: "#BC9CFF" }, { name: "green", title: "Green", rgb: "#6FCF97" }] })
+                include components/typography/typography
+                +typography
+      section.form-elements
+        .form-elements__body
+          .form-elements__header
+            .form-elements__title
+              +text({ withTag: "small", withContent: "Form Elements" })
+            .form-elements__logo-wrapper
+              +logo({ isGrey: true, alt: "Toxin logo" })
+          .form-elements__main
+            .form-elements__container
+              .form-elements__wrapper

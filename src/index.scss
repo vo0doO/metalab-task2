@@ -1,26 +1,76 @@
-main.color-and-type {
-  padding-top: 63px;
-  padding-right: 150px;
-  padding-bottom: 166px;
-  padding-left: 150px;
-}
+@import "utils/style/vars";
+
 
 .color-and-type {
-  &__logo-wrap {
+  &__title {
+    display: flex;
+    align-items: flex-end;
+    height: 50px;
+    background-color: $background-color-body;
+  }
+  
+  &__logo-wrapper {
     display: inline-block;
     margin: 30px 0 0 30px;
   }
-
+  
+  &__body {
+    height: 950px;
+    background-color: $background-color-html;
+  }
+  
+  &__main {
+    padding: 63px 150px 166px;
+  }
+  
   &__container {
     position: relative;
     width: 1140px;
     min-width: 320px;
     max-width: 1160px;
     height: 100%;
-    margin: 62px auto;
   }
+  
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100%;
+  }
+}
 
-  &__wrap {
+.form-elements {
+  &__title {
+    display: flex;
+    align-items: flex-end;
+    height: 50px;
+    background-color: $background-color-body;
+  }
+  
+  &__logo-wrapper {
+    display: inline-block;
+    margin: 30px 0 0 30px;
+  }
+  
+  &__body {
+    height: 950px;
+    background-color: $background-color-html;
+  }
+  
+  &__main {
+    padding: 63px 150px 166px;
+  }
+  
+  &__container {
+    position: relative;
+    width: 1140px;
+    min-width: 320px;
+    max-width: 1160px;
+    height: 100%;
+  }
+  
+  &__wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
