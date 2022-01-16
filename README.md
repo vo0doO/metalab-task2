@@ -8,6 +8,11 @@ cd toxin
 npm install
 ```
 
+## Настройка сборки
+
+```cmd
+npm run build
+```
 ## Локальный сервер разработки
 
 ```cmd
