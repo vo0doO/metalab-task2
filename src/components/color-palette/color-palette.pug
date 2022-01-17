@@ -1,10 +1,10 @@
 mixin color-palette(args = { colors: [{ name: "", title: "", rgb: ""}]})
-  -
+	-
 		let colorPaletteRectClass = "color-palette__item-rectangle";
 
 	ul.color-palette__ul
 		include ../text/text
-    each item in args.colors
+		each item in args.colors
 			li.section.color-palette__item
 				.color-palette__item-wrapper
 					div(
@@ -14,13 +14,13 @@ mixin color-palette(args = { colors: [{ name: "", title: "", rgb: ""}]})
 						.color-palette__item-title
 							+text({
                 withTag: "h2",
-                withLineHeight: "28px",
-                withContent: `${item.title}`
-              })
+								withLineHeight: "28px",
+								withContent: `${item.title}`
+							 })
 						.color-palette__item-description
 							+text({
                 withTag: "h2",
-                withLineHeight: "28px",
-                withWeight: "normal",
-                withContent: `${item.rgb}`
-              })
+								withLineHeight: "28px",
+								withWeight: "normal",
+								withContent: `${item.rgb}`
+							 })
