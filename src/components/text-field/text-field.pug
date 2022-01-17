@@ -7,6 +7,7 @@ mixin text-field(args= {withType: null, withLabel:false, withSublabel:false, wit
 
 		if (args.withFocus) {
 			inputClass += ` text-field__input_with-focus`
+
 		}
 		if (args.withMask) {
 			inputClass += ` text-field__input_with-mask`
@@ -17,14 +18,14 @@ mixin text-field(args= {withType: null, withLabel:false, withSublabel:false, wit
 			label(for=args.withId, class="text-field_with-label")
 				.text-field__label-wrapper
 					+text({
-						withTag: "h3",
-						withContent: args.withLabel
-					})
+            withTag: "h3",
+            withContent: args.withLabel
+          })
 					if args.withSublabel
 						+text({
-							withTag: "h3",
-							withContent: args.withSublabel,
-							withWeight: "normal",
-							withColor: "dark-shade-50"
-						})
+              withTag: "h3",
+              withContent: args.withSublabel,
+              withWeight: "normal",
+              withColor: "dark-shade-50"
+            })
 		input(class=inputClass, type=args.withType, name=args.withName, id=args.withId, value=args.withValue, placeholder=args.withPlaceholder)
