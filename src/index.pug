@@ -36,14 +36,23 @@ html(lang='ru')
                 withId: "text-field",
                 withPlaceholder: "Email",
               })
-						.form-elements__text-field-focused-wrapper
+						.form-elements__text-field-with-focus-wrapper
 							+text-field({
                 withType: "text",
                 withLabel: "text field",
                 withSublabel: "Hover / Focus",
-                withName: "text-field",
-                withId: "text-field",
+                withName: "text-field-focus-hover",
+                withId: "text-field-focus-hover",
                 withPlaceholder: "Email",
                 withValue: "This is pretty awesome",
                 withFocus: true,
+              })
+						.form-elements__text-field-with-mask-wrapper
+							+text-field({
+                withType: "text",
+                withLabel: "masked text field",
+                withName: "masked-text-field",
+                withId: "masked-text-field",
+                withPlaceholder: "ДД.ММ.ГГГГ",
+                withMask: "ДД.ММ.ГГГГ",
               })

@@ -24,13 +24,23 @@
 	}
 	
 	&__text-field-wrapper {
+		width: 320px;
 		left: 141px;
 		top: 143px;
 	}
 	
-	&__text-field-focused-wrapper {
+	&__text-field-with-focus-wrapper {
+		width: 320px;
 		left: 141px;
 		top: 227px;
+		margin-top: 20px;
+	}
+	
+	&__text-field-with-mask-wrapper {
+		width: 320px;
+		position: absolute;
+		left: 372.500px;
+		top: 428px;
 		margin-top: 20px;
 	}
 }
