@@ -57,6 +57,14 @@
 	}
 }
 
+.im-caret {
+	-webkit-animation: 0;
+	-moz-animation: 0;
+	-ms-animation: 0;
+	-o-animation: 0;
+	animation: 0;
+}
+
 @keyframes hover-focus {
 	100% {
 		border: 1px solid rgba(31, 32, 65, 0.5);
