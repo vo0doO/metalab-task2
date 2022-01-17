@@ -1,0 +1,24 @@
+include ../text/text
+
+mixin text-field(args= {withType: null, withLabel:null, withSublabel:null, withName:null, withId:null, withValue:null, withPlaceholder:null, withPattern:null, withFocused: false})
+	-
+		var args = args
+		var inputClass = "text-field__input"
+
+		if (args.withFocused) {
+			inputClass += ` text-field__input_focused`
+		}
+	.text-field
+		label(for=args.withId, class="text-field__label")
+			.text-field__label-wrapper
+				+text({
+          withTag: "h3",
+          withContent: args.withLabel
+        })
+				+text({
+          withTag: "h3",
+          withContent: args.withSublabel,
+          withWeight: "normal",
+          withColor: "dark-shade-50"
+        })
+		input(class=inputClass, type=args.withType, name=args.withName, id=args.withId, value=args.withValue, placeholder=args.withPlaceholder)
