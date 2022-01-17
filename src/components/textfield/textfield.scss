@@ -1,0 +1,70 @@
+.text-field {
+	width: 320px;
+	height: 64px;
+	
+	&__label-wrapper {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 5px;
+	}
+	
+	&__input {
+		font-family: Montserrat;
+		font-size: 14px;
+		font-weight: normal;
+		font-style: normal;
+		line-height: 18px;
+		box-sizing: border-box;
+		width: inherit;
+		height: 44px;
+		text-indent: 12px;
+		color: rgba(31, 32, 65, 0.75);
+		border: 1px solid rgba(31, 32, 65, 0.25);
+		border-radius: 4px;
+		
+		&_focused {
+			border: 1px solid rgba(31, 32, 65, 0.5);
+		}
+		
+		&:hover {
+			animation-name: hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
+		
+		&:focus {
+			animation-name: hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
+		
+		&:focus-visible {
+			animation-name: hover-focus;
+			animation-duration: 300ms;
+			outline: 0;
+			animation-fill-mode: forwards;
+		}
+		
+		&::placeholder {
+			font-family: Montserrat;
+			font-size: 14px;
+			font-weight: normal;
+			font-style: normal;
+			line-height: 18px;
+			text-indent: 12px;
+			color: rgba(31, 32, 65, 0.25);
+		}
+	}
+}
+
+@keyframes hover-focus {
+	100% {
+		border: 1px solid rgba(31, 32, 65, 0.5);
+	}
+	50% {
+		border: 1px solid rgba(31, 32, 65, 0.35);
+	}
+	0% {
+		border: 1px solid rgba(31, 32, 65, 0.25);
+	}
+}
