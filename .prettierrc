@@ -12,6 +12,6 @@
         "singleQuote": false
       }
     }
-  ],
-  "plugins": ["@prettier/plugin-pug"]
+  ]
+//  "plugins": ["@prettier/plugin-pug"]
 }
