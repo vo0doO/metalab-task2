@@ -2,79 +2,74 @@
 
 
 .color-and-type {
-  &__title {
-    display: flex;
-    align-items: flex-end;
-    height: 50px;
-    background-color: $background-color-body;
-  }
-  
-  &__logo-wrapper {
-    display: inline-block;
-    margin: 30px 0 0 30px;
-  }
-  
-  &__body {
-    height: 950px;
-    background-color: $background-color-html;
-  }
-  
-  &__main {
-    padding: 63px 150px 166px;
-  }
-  
-  &__container {
-    position: relative;
-    width: 1140px;
-    min-width: 320px;
-    max-width: 1160px;
-    height: 100%;
-  }
-  
-  &__wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: 100%;
-  }
+	&__title {
+		display: flex;
+		align-items: flex-end;
+		height: 50px;
+		background-color: $background-color-body;
+	}
+	
+	&__logo-wrapper {
+		display: inline-block;
+		margin: 30px 0 0 30px;
+	}
+	
+	&__body {
+		height: 950px;
+		background-color: $background-color-html;
+	}
+	
+	&__main {
+		padding: 63px 150px 166px;
+	}
+	
+	&__container {
+		position: relative;
+		width: 1140px;
+		min-width: 320px;
+		max-width: 1160px;
+		height: 100%;
+	}
+	
+	&__wrapper {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		height: 100%;
+	}
 }
 
 .form-elements {
-  &__title {
-    display: flex;
-    align-items: flex-end;
-    height: 50px;
-    background-color: $background-color-body;
-  }
-  
-  &__logo-wrapper {
-    display: inline-block;
-    margin: 30px 0 0 30px;
-  }
-  
-  &__body {
-    height: 950px;
-    background-color: $background-color-html;
-  }
-  
-  &__main {
-    padding: 63px 150px 166px;
-  }
-  
-  &__container {
-    position: relative;
-    width: 1140px;
-    min-width: 320px;
-    max-width: 1160px;
-    height: 100%;
-  }
-  
-  &__wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: 100%;
-  }
+	&__title {
+		display: flex;
+		align-items: flex-end;
+		height: 50px;
+		background-color: $background-color-body;
+	}
+	
+	&__logo-wrapper {
+		display: inline-block;
+		margin: 30px 0 0 30px;
+	}
+	
+	&__body {
+		height: 1903px;
+		background-color: $background-color-html;
+	}
+	
+	&__main {
+		padding: 62px 141px 131px 140px;
+	}
+	
+	&__text-field-wrapper {
+		left: 141px;
+		top: 143px;
+	}
+	
+	&__text-field-focused-wrapper {
+		left: 141px;
+		top: 227px;
+		margin-top: 20px;
+	}
 }
