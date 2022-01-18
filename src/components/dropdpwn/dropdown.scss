@@ -1,0 +1,130 @@
+@import "src/utils/style/vars";
+
+.dropdown {
+	width: inherit;
+	height: 64px;
+	
+	&__label-wrapper {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 5px;
+	}
+	
+	&__input-wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		box-sizing: border-box;
+		width: inherit;
+		width: inherit;
+		height: 44px;
+		padding-left: 14px;
+		padding-right: 9px;
+		color: rgba(31, 32, 65, 0.75);
+		border: 1px solid rgba(31, 32, 65, 0.25);
+		border-radius: 4px;
+		
+		&:hover {
+			animation-name: hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
+		
+		&:focus {
+			animation-name: hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
+		
+		&:focus-visible {
+			animation-name: hover-focus;
+			animation-duration: 300ms;
+			outline: 0;
+			animation-fill-mode: forwards;
+		}
+	}
+	
+	&__guest-button {
+		font-family: "Materialicons";
+		display: contents;
+		visibility: visible;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-feature-settings: "liga";
+		font-feature-settings: "liga";
+	}
+	
+	&__arrow-button {
+		font-family: Materialicons;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 24px;
+		
+		display: inline-block;
+		color: $dark-shade-50;
+		line-height: 1;
+		text-transform: none;
+		letter-spacing: normal;
+		word-wrap: normal;
+		white-space: nowrap;
+		direction: ltr;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-feature-settings: "liga";
+		font-feature-settings: "liga";
+		
+		&:hover {
+			animation-name: arrow-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
+		
+		&:focus {
+			animation-name: arrow-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
+		
+		&:focus-visible {
+			animation-name: arrow-hover-focus;
+			animation-duration: 300ms;
+			outline: 0;
+			animation-fill-mode: forwards;
+		}
+	}
+	
+	&__input {
+		font-family: Montserrat;
+		font-size: 14px;
+		font-weight: normal;
+		font-style: normal;
+		line-height: 18px;
+	}
+}
+
+@keyframes hover-focus {
+	100% {
+		border: 1px solid rgba(31, 32, 65, 0.5);
+	}
+	50% {
+		border: 1px solid rgba(31, 32, 65, 0.35);
+	}
+	0% {
+		border: 1px solid rgba(31, 32, 65, 0.25);
+	}
+}
+
+@keyframes arrow-hover-focus {
+	100% {
+		color: rgba(31, 32, 65, 0.75);
+	}
+	50% {
+		color: rgba(31, 32, 65, 0.75);
+	}
+	0% {
+		color: rgba(31, 32, 65, 0.75);
+	}
+}

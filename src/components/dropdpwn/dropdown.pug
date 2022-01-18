@@ -1,0 +1,27 @@
+include ../text/text
+
+mixin dropdown(args = {withLabel:false, withSublabel:false, withName:null, withId:null, withValue:null, withPlaceholder:null})
+  -
+    var args = args
+    var inputClass = "dropdown__input"
+
+  .dropdown
+    if args.withLabel
+    label(for=args.withId, class="dropdown_with-label")
+      .dropdown__label-wrapper
+        +text({
+          withTag: "h3",
+          withContent: args.withLabel
+        })
+        if args.withSublabel
+          +text({
+            withTag: "h3",
+            withContent: args.withSublabel,
+            withWeight: "normal",
+            withColor: "dark-shade-50"
+          })
+      .dropdown__input-wrapper
+        input(class=inputClass, type="hidden", id=args.withId, name=args.withName, placeholder=args.withPlaceholder, value="", for="" oninput="")
+        span Сколько гостей
+        button(class="dropdown__guest-button")
+          .dropdown__arrow-button="expand_more"

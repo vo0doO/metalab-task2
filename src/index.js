@@ -1,5 +1,6 @@
 import "./assets/fonts/fonts.scss";
 import "./components/color-palette/color-palette.scss";
+import "./components/dropdpwn/dropdown.scss";
 import "./components/text-field/text-field.js";
 import "./components/text-field/text-field.scss";
 import "./components/text/text.scss";
