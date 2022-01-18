@@ -2,33 +2,34 @@ include components/head/head
 include components/logo/logo
 include components/text/text
 include components/text-field/text-field
+include components/dropdown/dropdown
 
 doctype html
 html(lang='ru')
-	+head({
+  +head({
     title: "UI-KIT - TOXIN",
     description: "Frontend компоненты в фирменном стиле TOXIN",
     keywords: "фронтенд, компоненты, дизайн, стиль, toxin"
   })
-	body.ui-kit__body
-		main.ui-kit__main
-			include components/color-and-type/color-and-type
-			section.form-elements
-				.form-elements__body
-					.form-elements__header
-						.form-elements__title
-							+text({
+  body.ui-kit__body
+    main.ui-kit__main
+      include components/color-and-type/color-and-type
+      section.form-elements
+        .form-elements__body
+          .form-elements__header
+            .form-elements__title
+              +text({
                 withTag: "small",
                 withContent: "Form Elements"
               })
-						.form-elements__logo-wrapper
-							+logo({
+            .form-elements__logo-wrapper
+              +logo({
                 isGrey: true,
                 alt: "Toxin logo"
               })
-					.form-elements__main
-						.form-elements__text-field-wrapper
-							+text-field({
+          .form-elements__main
+            .form-elements__text-field-wrapper
+              +text-field({
                 withType: "text",
                 withLabel: "text field",
                 withSublabel: "default",
@@ -36,8 +37,8 @@ html(lang='ru')
                 withId: "text-field",
                 withPlaceholder: "Email",
               })
-						.form-elements__text-field-with-focus-wrapper
-							+text-field({
+            .form-elements__text-field_with-focus-wrapper
+              +text-field({
                 withType: "text",
                 withLabel: "text field",
                 withSublabel: "Hover / Focus",
@@ -47,8 +48,17 @@ html(lang='ru')
                 withValue: "This is pretty awesome",
                 withFocus: true,
               })
-						.form-elements__text-field-with-mask-wrapper
-							+text-field({
+            .form-elements__dropdown_default-wrapper
+              +dropdown({
+                withLabel: "dropdown",
+                withSublabel: false,
+                withName: "guest",
+                withId: "guest",
+                withValue: null,
+                withPlaceholder: "Сколько гостей"
+              })
+            .form-elements__text-field_with-mask-wrapper
+              +text-field({
                 withType: "text",
                 withLabel: "masked text field",
                 withName: "masked-text-field",

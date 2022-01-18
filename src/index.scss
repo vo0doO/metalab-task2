@@ -29,18 +29,24 @@
 		top: 143px;
 	}
 	
-	&__text-field-with-focus-wrapper {
+	&__text-field_with-focus-wrapper {
 		width: 320px;
 		left: 141px;
 		top: 227px;
 		margin-top: 20px;
 	}
 	
-	&__text-field-with-mask-wrapper {
+	&__dropdown_default-wrapper {
 		width: 320px;
-		position: absolute;
-		left: 372.500px;
-		top: 428px;
+		left: 141px;
+		top: 311px;
 		margin-top: 20px;
+	}
+	
+	&__text-field_with-mask-wrapper {
+		width: 320px;
+		left: 141px;
+		top: 395px;
+		margin-top: 23px;
 	}
 }
