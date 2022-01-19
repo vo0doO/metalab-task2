@@ -1,14 +1,14 @@
-mixin text(args={withTag: "", withColor: "", withWeight: "", withTransform: "", withAlign: "", withSize: "", withLineHeight: "", withContent: "",})
+mixin text(args={withTag: '', withColor: '', withWeight: '', withTransform: '', withAlign: '', withSize: '', withLineHeight: '', withContent: '',})
   -
-    let textClasses = ["text"]
-    let textClass = "text";
-    const tags = ["h1", "h2", "h3", "p", "strong", "span", "small"];
-    const weights = ["bold", "normal"];
-    const colors = ["dark-shade-100", "dark-shade-75", "dark-shade-50", "dark-shade-25", "dark-shade-5", "purple", "green"];
-    const transformations = ["uppercase", "lowercase", "none"];
-    const alignments = ["right", "horizontal-center", "left", "top", "bottom", "vertical-center"];
-    const sizes = ["larger", "large", "medium", "small", "smaller"];
-    const lineHeights = ["12px", "14px", "18px", "17px", "28px", "117percent", "129percent", "171percent"];
+    let textClasses = ['text']
+    let textClass = 'text';
+    const tags = ['h1', 'h2', 'h3', 'p', 'strong', 'span', 'small'];
+    const weights = ['bold', 'normal'];
+    const colors = ['dark-shade-100', 'dark-shade-75', 'dark-shade-50', 'dark-shade-25', 'dark-shade-5', 'purple', 'green'];
+    const transformations = ['uppercase', 'lowercase', 'none'];
+    const alignments = ['right', 'horizontal-center', 'left', 'top', 'bottom', 'vertical-center'];
+    const sizes = ['larger', 'large', 'medium', 'small', 'smaller'];
+    const lineHeights = ['12px', '14px', '18px', '17px', '28px', '117percent', '129percent', '171percent'];
 
     if (colors.includes(args.withColor)) {
       textClass += ` text_with-color_${args.withColor}`
@@ -35,10 +35,10 @@ mixin text(args={withTag: "", withColor: "", withWeight: "", withTransform: "", 
     }
 
   case args.withTag
-    when "h1": h1(class=textClass)= args.withContent
-    when "h2": h2(class=textClass)= args.withContent
-    when "h3": h3(class=textClass)= args.withContent
-    when "p": p(class=textClass)= args.withContent
-    when "strong": strong(class=textClass)= args.withContent
-    when "span": span(class=textClass)= args.withContent
-    when "small": small(class=textClass)= args.withContent
+    when 'h1': h1(class=textClass)= args.withContent
+    when 'h2': h2(class=textClass)= args.withContent
+    when 'h3': h3(class=textClass)= args.withContent
+    when 'p': p(class=textClass)= args.withContent
+    when 'strong': strong(class=textClass)= args.withContent
+    when 'span': span(class=textClass)= args.withContent
+    when 'small': small(class=textClass)= args.withContent

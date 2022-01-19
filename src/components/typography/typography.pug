@@ -1,60 +1,25 @@
 // TODO: Подумать над тем чтобы передавать настройки текста через index.pug а тут обойти их в цикле
-mixin typography(args = {texts:[{withTag: "", withColor: "", withWeight: "", withTransform: "", withContent: "",}]})
-	table.typography
-		tbody.typography__frame
-			tr.typography__item_h1
-				th.typography__title_h1
-					include ../text/text
-					+text({
-            withTag: "h1",
-            withColor: "dark-shade-25",
-            withWeight: "normal",
-            withTransform: "uppercase",
-            withContent: "H1",
-          })
-				th.typography__descr_h1
-					+text({
-            withTag: "h1",
-            withContent: "This one is the sub-section or widget title"
-          })
-			tr.typography__item_h2
-				th.typography__title_h2
-					+text({
-            withTag: "h2",
-            withColor: "dark-shade-25",
-            withWeight: "normal",
-            withTransform: "uppercase",
-            withContent: "h2"
-          })
-				th.typography__descr_h2
-					+text({
-            withTag: "h2",
-            withContent: "Next one is the item title inside widgets"
-          })
-			tr.typography__item_h3
-				th.typography__title_h3
-					+text({
-            withTag: "h3",
-            withColor: "dark-shade-25",
-            withWeight: "normal",
-            withTransform: "uppercase",
-            withContent: "h3"
-          })
-				th.typography__descr_h3
-					+text({
-            withTag: "h3",
-            withContent: "This is a label or CTA text"
-          })
-			tr.typography__item_body
-				th.typography__title_body
-					+text({
-            withTag: "p",
-            withColor: "dark-shade-25",
-            withWeight: "normal",
-            withContent: "Body"
-          })
-				th.typography__descr_body
-					+text({
-            withTag: "p",
-            withContent: "This is the body text which is used for most of the design, like paragraphs, lists, etc."
-          })
+mixin typography(args = {texts:[{withTag: '', withColor: '', withWeight: '', withTransform: '', withContent: '',}]})
+  table.typography
+    tbody.typography__frame
+      tr.typography__item_h1
+        th.typography__title_h1
+          include ../text/text
+          +text({ withTag: 'h1', withColor: 'dark-shade-25', withWeight: 'normal', withTransform: 'uppercase', withContent: 'H1', })
+        th.typography__descr_h1
+          +text({ withTag: 'h1', withContent: 'This one is the sub-section or widget title' })
+      tr.typography__item_h2
+        th.typography__title_h2
+          +text({ withTag: 'h2', withColor: 'dark-shade-25', withWeight: 'normal', withTransform: 'uppercase', withContent: 'h2' })
+        th.typography__descr_h2
+          +text({ withTag: 'h2', withContent: 'Next one is the item title inside widgets' })
+      tr.typography__item_h3
+        th.typography__title_h3
+          +text({ withTag: 'h3', withColor: 'dark-shade-25', withWeight: 'normal', withTransform: 'uppercase', withContent: 'h3' })
+        th.typography__descr_h3
+          +text({ withTag: 'h3', withContent: 'This is a label or CTA text' })
+      tr.typography__item_body
+        th.typography__title_body
+          +text({ withTag: 'p', withColor: 'dark-shade-25', withWeight: 'normal', withContent: 'Body' })
+        th.typography__descr_body
+          +text({ withTag: 'p', withContent: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.' })
