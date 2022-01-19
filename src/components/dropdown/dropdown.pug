@@ -17,13 +17,3 @@ mixin dropdown(args = {withLabel:false, withSublabel:false, withName:null, withI
 			span Сколько гостей
 			.dropdown__input(type=input)
 				.dropdown__button_arrow= 'expand_more'
-		.dropbox-group-wrapper
-			.input-group__wrapper
-				label(for='parents')
-					+text({
-						withTag: 'h3',
-						withContent: 'взрослые'
-					})
-				.input-pseudo__wrapper
-					input#parents.numerical-input( type='number', name='parents', role='aria-', aria-minvalue='0', aria-maxvalue='10', aria-nowvalue='0', value='0', form='', readonly)
-
