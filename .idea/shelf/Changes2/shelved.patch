@@ -1,0 +1,82 @@
+Index: src/index.pug
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>include components/head/head\r\ninclude components/logo/logo\r\ninclude components/text/text\r\ninclude components/text-field/text-field\r\n\r\ndoctype html\r\nhtml(lang='ru')\r\n\t+head({\r\n    title: \"UI-KIT - TOXIN\",\r\n    description: \"Frontend компоненты в фирменном стиле TOXIN\",\r\n    keywords: \"фронтенд, компоненты, дизайн, стиль, toxin\"\r\n  })\r\n\tbody.ui-kit__body\r\n\t\tmain.ui-kit__main\r\n\t\t\tinclude components/color-and-type/color-and-type\r\n\t\t\tsection.form-elements\r\n\t\t\t\t.form-elements__body\r\n\t\t\t\t\t.form-elements__header\r\n\t\t\t\t\t\t.form-elements__title\r\n\t\t\t\t\t\t\t+text({\r\n                withTag: \"small\",\r\n                withContent: \"Form Elements\"\r\n              })\r\n\t\t\t\t\t\t.form-elements__logo-wrapper\r\n\t\t\t\t\t\t\t+logo({\r\n                isGrey: true,\r\n                alt: \"Toxin logo\"\r\n              })\r\n\t\t\t\t\t.form-elements__main\r\n\t\t\t\t\t\t.form-elements__text-field-wrapper\r\n\t\t\t\t\t\t\t+text-field({\r\n                withType: \"text\",\r\n                withLabel: \"text field\",\r\n                withSublabel: \"default\",\r\n                withName: \"text-field\",\r\n                withId: \"text-field\",\r\n                withPlaceholder: \"Email\",\r\n              })\r\n\t\t\t\t\t\t.form-elements__text-field-with-focus-wrapper\r\n\t\t\t\t\t\t\t+text-field({\r\n                withType: \"text\",\r\n                withLabel: \"text field\",\r\n                withSublabel: \"Hover / Focus\",\r\n                withName: \"text-field-focus-hover\",\r\n                withId: \"text-field-focus-hover\",\r\n                withPlaceholder: \"Email\",\r\n                withValue: \"This is pretty awesome\",\r\n                withFocus: true,\r\n              })\r\n\t\t\t\t\t\t.form-elements__text-field-with-mask-wrapper\r\n\t\t\t\t\t\t\t+text-field({\r\n                withType: \"text\",\r\n                withLabel: \"masked text field\",\r\n                withName: \"masked-text-field\",\r\n                withId: \"masked-text-field\",\r\n                withPlaceholder: \"ДД.ММ.ГГГГ\",\r\n                withMask: \"ДД.ММ.ГГГГ\",\r\n              })\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/index.pug b/src/index.pug
+--- a/src/index.pug	(revision 3026bbe9ce112b2c7eadac58521ca88bf6188e68)
++++ b/src/index.pug	(date 1642488900059)
+@@ -1,58 +1,24 @@
+ include components/head/head
+ include components/logo/logo
+-include components/text/text
+ include components/text-field/text-field
++include components/dropdpwn/dropdown
+ 
+ doctype html
+ html(lang='ru')
+-	+head({
++  +head({
+     title: "UI-KIT - TOXIN",
+     description: "Frontend компоненты в фирменном стиле TOXIN",
+     keywords: "фронтенд, компоненты, дизайн, стиль, toxin"
+   })
+-	body.ui-kit__body
+-		main.ui-kit__main
+-			include components/color-and-type/color-and-type
+-			section.form-elements
+-				.form-elements__body
+-					.form-elements__header
+-						.form-elements__title
+-							+text({
+-                withTag: "small",
+-                withContent: "Form Elements"
+-              })
+-						.form-elements__logo-wrapper
+-							+logo({
+-                isGrey: true,
+-                alt: "Toxin logo"
+-              })
+-					.form-elements__main
+-						.form-elements__text-field-wrapper
+-							+text-field({
+-                withType: "text",
+-                withLabel: "text field",
+-                withSublabel: "default",
+-                withName: "text-field",
+-                withId: "text-field",
+-                withPlaceholder: "Email",
+-              })
+-						.form-elements__text-field-with-focus-wrapper
+-							+text-field({
+-                withType: "text",
+-                withLabel: "text field",
+-                withSublabel: "Hover / Focus",
+-                withName: "text-field-focus-hover",
+-                withId: "text-field-focus-hover",
+-                withPlaceholder: "Email",
+-                withValue: "This is pretty awesome",
+-                withFocus: true,
+-              })
+-						.form-elements__text-field-with-mask-wrapper
+-							+text-field({
+-                withType: "text",
+-                withLabel: "masked text field",
+-                withName: "masked-text-field",
+-                withId: "masked-text-field",
+-                withPlaceholder: "ДД.ММ.ГГГГ",
+-                withMask: "ДД.ММ.ГГГГ",
++  body.ui-kit__body
++    main.ui-kit__main
++      section.sandbox
++        container.sandbox__item-wrapper
++          .sandbox__item
++            .dropdown-wrapper
++              +dropdown({
++                withLabel: "dropdown",
++                withName: "guest",
++                withId: "guest",
++                withPlaceholder: "Сколько гостей"
+               })

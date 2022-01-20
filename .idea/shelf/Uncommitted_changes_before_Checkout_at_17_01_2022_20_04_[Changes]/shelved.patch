@@ -1,0 +1,90 @@
+Index: src/index.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@import \"utils/style/vars\";\r\n\r\n\r\n.ui-kit__body {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  max-width: 100vm;\r\n  max-height: 100vm;\r\n}\r\n\r\n.ui-kit__main {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n\r\n.sandbox {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  width: 600px;\r\n  height: 300px;\r\n  background-color: $background-color-html;\r\n}\r\n\r\n.sandbox__item-wrapper {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n\r\n.sandbox__item {\r\n  text-align: center;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/index.scss b/src/index.scss
+--- a/src/index.scss	
++++ b/src/index.scss	
+@@ -1,35 +1,36 @@
+ @import "utils/style/vars";
+-
++@import "src/components/textfield/textfield";
+ 
+ .ui-kit__body {
+-  display: flex;
+-  flex-direction: row;
+-  justify-content: center;
+-  max-width: 100vm;
+-  max-height: 100vm;
++	display: flex;
++	flex-direction: row;
++	justify-content: center;
++	max-width: 100vm;
++	max-height: 100vm;
+ }
+ 
+ .ui-kit__main {
+-  display: flex;
+-  flex-direction: column;
+-  justify-content: center;
++	display: flex;
++	flex-direction: column;
++	justify-content: center;
+ }
+ 
+ .sandbox {
+-  display: flex;
+-  flex-direction: row;
+-  justify-content: center;
+-  width: 600px;
+-  height: 300px;
+-  background-color: $background-color-html;
++	display: flex;
++	flex-direction: row;
++	justify-content: center;
++	width: 600px;
++	height: 300px;
++	background-color: $background-color-html;
++	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+ }
+ 
+ .sandbox__item-wrapper {
+-  display: flex;
+-  flex-direction: column;
+-  justify-content: center;
++	display: flex;
++	flex-direction: column;
++	justify-content: center;
+ }
+ 
+ .sandbox__item {
+-  text-align: center;
++	text-align: center;
+ }
+Index: src/index.pug
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>include components/head/head\r\ninclude components/logo/logo\r\ninclude components/text/text\r\n\r\ndoctype html\r\nhtml(lang='ru')\r\n  +head({ title: \"UI-KIT - TOXIN\", description: \"Frontend компоненты в фирменном стиле TOXIN\", keywords: \"фронтенд, компоненты, дизайн, стиль, toxin\" })\r\n  body.ui-kit__body\r\n    main.ui-kit__main\r\n      section.sandbox\r\n        container.sandbox__item-wrapper\r\n          .sandbox__item\r\n            +text({ withTag: \"h1\", withContent: \"hello world hello world hello world hello world hello world hello world hello world \" })\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/index.pug b/src/index.pug
+--- a/src/index.pug	
++++ b/src/index.pug	
+@@ -1,6 +1,7 @@
+ include components/head/head
+ include components/logo/logo
+ include components/text/text
++include components/textfield/textfield
+ 
+ doctype html
+ html(lang='ru')
+@@ -10,4 +11,4 @@
+       section.sandbox
+         container.sandbox__item-wrapper
+           .sandbox__item
+-            +text({ withTag: "h1", withContent: "hello world hello world hello world hello world hello world hello world hello world " })
++            +text-field({ type: "text", label: "text field", sublabel: "default", name: "text-field", id: "text-field", placeholder: "Email" })

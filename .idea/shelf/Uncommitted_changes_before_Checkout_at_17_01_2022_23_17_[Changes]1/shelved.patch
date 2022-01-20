@@ -1,0 +1,17 @@
+Index: src/index.pug
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>include components/head/head\r\ninclude components/logo/logo\r\ninclude components/text/text\r\ninclude components/text-field/text-field\r\n\r\ndoctype html\r\nhtml(lang='ru')\r\n\t+head({\r\n    title: \"UI-KIT - TOXIN\",\r\n    description: \"Frontend компоненты в фирменном стиле TOXIN\",\r\n    keywords: \"фронтенд, компоненты, дизайн, стиль, toxin\"\r\n  })\r\n\tbody.ui-kit__body\r\n\t\tmain.ui-kit__main\r\n\t\t\tinclude components/color-and-type/color-and-type\r\n\t\t\tsection.form-elements\r\n\t\t\t\t.form-elements__body\r\n\t\t\t\t\t.form-elements__header\r\n\t\t\t\t\t\t.form-elements__title\r\n\t\t\t\t\t\t\t+text({\r\n                withTag: \"small\",\r\n                withContent: \"Form Elements\"\r\n              })\r\n\t\t\t\t\t\t.form-elements__logo-wrapper\r\n\t\t\t\t\t\t\t+logo({\r\n                isGrey: true,\r\n                alt: \"Toxin logo\"\r\n              })\r\n\t\t\t\t\t.form-elements__main\r\n\t\t\t\t\t\t.form-elements__text-field-wrapper\r\n\t\t\t\t\t\t\t+text-field({\r\n                withType: \"text\",\r\n                withLabel: \"text field\",\r\n                withSublabel: \"default\",\r\n                withName: \"text-field\",\r\n                withId: \"text-field\",\r\n                withPlaceholder: \"Email\",\r\n              })\r\n\t\t\t\t\t\t.form-elements__text-field-focused-wrapper\r\n\t\t\t\t\t\t\t+text-field({\r\n                withType: \"text\",\r\n                withLabel: \"text field\",\r\n                withSublabel: \"Hover / Focus\",\r\n                withName: \"text-field\",\r\n                withId: \"text-field\",\r\n                withPlaceholder: \"Email\",\r\n                withValue: \"This is pretty awesome\",\r\n                withFocused: true,\r\n              })\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/index.pug b/src/index.pug
+--- a/src/index.pug	
++++ b/src/index.pug	
+@@ -45,5 +45,5 @@
+                 withId: "text-field",
+                 withPlaceholder: "Email",
+                 withValue: "This is pretty awesome",
+-                withFocused: true,
++                withFocus: true,
+               })
