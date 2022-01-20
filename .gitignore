@@ -2,3 +2,5 @@
 dist/
 external/
 test/
+.vscode/
+.idea/
