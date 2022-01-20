@@ -16,7 +16,7 @@ console.log(mode + " mode");
 
 module.exports = {
   mode: mode,
-  devtool: "source-map",
+  devtool: "eval-cheap-module-source-map",
   externals: {
     paths: PATHS,
   },
@@ -155,6 +155,10 @@ module.exports = {
         {
           from: path.resolve(__dirname, "src/assets/img"),
           to: "./assets/img",
+        },
+        {
+          from: path.resolve(__dirname, "src/utils/js/worker.js"),
+          to: "./utils/js/worker.js",
         },
       ],
     }),
