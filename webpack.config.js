@@ -1,98 +1,98 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const PATHS = {
-  src: path.resolve(__dirname, 'src'),
-  dist: path.resolve(__dirname, 'dist'),
+  src: path.resolve(__dirname, "src"),
+  dist: path.resolve(__dirname, "dist"),
 };
 
-let mode = 'development';
-if (process.env.NODE_ENV === 'production') {
-  mode = 'production';
+let mode = "development";
+if (process.env.NODE_ENV === "production") {
+  mode = "production";
 }
-console.log(mode + ' mode');
+console.log(mode + " mode");
 
 module.exports = {
   mode: mode,
-  devtool: 'source-map',
+  devtool: "eval-cheap-module-source-map",
   externals: {
     paths: PATHS,
   },
   entry: {
-    scripts: './src/index.js',
+    scripts: "./src/index.js",
   },
 
   output: {
     path: PATHS.dist,
-    filename: 'js/[name].[contenthash].js',
+    filename: "js/[name].[contenthash].js",
     clean: true,
   },
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      chunks: "all",
     },
   },
   module: {
     rules: [
       {
         test: /\.pug$/,
-        loader: 'pug-loader',
+        loader: "pug-loader",
       },
       {
         test: /\.pug$/,
-        loader: 'html-loader',
+        loader: "html-loader",
       },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-class-properties'],
+            presets: ["@babel/preset-env"],
+            plugins: ["@babel/plugin-proposal-class-properties"],
           },
         },
       },
 
       {
         test: /\.(png|svg|jpg|jpeg|gif|bmp)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
         generator: {
-          filename: 'assets/img/[name][ext][query]',
+          filename: "assets/img/[name][ext][query]",
         },
       },
       {
         test: /\.(woff|svg|woff2|oet|ttf|otf)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
         generator: {
-          filename: 'assets/fonts/[name][ext][query]',
+          filename: "assets/fonts/[name][ext][query]",
         },
       },
       {
         test: /\.scss$/,
         use: [
-          'production' === process.env.NODE_ENV
-            ? MiniCssExtractPlugin.loader
-            : 'style-loader',
+          "production" === process.env.NODE_ENV
+              ? MiniCssExtractPlugin.loader
+              : "style-loader",
           {
-            loader: 'css-loader',
-            options: { sourceMap: true },
+            loader: "css-loader",
+            options: {sourceMap: true},
           },
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               sourceMap: true,
               postcssOptions: {
                 plugins: [
-                  require('autoprefixer'),
-                  require('postcss-flexbugs-fixes'),
-                  require('postcss-combine-media-query'),
-                  require('css-mqpacker'),
-                  require('cssnano')({
+                  require("autoprefixer"),
+                  require("postcss-flexbugs-fixes"),
+                  require("postcss-combine-media-query"),
+                  require("css-mqpacker"),
+                  require("cssnano")({
                     preset: [
-                      'default',
+                      "default",
                       {
                         discardComments: {
                           removeAll: true,
@@ -105,31 +105,31 @@ module.exports = {
             },
           },
           {
-            loader: 'sass-loader',
-            options: { sourceMap: true },
+            loader: "sass-loader",
+            options: {sourceMap: true},
           },
         ],
       },
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          "style-loader",
           {
-            loader: 'css-loader',
-            options: { sourceMap: true },
+            loader: "css-loader",
+            options: {sourceMap: true},
           },
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               sourceMap: true,
               postcssOptions: {
                 plugins: [
-                  require('autoprefixer'),
-                  require('postcss-combine-media-query'),
-                  require('css-mqpacker'),
-                  require('cssnano')({
+                  require("autoprefixer"),
+                  require("postcss-combine-media-query"),
+                  require("css-mqpacker"),
+                  require("cssnano")({
                     preset: [
-                      'default',
+                      "default",
                       {
                         discardComments: {
                           removeAll: true,
@@ -149,18 +149,33 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/assets/favicons'),
-          to: './assets/favicons',
+          from: path.resolve(__dirname, "src/assets/favicons"),
+          to: "./assets/favicons",
         },
-        { from: path.resolve(__dirname, 'src/assets/img'), to: './assets/img' },
+        {
+          from: path.resolve(__dirname, "src/assets/img"),
+          to: "./assets/img",
+        },
+        {
+          from: path.resolve(__dirname, "src/utils/js/worker.js"),
+          to: "./utils/js/worker.js",
+        },
       ],
     }),
     new HtmlWebpackPlugin({
-      template: '!!pug-loader!/src/index.pug',
+      template: "!!pug-loader!/src/index.pug",
     }),
 
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: "[name].[contenthash].css",
     }),
   ],
+  resolve: {
+    alias: {
+      "inputmask.dependencyLib": path.join(__dirname,
+          "node_modules/jquery.inputmask/extra/dependencyLibs/inputmask.dependencyLib.js"),
+      "inputmask": path.join(__dirname,
+          "node_modules/jquery.inputmask/dist/inputmask/inputmask.js"),
+    },
+  },
 };

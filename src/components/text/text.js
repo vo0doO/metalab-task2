@@ -1,1 +1,1 @@
-import "./text.pug";
+import './text.pug'

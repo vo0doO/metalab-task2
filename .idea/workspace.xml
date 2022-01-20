@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="00de3154-390c-4556-afdd-d2006076cf31" name="Changes" comment="Deleted main.js worker.js from component directory">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="Pug File" />
+        <option value="SCSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+    <option name="myAllFileTypesSelected" value="false" />
+    <option name="mySelectedFileTypes">
+      <set>
+        <option value="Jade" />
+        <option value="JavaScript" />
+        <option value="SCSS" />
+      </set>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="sandbox" />
+                <branch-info repo="$PROJECT_DIR$" source="ui-kit_sections" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="test-prettier-pug" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="JsBowerSettings">
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+    <option name="myAllFileTypesSelected" value="false" />
+    <option name="mySelectedFileTypes">
+      <set>
+        <option value="ActionScript" />
+        <option value="HTML" />
+        <option value="JavaScript" />
+      </set>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="23kRdkFpTAONfOOggWr4t8YCJfM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="NewWatcherDialog.advanced.open" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="PLAIN_TEXT" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="C:\Users\vo0\WebstormProjects\toxin\node_modules\eslint" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.stylelint" value="C:\Users\vo0\WebstormProjects\toxin\node_modules\stylelint" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\vo0\WebstormProjects\toxin\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Pug/Jade" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vo0\WebstormProjects\toxin\node_modules" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vo0\WebstormProjects\toxin\src\utils\js" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="Node Debug" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" port="9229" restartOnDisconnect="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Js Debug" type="JavascriptDebugType" uri="http://localhost:8000">
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="NodeJSConfigurationType" nameIsGenerated="true" working-dir="$PROJECT_DIR$">
+      <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
+        <browser start="true" with-js-debugger="true" url="http://localhost:8080" />
+      </EXTENSION>
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <node-options value="--inspect" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Attach to Node.js/Chrome.Node Debug" />
+      <item itemvalue="JavaScript Debug.Js Debug" />
+      <item itemvalue="Node.js.Unnamed" />
+      <item itemvalue="npm.start" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00de3154-390c-4556-afdd-d2006076cf31" name="Changes" comment="" />
+      <created>1642276192182</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642276192182</updated>
+      <workItem from="1642276195757" duration="16886000" />
+      <workItem from="1642303908251" duration="6187000" />
+      <workItem from="1642406487333" duration="54466000" />
+      <workItem from="1642480114275" duration="43920000" />
+      <workItem from="1642578969889" duration="25933000" />
+      <workItem from="1642708454808" duration="2490000" />
+    </task>
+    <task id="LOCAL-00001" summary="refactoring ' to &quot;">
+      <created>1642291604909</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642291604909</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update README.md init sandbox">
+      <created>1642295093696</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1642295093696</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update README.md init sandbox">
+      <created>1642296090079</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1642296090079</updated>
+    </task>
+    <task id="LOCAL-00004" summary="revert README.md of master branch">
+      <created>1642296163987</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642296163987</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updating index.pug and index.scss for adding sections in ui-kit">
+      <created>1642298374858</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642298374858</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update README.md">
+      <created>1642298637562</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1642298637562</updated>
+    </task>
+    <task id="LOCAL-00007" summary="updated index.pug and index.scss to get the site of the component under development">
+      <created>1642310020976</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1642310020976</updated>
+    </task>
+    <task id="LOCAL-00008" summary="created textfield.pug textfield.scss component text-field complete">
+      <created>1642439055558</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1642439055558</updated>
+    </task>
+    <task id="LOCAL-00009" summary="return to branch master">
+      <created>1642439496657</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1642439496657</updated>
+    </task>
+    <task id="LOCAL-00010" summary="updated .pretier color-palette.pug typography.pug - fix codestyle">
+      <created>1642446173078</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1642446173078</updated>
+    </task>
+    <task id="LOCAL-00011" summary="renamed textfield.scss textfield.pug">
+      <created>1642446236820</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1642446236820</updated>
+    </task>
+    <task id="LOCAL-00012" summary="обновлены index.scss index.pug index.js - добавленны text-field и text-field-focused">
+      <created>1642446311656</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1642446311656</updated>
+    </task>
+    <task id="LOCAL-00013" summary="updated text-field.button text-field.skss - renamed arguments">
+      <created>1642446384069</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1642446384069</updated>
+    </task>
+    <task id="LOCAL-00014" summary="updated color-palette.pug - fix unknown where the bugs came from">
+      <created>1642449318785</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1642449318785</updated>
+    </task>
+    <task id="LOCAL-00015" summary="updated index.pug index.scss - removed code for color-and-type&#10;created color-and-type.pug color-and-type.sсss - they carry the code of the color-and-type block">
+      <created>1642449496680</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1642449496680</updated>
+    </task>
+    <task id="LOCAL-00016" summary="обновлен text-field.pug добавлен функционал отображения c лейбелами и без">
+      <created>1642453540730</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1642453540731</updated>
+    </task>
+    <task id="LOCAL-00017" summary="обновлен text-field.pug добавлен функционал masked -text-field">
+      <created>1642459839775</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1642459839775</updated>
+    </task>
+    <task id="LOCAL-00018" summary="обновлен text-field.pug добавлен функционал masked -text-field">
+      <created>1642459875122</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1642459875123</updated>
+    </task>
+    <task id="LOCAL-00019" summary="updated text-field.skss index.pug renamed names containing focused">
+      <created>1642460530189</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1642460530189</updated>
+    </task>
+    <task id="LOCAL-00020" summary="updated text-field.scss fix animation for text-field-with-focus">
+      <created>1642461382546</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1642461382546</updated>
+    </task>
+    <task id="LOCAL-00021" summary="updated text-field.scss index.pug index.scss fix width for text-field">
+      <created>1642463651140</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1642463651140</updated>
+    </task>
+    <task id="LOCAL-00022" summary="updated fonts.scss - added Materialicons">
+      <created>1642498340157</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1642498340157</updated>
+    </task>
+    <task id="LOCAL-00023" summary="updated index.js, created dropdown.js dropdown.pug dropdown.scss - added dropdown block">
+      <created>1642498534743</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1642498534743</updated>
+    </task>
+    <task id="LOCAL-00024" summary="created MaterialIcons-Regular.** - added Materialicons">
+      <created>1642498602377</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1642498602377</updated>
+    </task>
+    <task id="LOCAL-00025" summary="updated dropdown.scss dropdown.pug dropdown.js index.js - renamed dropdown folder">
+      <created>1642498803038</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1642498803038</updated>
+    </task>
+    <task id="LOCAL-00026" summary="updated index.scss index.pug - dropdown block added in ui-kit form-elements">
+      <created>1642500322303</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1642500322303</updated>
+    </task>
+    <task id="LOCAL-00027" summary="на 80% готовый counter, commit для теста новой настройки prettier для pug, боюсь убьет сборку этот новый codestyle">
+      <created>1642594102136</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1642594102139</updated>
+    </task>
+    <task id="LOCAL-00028" summary="updated 9 files - component for range fields counter completed">
+      <created>1642616260335</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1642616260336</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Created worker.js - added service worker">
+      <created>1642710062554</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1642710062555</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Update .prettierrc and created .prettierrc.cjs for new code style configuration">
+      <created>1642710129656</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1642710129656</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Update .eslintrc for js code style config">
+      <created>1642710160480</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1642710160480</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Update dropdown.pug, index.js. Created dropdown.js. For new custom events for UI">
+      <created>1642710501030</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1642710501031</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Update webpack.config.js for change devtool settings">
+      <created>1642710545787</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1642710545787</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Create counter.pug counter.scss. Made html markup and styles, you need to add the functionality of the counter">
+      <created>1642710841975</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1642710841975</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Deleted main.js worker.js from component directory">
+      <created>1642710911404</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1642710911404</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="108" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="updated .pretier color-palette.pug typography.pug - fix codestyle" />
+    <MESSAGE value="renamed textfield.scss textfield.pug" />
+    <MESSAGE value="обновлены index.scss index.pug index.js - добавленны text-field и text-field-focused" />
+    <MESSAGE value="updated text-field.button text-field.skss - renamed arguments" />
+    <MESSAGE value="updated color-palette.pug - fix unknown where the bugs came from" />
+    <MESSAGE value="updated index.pug index.scss - removed code for color-and-type&#10;created color-and-type.pug color-and-type.sсss - they carry the code of the color-and-type block" />
+    <MESSAGE value="обновлен text-field.pug добавлен функционал отображения c лейбелами и без" />
+    <MESSAGE value="обновлен text-field.pug добавлен функционал masked -text-field" />
+    <MESSAGE value="updated text-field.skss index.pug renamed names containing focused" />
+    <MESSAGE value="updated text-field.scss fix animation for text-field-with-focus" />
+    <MESSAGE value="updated text-field.scss index.pug index.scss fix width for text-field" />
+    <MESSAGE value="updated index.js, created dropdown.js dropdown.pug dropdown.scss - added dropdown block" />
+    <MESSAGE value="updated fonts.scss - added Materialicons" />
+    <MESSAGE value="created MaterialIcons-Regular.** - added Materialicons" />
+    <MESSAGE value="updated dropdown.scss dropdown.pug dropdown.js index.js - renamed dropdown folder" />
+    <MESSAGE value="updated index.scss index.pug - dropdown block added in ui-kit form-elements" />
+    <MESSAGE value="на 80% готовый counter, commit для теста новой настройки prettier для pug, боюсь убьет сборку этот новый codestyle" />
+    <MESSAGE value="updated 9 files - component for range fields counter completed" />
+    <MESSAGE value="Created worker.js - added service worker" />
+    <MESSAGE value="Update .prettierrc and created .prettierrc.cjs for new code style configuration" />
+    <MESSAGE value="Update .eslintrc for js code style config" />
+    <MESSAGE value="Update dropdown.pug, index.js. Created dropdown.js. For new custom events for UI" />
+    <MESSAGE value="Update webpack.config.js for change devtool settings" />
+    <MESSAGE value="Create counter.pug counter.scss. Made html markup and styles, you need to add the functionality of the counter" />
+    <MESSAGE value="Deleted main.js worker.js from component directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted main.js worker.js from component directory" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

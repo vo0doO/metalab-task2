@@ -1,0 +1,37 @@
+- let withAria = { role: false };
+
+mixin counter(args = [withType, withName, withLabel, withId, withAria, nowValue, minValue, maxValue, withForm, withArray, withReadonly])
+	-
+		let withType,
+						withName,
+						withLabel,
+						withId,
+						withRole,
+						withForm,
+						withArray,
+						withReadonly
+
+		let count = 0
+		count = args.flatMap((value, index, arr) => {
+			console.log(value, index, arr)
+			return arr.push({index: [arr]})
+		})
+		if (typeof Array === count[1]) console.log("Array in Array")
+
+	.counter.counter_hidden
+		.counter__field
+			label(for=`${withId}`)
+				+text({ withTag: 'h3', withContent: `${withLabel}` })
+			.counter__input
+				input.counter__input_spy(
+					value='0'
+					type='number'
+					role=`aria-${withAria.role}`
+					readonly=withReadonly ? true : false
+					name=`${withName}`
+					id=`${withId}`
+					form=`${withForm}`
+					aria-nowvalue=`${withAria.nowValue}`
+					aria-minvalue=`${withAria.minValue}`
+					aria-maxvalue=`${withAria.maxValue}`
+				)

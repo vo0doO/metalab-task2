@@ -1,80 +1,48 @@
 @import "utils/style/vars";
+@import "components/dropdown/dropdown";
 
-
-.color-and-type {
-  &__title {
-    display: flex;
-    align-items: flex-end;
-    height: 50px;
-    background-color: $background-color-body;
-  }
-  
-  &__logo-wrapper {
-    display: inline-block;
-    margin: 30px 0 0 30px;
-  }
-  
-  &__body {
-    height: 950px;
-    background-color: $background-color-html;
-  }
-  
-  &__main {
-    padding: 63px 150px 166px;
-  }
-  
-  &__container {
-    position: relative;
-    width: 1140px;
-    min-width: 320px;
-    max-width: 1160px;
-    height: 100%;
-  }
-  
-  &__wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: 100%;
-  }
+.ui-kit__body {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	max-width: 100vm;
+	max-height: 100vm;
 }
 
-.form-elements {
-  &__title {
-    display: flex;
-    align-items: flex-end;
-    height: 50px;
-    background-color: $background-color-body;
-  }
-  
-  &__logo-wrapper {
-    display: inline-block;
-    margin: 30px 0 0 30px;
-  }
-  
-  &__body {
-    height: 950px;
-    background-color: $background-color-html;
-  }
-  
-  &__main {
-    padding: 63px 150px 166px;
-  }
-  
-  &__container {
-    position: relative;
-    width: 1140px;
-    min-width: 320px;
-    max-width: 1160px;
-    height: 100%;
-  }
-  
-  &__wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: 100%;
-  }
+.ui-kit__main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.sandbox {
+	
+	padding: 20px;
+	align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 600px;
+	height: 300px;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.sandbox__item-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.sandbox__item {
+	text-align: center;
+	
+}
+
+.text-field-wrapper {
+	width: 320px;
+}
+
+.dropdown-wrapper {
+	width: 320px;
 }

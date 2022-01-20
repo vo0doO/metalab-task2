@@ -1,0 +1,97 @@
+Index: src/index.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@import \"utils/style/vars\";\r\n\r\n\r\n.form-elements {\r\n\t&__title {\r\n\t\tdisplay: flex;\r\n\t\talign-items: flex-end;\r\n\t\theight: 50px;\r\n\t\tbackground-color: $background-color-body;\r\n\t}\r\n\t\r\n\t&__logo-wrapper {\r\n\t\tdisplay: inline-block;\r\n\t\tmargin: 30px 0 0 30px;\r\n\t}\r\n\t\r\n\t&__body {\r\n\t\theight: 1903px;\r\n\t\tbackground-color: $background-color-html;\r\n\t}\r\n\t\r\n\t&__main {\r\n\t\tpadding: 62px 141px 131px 140px;\r\n\t}\r\n\t\r\n\t&__text-field-wrapper {\r\n\t\twidth: 320px;\r\n\t\tleft: 141px;\r\n\t\ttop: 143px;\r\n\t}\r\n\t\r\n\t&__text-field-with-focus-wrapper {\r\n\t\twidth: 320px;\r\n\t\tleft: 141px;\r\n\t\ttop: 227px;\r\n\t\tmargin-top: 20px;\r\n\t}\r\n\t\r\n\t&__text-field-with-mask-wrapper {\r\n\t\twidth: 320px;\r\n\t\tposition: absolute;\r\n\t\tleft: 372.500px;\r\n\t\ttop: 428px;\r\n\t\tmargin-top: 20px;\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/index.scss b/src/index.scss
+--- a/src/index.scss	(revision eca6175f667ca5b567f397b5fa9375cb5927bc11)
++++ b/src/index.scss	(date 1642473163394)
+@@ -1,46 +1,44 @@
+ @import "utils/style/vars";
+ 
+ 
+-.form-elements {
+-	&__title {
+-		display: flex;
+-		align-items: flex-end;
+-		height: 50px;
+-		background-color: $background-color-body;
+-	}
+-	
+-	&__logo-wrapper {
+-		display: inline-block;
+-		margin: 30px 0 0 30px;
+-	}
+-	
+-	&__body {
+-		height: 1903px;
+-		background-color: $background-color-html;
+-	}
+-	
+-	&__main {
+-		padding: 62px 141px 131px 140px;
+-	}
+-	
+-	&__text-field-wrapper {
+-		width: 320px;
+-		left: 141px;
+-		top: 143px;
+-	}
+-	
+-	&__text-field-with-focus-wrapper {
+-		width: 320px;
+-		left: 141px;
+-		top: 227px;
+-		margin-top: 20px;
+-	}
+-	
+-	&__text-field-with-mask-wrapper {
+-		width: 320px;
+-		position: absolute;
+-		left: 372.500px;
+-		top: 428px;
+-		margin-top: 20px;
+-	}
++.ui-kit__body {
++	display: flex;
++	flex-direction: row;
++	justify-content: center;
++	max-width: 100vm;
++	max-height: 100vm;
++}
++
++.ui-kit__main {
++	display: flex;
++	flex-direction: column;
++	justify-content: center;
++}
++
++.sandbox {
++	display: flex;
++	flex-direction: row;
++	justify-content: center;
++	width: 600px;
++	height: 300px;
++	background-color: $background-color-html;
++	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
++}
++
++.sandbox__item-wrapper {
++	display: flex;
++	flex-direction: column;
++	justify-content: center;
++}
++
++.sandbox__item {
++	text-align: center;
++}
++
++.text-field-wrapper {
++	width: 320px;
++}
++
++.dropdown-wrapper {
++	width: 320px;
+ }

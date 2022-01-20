@@ -1,0 +1,23 @@
+{
+    "configurations": [
+    {
+        "type": "chrome",
+        "request": "attach",
+        "name": "Attach Chrome",
+        "url": "http://localhost:8000",
+        "webRoot": "${workspaceFolder}/dist"
+    },
+    {
+        "command": "npm start",
+        "name": "Run npm start",
+        "request": "launch",
+        "type": "node-terminal"
+    },{
+        "name": "Launch Chrome",
+        "request": "launch",
+        "type": "pwa-chrome",
+        "url": "http://localhost:8000",
+        "webRoot": "${workspaceFolder}/"
+    }
+    ]
+}
