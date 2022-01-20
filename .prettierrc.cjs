@@ -9,14 +9,14 @@ module.exports = {
 	
 	plugins: ['prettier-plugin-pug'],
 	
-	printWidth: 160,
+	printWidth: 120,
 	useTabs: true,
 	pugTabWidth: 2,
 	singleQuote: true,
 	// ... more pug* options
-	pugAttributeSeparator: 'as-needed',
+	pugAttributeSeparator: 'none',
 	pugSortAttributes: 'desc',
-	pugWrapAttributesThreshold: 7,
+	pugWrapAttributesThreshold: 4,
 	pugEmptyAttributes: 'all',
 	pugArrowParens: 'always',
 	pugClassNotation: 'literal',
