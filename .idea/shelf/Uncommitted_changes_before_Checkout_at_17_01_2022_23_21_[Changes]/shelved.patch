@@ -1,6 +1,0 @@
-diff --git a/src/components/textfield/textfield.pug b/src/components/text-field/text-field.pug
-rename from src/components/textfield/textfield.pug
-rename to src/components/text-field/text-field.pug
-diff --git a/src/components/textfield/textfield.scss b/src/components/text-field/text-field.scss
-rename from src/components/textfield/textfield.scss
-rename to src/components/text-field/text-field.scss
