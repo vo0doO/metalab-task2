@@ -13,7 +13,9 @@
 .counter {
 	padding: 5px;
 	outline: none;
-	
+	&_hidden{
+		display:none;
+	}
 	&__field {
 		gap: 5%;
 		display: flex;

@@ -18,7 +18,7 @@ mixin counter(args = [withType, withName, withLabel, withId, withAria, nowValue,
 		})
 		if (typeof Array === count[1]) console.log("Array in Array")
 
-	.counter
+	.counter.counter_hidden
 		.counter__field
 			label(for=`${withId}`)
 				+text({ withTag: 'h3', withContent: `${withLabel}` })
