@@ -1,4 +1,15 @@
-extends: "airbnb-base/legacy"
+extends: "airbnb-base"
+parserOptions:
+  ecmaVersion: 'latest'
+  sourceType: module
+env:
+  worker: true
+  browser: true
+  commonjs: true
+  es6: true
+  serviceworker: true
+  jquery: true
+
 ecmaFeatures:
   arrowFunctions: true
   binaryLiterals: true
