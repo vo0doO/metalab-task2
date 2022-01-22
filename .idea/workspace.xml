@@ -4,8 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00de3154-390c-4556-afdd-d2006076cf31" name="Changes" comment="Deleted main.js worker.js from component directory">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update &quot;counter.scss&quot; &quot;counter.pug&quot; for delete non-used vars &amp; added border">
+      <change afterPath="$PROJECT_DIR$/.idea/fileColors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/dropdown/guest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/input/attributes.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/input/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/input/input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/input/input.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/input/input.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/input/types.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Changes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Changes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Changes1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Changes1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Changes2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Changes2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_20_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_20_04__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_17__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_17__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_17__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_21__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_21__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_17_01_2022_23_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_17_01_2022_23_26__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Update_README_md_init_sandbox.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Update_README_md_init_sandbox.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_text-field_pug___masked_-text-field.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/_text-field_pug___masked_-text-field.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/counter/counter.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/counter/counter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/head/head.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/head/head.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/text-field/text-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text-field/text-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/text-field/text-field.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text-field/text-field.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/text-field/text-field.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text-field/text-field.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/js/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/js/worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +65,6 @@
     </option>
   </component>
   <component name="FormatOnSaveOptions">
-    <option name="myRunOnSave" value="true" />
     <option name="myAllFileTypesSelected" value="false" />
     <option name="mySelectedFileTypes">
       <set>
@@ -48,6 +89,11 @@
         </map>
       </branch-storage>
     </favorite-branches>
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="vo0doo &lt;kirsanov.bvt@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="PUSH_TAGS">
       <GitPushTagMode>
         <option name="argument" value="--tags" />
@@ -70,6 +116,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="http://localhost:8080/js/scripts.d5f6d2b23ec2d0e76b53.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="JsBowerSettings">
     <bower-package value="" />
     <bower.json value="" />
@@ -78,7 +127,6 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="OptimizeOnSaveOptions">
-    <option name="myRunOnSave" value="true" />
     <option name="myAllFileTypesSelected" value="false" />
     <option name="mySelectedFileTypes">
       <set>
@@ -92,6 +140,9 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="23kRdkFpTAONfOOggWr4t8YCJfM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -100,8 +151,11 @@
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="Project Files" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="PLAIN_TEXT" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
@@ -115,9 +169,14 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\vo0\WebstormProjects\toxin\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Pug/Jade" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="increaseLineSpacing" value="true" />
+    <option name="showLigatures" value="true" />
+    <option name="showWarnings" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -127,31 +186,23 @@
       <recent name="C:\Users\vo0\WebstormProjects\toxin\src\utils\js" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
-    <configuration name="Node Debug" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" port="9229" restartOnDisconnect="true">
+  <component name="RunManager" selected="JavaScript Debug.Js Debug">
+    <configuration name="Js Debug" type="JavascriptDebugType" uri="http://localhost:8080">
       <method v="2" />
     </configuration>
-    <configuration name="Js Debug" type="JavascriptDebugType" uri="http://localhost:8000">
+    <configuration name="index.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/toxin/src/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="Unnamed" type="NodeJSConfigurationType" nameIsGenerated="true" working-dir="$PROJECT_DIR$">
-      <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
-        <browser start="true" with-js-debugger="true" url="http://localhost:8080" />
-      </EXTENSION>
-      <method v="2" />
-    </configuration>
-    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+    <configuration name="start" type="js.build_tools.npm" activateToolWindowBeforeRun="false" singleton="false" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="start" />
       <node-interpreter value="project" />
-      <node-options value="--inspect" />
       <envs />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Attach to Node.js/Chrome.Node Debug" />
       <item itemvalue="JavaScript Debug.Js Debug" />
-      <item itemvalue="Node.js.Unnamed" />
+      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="npm.start" />
     </list>
   </component>
@@ -161,7 +212,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="00de3154-390c-4556-afdd-d2006076cf31" name="Changes" comment="" />
+      <changelist id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update index.js index.pug index.scss" />
       <created>1642276192182</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -172,6 +223,10 @@
       <workItem from="1642480114275" duration="43920000" />
       <workItem from="1642578969889" duration="25933000" />
       <workItem from="1642708454808" duration="2490000" />
+      <workItem from="1642765569718" duration="669000" />
+      <workItem from="1642766280415" duration="63336000" />
+      <workItem from="1642835043947" duration="1793000" />
+      <workItem from="1642841647903" duration="21520000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring ' to &quot;">
       <created>1642291604909</created>
@@ -418,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642710911404</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Update .eslintrc">
+      <created>1642766905298</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1642766905298</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,9 +519,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="updated .pretier color-palette.pug typography.pug - fix codestyle" />
-    <MESSAGE value="renamed textfield.scss textfield.pug" />
     <MESSAGE value="обновлены index.scss index.pug index.js - добавленны text-field и text-field-focused" />
     <MESSAGE value="updated text-field.button text-field.skss - renamed arguments" />
     <MESSAGE value="updated color-palette.pug - fix unknown where the bugs came from" />
@@ -483,10 +542,69 @@
     <MESSAGE value="Update webpack.config.js for change devtool settings" />
     <MESSAGE value="Create counter.pug counter.scss. Made html markup and styles, you need to add the functionality of the counter" />
     <MESSAGE value="Deleted main.js worker.js from component directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted main.js worker.js from component directory" />
+    <MESSAGE value="Update .eslintrc" />
+    <MESSAGE value="Update &quot;counter.scss&quot; &quot;counter.pug&quot; for delete non-used vars &amp; added border" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update &quot;counter.scss&quot; &quot;counter.pug&quot; for delete non-used vars &amp; added border" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/input/input.js</url>
+          <line>6</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/input/input.js</url>
+          <line>5</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/input/input.js</url>
+          <line>3</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/input/input.js</url>
+          <line>4</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/input/input.js</url>
+          <line>2</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/input/input.js</url>
+          <line>1</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JavascriptDebugType">
+        <watch expression="this" language="JavaScript" />
+        <watch expression="arguments[&quot;1&quot;]" />
+        <watch expression="arguments[&quot;[[Prototype]]&quot;]" />
+        <watch expression="args" language="JavaScript" />
+      </configuration>
+      <configuration name="js.build_tools.npm">
+        <watch expression="values" />
+        <watch expression="args" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/toxin$index_html.dat" NAME="index.html Coverage Results" MODIFIED="1642829014587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
