@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update &quot;counter.scss&quot; &quot;counter.pug&quot; for delete non-used vars &amp; added border">
-      <change afterPath="$PROJECT_DIR$/.idea/fileColors.xml" afterDir="false" />
+    <list default="true" id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update .gitignore">
       <change afterPath="$PROJECT_DIR$/src/components/dropdown/guest.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/input/attributes.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/input/config.json" afterDir="false" />
@@ -13,23 +12,7 @@
       <change afterPath="$PROJECT_DIR$/src/components/input/input.pug" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/input/input.scss" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/input/types.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Changes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Changes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Changes1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Changes1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Changes2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Changes2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_20_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_20_04__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_17__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_17__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_17__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_21__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_21__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_17_01_2022_23_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_17_01_2022_23_26__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Update_README_md_init_sandbox.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Update_README_md_init_sandbox.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/_text-field_pug___masked_-text-field.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/_text-field_pug___masked_-text-field.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -226,7 +209,7 @@
       <workItem from="1642765569718" duration="669000" />
       <workItem from="1642766280415" duration="63336000" />
       <workItem from="1642835043947" duration="1793000" />
-      <workItem from="1642841647903" duration="21520000" />
+      <workItem from="1642841647903" duration="24378000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring ' to &quot;">
       <created>1642291604909</created>
@@ -480,7 +463,28 @@
       <option name="project" value="LOCAL" />
       <updated>1642766905298</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Update .eslintrc - change ecmaVersion">
+      <created>1642885326035</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1642885326036</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Update vsc files save development history">
+      <created>1642886543171</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1642886543171</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Update .gitignore">
+      <created>1642887009008</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1642887009008</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,9 +523,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="обновлены index.scss index.pug index.js - добавленны text-field и text-field-focused" />
-    <MESSAGE value="updated text-field.button text-field.skss - renamed arguments" />
-    <MESSAGE value="updated color-palette.pug - fix unknown where the bugs came from" />
     <MESSAGE value="updated index.pug index.scss - removed code for color-and-type&#10;created color-and-type.pug color-and-type.sсss - they carry the code of the color-and-type block" />
     <MESSAGE value="обновлен text-field.pug добавлен функционал отображения c лейбелами и без" />
     <MESSAGE value="обновлен text-field.pug добавлен функционал masked -text-field" />
@@ -544,7 +545,10 @@
     <MESSAGE value="Deleted main.js worker.js from component directory" />
     <MESSAGE value="Update .eslintrc" />
     <MESSAGE value="Update &quot;counter.scss&quot; &quot;counter.pug&quot; for delete non-used vars &amp; added border" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update &quot;counter.scss&quot; &quot;counter.pug&quot; for delete non-used vars &amp; added border" />
+    <MESSAGE value="Update .eslintrc - change ecmaVersion" />
+    <MESSAGE value="Update vsc files save development history" />
+    <MESSAGE value="Update .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update .gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
