@@ -4,19 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update .gitignore">
+    <list default="true" id="d8221658-2c73-44d5-8888-bc1e9cf8f06a" name="UnresolvedFiles" comment="test new methods">
+      <change afterPath="$PROJECT_DIR$/options.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/dropdown/guest.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/input/attributes.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/input/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/input/types.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/js/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/js/worker.js" afterDir="false" />
+    </list>
+    <list id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update package.json package-lock.json for install new PluginPug and pug-loader">
       <change afterPath="$PROJECT_DIR$/src/components/input/input.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/input/input.pug" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/input/input.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/input/types.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.prettierrc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/counter/counter.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/counter/counter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.js" afterDir="false" />
@@ -29,8 +30,6 @@
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/js/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/js/worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,12 +193,12 @@
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
+    <task id="Default" summary="Default task">
       <changelist id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update index.js index.pug index.scss" />
       <created>1642276192182</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1642276192182</updated>
+      <updated>1642887166993</updated>
       <workItem from="1642276195757" duration="16886000" />
       <workItem from="1642303908251" duration="6187000" />
       <workItem from="1642406487333" duration="54466000" />
@@ -209,7 +208,7 @@
       <workItem from="1642765569718" duration="669000" />
       <workItem from="1642766280415" duration="63336000" />
       <workItem from="1642835043947" duration="1793000" />
-      <workItem from="1642841647903" duration="24378000" />
+      <workItem from="1642841647903" duration="24500000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring ' to &quot;">
       <created>1642291604909</created>
@@ -484,7 +483,38 @@
       <option name="project" value="LOCAL" />
       <updated>1642887009008</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task active="true" id="LOCAL-00040" summary="UnresolvedFiles">
+      <changelist id="d8221658-2c73-44d5-8888-bc1e9cf8f06a" name="UnresolvedFiles" comment="" />
+      <created>1642887166877</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1642887166993</updated>
+      <workItem from="1642887167297" duration="553000" />
+    </task>
+    <task id="LOCAL-00041" summary="Update .gitignore">
+      <created>1642887239660</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1642887239660</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Update vsc files save development history">
+      <created>1642887291145</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1642887291145</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Update package.json package-lock.json for install new PluginPug and pug-loader">
+      <created>1642887521625</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1642887521625</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
+    <option name="trackContextForNewChangelist" value="true" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +553,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updated index.pug index.scss - removed code for color-and-type&#10;created color-and-type.pug color-and-type.sсss - they carry the code of the color-and-type block" />
     <MESSAGE value="обновлен text-field.pug добавлен функционал отображения c лейбелами и без" />
     <MESSAGE value="обновлен text-field.pug добавлен функционал masked -text-field" />
     <MESSAGE value="updated text-field.skss index.pug renamed names containing focused" />
@@ -546,63 +575,11 @@
     <MESSAGE value="Update .eslintrc" />
     <MESSAGE value="Update &quot;counter.scss&quot; &quot;counter.pug&quot; for delete non-used vars &amp; added border" />
     <MESSAGE value="Update .eslintrc - change ecmaVersion" />
-    <MESSAGE value="Update vsc files save development history" />
     <MESSAGE value="Update .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update .gitignore" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/input/input.js</url>
-          <line>6</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/input/input.js</url>
-          <line>5</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/input/input.js</url>
-          <line>3</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/input/input.js</url>
-          <line>4</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/input/input.js</url>
-          <line>2</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/input/input.js</url>
-          <line>1</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="JavascriptDebugType">
-        <watch expression="this" language="JavaScript" />
-        <watch expression="arguments[&quot;1&quot;]" />
-        <watch expression="arguments[&quot;[[Prototype]]&quot;]" />
-        <watch expression="args" language="JavaScript" />
-      </configuration>
-      <configuration name="js.build_tools.npm">
-        <watch expression="values" />
-        <watch expression="args" />
-      </configuration>
-    </watches-manager>
+    <MESSAGE value="Update vsc files save development history" />
+    <MESSAGE value="Update package.json package-lock.json for install new PluginPug and pug-loader" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update package.json package-lock.json for install new PluginPug and pug-loader" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
