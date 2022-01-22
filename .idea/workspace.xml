@@ -4,24 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8221658-2c73-44d5-8888-bc1e9cf8f06a" name="UnresolvedFiles" comment="test new methods">
-      <change afterPath="$PROJECT_DIR$/options.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/dropdown/guest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/input/attributes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/input/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/input/types.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/js/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/js/worker.js" afterDir="false" />
+    <list default="true" id="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" name="Last change" comment="">
+      <change afterPath="$PROJECT_DIR$/[new]webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/head/head.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/head/head.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/text-field/text-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text-field/text-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/text-field/text-field.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text-field/text-field.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
-    <list id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update package.json package-lock.json for install new PluginPug and pug-loader">
+    <list id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Updated head.pug Fixed incorrect loading of block variables.">
       <change afterPath="$PROJECT_DIR$/src/components/input/input.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/input/input.pug" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/input/input.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/counter/counter.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/counter/counter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/head/head.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/head/head.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/text-field/text-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text-field/text-field.js" afterDir="false" />
@@ -30,6 +29,31 @@
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+    </list>
+    <list id="d8221658-2c73-44d5-8888-bc1e9cf8f06a" name="OtherUnresolvedFiles" comment="Update vsc files save development history">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/new_methods_load_block_settings_as_config_json_and_use_web_worker_js.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/new_methods_load_block_settings_as_config_json_and_use_web_worker_js/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/favicons/site.webmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/favicons/site.webmanifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/fonts/fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/fonts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/color-and-type/color-and-type.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/color-and-type/color-and-type.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/color-and-type/color-and-type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/color-and-type/color-and-type.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/color-palette/color-palette.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/color-palette/color-palette.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/color-palette/color-palette.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/color-palette/color-palette.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/logo/logo.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logo/logo.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/text/text.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text/text.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/text/text.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text/text.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/text/text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text/text.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/typography/typography.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typography/typography.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/typography/typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typography/typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/js/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/js/worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/style/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/style/_main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/style/_vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/style/_vars.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +129,47 @@
     <bower-package value="" />
     <bower.json value="" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/components/head/head.pug">
+      <ranges>
+        <range start1="0" end1="8" start2="0" end2="8" changelist="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" />
+        <range start1="9" end1="41" start2="9" end2="38" changelist="30763d2f-8cb2-4424-bf98-5a9630af3d70" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/components/text-field/text-field.js">
+      <ranges>
+        <range start1="0" end1="6" start2="0" end2="2" changelist="30763d2f-8cb2-4424-bf98-5a9630af3d70" />
+        <range start1="9" end1="11" start2="5" end2="6" changelist="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" />
+        <range start1="15" end1="19" start2="10" end2="13" changelist="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" />
+        <range start1="21" end1="22" start2="15" end2="15" changelist="30763d2f-8cb2-4424-bf98-5a9630af3d70" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="6" end1="15" start2="6" end2="15" changelist="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" />
+        <range start1="16" end1="17" start2="16" end2="17" changelist="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" />
+        <range start1="23" end1="24" start2="23" end2="23" changelist="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" />
+        <range start1="32" end1="32" start2="31" end2="56" changelist="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" />
+        <range start1="107" end1="107" start2="131" end2="172" changelist="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" />
+        <range start1="153" end1="154" start2="218" end2="219" changelist="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" />
+        <range start1="485" end1="486" start2="550" end2="551" changelist="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" />
+        <range start1="491" end1="493" start2="556" end2="558" changelist="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" />
+        <range start1="515" end1="516" start2="580" end2="604" changelist="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" />
+        <range start1="555" end1="557" start2="643" end2="643" changelist="d8221658-2c73-44d5-8888-bc1e9cf8f06a" />
+        <range start1="578" end1="579" start2="664" end2="664" changelist="d8221658-2c73-44d5-8888-bc1e9cf8f06a" />
+        <range start1="580" end1="581" start2="665" end2="669" changelist="d8221658-2c73-44d5-8888-bc1e9cf8f06a" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/components/text-field/text-field.pug">
+      <ranges>
+        <range start1="1" end1="1" start2="1" end2="2" changelist="30763d2f-8cb2-4424-bf98-5a9630af3d70" />
+        <range start1="2" end1="6" start2="3" end2="7" changelist="30763d2f-8cb2-4424-bf98-5a9630af3d70" />
+        <range start1="7" end1="9" start2="8" end2="18" changelist="30763d2f-8cb2-4424-bf98-5a9630af3d70" />
+        <range start1="10" end1="14" start2="19" end2="19" changelist="30763d2f-8cb2-4424-bf98-5a9630af3d70" />
+        <range start1="15" end1="30" start2="20" end2="22" changelist="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -151,7 +216,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\vo0\WebstormProjects\toxin\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -483,14 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642887009008</updated>
     </task>
-    <task active="true" id="LOCAL-00040" summary="UnresolvedFiles">
+    <task id="LOCAL-00040" summary="UnresolvedFiles">
       <changelist id="d8221658-2c73-44d5-8888-bc1e9cf8f06a" name="UnresolvedFiles" comment="" />
       <created>1642887166877</created>
       <option name="number" value="00040" />
       <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1642887166993</updated>
-      <workItem from="1642887167297" duration="553000" />
+      <updated>1642889461352</updated>
+      <workItem from="1642887167297" duration="2275000" />
     </task>
     <task id="LOCAL-00041" summary="Update .gitignore">
       <created>1642887239660</created>
@@ -513,7 +578,30 @@
       <option name="project" value="LOCAL" />
       <updated>1642887521625</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="new methods load block settings as config.json&#10;and use web worker.js">
+      <created>1642887795782</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1642887795782</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Update vsc files save development history">
+      <created>1642887852156</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1642887852156</updated>
+    </task>
+    <task active="true" id="LOCAL-00046" summary="Last change">
+      <changelist id="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" name="Last change" comment="" />
+      <created>1642889461273</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1642889461352</updated>
+      <workItem from="1642889462210" duration="2895000" />
+    </task>
+    <option name="localTasksCounter" value="47" />
     <option name="trackContextForNewChangelist" value="true" />
     <servers />
   </component>
@@ -553,8 +641,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="обновлен text-field.pug добавлен функционал отображения c лейбелами и без" />
-    <MESSAGE value="обновлен text-field.pug добавлен функционал masked -text-field" />
     <MESSAGE value="updated text-field.skss index.pug renamed names containing focused" />
     <MESSAGE value="updated text-field.scss fix animation for text-field-with-focus" />
     <MESSAGE value="updated text-field.scss index.pug index.scss fix width for text-field" />
@@ -576,9 +662,11 @@
     <MESSAGE value="Update &quot;counter.scss&quot; &quot;counter.pug&quot; for delete non-used vars &amp; added border" />
     <MESSAGE value="Update .eslintrc - change ecmaVersion" />
     <MESSAGE value="Update .gitignore" />
-    <MESSAGE value="Update vsc files save development history" />
     <MESSAGE value="Update package.json package-lock.json for install new PluginPug and pug-loader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update package.json package-lock.json for install new PluginPug and pug-loader" />
+    <MESSAGE value="new methods load block settings as config.json&#10;and use web worker.js" />
+    <MESSAGE value="Update vsc files save development history" />
+    <MESSAGE value="Updated head.pug Fixed incorrect loading of block variables." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated head.pug Fixed incorrect loading of block variables." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

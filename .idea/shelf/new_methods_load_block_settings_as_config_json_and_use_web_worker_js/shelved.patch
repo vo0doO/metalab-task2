@@ -1,0 +1,235 @@
+Index: src/.prettierrc
+===================================================================
+diff --git a/src/.prettierrc b/src/.prettierrc
+deleted file mode 100644
+--- a/src/.prettierrc	(revision 264e5b03bad0e42afbccfcb726791c6f6773300c)
++++ /dev/null	(revision 264e5b03bad0e42afbccfcb726791c6f6773300c)
+@@ -1,4 +0,0 @@
+-{
+-  "tabWidth": 2,
+-  "useTabs": false
+-}
+Index: src/components/input/types.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/input/types.json b/src/components/input/types.json
+new file mode 100644
+--- /dev/null	(date 1642804730597)
++++ b/src/components/input/types.json	(date 1642804730597)
+@@ -0,0 +1,25 @@
++{
++  "button": false,
++  "checkbox": false,
++  "color": false,
++  "date": false,
++  "datetime-local": false,
++  "email": false,
++  "file": false,
++  "hidden": false,
++  "image": false,
++  "month": false,
++  "number": false,
++  "password": false,
++  "radio": false,
++  "range": false,
++  "reset": false,
++  "search": false,
++  "submit": false,
++  "tel": false,
++  "text": false,
++  "time": false,
++  "url": false,
++  "week": false,
++  "datetime": false
++}
+\ No newline at end of file
+Index: options.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-16LE
+===================================================================
+diff --git a/options.json b/options.json
+new file mode 100644
+--- /dev/null	(date 1642773016220)
++++ b/options.json	(date 1642773016220)
+@@ -0,0 +1,1 @@
++{"doctype": "html"}
+Index: src/components/dropdown/guest.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/dropdown/guest.json b/src/components/dropdown/guest.json
+new file mode 100644
+--- /dev/null	(date 1642788926174)
++++ b/src/components/dropdown/guest.json	(date 1642788926174)
+@@ -0,0 +1,3 @@
++[
++  {"id": "взрослые"}
++]
+\ No newline at end of file
+Index: src/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/index.html b/src/index.html
+new file mode 100644
+--- /dev/null	(date 1642867630432)
++++ b/src/index.html	(date 1642867630432)
+@@ -0,0 +1,62 @@
++
++<!-- TODO:--><!DOCTYPE html>
++<html lang="ru">
++  <head>
++    <meta charset="UTF-8"/>
++    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
++    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
++    <meta name="description" content="Frontend компоненты в фирменном стиле TOXIN"/>
++    <meta name="keywords" content="фронтенд, компоненты, дизайн, стиль, toxin"/>
++    <meta name="msapplication-TileColor" content="#da532c"/>
++    <meta name="theme-color" content="#ffffff"/>
++    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png"/>
++    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png"/>
++    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png"/>
++    <link rel="manifest" href="assets/favicons/site.webmanifest"/>
++    <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#5bbad5"/>
++    <title>UI-KIT - TOXIN</title>
++  </head>
++  <body class="ui-kit__body">
++    <main class="ui-kit__main">
++      <section class="sandbox">
++        <container class="sandbox__item-wrapper">
++          <div class="sandbox__item">
++            <div class="sandbox__dropdown-wrapper">
++              <form class="dropdown" id="guest" oninput="guests.value=parseInt(people.value)+parseInt(kinds.value)">
++                <label class="dropdown__label" for="guest">
++                  <h3 class="text">dropdown</h3>
++                </label>
++                <div class="dropdown__input">
++                  <input value="Сколько гостей" type="hidden" placeholder="Сколько гостей" name="guests" id="guest" form="guest"/><span class="text text_with-color_dark-shade-50 text_with-weight_normal">Сколько гостей</span>
++                  <div class="dropdown__button_arrow">expand_more</div>
++                </div>
++                <div class="counter counter_hidden">
++                  <div class="counter__field">
++                    <label for="people">
++                    </label>
++                    <div class="counter__input">
++                      <input class="counter__input_spy" value="3" type="" readonly="readonly" name="" id="people" form="guest" aria-nowvalue="3" aria-minvalue="" aria-maxvalue="10"/>
++                    </div>
++                  </div>
++                </div>
++                <div class="counter counter_hidden">
++                  <div class="counter__field">
++                    <label for="kinds">
++                    </label>
++                    <div class="counter__input">
++                      <input class="counter__input_spy" value="4" type="" readonly="readonly" name="" id="kinds" form="guests-form" aria-nowvalue="4" aria-minvalue="" aria-maxvalue="10"/>
++                    </div>
++                  </div>
++                </div>
++              </form>
++            </div>
++            <div class="sandbox__dropdown-wrapper">
++              <div class="text-field">
++              </div>
++            </div>
++          </div>
++        </container>
++      </section>
++    </main>
++  </body>
++</html>
+\ No newline at end of file
+Index: src/utils/js/worker.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>onmessage = async function(e) {\r\n  console.log('Рабочий: сообщение полученно от основного скрипта');\r\n  \r\n  const data = e.data;\r\n\r\n\r\n  if (isNaN(data)) {\r\n    postMessage('Please write two numbers');\r\n  } else {\r\n    const workerResult = 'Result: ' + data;\r\n    console.log(`Worker: Posting message back to main script with result ${workerResult}`);\r\n    ;\r\n  }\r\n}\r\nonerror = function(e) {\r\n  try {\r\n    console.log(\"Try \", e)\r\n    postMessage(\"Error \" + e)\r\n  }\r\n  catch(error) {\r\n    console.log(\"Error\", error)\r\n  }\r\n};
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/utils/js/worker.js b/src/utils/js/worker.js
+--- a/src/utils/js/worker.js	(revision 264e5b03bad0e42afbccfcb726791c6f6773300c)
++++ b/src/utils/js/worker.js	(date 1642729558319)
+@@ -1,23 +1,9 @@
+-onmessage = async function(e) {
+-  console.log('Рабочий: сообщение полученно от основного скрипта');
+-  
+-  const data = e.data;
+-
+-
+-  if (isNaN(data)) {
+-    postMessage('Please write two numbers');
+-  } else {
+-    const workerResult = 'Result: ' + data;
+-    console.log(`Worker: Posting message back to main script with result ${workerResult}`);
+-    ;
+-  }
+-}
+-onerror = function(e) {
+-  try {
+-    console.log("Try ", e)
+-    postMessage("Error " + e)
+-  }
+-  catch(error) {
+-    console.log("Error", error)
+-  }
+-};
+\ No newline at end of file
++// onmessage = (e) => {
++//   console.log('Рабочий: сообщение полученно от основного скрипта');
++//
++//   const { data } = e;
++//   const workerResult = `Result: ${data}`;
++//   // postMessage(`Please write two numbers${workerResult}`);
++//   console.log(
++//     `Worker: Posting message back to main script with result
++// ${workerResult}`, ); };
+Index: src/components/input/attributes.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/input/attributes.json b/src/components/input/attributes.json
+new file mode 100644
+--- /dev/null	(date 1642804467995)
++++ b/src/components/input/attributes.json	(date 1642804467995)
+@@ -0,0 +1,34 @@
++[
++    {"name":"accept", "value": false},
++    {"name":"alt", "value": "string"},
++    {"name":"autocomplete", "value": false},
++    {"name":"autofocus", "value": false},
++    {"name":"capture", "value": false},
++    {"name":"checked", "value": false},
++    {"name":"dirname", "value": "string"},
++    {"name":"disabled", "value": false},
++    {"name":"form", "value": "string"},
++    {"name":"formaction", "value": "string"},
++    {"name":"formenctype", "value": "string"},
++    {"name":"formmethod", "value": "string"},
++    {"name":"formnovalidate", "value": "string"},
++    {"name":"formtarget", "value": "string"},
++    {"name":"height", "value": "string"},
++    {"name":"list", "value": "string"},
++    {"name":"maxnumeric", "value": "string"},
++    {"name":"maxlength", "value": "string"},
++    {"name":"minnumeric", "value": "string"},
++    {"name":"minlength", "value": "string"},
++    {"name":"multiple", "value": false},
++    {"name":"name", "value": "string"},
++    {"name":"pattern", "value": "string"},
++    {"name":"placeholder", "value": "string"},
++    {"name":"readonly", "value": false},
++    {"name":"required", "value": false},
++    {"name":"size", "value": "string"},
++    {"name":"src", "value": "string"},
++    {"name":"step", "value": "string"},
++    {"name":"type", "value": "string"},
++    {"name":"value", "value": "string"},
++    {"name":"width", "value": "string"}
++  ]
+diff --git a/src/components/input/config.json b/src/components/input/config.json
+new file mode 100644
