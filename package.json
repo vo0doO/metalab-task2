@@ -29,6 +29,7 @@
     "@prettier/plugin-pug": "^1.19.1",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
+    "@webdiscus/pug-loader": "^1.6.2",
     "autoprefixer": "^10.4.1",
     "babel-loader": "^8.2.3",
     "copy-webpack-plugin": "^10.2.0",
@@ -53,8 +54,9 @@
     "postcss-preset-env": "^7.0.2",
     "presets": "^0.1.0",
     "prettier": "^2.5.1",
-    "pug": "^3.0.1",
+    "pug": "^3.0.2",
     "pug-loader": "^2.4.0",
+    "pug-plugin": "^1.2.3",
     "resolve-url-loader": "^4.0.0",
     "sass": "^1.45.0",
     "sass-loader": "^12.4.0",
@@ -73,6 +75,8 @@
   },
   "dependencies": {
     "jquery": "^3.6.0",
-    "jquery.inputmask": "^3.3.1"
+    "jquery.inputmask": "^3.3.1",
+    "pug-cli": "^1.0.0-alpha6",
+    "pug-html-loader": "^1.1.5"
   }
 }
