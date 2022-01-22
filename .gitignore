@@ -2,4 +2,4 @@
 dist/
 external/
 test/
-src/**/*.json*
+src/components/**.json
