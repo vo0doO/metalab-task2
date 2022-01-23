@@ -5,15 +5,11 @@
  * @type {import('prettier').Options}
  */
 module.exports = {
-	// `require.resolve` is needed for e.g. `pnpm`
-	
 	plugins: ['prettier-plugin-pug'],
-	
 	printWidth: 120,
 	useTabs: true,
 	pugTabWidth: 2,
 	singleQuote: true,
-	// ... more pug* options
 	pugAttributeSeparator: 'none',
 	pugSortAttributes: 'desc',
 	pugWrapAttributesThreshold: 4,

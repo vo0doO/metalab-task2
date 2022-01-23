@@ -4,22 +4,23 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const PugPlugin = require('pug-plugin');
 
-const PATHS = {
+const paths = {
   src: path.resolve(__dirname, 'src'),
   dist: path.resolve(__dirname, 'dist'),
-};
+  inputmaskdependencyLib: path.join(__dirname, './node_modules/jquery.inputmask/extra/dependencyLibs/inputmask.dependencyLib.js'),
+  inputmask: path.join(__dirname,'./node_modules/jquery.inputmask/dist/inputmask/inputmask.js'),
+  };
 
-// Default pug-loader options.
 const pugLoaderOptions = {
   method: 'compile',
   esModule: true,
 };
 
-let mode = 'development';
+let mode = 'development'
 if (process.env.NODE_ENV === 'production') {
-  mode = 'production';
+	mode = 'production'
 }
-console.log(`${mode} mode`);
+console.log(`${mode} mode`)
 
 module.exports = {
   mode,
@@ -39,19 +40,17 @@ module.exports = {
     },
   },
   resolveLoader: {
-    // alias for pug-loader
     alias: {
       'pug-loader2': '@webdiscus/pug-loader',
     },
   },
 
-  devtool: 'eval-cheap-module-source-map',
+  devtool: mode == 'production' ? false : 'source-map', // 'eval-cheap-module-source-map',
   externals: {
     paths: PATHS,
   },
   entry: {
     scripts: './src/index.js',
-    // index: './src/index.pug',
 
   },
 
@@ -204,4 +203,41 @@ module.exports = {
       filename: '[name].[contenthash].css',
     }),
   ],
+  optimization: {
+    splitChunks: {
+      // chunks: 'all',
+      maxSize: 5000,
+      minSize: 5000,
+    },
+  },
+  
+  performance: {
+    hints: mode == 'production' ? 'error' : 'warning',
+    // в режиме разработки размер CSS и JS может быть больше, чем в рабочем
+    maxEntrypointSize: mode == 'production' ? 1024000 : 4096000,
+    maxAssetSize: mode == 'production' ? 1024000 : 4096000,
+  },
+  
+  devServer: {
+    static: {
+      directory: path.join(__dirname, ''),
+    },
+    compress: true,
+    port: 8080,
+    https: false,
+    // открыть в браузере по умолчанию
+    // open: true,
+    // Определение обозревателя разработки
+    open: {
+      app: {
+        name: 'Firefox',
+      },
+    },
+    liveReload: true,
+    hot: true,
+    
+    client: {
+      progress: true,
+    },
+  },
 };

@@ -1,11 +1,11 @@
-mixin head(options)
-  -
-    let title = 'Page title'
-    title = options.title
-    let description = 'Page description'
-    description = options.description
-    let keywords = 'Page keywords'
-    keywords = options.keywords
+mixin head(Head={title, description, keywords, themeColor,	titleColor,	safariPinnedTabColor})
+	-
+		var title = Head.title ? Head.title : 'Page title'
+		var description = Head.description ? Head.description : 'Page description'
+		var keywords = Head.keywords ? Head.keywords : 'Page keywords'
+		var themeColor = Head.keywords ? Head.keywords : 'Page keywords'
+		var titleColor = Head.keywords ? Head.keywords : 'Title color'
+		var safariPinnedTabColor = Head.keywords ? Head.keywords : 'Safari pined message color'
 
   head
     meta(charset='UTF-8')

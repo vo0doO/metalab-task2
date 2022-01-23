@@ -1,4 +1,4 @@
-@import "../../utils/style/vars";
+@import '../../utils/style/vars';
 
 .color-palette__ul {
 	display: flex;
@@ -14,59 +14,59 @@
 
 .color-palette__item {
 	list-style: none;
-	
+
 	&-wrapper {
 		display: flex;
 		align-items: center;
 		flex-direction: row;
 		flex-wrap: nowrap;
 	}
-	
+
 	&-rectangle {
 		width: 70px;
 		height: 70px;
 		margin-right: 40px;
 		border-radius: 6px;
-		
+
 		&_with-color {
 			background-color: $dark-shade-100;
-			
+
 			&_dark-shade100 {
 				background-color: $dark-shade-100;
 			}
-			
+
 			&_dark-shade75 {
 				background-color: $dark-shade-75;
 			}
-			
+
 			&_dark-shade50 {
 				background-color: $dark-shade-50;
 			}
-			
+
 			&_dark-shade25 {
 				background-color: $dark-shade-25;
 			}
-			
+
 			&_dark-shade5 {
 				background-color: $dark-shade-5;
 			}
-			
+
 			&_purple {
 				background-color: $purple;
 			}
-			
+
 			&_green {
 				background-color: $green;
 			}
 		}
 	}
-	
+
 	&-title {
 		margin: 0;
 		padding-top: 1px;
 		letter-spacing: 0;
 	}
-	
+
 	&-description {
 		font-weight: 400;
 		font-size: 19px;
