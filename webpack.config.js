@@ -7,36 +7,33 @@ const PugPlugin = require('pug-plugin');
 const paths = {
   src: path.resolve(__dirname, 'src'),
   dist: path.resolve(__dirname, 'dist'),
-  inputmaskdependencyLib: path.join(__dirname, './node_modules/jquery.inputmask/extra/dependencyLibs/inputmask.dependencyLib.js'),
-  inputmask: path.join(__dirname,'./node_modules/jquery.inputmask/dist/inputmask/inputmask.js'),
-  };
+  inputmaskdependencyLib: path.join(
+    __dirname,
+    './node_modules/jquery.inputmask/extra/dependencyLibs/inputmask.dependencyLib.js',
+  ),
+  inputmask: path.join(__dirname, './node_modules/jquery.inputmask/dist/inputmask/inputmask.js'),
+};
 
 const pugLoaderOptions = {
   method: 'compile',
   esModule: true,
 };
 
-let mode = 'development'
+let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
-	mode = 'production'
+  mode = 'production';
 }
-console.log(`${mode} mode`)
+console.log(`${mode} mode`);
 
 module.exports = {
   mode,
   resolve: {
     alias: {
-      Components: path.join(PATHS.src, '/components/'),
-      Images: path.join(PATHS.src, '/assets/img/'),
-      Templates: path.join(PATHS.src, '/templates/'),
-      'inputmask.dependencyLib': path.join(
-        __dirname,
-        'node_modules/jquery.inputmask/extra/dependencyLibs/inputmask.dependencyLib.js',
-      ),
-      inputmask: path.join(
-        __dirname,
-        'node_modules/jquery.inputmask/dist/inputmask/inputmask.js',
-      ),
+      Components: path.join(paths.src, '/components/'),
+      Images: path.join(paths.src, '/assets/img/'),
+      Templates: path.join(paths.src, '/templates/'),
+      'inputmask.dependencyLib': paths.inputmaskdependencyLib,
+      inputmask: paths.inputmask,
     },
   },
   resolveLoader: {
@@ -47,23 +44,17 @@ module.exports = {
 
   devtool: mode == 'production' ? false : 'source-map', // 'eval-cheap-module-source-map',
   externals: {
-    paths: PATHS,
+    paths,
   },
   entry: {
     scripts: './src/index.js',
-
   },
 
   output: {
-    path: PATHS.dist,
+    path: paths.dist,
     publicPath: '/',
     filename: 'js/[name].[contenthash].js',
     clean: true,
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
   },
   module: {
     rules: [
@@ -105,9 +96,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          process.env.NODE_ENV === 'production'
-            ? MiniCssExtractPlugin.loader
-            : 'style-loader',
+          process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
           {
             loader: 'css-loader',
             options: { sourceMap: true },
@@ -203,6 +192,7 @@ module.exports = {
       filename: '[name].[contenthash].css',
     }),
   ],
+
   optimization: {
     splitChunks: {
       // chunks: 'all',
@@ -210,24 +200,21 @@ module.exports = {
       minSize: 5000,
     },
   },
-  
+
   performance: {
-    hints: mode == 'production' ? 'error' : 'warning',
-    // в режиме разработки размер CSS и JS может быть больше, чем в рабочем
-    maxEntrypointSize: mode == 'production' ? 1024000 : 4096000,
-    maxAssetSize: mode == 'production' ? 1024000 : 4096000,
+    hints: mode == 'production' ? 'error' : 'warning', // в режиме разработки размер CSS и JS может быть больше,
+    // чем в рабочем
+    maxEntrypointSize: mode === 'production' ? 1024000 : 4096000,
+    maxAssetSize: mode === 'production' ? 1024000 : 4096000,
   },
-  
   devServer: {
     static: {
       directory: path.join(__dirname, ''),
     },
     compress: true,
     port: 8080,
-    https: false,
-    // открыть в браузере по умолчанию
-    // open: true,
-    // Определение обозревателя разработки
+    https: false, // открыть в браузере по умолчанию
+    open: true, // Определение обозревателя разработки
     open: {
       app: {
         name: 'Firefox',
@@ -235,7 +222,6 @@ module.exports = {
     },
     liveReload: true,
     hot: true,
-    
     client: {
       progress: true,
     },
