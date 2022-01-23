@@ -1,37 +1,18 @@
-- let withAria = { role: false };
-
-mixin counter(args = [withType, withName, withLabel, withId, withAria, nowValue, minValue, maxValue, withForm, withArray, withReadonly])
-	-
-		let withType,
-						withName,
-						withLabel,
-						withId,
-						withRole,
-						withForm,
-						withArray,
-						withReadonly
-
-		let count = 0
-		count = args.flatMap((value, index, arr) => {
-			console.log(value, index, arr)
-			return arr.push({index: [arr]})
-		})
-		if (typeof Array === count[1]) console.log("Array in Array")
-
+mixin counter(Counter={type, name, label, id, aria, nowvalue, minvalue, maxvalue, form, array,role, readonly})
 	.counter.counter_hidden
 		.counter__field
-			label(for=`${withId}`)
-				+text({ withTag: 'h3', withContent: `${withLabel}` })
+			label(for=`${Counter.id}`)
+				+text({ Tag: 'h3', Content: `${Counter.label}` })
 			.counter__input
 				input.counter__input_spy(
-					value='0'
-					type='number'
-					role=`aria-${withAria.role}`
-					readonly=withReadonly ? true : false
-					name=`${withName}`
-					id=`${withId}`
-					form=`${withForm}`
-					aria-nowvalue=`${withAria.nowValue}`
-					aria-minvalue=`${withAria.minValue}`
-					aria-maxvalue=`${withAria.maxValue}`
+					value=Counter.nowvalue ? Counter.nowvalue : ''
+					type=Counter.Type ? Counter.Type : ''
+					role=`aria-${Counter.role}` ? Counter.role : ''
+					readonly=Counter.readonly ? Counter.readonly : ''
+					name=Counter.Name ? Counter.Name : ''
+					id=Counter.id ? Counter.id : ''
+					form=Counter.form ? Counter.form : ''
+					aria-nowvalue=Counter.nowvalue ? Counter.nowvalue : ''
+					aria-minvalue=Counter.minvalue ? Counter.minvalue : ''
+					aria-maxvalue=Counter.maxvalue ? Counter.maxvalue : ''
 				)
