@@ -1,0 +1,368 @@
+Index: src/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import './assets/fonts/fonts.scss';\r\nimport './components/color-palette/color-palette.scss';\r\nimport './components/counter/counter.js';\r\nimport './components/counter/counter.scss';\r\nimport './components/dropdown/dropdown.scss';\r\nimport './components/dropdown/dropdown.js';\r\nimport './components/text-field/text-field.js';\r\nimport './components/text-field/text-field.scss';\r\nimport './components/text/text.scss';\r\nimport './components/typography/typography.scss';\r\nimport './index.scss';\r\nimport './utils/style/_main.scss';\r\nimport './utils/style/_vars.scss';\r\nimport './utils/js/worker.js';\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/index.js b/src/index.js
+--- a/src/index.js	(revision 61e873ddcb8b495eceb4974281feea589a02e68e)
++++ b/src/index.js	(date 1642960498136)
+@@ -1,14 +1,17 @@
+ import './assets/fonts/fonts.scss';
+ import './components/color-palette/color-palette.scss';
++import './components/input/input.scss';
+ import './components/counter/counter.js';
+ import './components/counter/counter.scss';
+-import './components/dropdown/dropdown.scss';
+ import './components/dropdown/dropdown.js';
++import './components/dropdown/dropdown.scss';
++import './components/head/head.pug';
+ import './components/text-field/text-field.js';
+ import './components/text-field/text-field.scss';
+ import './components/text/text.scss';
+ import './components/typography/typography.scss';
+ import './index.scss';
++import './utils/js/worker.js';
+ import './utils/style/_main.scss';
+ import './utils/style/_vars.scss';
+-import './utils/js/worker.js';
++import './utils/style/_main.scss'
+Index: src/components/text-field/text-field.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.text-field {\r\n\twidth: inherit;\r\n\theight: 64px;\r\n\t\r\n\t&__label-wrapper {\r\n\t\tdisplay: flex;\r\n\t\tjustify-content: space-between;\r\n\t\tmargin-bottom: 5px;\r\n\t}\r\n\t\r\n\t&__input {\r\n\t\tfont-family: Montserrat;\r\n\t\tfont-size: 14px;\r\n\t\tfont-weight: normal;\r\n\t\tfont-style: normal;\r\n\t\tline-height: 18px;\r\n\t\tbox-sizing: border-box;\r\n\t\twidth: inherit;\r\n\t\theight: 44px;\r\n\t\ttext-indent: 12px;\r\n\t\tcolor: rgba(31, 32, 65, 0.75);\r\n\t\tborder: 1px solid rgba(31, 32, 65, 0.25);\r\n\t\tborder-radius: 4px;\r\n\t\t\r\n\t\t&:hover {\r\n\t\t\tanimation-name: hover-focus;\r\n\t\t\tanimation-duration: 300ms;\r\n\t\t\tanimation-fill-mode: forwards;\r\n\t\t}\r\n\t\t\r\n\t\t&:focus {\r\n\t\t\tanimation-name: hover-focus;\r\n\t\t\tanimation-duration: 300ms;\r\n\t\t\tanimation-fill-mode: forwards;\r\n\t\t}\r\n\t\t\r\n\t\t&:focus-visible {\r\n\t\t\tanimation-name: hover-focus;\r\n\t\t\tanimation-duration: 300ms;\r\n\t\t\toutline: 0;\r\n\t\t\tanimation-fill-mode: forwards;\r\n\t\t}\r\n\t\t\r\n\t\t&::placeholder {\r\n\t\t\tfont-family: Montserrat;\r\n\t\t\tfont-size: 14px;\r\n\t\t\tfont-weight: normal;\r\n\t\t\tfont-style: normal;\r\n\t\t\tline-height: 18px;\r\n\t\t\ttext-indent: 12px;\r\n\t\t\tcolor: rgba(31, 32, 65, 0.25);\r\n\t\t}\r\n\t\t\r\n\t\t&_with-focus {\r\n\t\t\tborder: 1px solid rgba(31, 32, 65, 0.5);\r\n\t\t\tanimation-name: hover-focus;\r\n\t\t\tanimation-duration: unset;\r\n\t\t\tanimation-fill-mode: unset;\r\n\t\t}\r\n\t}\r\n}\r\n\r\n.im-caret {\r\n\t-webkit-animation: 0;\r\n\t-moz-animation: 0;\r\n\t-ms-animation: 0;\r\n\t-o-animation: 0;\r\n\tanimation: 0;\r\n}\r\n\r\n@keyframes hover-focus {\r\n\t100% {\r\n\t\tborder: 1px solid rgba(31, 32, 65, 0.5);\r\n\t}\r\n\t50% {\r\n\t\tborder: 1px solid rgba(31, 32, 65, 0.35);\r\n\t}\r\n\t0% {\r\n\t\tborder: 1px solid rgba(31, 32, 65, 0.25);\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/text-field/text-field.scss b/src/components/text-field/text-field.scss
+--- a/src/components/text-field/text-field.scss	(revision 06aab17b4a2d40ac00f76b6773f4e345f6150304)
++++ b/src/components/text-field/text-field.scss	(date 1642959587360)
+@@ -1,13 +1,13 @@
+ .text-field {
+ 	width: inherit;
+ 	height: 64px;
+-	
++
+ 	&__label-wrapper {
+ 		display: flex;
+ 		justify-content: space-between;
+ 		margin-bottom: 5px;
+ 	}
+-	
++
+ 	&__input {
+ 		font-family: Montserrat;
+ 		font-size: 14px;
+@@ -21,26 +21,26 @@
+ 		color: rgba(31, 32, 65, 0.75);
+ 		border: 1px solid rgba(31, 32, 65, 0.25);
+ 		border-radius: 4px;
+-		
++
+ 		&:hover {
+ 			animation-name: hover-focus;
+ 			animation-duration: 300ms;
+ 			animation-fill-mode: forwards;
+ 		}
+-		
++
+ 		&:focus {
+ 			animation-name: hover-focus;
+ 			animation-duration: 300ms;
+ 			animation-fill-mode: forwards;
+ 		}
+-		
++
+ 		&:focus-visible {
+ 			animation-name: hover-focus;
+ 			animation-duration: 300ms;
+ 			outline: 0;
+ 			animation-fill-mode: forwards;
+ 		}
+-		
++
+ 		&::placeholder {
+ 			font-family: Montserrat;
+ 			font-size: 14px;
+@@ -50,7 +50,7 @@
+ 			text-indent: 12px;
+ 			color: rgba(31, 32, 65, 0.25);
+ 		}
+-		
++
+ 		&_with-focus {
+ 			border: 1px solid rgba(31, 32, 65, 0.5);
+ 			animation-name: hover-focus;
+@@ -60,14 +60,6 @@
+ 	}
+ }
+ 
+-.im-caret {
+-	-webkit-animation: 0;
+-	-moz-animation: 0;
+-	-ms-animation: 0;
+-	-o-animation: 0;
+-	animation: 0;
+-}
+-
+ @keyframes hover-focus {
+ 	100% {
+ 		border: 1px solid rgba(31, 32, 65, 0.5);
+Index: src/components/text-field/text-field.pug
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>include ../text/text\r\n\r\nmixin text-field(args= {withType: null, withLabel:false, withSublabel:false, withName:null, withId:null, withValue:null, withPlaceholder:null, withPattern:null, withFocus: false, withMask: false})\r\n  -\r\n    var args = args\r\n    var inputClass = 'text-field__input'\r\n\r\n    if (args.withFocus) {\r\n    \tinputClass += ` text-field__input_with-focus`\r\n\r\n    }\r\n    if (args.withMask) {\r\n    \tinputClass += ` text-field__input_with-mask`\r\n    }\r\n\r\n  .text-field\r\n    if args.withLabel\r\n      label.text-field_with-label(for=args.withId)\r\n        .text-field__label-wrapper\r\n          +text({ withTag: 'h3', withContent: args.withLabel })\r\n          if args.withSublabel\r\n            +text({ withTag: 'h3', withContent: args.withSublabel, withWeight: 'normal', withColor: 'dark-shade-50' })\r\n    input(\r\n      class=inputClass,\r\n      type=args.withType,\r\n      name=args.withName,\r\n      id=args.withId,\r\n      value=args.withValue,\r\n      placeholder=args.withPlaceholder\r\n    )\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/text-field/text-field.pug b/src/components/text-field/text-field.pug
+--- a/src/components/text-field/text-field.pug	(revision 06aab17b4a2d40ac00f76b6773f4e345f6150304)
++++ b/src/components/text-field/text-field.pug	(date 1642955521831)
+@@ -1,30 +1,21 @@
+ include ../text/text
++include ../input/input
+ 
+-mixin text-field(args= {withType: null, withLabel:false, withSublabel:false, withName:null, withId:null, withValue:null, withPlaceholder:null, withPattern:null, withFocus: false, withMask: false})
+-  -
+-    var args = args
+-    var inputClass = 'text-field__input'
++mixin text-field(TextField={ customcontrols: false, focused: false, visible: true, label: false, sublabel: false, toxintype: false, subtype: false, id: false,	accept: false,	alt: false,	autocomplete: false,	autofocus: false,	arialabel: false,	capture: false,	checked: false,	dirname: false,	disabled: false,	form: false,	formaction: false,	formenctype: false,	formmethod: false,	formnovalidate: false,	formtarget: false,	height: false,	list: false,	maxnumeric: false,	maxlength: false,	minnumeric: false,	minlength: false,	multiple: false,	name: false,	pattern: false,	placeholder: false,	readonly: false,	required: true,	size: false,	src: false,	step: false,	type: false,	value: false,	width: false})
++	-
++		var classes = []
++		var attrs = []
+ 
+-    if (args.withFocus) {
+-    	inputClass += ` text-field__input_with-focus`
++		!TextField.pattern ? attrs : attrs.push(TextField.pattern);
++		!TextField.label ? attrs : attrs.push(TextField.label);
++		!TextField.sublabel ? attrs : attrs.push(TextField.sublabel);
++		!TextField.value ? attrs : attrs.push(TextField.value)
++		!TextField.type ? attrs : attrs.push(TextField.type);
++		!TextField.subtype ? attrs : attrs.push(TextField.subtype);
++		!TextField['mask'] ? attrs : attrs.push(TextField.mask);
++		!TextField.id ? attrs : attrs.push(TextField.id);
++		!TextField.focused ? classes : classes.push("text-field_focused");
+ 
+-    }
+-    if (args.withMask) {
+-    	inputClass += ` text-field__input_with-mask`
+-    }
+ 
+-  .text-field
+-    if args.withLabel
+-      label.text-field_with-label(for=args.withId)
+-        .text-field__label-wrapper
+-          +text({ withTag: 'h3', withContent: args.withLabel })
+-          if args.withSublabel
+-            +text({ withTag: 'h3', withContent: args.withSublabel, withWeight: 'normal', withColor: 'dark-shade-50' })
+-    input(
+-      class=inputClass,
+-      type=args.withType,
+-      name=args.withName,
+-      id=args.withId,
+-      value=args.withValue,
+-      placeholder=args.withPlaceholder
+-    )
++	.text-field(class=classes)
++		+input(TextField)
+Index: src/components/text-field/text-field.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Add extensions as necessary make sure you remember to add the corresponding\r\n// aliases in the webpack config\r\n\r\nimport $ from 'jquery'\r\nimport 'jquery.inputmask'\r\n\r\n\r\nwindow.onload = (event) => {\r\n\t$(() => {\r\n\t\tlet input = $('.text-field__input.text-field__input_with-mask')\r\n\t\tconsole.log(input)\r\n\t\tinput.inputmask('dd.mm.yyyy', {\r\n\t\t\talias: 'date',\r\n\t\t\tplaceholder: 'ДД.ММ.ГГГГ',\r\n\t\t\tshowMaskOnFocus: false,\r\n\t\t\tshowMaskOnHover: false\r\n\t\t\t\r\n\t\t})\r\n\t})\r\n};\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/text-field/text-field.js b/src/components/text-field/text-field.js
+--- a/src/components/text-field/text-field.js	(revision 06aab17b4a2d40ac00f76b6773f4e345f6150304)
++++ b/src/components/text-field/text-field.js	(date 1642953965677)
+@@ -1,21 +1,14 @@
+-// Add extensions as necessary make sure you remember to add the corresponding
+-// aliases in the webpack config
+-
+-import $ from 'jquery'
+-import 'jquery.inputmask'
+-
++import $ from 'jquery';
++import 'jquery.inputmask';
+ 
+ window.onload = (event) => {
+-	$(() => {
+-		let input = $('.text-field__input.text-field__input_with-mask')
+-		console.log(input)
+-		input.inputmask('dd.mm.yyyy', {
+-			alias: 'date',
+-			placeholder: 'ДД.ММ.ГГГГ',
+-			showMaskOnFocus: false,
+-			showMaskOnHover: false
+-			
+-		})
+-	})
++  $(() => {
++    const input = $('.input__text.input__text_with-mask');
++    input.inputmask('dd.mm.yyyy', {
++      alias: 'date',
++      placeholder: 'ДД.ММ.ГГГГ',
++      showMaskOnFocus: false,
++      showMaskOnHover: false,
++    });
++  });
+ };
+-
+Index: src/components/input/input.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/input/input.scss b/src/components/input/input.scss
+new file mode 100644
+--- /dev/null	(date 1642958881758)
++++ b/src/components/input/input.scss	(date 1642958881758)
+@@ -0,0 +1,76 @@
++.input {
++	width: inherit;
++	height: inherit;
++
++	&__label {
++		display: flex;
++		justify-content: space-between;
++		align-items: center;
++		margin-bottom: 5px;
++	}
++
++	&__text {
++		font-family: Montserrat;
++		font-size: 14px;
++		font-weight: normal;
++		font-style: normal;
++		line-height: 18px;
++		box-sizing: border-box;
++		width: inherit;
++		height: 44px;
++		text-indent: 12px;
++		color: rgba(31, 32, 65, 0.75);
++		border: 1px solid rgba(31, 32, 65, 0.25);
++		border-radius: 4px;
++
++		&:hover {
++			animation-name: hover-focus;
++			animation-duration: 300ms;
++			animation-fill-mode: forwards;
++		}
++
++		&:focus {
++			animation-name: hover-focus;
++			animation-duration: 300ms;
++			animation-fill-mode: forwards;
++		}
++
++		&:focus-visible {
++			animation-name: hover-focus;
++			animation-duration: 300ms;
++			outline: 0;
++			animation-fill-mode: forwards;
++		}
++
++		&::placeholder {
++			font-family: Montserrat;
++			font-size: 14px;
++			font-weight: normal;
++			font-style: normal;
++			line-height: 18px;
++			text-indent: 12px;
++			color: rgba(31, 32, 65, 0.25);
++		}
++
++		&_focused {
++			border: 1px solid rgba(31, 32, 65, 0.5);
++			animation-name: hover-focus;
++			animation-duration: unset;
++			animation-fill-mode: unset;
++		}
++		&_pseudo {
++		}
++	}
++}
++
++@keyframes hover-focus {
++	100% {
++		border: 1px solid rgba(31, 32, 65, 0.5);
++	}
++	50% {
++		border: 1px solid rgba(31, 32, 65, 0.35);
++	}
++	0% {
++		border: 1px solid rgba(31, 32, 65, 0.25);
++	}
++}
+Index: src/index.pug
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>include components/head/head\r\ninclude components/logo/logo\r\ninclude components/text-field/text-field\r\ninclude components/dropdown/dropdown\r\ninclude components/counter/counter\r\n//formatter:off\r\ndoctype html\r\nhtml(lang='ru')\r\n  +head({ title: \"UI-KIT - TOXIN\", description: \"Frontend компоненты в фирменном стиле TOXIN\", keywords: \"фронтенд, компоненты, дизайн, стиль, toxin\" })\r\n  body(class='ui-kit__body')\r\n    main(class='ui-kit__main')\r\n      section(class='sandbox')\r\n        container(class='sandbox__item-wrapper')\r\n        div(class='sandbox__item')\r\n          div(class='dropdown-wrapper')\r\n            +dropdown({ withLabel: \"dropdown\", withName: \"guest\", withId: \"guest\", withPlaceholder: \"Сколько гостей\" })\r\n            +counter([withType, withName, withLabel, withId, withAria, nowValue ,minValue , maxValue, withForm, withArray, withReadonly])\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/index.pug b/src/index.pug
+--- a/src/index.pug	(revision 5776b15a73022185030d5088ea9c23a4a7264cc1)
++++ b/src/index.pug	(date 1642960230543)
+@@ -3,15 +3,17 @@
+ include components/text-field/text-field
+ include components/dropdown/dropdown
+ include components/counter/counter
+-//formatter:off
++include components/input/input
++
+ doctype html
+ html(lang='ru')
+-  +head({ title: "UI-KIT - TOXIN", description: "Frontend компоненты в фирменном стиле TOXIN", keywords: "фронтенд, компоненты, дизайн, стиль, toxin" })
+-  body(class='ui-kit__body')
+-    main(class='ui-kit__main')
+-      section(class='sandbox')
+-        container(class='sandbox__item-wrapper')
+-        div(class='sandbox__item')
+-          div(class='dropdown-wrapper')
+-            +dropdown({ withLabel: "dropdown", withName: "guest", withId: "guest", withPlaceholder: "Сколько гостей" })
+-            +counter([withType, withName, withLabel, withId, withAria, nowValue ,minValue , maxValue, withForm, withArray, withReadonly])
++	+head({ title: 'UI-KIT - TOXIN', keywords: 'фронтенд, компоненты, дизайн, стиль, toxin', description: 'Frontend компоненты в фирменном стиле TOXIN', })
++	body.ui-kit__body
++		main.ui-kit__main
++			section.sandbox
++				container.sandbox__item-wrapper
++					.sandbox__item
++						.sandbox__dropdown-wrapper
++							+dropdown({ withPlaceholder: 'Сколько гостей', withName: 'guests', withLabel: 'dropdown', withId: 'guest', withForm: 'guest', withValue: "Сколько гостей" })
++						.sandbox__dropdown-wrapper
++							+text-field({label:"text field", sublabel:"hover / focus", placeholder: "Сколько гостей", focused : true, type : "text" })
+Index: src/components/input/input.pug
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/input/input.pug b/src/components/input/input.pug
+new file mode 100644
+--- /dev/null	(date 1642958782041)
++++ b/src/components/input/input.pug	(date 1642958782041)
+@@ -0,0 +1,23 @@
++include ../text/text
++mixin input(Input={customcontrols: false, focused: false, visible: true, label: false,sublabel: false, toxintype: false, subtype: false, id: false,	accept: false,	alt: false,	autocomplete: false,	autofocus: false,	arialabel: false,	capture: false,	checked: false,	dirname: false,	disabled: false,	form: false,	formaction: false,	formenctype: false,	formmethod: false,	formnovalidate: false,	formtarget: false,	height: false,	list: false,	maxnumeric: false,	maxlength: false,	minnumeric: false,	minlength: false,	multiple: false,	name: false,	pattern: false,	placeholder: false,	readonly: false,	required: true,	size: false,	src: false,	step: false,	type: false,	value: false,	width: false})
++	-
++		var classes = ['input']
++		if (Input.type == "text"){
++			classes.push('input__text')
++		}
++		if (Input.focused) {
++			classes.push('input_focused')
++		}
++		var inputAttrs = Object.entries(Input)
++		var toxintypes = ['textfield', 'masked-text-field', 'dropdown', 'dropdownWithCounter', 'dropdownWithDate', 'dropdownWithRadio', 'dropdownWithCheckbox']
++
++	if Input.label
++		label.input__label(for=Input['id'])
++			+text({ withTag: 'h3', withContent: Input.label })
++			if Input['sublabel']
++				+text({ withTag: 'h3', withContent: Input['sublabel'], withWeight: 'normal', withColor: 'dark-shade-50' })
++	case Input['type']
++		when 'text'
++			input(type='text' class=classes)&attributes(Input)
++		when 'hidden'
++			input(type='hidden' class=classes)&attributes(Input)
