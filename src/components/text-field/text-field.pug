@@ -1,30 +1,21 @@
 include ../text/text
+include ../input/input
 
-mixin text-field(args= {withType: null, withLabel:false, withSublabel:false, withName:null, withId:null, withValue:null, withPlaceholder:null, withPattern:null, withFocus: false, withMask: false})
-  -
-    var args = args
-    var inputClass = 'text-field__input'
+mixin text-field(TextField={ customcontrols: false, focused: false, visible: true, label: false, sublabel: false, toxintype: false, subtype: false, id: false,	accept: false,	alt: false,	autocomplete: false,	autofocus: false,	arialabel: false,	capture: false,	checked: false,	dirname: false,	disabled: false,	form: false,	formaction: false,	formenctype: false,	formmethod: false,	formnovalidate: false,	formtarget: false,	height: false,	list: false,	maxnumeric: false,	maxlength: false,	minnumeric: false,	minlength: false,	multiple: false,	name: false,	pattern: false,	placeholder: false,	readonly: false,	required: true,	size: false,	src: false,	step: false,	type: false,	value: false,	width: false})
+	-
+		var classes = []
+		var attrs = []
 
-    if (args.withFocus) {
-    	inputClass += ` text-field__input_with-focus`
+		!TextField.pattern ? attrs : attrs.push(TextField.pattern);
+		!TextField.label ? attrs : attrs.push(TextField.label);
+		!TextField.sublabel ? attrs : attrs.push(TextField.sublabel);
+		!TextField.value ? attrs : attrs.push(TextField.value)
+		!TextField.type ? attrs : attrs.push(TextField.type);
+		!TextField.subtype ? attrs : attrs.push(TextField.subtype);
+		!TextField['mask'] ? attrs : attrs.push(TextField.mask);
+		!TextField.id ? attrs : attrs.push(TextField.id);
+		!TextField.focused ? classes : classes.push("text-field_focused");
 
-    }
-    if (args.withMask) {
-    	inputClass += ` text-field__input_with-mask`
-    }
 
-  .text-field
-    if args.withLabel
-      label.text-field_with-label(for=args.withId)
-        .text-field__label-wrapper
-          +text({ withTag: 'h3', withContent: args.withLabel })
-          if args.withSublabel
-            +text({ withTag: 'h3', withContent: args.withSublabel, withWeight: 'normal', withColor: 'dark-shade-50' })
-    input(
-      class=inputClass,
-      type=args.withType,
-      name=args.withName,
-      id=args.withId,
-      value=args.withValue,
-      placeholder=args.withPlaceholder
-    )
+	.text-field(class=classes)
+		+input(TextField)

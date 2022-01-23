@@ -1,14 +1,15 @@
-.text-field {
+.input {
 	width: inherit;
-	height: 64px;
+	height: inherit;
 
-	&__label-wrapper {
+	&__label {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		margin-bottom: 5px;
 	}
 
-	&__input {
+	&__text {
 		font-family: Montserrat;
 		font-size: 14px;
 		font-weight: normal;
@@ -51,11 +52,13 @@
 			color: rgba(31, 32, 65, 0.25);
 		}
 
-		&_with-focus {
+		&_focused {
 			border: 1px solid rgba(31, 32, 65, 0.5);
 			animation-name: hover-focus;
 			animation-duration: unset;
 			animation-fill-mode: unset;
+		}
+		&_pseudo {
 		}
 	}
 }

@@ -1,0 +1,23 @@
+include ../text/text
+mixin input(Input={customcontrols: false, focused: false, visible: true, label: false,sublabel: false, toxintype: false, subtype: false, id: false,	accept: false,	alt: false,	autocomplete: false,	autofocus: false,	arialabel: false,	capture: false,	checked: false,	dirname: false,	disabled: false,	form: false,	formaction: false,	formenctype: false,	formmethod: false,	formnovalidate: false,	formtarget: false,	height: false,	list: false,	maxnumeric: false,	maxlength: false,	minnumeric: false,	minlength: false,	multiple: false,	name: false,	pattern: false,	placeholder: false,	readonly: false,	required: true,	size: false,	src: false,	step: false,	type: false,	value: false,	width: false})
+	-
+		var classes = ['input']
+		if (Input.type == "text"){
+			classes.push('input__text')
+		}
+		if (Input.focused) {
+			classes.push('input_focused')
+		}
+		var inputAttrs = Object.entries(Input)
+		var toxintypes = ['textfield', 'masked-text-field', 'dropdown', 'dropdownWithCounter', 'dropdownWithDate', 'dropdownWithRadio', 'dropdownWithCheckbox']
+
+	if Input.label
+		label.input__label(for=Input['id'])
+			+text({ withTag: 'h3', withContent: Input.label })
+			if Input['sublabel']
+				+text({ withTag: 'h3', withContent: Input['sublabel'], withWeight: 'normal', withColor: 'dark-shade-50' })
+	case Input['type']
+		when 'text'
+			input(type='text' class=classes)&attributes(Input)
+		when 'hidden'
+			input(type='hidden' class=classes)&attributes(Input)
