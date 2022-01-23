@@ -7,35 +7,32 @@ mixin head(Head={title, description, keywords, themeColor,	titleColor,	safariPin
 		var titleColor = Head.keywords ? Head.keywords : 'Title color'
 		var safariPinnedTabColor = Head.keywords ? Head.keywords : 'Safari pined message color'
 
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    meta(http-equiv='X-UA-Compatible', content='ie=edge')
-    meta(name='description', content=description)
-    meta(name='keywords', content=keywords)
-    meta(name='msapplication-TileColor', content='#da532c')
-    meta(name='theme-color', content='#ffffff')
-    link(
-      rel='apple-touch-icon',
-      sizes='180x180',
-      href='assets/favicons/apple-touch-icon.png'
-    )
-    link(
-      rel='icon',
-      type='image/png',
-      sizes='32x32',
-      href='assets/favicons/favicon-32x32.png'
-    )
-    link(
-      rel='icon',
-      type='image/png',
-      sizes='16x16',
-      href='assets/favicons/favicon-16x16.png'
-    )
-    link(rel='manifest', href='assets/favicons/site.webmanifest')
-    link(
-      rel='mask-icon',
-      href='assets/favicons/safari-pinned-tab.svg',
-      color='#5bbad5'
-    )
-    title= title
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0')
+		meta(http-equiv='X-UA-Compatible' content='ie=edge')
+		meta(name='description' content=description)
+		meta(name='keywords' content=keywords)
+		meta(name='msapplication-TileColor' content=titleColor)
+		meta(name='theme-color' content=themeColor)
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Material Design Lite">
+		<link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+		<meta name="msapplication-TileColor" content="#3372DF">
+		<link id=canon rel="canonical" href="http://www.example.com/">
+		link(sizes='180x180' rel='apple-touch-icon' href='assets/favicons/apple-touch-icon.png')
+		link(type='image/png' sizes='32x32' rel='icon' href='assets/favicons/favicon-32x32.png')
+		link(type='image/png' sizes='16x16' rel='icon' href='assets/favicons/favicon-16x16.png')
+		link(rel='manifest' href='assets/favicons/site.webmanifest')
+		link(rel='mask-icon' href='assets/favicons/safari-pinned-tab.svg' color=Head.safariPinnedTabColor)
+		title= Head.title
+		block content
