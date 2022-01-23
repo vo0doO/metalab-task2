@@ -6,12 +6,11 @@ include components/counter/counter
 //formatter:off
 doctype html
 html(lang='ru')
-  +head({ title: "UI-KIT - TOXIN", description: "Frontend компоненты в фирменном стиле TOXIN", keywords: "фронтенд, компоненты, дизайн, стиль, toxin" })
-  body(class='ui-kit__body')
-    main(class='ui-kit__main')
-      section(class='sandbox')
-        container(class='sandbox__item-wrapper')
-        div(class='sandbox__item')
-          div(class='dropdown-wrapper')
-            +dropdown({ withLabel: "dropdown", withName: "guest", withId: "guest", withPlaceholder: "Сколько гостей" })
-            +counter([withType, withName, withLabel, withId, withAria, nowValue ,minValue , maxValue, withForm, withArray, withReadonly])
+	+head({ title: "UI-KIT - TOXIN", description: "Frontend компоненты в фирменном стиле TOXIN", keywords: "фронтенд, компоненты, дизайн, стиль, toxin" })
+	body.ui-kit__body
+		main.ui-kit__main
+			section.sandbox
+				container.sandbox__item-wrapper
+					.sandbox__item
+						.sandbox__dropdown-wrapper
+							+dropdown({ withLabel: "dropdown", withName: "guest", withId: "guest", withPlaceholder: "Сколько гостей" })

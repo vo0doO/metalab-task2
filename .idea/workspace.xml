@@ -4,25 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update index.scss - add dropdown wrapper">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update index.scss index.js - fix import">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <list id="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" name="Last change" comment="Update code style">
       <change afterPath="$PROJECT_DIR$/[new]webpack.config.js" afterDir="false" />
     </list>
-    <list id="cb1b62a5-5cb2-4df2-8f6b-4ade053e1fa0" name="new Input" comment="new Input">
-      <change afterPath="$PROJECT_DIR$/src/components/input/input.pug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/input/input.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/text-field/text-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text-field/text-field.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/text-field/text-field.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text-field/text-field.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/text-field/text-field.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text-field/text-field.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.pug" afterDir="false" />
-    </list>
+    <list id="cb1b62a5-5cb2-4df2-8f6b-4ade053e1fa0" name="new-Input" comment="new Input" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +66,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="b05464a8c036c46e61a4d53f60f29e48aaeb9b3e" />
+        <entry key="$PROJECT_DIR$" value="new-Input" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -109,17 +99,6 @@
   <component name="JsBowerSettings">
     <bower-package value="" />
     <bower.json value="" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/index.js">
-      <ranges>
-        <range start1="1" end1="1" start2="1" end2="4" changelist="30763d2f-8cb2-4424-bf98-5a9630af3d70" />
-        <range start1="4" end1="4" start2="7" end2="8" changelist="cb1b62a5-5cb2-4df2-8f6b-4ade053e1fa0" />
-        <range start1="5" end1="6" start2="9" end2="9" changelist="cb1b62a5-5cb2-4df2-8f6b-4ade053e1fa0" />
-        <range start1="8" end1="9" start2="11" end2="11" changelist="30763d2f-8cb2-4424-bf98-5a9630af3d70" />
-        <range start1="10" end1="14" start2="12" end2="12" changelist="cb1b62a5-5cb2-4df2-8f6b-4ade053e1fa0" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -227,35 +206,7 @@
       <workItem from="1642841647903" duration="24500000" />
       <workItem from="1642892434027" duration="2561000" />
       <workItem from="1642947615650" duration="9821000" />
-      <workItem from="1642959490074" duration="4749000" />
-    </task>
-    <task id="LOCAL-00006" summary="Update README.md">
-      <created>1642298637562</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1642298637562</updated>
-    </task>
-    <task id="LOCAL-00007" summary="updated index.pug and index.scss to get the site of the component under development">
-      <created>1642310020976</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1642310020976</updated>
-    </task>
-    <task id="LOCAL-00008" summary="created textfield.pug textfield.scss component text-field complete">
-      <created>1642439055558</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1642439055558</updated>
-    </task>
-    <task id="LOCAL-00009" summary="return to branch master">
-      <created>1642439496657</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1642439496657</updated>
+      <workItem from="1642959490074" duration="5360000" />
     </task>
     <task id="LOCAL-00010" summary="updated .pretier color-palette.pug typography.pug - fix codestyle">
       <created>1642446173078</created>
@@ -575,7 +526,35 @@
       <option name="project" value="LOCAL" />
       <updated>1642960395429</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Update webpack.config.js - chahge devserver settings, performance, optimizatios">
+      <created>1642964437215</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1642964437215</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Update vsc files save development history">
+      <created>1642964524933</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1642964524933</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Update index.scss index.js - fix import">
+      <created>1642964601760</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1642964601760</updated>
+    </task>
+    <task id="LOCAL-00059" summary="new Input">
+      <created>1642964673578</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1642964673578</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <option name="trackContextForNewChangelist" value="true" />
     <servers />
   </component>
@@ -616,9 +595,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="updated index.scss index.pug - dropdown block added in ui-kit form-elements" />
-    <MESSAGE value="на 80% готовый counter, commit для теста новой настройки prettier для pug, боюсь убьет сборку этот новый codestyle" />
-    <MESSAGE value="updated 9 files - component for range fields counter completed" />
     <MESSAGE value="Created worker.js - added service worker" />
     <MESSAGE value="Update .prettierrc and created .prettierrc.cjs for new code style configuration" />
     <MESSAGE value="Update .eslintrc for js code style config" />
@@ -633,7 +609,6 @@
     <MESSAGE value="Update package.json package-lock.json for install new PluginPug and pug-loader" />
     <MESSAGE value="new methods load block settings as config.json&#10;and use web worker.js" />
     <MESSAGE value="Updated head.pug Fixed incorrect loading of block variables." />
-    <MESSAGE value="Update vsc files save development history" />
     <MESSAGE value="Last change" />
     <MESSAGE value="Update code style" />
     <MESSAGE value="Update .prettierrc.cjs added pugSingleQuotes" />
@@ -641,7 +616,11 @@
     <MESSAGE value="Update dropdown.js dropdown.pug dropdown.scss - rename options name, added counter" />
     <MESSAGE value="Update head.pug - rename options name, added new meta and block" />
     <MESSAGE value="Update index.scss - add dropdown wrapper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update index.scss - add dropdown wrapper" />
+    <MESSAGE value="Update webpack.config.js - chahge devserver settings, performance, optimizatios" />
+    <MESSAGE value="Update vsc files save development history" />
+    <MESSAGE value="Update index.scss index.js - fix import" />
+    <MESSAGE value="new Input" />
+    <option name="LAST_COMMIT_MESSAGE" value="new Input" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">

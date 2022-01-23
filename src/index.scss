@@ -1,5 +1,5 @@
-@import "utils/style/vars";
-@import "utils/style/main";
+@import 'utils/style/vars';
+@import 'utils/style/main';
 
 .ui-kit__body {
 	display: flex;
@@ -35,10 +35,6 @@
 
 .sandbox__item {
 	text-align: center;
-}
-
-.text-field-wrapper {
-	width: 320px;
 }
 
 .sandbox__dropdown-wrapper {
