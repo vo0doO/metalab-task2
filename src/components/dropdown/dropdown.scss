@@ -1,88 +1,86 @@
-@import "src/utils/style/vars";
+@import 'src/utils/style/vars';
 
 .dropdown {
 	width: inherit;
-	height: fit-content;
+	height: inherit;
+	background: #ffffff;
+	color: rgba(31, 32, 65, 0.75);
 	box-shadow: 0px 10px 20px 0px rgba(31, 32, 65, 0.05);
 	box-slizing: border-box;
-	
-	
-	&__label-wrapper {
+
+	&__label {
 		display: flex;
 		justify-content: space-between;
+		align-items: flex-start;
 		margin-bottom: 5px;
 	}
-	
-	&__input-wrapper {
-		background: #ffffff;
+
+	&__input {
 		display: flex;
 		align-items: center;
 		flex-direction: row;
 		justify-content: space-between;
 		width: inherit;
-		width: inherit;
 		height: 44px;
 		padding-right: 9px;
 		padding-left: 14px;
-		color: rgba(31, 32, 65, 0.75);
+		font-family: Montserrat;
+		font-size: 14px;
+		font-weight: normal;
+		font-style: normal;
+		line-height: 18px;
 		border: 1px solid rgba(31, 32, 65, 0.25);
 		border-radius: 4px;
-		
-		
+		border-collapse: collapse;
+
 		&:hover {
 			animation-name: hover-focus;
 			animation-duration: 300ms;
 			animation-fill-mode: forwards;
 		}
-		
+
 		&:focus {
 			animation-name: hover-focus;
 			animation-duration: 300ms;
 			animation-fill-mode: forwards;
 		}
-		
+
 		&:focus-visible {
 			animation-name: hover-focus;
 			animation-duration: 300ms;
 			outline: 0;
 			animation-fill-mode: forwards;
 		}
-		
+
 		@keyframes hover-focus {
 			100% {
 				border: 1px solid rgba(31, 32, 65, 0.5);
+				color: rgba(31, 32, 65, 0.75);
 			}
 			50% {
 				border: 1px solid rgba(31, 32, 65, 0.35);
+				color: rgba(31, 32, 65, 0.75);
 			}
 			0% {
 				border: 1px solid rgba(31, 32, 65, 0.25);
+				color: rgba(31, 32, 65, 0.75);
 			}
 		}
-		
+
 		&_static-style_focused {
 			border: 1px solid rgba(31, 32, 65, 0.5);
 			animation-name: hover-focus;
 			animation-duration: unset;
 			animation-fill-mode: unset;
 		}
-		
 	}
-	
-	&__input {
-		font-family: Montserrat;
-		font-size: 14px;
-		font-weight: normal;
-		font-style: normal;
-		line-height: 18px;
-	}
-	
+
 	&__button_arrow {
 		font-family: Materialicons;
 		font-size: 24px;
 		font-weight: 400;
 		font-style: normal;
-		
+		outline: none;
 		line-height: 1;
 		display: inline-block;
 		white-space: nowrap;
@@ -94,28 +92,28 @@
 		-webkit-font-smoothing: antialiased;
 		text-rendering: optimizeLegibility;
 		-moz-osx-font-smoothing: grayscale;
-		-webkit-font-feature-settings: "liga";
-		font-feature-settings: "liga";
-		
+		-webkit-font-feature-settings: 'liga';
+		font-feature-settings: 'liga';
+
 		&:hover {
 			animation-name: arrow-hover-focus;
 			animation-duration: 300ms;
 			animation-fill-mode: forwards;
 		}
-		
+
 		&:focus {
 			animation-name: arrow-hover-focus;
 			animation-duration: 300ms;
 			animation-fill-mode: forwards;
 		}
-		
+
 		&:focus-visible {
 			animation-name: arrow-hover-focus;
 			animation-duration: 300ms;
 			outline: 0;
 			animation-fill-mode: forwards;
 		}
-		
+
 		@keyframes arrow-hover-focus {
 			100% {
 				color: rgba(31, 32, 65, 0.75);
@@ -127,7 +125,5 @@
 				color: rgba(31, 32, 65, 0.75);
 			}
 		}
-		
 	}
 }
-

@@ -1,27 +1,22 @@
 include ../text/text
 
-mixin dropdown(args = {withLabel:false, withSublabel:false, withType: null, withForm:null, withName:null, withId:null, withValue:null, withPlaceholder:null})
-	-
-		var args = args
-		var inputClass = 'dropdown__input'
-
-	.dropdown
-		if args.withLabel
-		label.dropdown_with-label(for=args.withId)
-			.dropdown__label-wrapper
-				+text({withTag: 'h3', withContent: args.withLabel})
-				if args.withSublabel
-					+text({withTag: 'h3', withContent: args.withSublabel, withWeight: 'normal', withColor: 'dark-shade-50'})
-		.dropdown__input-wrapper
+mixin dropdown(DropDown={withLabel:false, withSublabel:false, withType: null, withForm:null, withName:null, withId:null, withValue:null, withPlaceholder:null})
+	form.dropdown(oninput='guests.value=parseInt(people.value)+parseInt(kinds.value)' id=DropDown.withId)
+		if DropDown.withLabel
+			label.dropdown__label(for=DropDown.withId)
+				+text({ withTag: 'h3', withContent: DropDown.withLabel })
+				if DropDown.withSublabel
+					+text({ withTag: 'h3', withContent: DropDown.withSublabel, withWeight: 'normal', withColor: 'dark-shade-50' })
+		.dropdown__input
 			input(
-				value=args.withValue
-				type="hidden"
-				placeholder=args.withPlaceholder
-				name=args.withName
-				id=args.withId
-				form=args.withForm
-				class=inputClass
+				value=DropDown.withValue
+				type='hidden'
+				placeholder=DropDown.withPlaceholder
+				name=DropDown.withName
+				id=DropDown.withId
+				form=DropDown.withForm
 			)
-			span Сколько гостей
-			.dropdown__input
-				.dropdown__button_arrow= 'expand_more'
+			+text({ withTag: 'span', withContent: DropDown.withPlaceholder, withWeight: 'normal', withColor: 'dark-shade-50' })
+			.dropdown__button_arrow= 'expand_more'
+		+counter({ type: 'number', readonly: true, name: 'big', label: 'взрослые', id: 'people', form: 'guest', nowvalue: 3, minvalue: 0, maxvalue: 10, })
+		+counter({ type: 'number', readonly: true, name: 'smal', label: 'взрослые', id: 'kinds', form: 'guests-form', nowvalue: 4, minvalue: 0, maxvalue: 10, })

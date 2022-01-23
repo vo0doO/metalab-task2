@@ -1,23 +1,13 @@
-const $ = require("jquery");
+import $ from 'jquery';
 
-window.onload = (function () {
-  let dropdown = $(".dropdown__input-wrapper");
-  let counter = $(".counter");
+function init() {
+  const dropdown = $('.dropdown__input');
+  const counter = $('.counter');
 
-  if (window.Worker) {
-    const myWorker = new Worker("./utils/js/worker.js");
-
-    myWorker.onmessage = function () {
-      result.textContent = e.data;
-      console.log("Сообщение, полученое от работника");
-    };
-    console.log("работник work");
-  }
-
-  dropdown.on("click", function (e) {
+  dropdown.on('click', (e) => {
     e.preventDefault();
-    let d = e.data;
-    counter.toggleClass("counter_hidden");
+    counter.toggleClass('counter_hidden');
     e.stopPropagation();
   });
-})();
+}
+window.onload = init();
