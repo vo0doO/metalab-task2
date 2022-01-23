@@ -6,18 +6,18 @@
 	*/
 module.exports = {
 		plugins: [ 'prettier-plugin-pug' ],
-		printWidth: 120,
+		printWidth: 80,
 		useTabs: true,
 		pugTabWidth: 2,
 		singleQuote: true,
 		pugSingleQuote: 'true',
 		pugAttributeSeparator: 'none',
 		pugSortAttributes: 'desc',
-		pugWrapAttributesThreshold: 4,
+		pugWrapAttributesThreshold: 3,
 		pugEmptyAttributes: 'all',
 		pugArrowParens: 'always',
 		pugClassNotation: 'literal',
 		pugIdNotation: 'literal',
 		pugClassLocation: 'before-attributes',
-		pugExplicitDiv: false
+		pugExplicitDiv: false,
 }
