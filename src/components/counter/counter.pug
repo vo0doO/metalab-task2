@@ -1,18 +1,33 @@
-mixin counter(Counter={type, name, label, id, aria, nowvalue, minvalue, maxvalue, form, array,role, readonly})
+include ../../components/text/text
+
+-
+	Counter={
+		type:false,
+		name:false,
+		label:false,
+		id:false,
+		value:false,
+		min:false,
+		max:false,
+		form:false,
+		role:false,
+		readonly:false
+	}
+
+mixin counter(Counter)
 	.counter.counter_hidden
 		.counter__field
 			label(for=`${Counter.id}`)
-				+text({ Tag: 'h3', Content: `${Counter.label}` })
+				+text({ withTag: 'h3', withContent: `${Counter.label}` })
 			.counter__input
 				input.counter__input_spy(
-					value=Counter.nowvalue ? Counter.nowvalue : ''
 					type=Counter.Type ? Counter.Type : ''
 					role=`aria-${Counter.role}` ? Counter.role : ''
 					readonly=Counter.readonly ? Counter.readonly : ''
 					name=Counter.Name ? Counter.Name : ''
 					id=Counter.id ? Counter.id : ''
 					form=Counter.form ? Counter.form : ''
-					aria-nowvalue=Counter.nowvalue ? Counter.nowvalue : ''
-					aria-minvalue=Counter.minvalue ? Counter.minvalue : ''
-					aria-maxvalue=Counter.maxvalue ? Counter.maxvalue : ''
+					value=Counter.value ? Counter.value : ''
+					min=Counter.min ? Counter.min : ''
+					max=Counter.max ? Counter.max : ''
 				)

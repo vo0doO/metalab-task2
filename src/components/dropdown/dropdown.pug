@@ -1,7 +1,21 @@
 include ../text/text
 
-mixin dropdown(DropDown={withLabel:false, withSublabel:false, withType: null, withForm:null, withName:null, withId:null, withValue:null, withPlaceholder:null})
-	form.dropdown(oninput='guests.value=parseInt(people.value)+parseInt(kinds.value)' id=DropDown.withId)
+-
+	DropDown={
+		withLabel:false,
+		withSublabel:false,
+		withType: false,
+		withForm:false,
+		withName:false,
+		withId:false,
+		withValue:false,
+		withPlaceholder:false,
+		counter:false
+	}
+
+mixin dropdown(DropDown)
+
+	.dropdown(oninput='guests.value=parseInt(people.value)+parseInt(kinds.value)' id=DropDown.withId)
 		if DropDown.withLabel
 			label.dropdown__label(for=DropDown.withId)
 				+text({ withTag: 'h3', withContent: DropDown.withLabel })
@@ -18,5 +32,6 @@ mixin dropdown(DropDown={withLabel:false, withSublabel:false, withType: null, wi
 			)
 			+text({ withTag: 'span', withContent: DropDown.withPlaceholder, withWeight: 'normal', withColor: 'dark-shade-50' })
 			.dropdown__button_arrow= 'expand_more'
-		+counter({ type: 'number', readonly: true, name: 'big', label: 'взрослые', id: 'people', form: 'guest', nowvalue: 3, minvalue: 0, maxvalue: 10, })
-		+counter({ type: 'number', readonly: true, name: 'smal', label: 'взрослые', id: 'kinds', form: 'guests-form', nowvalue: 4, minvalue: 0, maxvalue: 10, })
+		if DropDown.counter
+			+counter({ type: 'number', readonly: true, name: 'big', label: 'взрослые', id: 'people', form: 'guest', value: 3, min: 0, max: 10, })
+			+counter({ type: 'number', readonly: true, name: 'smal', label: 'дети', id: 'kinds', form: 'guests-form', value: 4, min: 0, max: 10, })
