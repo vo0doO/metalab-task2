@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update index.scss index.js - fix import">
+    <list default="true" id="d28de73d-af60-40e3-a0ee-d473dcd33590" name="dropdown" comment="Update .prettierrc.cjs - fix code style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/counter/counter.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/counter/counter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
     </list>
+    <list id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update index.scss index.pug - fix class names" />
     <list id="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" name="Last change" comment="Update code style">
       <change afterPath="$PROJECT_DIR$/[new]webpack.config.js" afterDir="false" />
     </list>
@@ -188,12 +191,12 @@
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
+    <task id="Default" summary="Default task">
       <changelist id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update index.js index.pug index.scss" />
       <created>1642276192182</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1642959489703</updated>
+      <updated>1642969326316</updated>
       <workItem from="1642276195757" duration="16886000" />
       <workItem from="1642303908251" duration="6187000" />
       <workItem from="1642406487333" duration="54466000" />
@@ -206,28 +209,7 @@
       <workItem from="1642841647903" duration="24500000" />
       <workItem from="1642892434027" duration="2561000" />
       <workItem from="1642947615650" duration="9821000" />
-      <workItem from="1642959490074" duration="5360000" />
-    </task>
-    <task id="LOCAL-00010" summary="updated .pretier color-palette.pug typography.pug - fix codestyle">
-      <created>1642446173078</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1642446173078</updated>
-    </task>
-    <task id="LOCAL-00011" summary="renamed textfield.scss textfield.pug">
-      <created>1642446236820</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1642446236820</updated>
-    </task>
-    <task id="LOCAL-00012" summary="обновлены index.scss index.pug index.js - добавленны text-field и text-field-focused">
-      <created>1642446311656</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1642446311656</updated>
+      <workItem from="1642959490074" duration="9543000" />
     </task>
     <task id="LOCAL-00013" summary="updated text-field.button text-field.skss - renamed arguments">
       <created>1642446384069</created>
@@ -554,7 +536,30 @@
       <option name="project" value="LOCAL" />
       <updated>1642964673578</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Update index.scss index.pug - fix class names">
+      <created>1642964975485</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1642964975485</updated>
+    </task>
+    <task active="true" id="LOCAL-00061" summary="dropdown">
+      <changelist id="d28de73d-af60-40e3-a0ee-d473dcd33590" name="dropdown" comment="" />
+      <created>1642969326196</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1642969326316</updated>
+      <workItem from="1642969327208" duration="114000" />
+    </task>
+    <task id="LOCAL-00062" summary="Update .prettierrc.cjs - fix code style">
+      <created>1642969387338</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1642969387339</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <option name="trackContextForNewChangelist" value="true" />
     <servers />
   </component>
@@ -595,8 +600,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Created worker.js - added service worker" />
-    <MESSAGE value="Update .prettierrc and created .prettierrc.cjs for new code style configuration" />
     <MESSAGE value="Update .eslintrc for js code style config" />
     <MESSAGE value="Update dropdown.pug, index.js. Created dropdown.js. For new custom events for UI" />
     <MESSAGE value="Update webpack.config.js for change devtool settings" />
@@ -620,22 +623,10 @@
     <MESSAGE value="Update vsc files save development history" />
     <MESSAGE value="Update index.scss index.js - fix import" />
     <MESSAGE value="new Input" />
-    <option name="LAST_COMMIT_MESSAGE" value="new Input" />
+    <MESSAGE value="Update index.scss index.pug - fix class names" />
+    <MESSAGE value="Update .prettierrc.cjs - fix code style" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update .prettierrc.cjs - fix code style" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="JavascriptDebugType">
-        <watch expression="this" language="JavaScript" />
-        <watch expression="arguments[&quot;1&quot;]" />
-        <watch expression="arguments[&quot;[[Prototype]]&quot;]" />
-        <watch expression="args" language="JavaScript" />
-      </configuration>
-      <configuration name="js.build_tools.npm">
-        <watch expression="values" />
-        <watch expression="args" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
