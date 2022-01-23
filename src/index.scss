@@ -16,7 +16,6 @@
 }
 
 .sandbox {
-	
 	padding: 20px;
 	align-items: flex-start;
 	display: flex;
@@ -36,13 +35,14 @@
 
 .sandbox__item {
 	text-align: center;
-	
 }
 
 .text-field-wrapper {
 	width: 320px;
 }
 
-.dropdown-wrapper {
+.sandbox__dropdown-wrapper {
 	width: 320px;
+	height: fit-content;
+	margin: 40px;
 }
