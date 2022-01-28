@@ -46,6 +46,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding-top: 3px;
       content: '+';
       text-align: center;
       vertical-align: center;
@@ -57,7 +58,7 @@
       font-weight: bold;
       line-height: 15px;
       width: 32px;
-      padding: 0;
+      padding-bottom: 1px;
       cursor: default;
       text-align: center;
       color: #1f2041;
