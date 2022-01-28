@@ -3,14 +3,22 @@ include components/logo/logo
 include components/text-field/text-field
 include components/dropdown/dropdown
 include components/counter/counter
-//formatter:off
+
 doctype html
 html(lang='ru')
-	+head({ title: "UI-KIT - TOXIN", description: "Frontend компоненты в фирменном стиле TOXIN", keywords: "фронтенд, компоненты, дизайн, стиль, toxin" })
-	body.ui-kit__body
-		main.ui-kit__main
-			section.sandbox
-				container.sandbox__item-wrapper
-					.sandbox__item
-						.sandbox__dropdown-wrapper
-							+dropdown({ withLabel: "dropdown", withName: "guest", withId: "guest", withPlaceholder: "Сколько гостей", counter:true })
+	+head(title= 'UI-KIT - TOXIN', description= 'Frontend компоненты в фирменном стиле TOXIN', keywords= 'фронтенд, компоненты, дизайн, стиль, toxin' )
+		body.ui-kit__body
+			main.ui-kit__main
+				section.sandbox
+					container.sandbox__item-wrapper
+						.sandbox__item
+							.sandbox__dropdown-wrapper
+								+dropdown('guestscounter', 'dropdown', 'counter', 'Сколько гостей', 'listbox', 'guests', '', true)
+									options
+										+counter('взрослые', 'взрослые', 'взрослые', 'guests', 0, 0, 10)
+									options
+										+counter('дети', 'дети', 'дети', 'guests', 0, 0, 10)
+									options
+										+counter('младенцы', 'младенцы', 'младенцы', 'guests', 0, 0, 10)
+								.redblue-toggle#1(aria-pressed="false") Toggle
+									span.redblue-toggle__color Blue
