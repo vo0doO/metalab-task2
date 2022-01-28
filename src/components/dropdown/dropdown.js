@@ -1,13 +1,25 @@
 import $ from 'jquery';
+import { setLogLevel } from 'webpack-dev-server/client/utils/log';
 
-function init() {
-	const dropdown = $('.dropdown__input');
-	const counter = $('.counter');
+setLogLevel('verbose');
 
-	dropdown.on('click', (e) => {
-		e.preventDefault();
-		counter.toggleClass('counter_hidden');
-		e.stopPropagation();
-	});
+function initDropDown() {
+  const dropdown = $('.dropdown');
+  const arrowBtn = dropdown.find('.dropdown__button');
+  const dropItems = dropdown.find('.dropdown__dropitems');
+  const box = dropdown.find('.dropdown__input');
+  const dropdownShowHide = (event) => {
+    event.preventDefault();
+    dropItems.toggleClass('dropdown__dropitems_closed');
+    arrowBtn.toggleClass('dropdown__button_opened');
+    box.toggleClass('dropdown__input_opened');
+  };
+
+  [
+    box,
+    arrowBtn,
+  ].map((item) => item.bind('click', item.event, dropdownShowHide));
+  return 0;
 }
-window.onload = init();
+
+window.load = initDropDown();

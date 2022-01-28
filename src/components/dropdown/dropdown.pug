@@ -1,37 +1,33 @@
 include ../text/text
 
--
-	DropDown={
-		withLabel:false,
-		withSublabel:false,
-		withType: false,
-		withForm:false,
-		withName:false,
-		withId:false,
-		withValue:false,
-		withPlaceholder:false,
-		counter:false
-	}
-
-mixin dropdown(DropDown)
-
-	.dropdown(oninput='guests.value=parseInt(people.value)+parseInt(kinds.value)' id=DropDown.withId)
-		if DropDown.withLabel
-			label.dropdown__label(for=DropDown.withId)
-				+text({ withTag: 'h3', withContent: DropDown.withLabel })
-				if DropDown.withSublabel
-					+text({ withTag: 'h3', withContent: DropDown.withSublabel, withWeight: 'normal', withColor: 'dark-shade-50' })
-		.dropdown__input
-			input(
-				value=DropDown.withValue
-				type='hidden'
-				placeholder=DropDown.withPlaceholder
-				name=DropDown.withName
-				id=DropDown.withId
-				form=DropDown.withForm
-			)
-			+text({ withTag: 'span', withContent: DropDown.withPlaceholder, withWeight: 'normal', withColor: 'dark-shade-50' })
-			.dropdown__button_arrow= 'expand_more'
-		if DropDown.counter
-			+counter({ type: 'number', readonly: true, name: 'big', label: 'взрослые', id: 'people', form: 'guest', value: 3, min: 0, max: 10, })
-			+counter({ type: 'number', readonly: true, name: 'smal', label: 'дети', id: 'kinds', form: 'guests-form', value: 4, min: 0, max: 10, })
+mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=false, form=false, value=false, counters=false)
+	section.dropdown(form=form)
+		if label
+			label.dropdown__label(for=id)
+				+text({
+					withTag: 'h3',
+					withContent: label
+				})
+				if sublabel
+					+text({
+						withTag: 'h3',
+						withContent: sublabel,
+						withWeight: 'normal',
+						withColor: 'dark-shade-50'
+					})
+		input.dropdown__input(
+			list=id
+			value=value
+			type="text"
+			placeholder=`${placeholder}`
+			name=name
+			form=form
+			readonly=true
+			role="combobox"
+			aria-owns="dropitems"
+		)
+		span.dropdown__button= 'expand_more'
+		if counters
+			if block
+				datalist#dropitems.dropdown__dropitems.dropdown__dropitems_closed
+					block

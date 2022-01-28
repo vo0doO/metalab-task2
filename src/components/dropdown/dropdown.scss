@@ -1,129 +1,164 @@
 @import 'src/utils/style/vars';
 
 .dropdown {
-	width: inherit;
-	height: inherit;
-	background: #ffffff;
-	color: rgba(31, 32, 65, 0.75);
-	box-shadow: 0px 10px 20px 0px rgba(31, 32, 65, 0.05);
-	box-slizing: border-box;
+  display: grid;
+  align-items: center;
+  grid-template-areas:
+    'label label'
+    'input input'
+    'counter counter'
+    'reset-btn added-btn';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 25px 43px auto;
 
-	&__label {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		margin-bottom: 5px;
-	}
+  &__label {
+    display: flex;
+    align-items: self-start;
+    justify-content: space-between;
+    grid-area: label;
+  }
 
-	&__input {
-		display: flex;
-		align-items: center;
-		flex-direction: row;
-		justify-content: space-between;
-		width: inherit;
-		height: 44px;
-		padding-right: 9px;
-		padding-left: 14px;
-		font-family: Montserrat;
-		font-size: 14px;
-		font-weight: normal;
-		font-style: normal;
-		line-height: 18px;
-		border: 1px solid rgba(31, 32, 65, 0.25);
-		border-radius: 4px;
-		border-collapse: collapse;
+  &__input {
+    font-family: 'Montserrat', serif;
+    font-size: 14px;
+    width: inherit;
+    height: 100%;
+    border-collapse: collapse;
+    cursor: pointer;
+    color: $dark-shade-75;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    background: #ffffff;
+    box-shadow: 0 10px 20px 0 $dark-shade-5;
+    grid-area: input;
 
-		&:hover {
-			animation-name: hover-focus;
-			animation-duration: 300ms;
-			animation-fill-mode: forwards;
-		}
+    &::placeholder {
+      text-indent: 12px;
+    }
 
-		&:focus {
-			animation-name: hover-focus;
-			animation-duration: 300ms;
-			animation-fill-mode: forwards;
-		}
+    &:hover {
+      animation-name: hover-focus;
+      animation-duration: 300ms;
+      animation-fill-mode: forwards;
+    }
 
-		&:focus-visible {
-			animation-name: hover-focus;
-			animation-duration: 300ms;
-			outline: 0;
-			animation-fill-mode: forwards;
-		}
+    &:focus {
+      animation-name: hover-focus;
+      animation-duration: 300ms;
+      outline: 0;
+      animation-fill-mode: forwards;
+    }
 
-		@keyframes hover-focus {
-			100% {
-				border: 1px solid rgba(31, 32, 65, 0.5);
-				color: rgba(31, 32, 65, 0.75);
-			}
-			50% {
-				border: 1px solid rgba(31, 32, 65, 0.35);
-				color: rgba(31, 32, 65, 0.75);
-			}
-			0% {
-				border: 1px solid rgba(31, 32, 65, 0.25);
-				color: rgba(31, 32, 65, 0.75);
-			}
-		}
+    &:focus-visible {
+      animation-name: hover-focus;
+      animation-duration: 300ms;
+      animation-fill-mode: forwards;
+    }
 
-		&_static-style_focused {
-			border: 1px solid rgba(31, 32, 65, 0.5);
-			animation-name: hover-focus;
-			animation-duration: unset;
-			animation-fill-mode: unset;
-		}
-	}
+    @keyframes hover-focus {
+      100% {
+        border: 1px solid $dark-shade-50;
+      }
 
-	&__button_arrow {
-		font-family: Materialicons;
-		font-size: 24px;
-		font-weight: 400;
-		font-style: normal;
-		outline: none;
-		line-height: 1;
-		display: inline-block;
-		white-space: nowrap;
-		letter-spacing: normal;
-		text-transform: none;
-		word-wrap: normal;
-		color: $dark-shade-50;
-		direction: ltr;
-		-webkit-font-smoothing: antialiased;
-		text-rendering: optimizeLegibility;
-		-moz-osx-font-smoothing: grayscale;
-		-webkit-font-feature-settings: 'liga';
-		font-feature-settings: 'liga';
+      50% {
+        border: 1px solid $dark-shade-25;
+      }
 
-		&:hover {
-			animation-name: arrow-hover-focus;
-			animation-duration: 300ms;
-			animation-fill-mode: forwards;
-		}
+      0% {
+        border: 1px solid $dark-shade-5;
+      }
+    }
 
-		&:focus {
-			animation-name: arrow-hover-focus;
-			animation-duration: 300ms;
-			animation-fill-mode: forwards;
-		}
+    &_opened {
+      cursor: pointer;
+      border: 1px solid $dark-shade-50;
+      border-radius: 4px 4px 0 0;
+    }
+  }
 
-		&:focus-visible {
-			animation-name: arrow-hover-focus;
-			animation-duration: 300ms;
-			outline: 0;
-			animation-fill-mode: forwards;
-		}
+  &__button {
+    font-family: 'Materialicons', serif;
+    font-size: 24px;
+    padding: 9px;
+    cursor: pointer;
+    color: $dark-shade-50;
+    grid-area: input;
+    justify-self: self-end;
 
-		@keyframes arrow-hover-focus {
-			100% {
-				color: rgba(31, 32, 65, 0.75);
-			}
-			50% {
-				color: rgba(31, 32, 65, 0.75);
-			}
-			0% {
-				color: rgba(31, 32, 65, 0.75);
-			}
-		}
-	}
+    &_opened {
+      animation-name: arrow-hover-focus;
+      animation-duration: 500ms;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    &:hover {
+      animation-name: arrow-hover-focus;
+      animation-duration: 300ms;
+      animation-fill-mode: forwards;
+    }
+
+    &:focus {
+      animation-name: arrow-hover-focus;
+      animation-duration: 300ms;
+      animation-fill-mode: forwards;
+    }
+
+    &:focus-visible {
+      animation-name: arrow-hover-focus;
+      animation-duration: 300ms;
+      outline: 0;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes arrow-hover-focus {
+      100% {
+        color: rgb(31 32 65 / 75%);
+      }
+
+      50% {
+        color: rgb(31 32 65 / 65%);
+      }
+
+      0% {
+        color: rgb(31 32 65 / 50%);
+      }
+    }
+  }
+
+  &__dropitems {
+    display: grid;
+    align-items: center;
+    padding: 5px 6px 9px 14px;
+    border: 1px solid;
+    border-top: 0 none;
+    border-radius: 0 0 4px 4px;
+    background: #ffffff;
+    box-shadow: 0 10px 20px 0 $dark-shade-5;
+    grid-area: counter;
+    grid-row-gap: 7px;
+    grid-template-rows: repeat(auto-fill, 3px) auto;
+    box-slizing: border-box;
+
+    &_closed {
+      display: none;
+      animation-name: close;
+      animation-duration: 300ms;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes close {
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      0% {
+        opacity: 0.25;
+      }
+    }
+  }
 }
