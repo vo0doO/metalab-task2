@@ -14,21 +14,19 @@
     <option name="ENABLE_SECOND_REFORMAT" value="true" />
     <option name="SOFT_MARGINS" value="200" />
     <JSCodeStyleSettings version="0">
-      <option name="USE_SEMICOLON_AFTER_STATEMENT" value="false" />
       <option name="FORCE_SEMICOLON_STYLE" value="true" />
       <option name="SPACE_BEFORE_TYPE_COLON" value="true" />
-      <option name="SPACE_BEFORE_GENERATOR_MULT" value="true" />
-      <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACKETS" value="true" />
+      <option name="PROPERTY_PREFIX" value="__" />
+      <option name="FILE_NAME_STYLE" value="LISP_CASE" />
       <option name="REFORMAT_C_STYLE_COMMENTS" value="true" />
       <option name="USE_DOUBLE_QUOTES" value="false" />
       <option name="FORCE_QUOTE_STYlE" value="true" />
-      <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
+      <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
       <option name="VAR_DECLARATION_WRAP" value="2" />
       <option name="OBJECT_LITERAL_WRAP" value="2" />
-      <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
       <option name="SPACES_WITHIN_IMPORTS" value="true" />
       <option name="USE_CHAINED_CALLS_GROUP_INDENTS" value="true" />
-      <option name="SPACES_WITHIN_INTERPOLATION_EXPRESSIONS" value="true" />
+      <option name="SPACES_WITHIN_OBJECT_TYPE_BRACES" value="false" />
       <option name="SPACE_BEFORE_UNARY_NOT" value="true" />
       <option name="SPACE_AFTER_UNARY_NOT" value="true" />
       <option name="IMPORT_SORT_MODULE_NAME" value="true" />
@@ -41,6 +39,9 @@
       <option name="KEEP_SINGLE_LINE_BLOCKS" value="true" />
       <option name="ENFORCE_QUOTES_ON_FORMAT" value="true" />
     </ScssCodeStyleSettings>
+    <editorconfig>
+      <option name="ENABLED" value="false" />
+    </editorconfig>
     <codeStyleSettings language="HTML">
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
@@ -59,23 +60,10 @@
       <option name="RIGHT_MARGIN" value="80" />
       <option name="BLOCK_COMMENT_ADD_SPACE" value="true" />
       <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
-      <option name="BLANK_LINES_AFTER_IMPORTS" value="2" />
-      <option name="BLANK_LINES_AROUND_CLASS" value="2" />
+      <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
       <option name="ELSE_ON_NEW_LINE" value="true" />
       <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
       <option name="ALIGN_MULTILINE_FOR" value="false" />
-      <option name="SPACE_AROUND_UNARY_OPERATOR" value="true" />
-      <option name="SPACE_WITHIN_PARENTHESES" value="true" />
-      <option name="SPACE_WITHIN_METHOD_CALL_PARENTHESES" value="true" />
-      <option name="SPACE_WITHIN_METHOD_PARENTHESES" value="true" />
-      <option name="SPACE_WITHIN_IF_PARENTHESES" value="true" />
-      <option name="SPACE_WITHIN_WHILE_PARENTHESES" value="true" />
-      <option name="SPACE_WITHIN_FOR_PARENTHESES" value="true" />
-      <option name="SPACE_WITHIN_CATCH_PARENTHESES" value="true" />
-      <option name="SPACE_WITHIN_SWITCH_PARENTHESES" value="true" />
-      <option name="SPACE_WITHIN_BRACKETS" value="true" />
-      <option name="SPACE_BEFORE_METHOD_CALL_PARENTHESES" value="true" />
-      <option name="SPACE_BEFORE_METHOD_PARENTHESES" value="true" />
       <option name="PREFER_PARAMETERS_WRAP" value="true" />
       <option name="CALL_PARAMETERS_RPAREN_ON_NEXT_LINE" value="true" />
       <option name="METHOD_PARAMETERS_WRAP" value="1" />
@@ -97,11 +85,27 @@
       <option name="WRAP_ON_TYPING" value="1" />
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
         <option name="TAB_SIZE" value="2" />
         <option name="USE_TAB_CHARACTER" value="true" />
         <option name="SMART_TABS" value="true" />
-        <option name="KEEP_INDENTS_ON_EMPTY_LINES" value="true" />
       </indentOptions>
+      <arrangement>
+        <groups>
+          <group>
+            <type>GROUP_PROPERTY_FIELD_WITH_GETTER_SETTER</type>
+            <order>KEEP</order>
+          </group>
+          <group>
+            <type>TREAT_LAMBDA_INITIALIZED_FIELDS_AS_METHODS</type>
+            <order>KEEP</order>
+          </group>
+          <group>
+            <type>OVERRIDDEN_METHODS</type>
+            <order>KEEP</order>
+          </group>
+        </groups>
+      </arrangement>
     </codeStyleSettings>
     <codeStyleSettings language="SCSS">
       <indentOptions>

@@ -4,31 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a2efea7-8cf0-4777-b8f1-82fb40e4c70e" name="head" comment="Update Update head.pug - added new metadata in block">
+    <list default="true" id="d28de73d-af60-40e3-a0ee-d473dcd33590" name="dropdown" comment="Updated dropdown.***, counter.scss - refactoring styles,template and scripts">
+      <change afterPath="$PROJECT_DIR$/.idea/jsDialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/counter/mdc-based-components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/stylesheetLinters/stylelint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/stylesheetLinters/stylelint.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/toxin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/toxin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/head/head.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/head/head.pug" afterDir="false" />
-    </list>
-    <list id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update index.scss index.pug - fix class names" />
-    <list id="d28de73d-af60-40e3-a0ee-d473dcd33590" name="dropdown" comment="Update counter.pug - fix default attrs name">
-      <changelist_data name="vo0doo" email="kirsanov.bvt@gmail.com" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_17_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_01_2022_23_17__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc.cjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/counter/counter.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/counter/counter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/text/text.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text/text.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/text/text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text/text.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/js/worker.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
-    <list id="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" name="Last change" comment="Update code style">
-      <change afterPath="$PROJECT_DIR$/[new]webpack.config.js" afterDir="false" />
+    <list id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update index.scss index.pug - fix class names" />
+    <list id="17c4e1f6-1690-4856-bc7c-14b64652f1fd" name="codestyle" comment="codestyle">
+      <change beforePath="$PROJECT_DIR$/.prettierrc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc.cjs" afterDir="false" />
     </list>
+    <list id="6a2efea7-8cf0-4777-b8f1-82fb40e4c70e" name="head" comment="Update Update head.pug - added new metadata in block">
+      <change beforePath="$PROJECT_DIR$/src/components/head/head.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/head/head.pug" afterDir="false" />
+    </list>
+    <list id="5d16d3ca-f9f3-46c7-a92c-cbd7da41a9e1" name="Last change" comment="Update code style" />
     <list id="cb1b62a5-5cb2-4df2-8f6b-4ade053e1fa0" name="new-Input" comment="new Input" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,29 +123,6 @@
     <bower-package value="" />
     <bower.json value="" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.idea/workspace.xml">
-      <ranges>
-        <range start1="6" end1="7" start2="6" end2="14" changelist="6a2efea7-8cf0-4777-b8f1-82fb40e4c70e" />
-        <range start1="8" end1="8" start2="15" end2="16" changelist="6a2efea7-8cf0-4777-b8f1-82fb40e4c70e" />
-        <range start1="10" end1="10" start2="18" end2="19" changelist="d28de73d-af60-40e3-a0ee-d473dcd33590" />
-        <range start1="11" end1="11" start2="20" end2="23" changelist="d28de73d-af60-40e3-a0ee-d473dcd33590" />
-        <range start1="12" end1="12" start2="24" end2="26" changelist="d28de73d-af60-40e3-a0ee-d473dcd33590" />
-        <range start1="13" end1="14" start2="27" end2="27" changelist="d28de73d-af60-40e3-a0ee-d473dcd33590" />
-        <range start1="23" end1="23" start2="36" end2="37" changelist="d28de73d-af60-40e3-a0ee-d473dcd33590" />
-        <range start1="71" end1="72" start2="85" end2="86" changelist="d28de73d-af60-40e3-a0ee-d473dcd33590" />
-        <range start1="99" end1="99" start2="113" end2="114" changelist="d28de73d-af60-40e3-a0ee-d473dcd33590" />
-        <range start1="151" end1="152" start2="166" end2="167" changelist="d28de73d-af60-40e3-a0ee-d473dcd33590" />
-        <range start1="212" end1="233" start2="227" end2="227" changelist="d28de73d-af60-40e3-a0ee-d473dcd33590" />
-        <range start1="545" end1="546" start2="539" end2="540" changelist="d28de73d-af60-40e3-a0ee-d473dcd33590" />
-        <range start1="551" end1="553" start2="545" end2="549" changelist="d28de73d-af60-40e3-a0ee-d473dcd33590" />
-        <range start1="561" end1="562" start2="557" end2="581" changelist="6a2efea7-8cf0-4777-b8f1-82fb40e4c70e" />
-        <range start1="601" end1="606" start2="620" end2="621" changelist="6a2efea7-8cf0-4777-b8f1-82fb40e4c70e" />
-        <range start1="627" end1="628" start2="642" end2="647" changelist="6a2efea7-8cf0-4777-b8f1-82fb40e4c70e" />
-        <range start1="629" end1="629" start2="648" end2="651" changelist="d28de73d-af60-40e3-a0ee-d473dcd33590" />
-      </ranges>
-    </file>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -175,8 +156,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="PLAIN_TEXT" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="js.last.introduce.type" value="LET" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/jquery/src/css/addGetHookIf.js" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -188,7 +170,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\vo0\WebstormProjects\toxin\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -202,14 +184,18 @@
       <recent name="C:\Users\vo0\WebstormProjects\toxin\node_modules" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vo0\AppData\Roaming\JetBrains\WebStorm2021.3\scratches" />
       <recent name="C:\Users\vo0\WebstormProjects\toxin\src\utils\js" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="JavaScript Debug.Js Debug">
     <configuration name="Js Debug" type="JavascriptDebugType" uri="http://localhost:8080">
       <method v="2" />
     </configuration>
     <configuration name="index.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/toxin/src/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="scrath.mjs" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/scratches/scrath.mjs" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" activateToolWindowBeforeRun="false" singleton="false" nameIsGenerated="true">
@@ -222,8 +208,14 @@
     <list>
       <item itemvalue="JavaScript Debug.Js Debug" />
       <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="Node.js.scrath.mjs" />
       <item itemvalue="npm.start" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.scrath.mjs" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -249,69 +241,6 @@
       <workItem from="1642892434027" duration="2561000" />
       <workItem from="1642947615650" duration="9821000" />
       <workItem from="1642959490074" duration="9543000" />
-    </task>
-    <task id="LOCAL-00016" summary="обновлен text-field.pug добавлен функционал отображения c лейбелами и без">
-      <created>1642453540730</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1642453540731</updated>
-    </task>
-    <task id="LOCAL-00017" summary="обновлен text-field.pug добавлен функционал masked -text-field">
-      <created>1642459839775</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1642459839775</updated>
-    </task>
-    <task id="LOCAL-00018" summary="обновлен text-field.pug добавлен функционал masked -text-field">
-      <created>1642459875122</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1642459875123</updated>
-    </task>
-    <task id="LOCAL-00019" summary="updated text-field.skss index.pug renamed names containing focused">
-      <created>1642460530189</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1642460530189</updated>
-    </task>
-    <task id="LOCAL-00020" summary="updated text-field.scss fix animation for text-field-with-focus">
-      <created>1642461382546</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1642461382546</updated>
-    </task>
-    <task id="LOCAL-00021" summary="updated text-field.scss index.pug index.scss fix width for text-field">
-      <created>1642463651140</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1642463651140</updated>
-    </task>
-    <task id="LOCAL-00022" summary="updated fonts.scss - added Materialicons">
-      <created>1642498340157</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1642498340157</updated>
-    </task>
-    <task id="LOCAL-00023" summary="updated index.js, created dropdown.js dropdown.pug dropdown.scss - added dropdown block">
-      <created>1642498534743</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1642498534743</updated>
-    </task>
-    <task id="LOCAL-00024" summary="created MaterialIcons-Regular.** - added Materialicons">
-      <created>1642498602377</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1642498602377</updated>
     </task>
     <task id="LOCAL-00025" summary="updated dropdown.scss dropdown.pug dropdown.js index.js - renamed dropdown folder">
       <created>1642498803038</created>
@@ -561,16 +490,22 @@
       <option name="project" value="LOCAL" />
       <updated>1642964975485</updated>
     </task>
-    <task id="LOCAL-00061" summary="dropdown">
+    <task active="true" id="LOCAL-00061" summary="dropdown">
       <changelist id="d28de73d-af60-40e3-a0ee-d473dcd33590" name="dropdown" comment="" />
       <created>1642969326196</created>
       <option name="number" value="00061" />
       <option name="presentableId" value="LOCAL-00061" />
       <option name="project" value="LOCAL" />
-      <updated>1643133944265</updated>
+      <updated>1643206711511</updated>
       <workItem from="1642969327208" duration="1181000" />
       <workItem from="1643033075685" duration="56270000" />
       <workItem from="1643124156215" duration="1283000" />
+      <workItem from="1643206711882" duration="6030000" />
+      <workItem from="1643218787886" duration="13044000" />
+      <workItem from="1643277433404" duration="15384000" />
+      <workItem from="1643313882886" duration="2857000" />
+      <workItem from="1643326599276" duration="1095000" />
+      <workItem from="1643366811521" duration="11137000" />
     </task>
     <task id="LOCAL-00062" summary="Update .prettierrc.cjs - fix code style">
       <created>1642969387338</created>
@@ -593,16 +528,80 @@
       <option name="project" value="LOCAL" />
       <updated>1642969783942</updated>
     </task>
-    <task active="true" id="LOCAL-00065" summary="head">
+    <task id="LOCAL-00065" summary="head">
       <changelist id="6a2efea7-8cf0-4777-b8f1-82fb40e4c70e" name="head" comment="" />
       <created>1643133944142</created>
       <option name="number" value="00065" />
       <option name="presentableId" value="LOCAL-00065" />
       <option name="project" value="LOCAL" />
-      <updated>1643133944265</updated>
-      <workItem from="1643133944609" duration="2805000" />
+      <updated>1643206711511</updated>
+      <workItem from="1643133944609" duration="13334000" />
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Update Update head.pug - added new metadata in block">
+      <created>1643136819990</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1643136819991</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Update vsc files save development history">
+      <created>1643136896508</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1643136896511</updated>
+    </task>
+    <task id="LOCAL-00068" summary="codestyle">
+      <changelist id="17c4e1f6-1690-4856-bc7c-14b64652f1fd" name="codestyle" comment="" />
+      <created>1643206450636</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1643206450636</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Created .stylelintrc.yaml - added to code style linter for BEM">
+      <created>1643367086497</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1643367086497</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Update _main.scss - added block model">
+      <created>1643367175338</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1643367175338</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Update counter.pug - update vars names, attrs values">
+      <created>1643372084007</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1643372084007</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Created counter.js - for added functional for button">
+      <created>1643376262748</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1643376262748</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Updated text.pug, text.scss - fix styles">
+      <created>1643376559634</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1643376559634</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Updated index.*** - refactoring">
+      <created>1643376746773</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1643376746773</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <option name="trackContextForNewChangelist" value="true" />
     <servers />
   </component>
@@ -643,13 +642,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT_PROFILE" value="Project Default" />
-    <MESSAGE value="Deleted main.js worker.js from component directory" />
-    <MESSAGE value="Update .eslintrc" />
-    <MESSAGE value="Update &quot;counter.scss&quot; &quot;counter.pug&quot; for delete non-used vars &amp; added border" />
-    <MESSAGE value="Update .eslintrc - change ecmaVersion" />
-    <MESSAGE value="Update .gitignore" />
-    <MESSAGE value="Update package.json package-lock.json for install new PluginPug and pug-loader" />
-    <MESSAGE value="new methods load block settings as config.json&#10;and use web worker.js" />
     <MESSAGE value="Updated head.pug Fixed incorrect loading of block variables." />
     <MESSAGE value="Last change" />
     <MESSAGE value="Update code style" />
@@ -659,7 +651,6 @@
     <MESSAGE value="Update head.pug - rename options name, added new meta and block" />
     <MESSAGE value="Update index.scss - add dropdown wrapper" />
     <MESSAGE value="Update webpack.config.js - chahge devserver settings, performance, optimizatios" />
-    <MESSAGE value="Update vsc files save development history" />
     <MESSAGE value="Update index.scss index.js - fix import" />
     <MESSAGE value="new Input" />
     <MESSAGE value="Update index.scss index.pug - fix class names" />
@@ -668,11 +659,43 @@
     <MESSAGE value="fix" />
     <MESSAGE value="Update counter.pug - fix default attrs name" />
     <MESSAGE value="Update Update head.pug - added new metadata in block" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Update head.pug - added new metadata in block" />
+    <MESSAGE value="Update vsc files save development history" />
+    <MESSAGE value="Created .stylelintrc.yaml - added to code style linter for BEM" />
+    <MESSAGE value="Update _main.scss - added block model" />
+    <MESSAGE value="Update counter.pug - update vars names, attrs values" />
+    <MESSAGE value="Created counter.js - for added functional for button" />
+    <MESSAGE value="Updated text.pug, text.scss - fix styles" />
+    <MESSAGE value="Updated index.*** - refactoring" />
+    <MESSAGE value="Updated dropdown.***, counter.scss - refactoring styles,template and scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated dropdown.***, counter.scss - refactoring styles,template and scripts" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$APPLICATION_CONFIG_DIR$/scratches/scrath.mjs</url>
+          <line>3</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JavascriptDebugType">
+        <watch expression="init[&quot;[[Scopes]]&quot;][&quot;0&quot;].jquery__WEBPACK_IMPORTED_MODULE_0___default.a.fn" />
+      </configuration>
+      <configuration name="js.build_tools.npm">
+        <watch expression="values" />
+        <watch expression="args" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XPathView.XPathProjectComponent">
+    <history />
+    <find-history />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
