@@ -5,19 +5,30 @@
 	* @type {import('prettier').Options}
 	*/
 module.exports = {
-		plugins: [ 'prettier-plugin-pug' ],
-		printWidth: 80,
-		useTabs: true,
-		pugTabWidth: 2,
-		singleQuote: true,
-		pugSingleQuote: 'true',
-		pugAttributeSeparator: 'none',
-		pugSortAttributes: 'desc',
-		pugWrapAttributesThreshold: 3,
-		pugEmptyAttributes: 'all',
-		pugArrowParens: 'always',
-		pugClassNotation: 'literal',
-		pugIdNotation: 'literal',
-		pugClassLocation: 'before-attributes',
-		pugExplicitDiv: false,
+	plugins: [ require.resolve('@prettier/plugin-pug') ],
+	singleQuote: 'true',
+	pugPrintWidth: 80,
+	pugUseTabs: 'true',
+	pugSemi: 'true',
+	pugBracketSpacing: 'true',
+	pugTabWidth: 2,
+	pugSingleQuote: 'true',
+	pugAttributeSeparator: 'none',
+	pugSortAttributes: 'asc',
+	pugWrapAttributesThreshold: 3,
+	pugEmptyAttributes: 'all',
+	pugArrowParens: 'always',
+	pugClassNotation: 'literal',
+	pugIdNotation: 'literal',
+	pugClassLocation: 'before-attributes',
+	pugExplicitDiv: false,
+	overrides: [
+		{
+			/** Sass-specific configuration. */
+			files: '*.scss',
+			options: {
+				singleQuote: true,
+			},
+		},
+	],
 }
