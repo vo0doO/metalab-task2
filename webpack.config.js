@@ -11,11 +11,14 @@ const paths = {
     __dirname,
     './node_modules/jquery.inputmask/extra/dependencyLibs/inputmask.dependencyLib.js',
   ),
-  inputmask: path.join(__dirname, './node_modules/jquery.inputmask/dist/inputmask/inputmask.js'),
+  inputmask: path.join(
+    __dirname,
+    './node_modules/jquery.inputmask/dist/inputmask/inputmask.js',
+  ),
 };
 
 const pugLoaderOptions = {
-  method: 'compile',
+  method: 'render',
   esModule: true,
 };
 
@@ -96,7 +99,9 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
+          process.env.NODE_ENV === 'production'
+            ? MiniCssExtractPlugin.loader
+            : 'style-loader',
           {
             loader: 'css-loader',
             options: { sourceMap: true },
@@ -178,10 +183,6 @@ module.exports = {
           from: path.resolve(__dirname, 'src/assets/img'),
           to: './assets/img',
         },
-        {
-          from: path.resolve(__dirname, 'src/utils/js/worker.js'),
-          to: './utils/js/worker.js',
-        },
       ],
     }),
     new HtmlWebpackPlugin({
@@ -195,29 +196,27 @@ module.exports = {
 
   optimization: {
     splitChunks: {
-      // chunks: 'all',
-      maxSize: 5000,
-      minSize: 5000,
+      chunks: 'all',
+      // maxSize: 500000,
+      // minSize: 500000,
     },
   },
-
-  performance: {
-    hints: mode == 'production' ? 'error' : 'warning', // в режиме разработки размер CSS и JS может быть больше,
-    // чем в рабочем
-    maxEntrypointSize: mode === 'production' ? 1024000 : 4096000,
-    maxAssetSize: mode === 'production' ? 1024000 : 4096000,
-  },
+  //
+  // performance: {
+  //   hints: mode == 'production' ? 'error' : 'warning',
+  //   maxEntrypointSize: mode === 'production' ? 1024000000 : 4096000000,
+  //   maxAssetSize: mode === 'production' ? 1024000000 : 4096000000,
+  // },
   devServer: {
     static: {
       directory: path.join(__dirname, ''),
     },
     compress: true,
+    https: false,
     port: 8080,
-    https: false, // открыть в браузере по умолчанию
-    open: true, // Определение обозревателя разработки
     open: {
       app: {
-        name: 'Firefox',
+        name: 'firefox',
       },
     },
     liveReload: true,
