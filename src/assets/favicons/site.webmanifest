@@ -1,6 +1,6 @@
 {
-	"name": "",
-	"short_name": "",
+	"name": "Toxin - поиск номеров в отелях",
+	"short_name": "toxin",
 	"icons": [
 		{
 			"src": "/android-chrome-192x192.png",

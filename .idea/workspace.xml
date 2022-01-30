@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d28de73d-af60-40e3-a0ee-d473dcd33590" name="dropdown" comment="Updated dropdown.***, counter.scss - refactoring styles,template and scripts">
-      <change afterPath="$PROJECT_DIR$/.idea/jsDialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterDir="false" />
+    <list default="true" id="d28de73d-af60-40e3-a0ee-d473dcd33590" name="dropdown" comment="Update dropdown.scss counter.scss - fix style">
       <change afterPath="$PROJECT_DIR$/src/components/counter/mdc-based-components.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/stylesheetLinters/stylelint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/stylesheetLinters/stylelint.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/toxin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/toxin.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/counter/counter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/text/text.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text/text.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/js/main.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/js/worker.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
@@ -241,41 +231,6 @@
       <workItem from="1642892434027" duration="2561000" />
       <workItem from="1642947615650" duration="9821000" />
       <workItem from="1642959490074" duration="9543000" />
-    </task>
-    <task id="LOCAL-00025" summary="updated dropdown.scss dropdown.pug dropdown.js index.js - renamed dropdown folder">
-      <created>1642498803038</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1642498803038</updated>
-    </task>
-    <task id="LOCAL-00026" summary="updated index.scss index.pug - dropdown block added in ui-kit form-elements">
-      <created>1642500322303</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1642500322303</updated>
-    </task>
-    <task id="LOCAL-00027" summary="на 80% готовый counter, commit для теста новой настройки prettier для pug, боюсь убьет сборку этот новый codestyle">
-      <created>1642594102136</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1642594102139</updated>
-    </task>
-    <task id="LOCAL-00028" summary="updated 9 files - component for range fields counter completed">
-      <created>1642616260335</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1642616260336</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Created worker.js - added service worker">
-      <created>1642710062554</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1642710062555</updated>
     </task>
     <task id="LOCAL-00030" summary="Update .prettierrc and created .prettierrc.cjs for new code style configuration">
       <created>1642710129656</created>
@@ -505,7 +460,7 @@
       <workItem from="1643277433404" duration="15384000" />
       <workItem from="1643313882886" duration="2857000" />
       <workItem from="1643326599276" duration="1095000" />
-      <workItem from="1643366811521" duration="11137000" />
+      <workItem from="1643366811521" duration="20664000" />
     </task>
     <task id="LOCAL-00062" summary="Update .prettierrc.cjs - fix code style">
       <created>1642969387338</created>
@@ -601,7 +556,42 @@
       <option name="project" value="LOCAL" />
       <updated>1643376746773</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Updated dropdown.***, counter.scss - refactoring styles,template and scripts">
+      <created>1643378074553</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1643378074553</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Update vsc files save development history">
+      <created>1643378138084</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1643378138084</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Update index.js - fix import">
+      <created>1643391466072</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1643391466074</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Update dropdown.scss - fix style">
+      <created>1643391544595</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1643391544595</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Update dropdown.scss counter.scss - fix style">
+      <created>1643392090657</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1643392090657</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <option name="trackContextForNewChangelist" value="true" />
     <servers />
   </component>
@@ -642,9 +632,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT_PROFILE" value="Project Default" />
-    <MESSAGE value="Updated head.pug Fixed incorrect loading of block variables." />
-    <MESSAGE value="Last change" />
-    <MESSAGE value="Update code style" />
     <MESSAGE value="Update .prettierrc.cjs added pugSingleQuotes" />
     <MESSAGE value="Update counter.pug counter.scss added -with-border modificator" />
     <MESSAGE value="Update dropdown.js dropdown.pug dropdown.scss - rename options name, added counter" />
@@ -659,7 +646,6 @@
     <MESSAGE value="fix" />
     <MESSAGE value="Update counter.pug - fix default attrs name" />
     <MESSAGE value="Update Update head.pug - added new metadata in block" />
-    <MESSAGE value="Update vsc files save development history" />
     <MESSAGE value="Created .stylelintrc.yaml - added to code style linter for BEM" />
     <MESSAGE value="Update _main.scss - added block model" />
     <MESSAGE value="Update counter.pug - update vars names, attrs values" />
@@ -667,9 +653,12 @@
     <MESSAGE value="Updated text.pug, text.scss - fix styles" />
     <MESSAGE value="Updated index.*** - refactoring" />
     <MESSAGE value="Updated dropdown.***, counter.scss - refactoring styles,template and scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated dropdown.***, counter.scss - refactoring styles,template and scripts" />
+    <MESSAGE value="Update vsc files save development history" />
+    <MESSAGE value="Update index.js - fix import" />
+    <MESSAGE value="Update dropdown.scss - fix style" />
+    <MESSAGE value="Update dropdown.scss counter.scss - fix style" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update dropdown.scss counter.scss - fix style" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
