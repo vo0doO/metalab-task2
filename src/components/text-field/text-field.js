@@ -4,10 +4,9 @@
 import $ from 'jquery';
 import 'jquery.inputmask';
 
-window.onload = (event) => {
+window.onload = function () {
 	$(() => {
-		let input = $('.text-field__input.text-field__input_with-mask');
-		console.log(input);
+		const input = $('.text-field__input.text-field__input_with-mask');
 		input.inputmask('dd.mm.yyyy', {
 			alias: 'date',
 			placeholder: 'ДД.ММ.ГГГГ',
