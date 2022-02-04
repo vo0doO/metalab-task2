@@ -41,7 +41,7 @@ rules:
   selector-pseudo-element-no-unknown:
     - true
     - ignorePseudoElements:
-        ng-deep
+      - ng-deep
   scss/at-rule-no-unknown: true
   # Конфигурация не позволяет этого:
   #
