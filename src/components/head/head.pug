@@ -1,31 +1,6 @@
--
-	Head = [
-		appleTouchIconPrecomposed = false,
-		msapplicationTileImage = false,
-		icon192x192 = false,
-		dnsPrefetch = false,
-		twitterCard = false,
-		twitterSite = false,
-		twitterImage = false,
-		ogImage = false,
-		ogUrl = false,
-		canonical = false,
-		title = false,
-		description = false,
-		keywords = false,
-		themeColor = false,
-		titleColor = false,
-		safariPinnedTabColor = false
-	]
 
-mixin head(...Head)
-	-
-		var title = title ? title : 'Page title'
-		var description = description ? description : 'Page description'
-		var keywords = keywords ? keywords : 'Page keywords'
-		var themeColor = keywords ? keywords : 'Page keywords'
-		var titleColor = keywords ? keywords : 'Title color'
-		var safariPinnedTabColor = keywords ? keywords : 'Safari pined message color'
+//- appleTouchIconPrecomposed= '', msapplicationTileImage= '', icon192x192= '', dnsPrefetch= '', twitterCard= '', twitterSite= '', twitterImage= '', ogImage= '', ogUrl= '', canonical= '', title= '', description= '', keywords= '', themeColor= '', titleColor= '', safariPinnedTabColor= ''
+mixin head(title= 'Page title', description= 'Page description', keywords= 'Page keywords', themeColor= 'Page keywords', titleColor= 'Title color', safariPinnedTabColor= 'Safari pined message color',)
 
 	head
 		meta(charset='UTF-8')
@@ -50,15 +25,15 @@ mixin head(...Head)
 		meta(name="msapplication-TileColor" content="#3372DF")
 		link(id="canonical" rel="canonical" href="FIX_ME!!!!")
 		link(rel="dns-prefetch" href="FIX_ME!!!!")
-		meta(name="twitter:card" content="FIX_ME!!!!")
-		meta(name="twitter:site" content="FIX_ME!!!!")
-		meta(name="twitter:title" content=title)
-		meta(name="twitter:description" content=description)
-		meta(name="twitter:image" content="FIX_MEE!!!")
-		meta(property="og:image" content="FIX_MEE!!!" "thumbnailUrl")
-		meta(property="og:title" content=title)
-		meta(property="og:url" content="FIX_MEE!!!")
-		meta(property="og:site_name" content=title)
-		meta(property="og:description" content=description)
+		meta(name="twitter=card" content="FIX_ME!!!!")
+		meta(name="twitter=site" content="FIX_ME!!!!")
+		meta(name="twitter=title" content=title)
+		meta(name="twitter=description" content=description)
+		meta(name="twitter=image" content="FIX_MEE!!!")
+		meta(property="og=image" content="FIX_MEE!!!" "thumbnailUrl")
+		meta(property="og=title" content=title)
+		meta(property="og=url" content="FIX_MEE!!!")
+		meta(property="og=site_name" content=title)
+		meta(property="og=description" content=description)
 		title=title
 		block

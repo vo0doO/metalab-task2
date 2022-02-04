@@ -6,7 +6,7 @@ include components/counter/counter
 
 doctype html
 html(lang='ru')
-	+head(title= 'UI-KIT - TOXIN', description= 'Frontend компоненты в фирменном стиле TOXIN', keywords= 'фронтенд, компоненты, дизайн, стиль, toxin' )
+	+head('UI-KIT - TOXIN', 'Frontend компоненты в фирменном стиле TOXIN', 'фронтенд, компоненты, дизайн, стиль, toxin')
 		body.ui-kit__body
 			main.ui-kit__main
 				section.sandbox
@@ -20,5 +20,3 @@ html(lang='ru')
 										+counter('дети', 'дети', 'дети', 'guests', 0, 0, 10)
 									options
 										+counter('младенцы', 'младенцы', 'младенцы', 'guests', 0, 0, 10)
-								.redblue-toggle#1(aria-pressed="false") Toggle
-									span.redblue-toggle__color Blue
