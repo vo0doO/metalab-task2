@@ -1,25 +1,25 @@
-import $ from 'jquery';
-import { log, setLogLevel } from 'webpack-dev-server/client/utils/log';
+import jQuery from 'jquery';
 
-setLogLevel('verbose');
+const $ = jQuery.noConflict();
 
 const initCounter = async (args) => {
   if (typeof args === 'undefined') {
-    throw new Error('Undefined arguments');
+    console.error(new Error('Undefined arguments'));
   }
   try {
     const increment = $('.counter__input');
-    log('Increment', increment);
+    console.info('Increment', increment);
   } catch (e) {
-    log('При инициализации кнопок коунтера возникла ошибка: ', e);
+    console.error(new Error(`При инициализации кнопок коунтера возникла ошибка: ${e}`));
     throw new Error(e);
   }
 };
 
 const ready = async () => {
   try {
-    document.addEventListener('DOMContentLoaded', (e) => {
-      log('DOM loaded: ', e);
+    document.addEventListener('DOMContentLoaded', () => {
+      console.info('DOM loaded');
+      console.info('im here');
     });
     return true;
   } catch (e) {
@@ -27,4 +27,7 @@ const ready = async () => {
   }
 };
 
-initCounter(ready()).then((r) => { log(r); });
+ready();
+initCounter("counter");
+console.info('im here - file');
+export { ready, initCounter };
