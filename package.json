@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npx webpack serve --config webpack.config.js --open --live-reload --stats-children --stats-error-details",
-    "test": "set NODE_ENV=development&&.\\node_modules\\.bin\\webpack serve --config test.config.js --open --stats-children --stats-error-details",
-    "dev": "set NODE_ENV=development&&.\\node_modules\\.bin\\webpack",
-    "build": "set NODE_ENV=production&&.\\node_modules\\.bin\\webpack --stats-children --stats-error-details",
+    "start": "npx webpack serve --stats-children --stats-error-details",
+    "test": "set NODE_ENV=development&&npx webpack serve --config test.config.js --open --stats-children --stats-error-details",
+    "dev": "set NODE_ENV=development&&npx webpack",
+    "build": "set NODE_ENV=production&&npx webpack --stats-children --stats-error-details",
     "full-reset-cache": "webpack --resolve-roots-reset --resolve-loader-imports-fields-reset --resolve-loader-modules-reset --resolve-loader-imports-fields-reset --resolve-loader-extensions-reset --resolve-loader-description-files-reset"
   },
   "browserslist": [
@@ -26,13 +26,14 @@
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
-    "@material/base": "^13.0.0",
     "@prettier/plugin-pug": "^1.19.1",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
     "@webdiscus/pug-loader": "^1.6.2",
     "autoprefixer": "^10.4.1",
     "babel-loader": "^8.2.3",
+    "babel-polyfill": "^6.26.0",
+    "console-browserify": "^1.2.0",
     "copy-webpack-plugin": "^10.2.0",
     "css-loader": "^6.5.1",
     "css-mqpacker": "^7.0.0",
@@ -40,14 +41,9 @@
     "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "follow-redirects": ">=1.14.7",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
-    "install": "^0.13.0",
     "mini-css-extract-plugin": "^2.4.5",
-    "node-forge": "^1.2.0",
-    "npm": "^8.3.0",
-    "pnpm": "^6.27.0",
     "postcss": "^8.4.5",
     "postcss-combine-media-query": "^1.0.1",
     "postcss-flexbugs-fixes": "^5.0.2",
@@ -56,6 +52,8 @@
     "presets": "^0.1.0",
     "prettier": "^2.5.1",
     "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6",
+    "pug-html-loader": "^1.1.5",
     "pug-loader": "^2.4.0",
     "pug-plugin": "^1.2.3",
     "resolve-url-loader": "^4.0.0",
@@ -75,10 +73,7 @@
     "webpack-dev-server": "^4.7.2"
   },
   "dependencies": {
-    "webpack-dev-server": "^4.7.2",
     "jquery": "^3.6.0",
-    "jquery.inputmask": "^3.3.1",
-    "pug-cli": "^1.0.0-alpha6",
-    "pug-html-loader": "^1.1.5"
+    "jquery.inputmask": "^3.3.1"
   }
 }
