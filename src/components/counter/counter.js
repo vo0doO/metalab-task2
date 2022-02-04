@@ -4,14 +4,13 @@ const $ = jQuery.noConflict();
 
 const initCounter = async (args) => {
   if (typeof args === 'undefined') {
-    console.error(new Error('Undefined arguments'));
+    throw new Error('Undefined arguments');
   }
   try {
     const increment = $('.counter__input');
     console.info('Increment', increment);
   } catch (e) {
-    console.error(new Error(`При инициализации кнопок коунтера возникла ошибка: ${e}`));
-    throw new Error(e);
+    throw new Error(`При инициализации кнопок коунтера возникла ошибка: ${e}`);
   }
 };
 
@@ -19,7 +18,6 @@ const ready = async () => {
   try {
     document.addEventListener('DOMContentLoaded', () => {
       console.info('DOM loaded');
-      console.info('im here');
     });
     return true;
   } catch (e) {
@@ -29,5 +27,4 @@ const ready = async () => {
 
 ready();
 initCounter("counter");
-console.info('im here - file');
 export { ready, initCounter };
