@@ -9,6 +9,31 @@
     gap: 30%;
   }
 
+  &__decrement, &__increment {
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 22px;
+    width: 30px;
+    height: 30px;
+    padding-right: 6px;
+    padding-left: 6px;
+    color: rgba(31, 32, 65, 0.5);
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__decrement {
+    opacity: 0.38;
+  }
+
+  &__increment {
+    padding-top: 3px;
+  }
+
   &__input {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -16,41 +41,6 @@
     line-height: 15px;
     display: flex;
     color: $dark-shade-100;
-
-    &::after,
-    &::before {
-      font-size: 18px;
-      font-weight: normal;
-      font-style: normal;
-      line-height: 22px;
-      width: 30px;
-      height: 30px;
-      padding-right: 6px;
-      padding-left: 6px;
-      color: rgba(31, 32, 65, 0.5);
-      border: 1px solid rgba(31, 32, 65, 0.25);
-      border-radius: 22px;
-    }
-
-    &::before {
-      line-height: 22px;
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-      justify-content: space-around;
-      content: '-';
-      opacity: 0.38;
-    }
-
-    &::after {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 3px;
-      content: '+';
-      text-align: center;
-      vertical-align: center;
-    }
 
     &_spy {
       font-family: 'Montserrat', sans-serif;

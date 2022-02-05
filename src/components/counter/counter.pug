@@ -9,6 +9,7 @@ mixin counter(name='', label='', id='', form='', value=1, min=0, max=0, ...items
           withContent: `${ label }`
         })
       .counter__input
+        span.counter__decrement -
         input.counter__input_spy(
           toggled=true
           type='number'
@@ -20,3 +21,4 @@ mixin counter(name='', label='', id='', form='', value=1, min=0, max=0, ...items
           min=min
           max=max
         )
+        span.counter__increment +
