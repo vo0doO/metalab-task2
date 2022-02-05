@@ -27,8 +27,8 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
 			aria-owns="dropitems"
 			aria-expanded="false"
 		)
-		span.dropdown__button= 'expand_more'
+		span.dropdown__arrow-button= 'expand_more'
 		if counters
 			if block
-				datalist#dropitems.dropdown__dropitems.dropdown__dropitems_closed
+				datalist#dropitems.dropdown__items.dropdown__items_closed
 					block
