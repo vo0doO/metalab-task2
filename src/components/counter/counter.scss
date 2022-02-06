@@ -9,7 +9,8 @@
     gap: 30%;
   }
 
-  &__decrement, &__increment {
+  &__decrement,
+  &__increment {
     font-size: 18px;
     font-weight: normal;
     font-style: normal;
@@ -24,14 +25,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    &[disabled] {
+      opacity: 0.38;
+    }
   }
 
-  &__decrement {
+  &__decrement_disabled {
     opacity: 0.38;
   }
 
   &__increment {
     padding-top: 3px;
+  }
+
+  &__increment_disabled {
+    opacity: 0.38;
   }
 
   &__input {
