@@ -1,15 +1,16 @@
 include ../../components/text/text
 
 mixin counter(name='', label='', id='', form='', value=1, min=0, max=0, ...items)
-  .counter
-    .counter__field
+  
+  .counter(id=id)
+    .counter__field(id=id)
       label.counter__label(for=id)
         +text({
           withTag: 'h3',
           withContent: `${ label }`
         })
-      .counter__input
-        span.counter__decrement -
+      .counter__input(id=id)
+        span.counter__decrement(id=id disabled) -
         input.counter__input_spy(
           toggled=true
           type='number'
@@ -21,4 +22,4 @@ mixin counter(name='', label='', id='', form='', value=1, min=0, max=0, ...items
           min=min
           max=max
         )
-        span.counter__increment +
+        span.counter__increment(id=id) +
