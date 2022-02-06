@@ -25,21 +25,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     &[disabled] {
       opacity: 0.38;
+      cursor: not-allowed;
     }
-  }
-
-  &__decrement_disabled {
-    opacity: 0.38;
   }
 
   &__increment {
     padding-top: 3px;
-  }
-
-  &__increment_disabled {
-    opacity: 0.38;
   }
 
   &__input {
