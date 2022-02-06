@@ -32,6 +32,7 @@
     background: #ffffff;
     box-shadow: 0 10px 20px 0 $dark-shade-5;
     grid-area: input;
+    text-indent: 12px;
 
     &::placeholder {
       text-indent: 12px;
@@ -136,23 +137,23 @@
   }
 
   &__items {
-    display: grid;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 2px 6px 9px 14px;
-    border: 1px solid $dark-shade-50;
-    border-top: 0 none;
-    border-radius: 0 0 4px 4px;
-    background: #ffffff;
-    box-shadow: 0 10px 20px 0 $dark-shade-5;
-    grid-area: counter;
-    grid-template-rows: repeat(3, 37px) auto;
+    display: none;
+    animation-name: close;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
 
-    &_closed {
-      display: none;
-      animation-name: close;
-      animation-duration: 300ms;
-      animation-fill-mode: forwards;
+    &_opened {
+      display: grid;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 2px 6px 9px 14px;
+      border: 1px solid $dark-shade-50;
+      border-top: 0 none;
+      border-radius: 0 0 4px 4px;
+      background: #ffffff;
+      box-shadow: 0 10px 20px 0 $dark-shade-5;
+      grid-area: counter;
+      grid-template-rows: repeat(3, 37px) auto;
     }
 
     @keyframes close {
