@@ -1,6 +1,11 @@
 import $ from 'jquery';
 
 class Counter {
+
+  static get observedAttributes() {
+    return ['value', 'disabled'];
+  }
+
   constructor() {
     this.input = $('.counter__input_spy');
     this.increment = $('.counter__increment');
@@ -8,17 +13,44 @@ class Counter {
     this.observer = new MutationObserver(this.observerCallback);
     this._incrementsEvents = this._incrementsEvents.bind(this);
     this._decrementsEvents = this._decrementsEvents.bind(this);
+    this._inputsEvents = this._inputsEvents.bind(this);
+    this._handleInputChange = this._handleInputChange.bind(this);
   }
 
-  init() {
+  connectedCallback() {
     this._decrementsEvents();
     this._incrementsEvents();
+    this._inputsEvents();
     this.observe();
   }
 
-  observerCallback(mutationsList, observer) {
-    console.log(mutationsList);
-    console.log(observer);
+  disconnectedCallback() {
+    this.input.off('change.counter.input.value');
+    this.increment.off('click.counter.increment');
+    this.increment.off('change.counter.increment');
+    this.decrement.off('change.counter.decrement');
+    this.decrement.off('click.counter.decrement');
+    this.observer.takeRecords();
+  }
+
+  get observerConfig() {
+    return {
+      attributes: true,
+      attributeOldValue: true,
+      attributeFilter: Counter.observedAttributes
+    };
+  }
+
+  observerCallback(mutations) {
+    for (let mutation of mutations) {
+      if (mutation.type === 'attributes') {
+        let value = mutation.target.value;
+        let oldValue = mutation.oldValue;
+        if (value !== oldValue) {
+          $(mutation.target).trigger('change.counter.input.value');
+        }
+      }
+    }
   }
 
   observe() {
@@ -34,47 +66,59 @@ class Counter {
   setDisabled(item) {
     let disabled = this.getDisabled(item);
     if (disabled === 'disabled') {
-      $(item).removeAttr('disabled');
-    } else {
-      $(item).attr('disabled', '');
+      return;
     }
+    $(item).attr('disabled', '');
+    return;
   }
 
-  get observerConfig() {
-    return {
-      subtree: true,
-      childList: true,
-      characterData: true,
-      attributes: true
-    };
+  removeDisabled(item) {
+    let disabled = this.getDisabled(item);
+    if (disabled !== 'disabled') {
+      return;
+    }
+    item.removeAttr('disabled');
   }
 
-  _onOfBtn(elem, input) {
-    input = $(input);
+  toggleDisabled(input, incr, decr) {
     const max = parseInt(input.attr('max'));
     const min = parseInt(input.attr('min'));
     const val = parseInt(input.val());
-    console.log(val, min, max);
-    if (val < max) {
-      if (elem.hasClass('counter__increment_disabled')) {
-        elem.removeClass('counter__increment_disabled');
-      }
+    if (val < max && val >= min) {
+      this.removeDisabled(incr);
     }
     if (val >= max) {
-      if (!elem.hasClass('counter__increment_disabled')) {
-        elem.addClass('counter__increment_disabled');
-      }
+      this.setDisabled(incr);
     }
     if (val > min) {
-      if (elem.hasClass('counter__decrement_disabled')) {
-        elem.removeClass('counter__decrement_disabled');
-      }
+      this.removeDisabled(decr);
     }
     if (val <= min) {
-      if (!elem.hasClass('counter__decrement_disabled')) {
-        elem.addClass('counter__decrement_disabled');
-      }
+      this.setDisabled(decr);
     }
+  }
+
+  _handleInputChange(event, elem) {
+    let incr = $(event.target).next();
+    let decr = $(event.target).prev();
+    incr.triggerHandler('change.counter.increment', {
+      'incr': incr,
+      'decr': decr
+    });
+    decr.triggerHandler('change.counter.decrement', {
+      'incr': incr,
+      'decr': decr
+    });
+  }
+
+  _inputsEvents() {
+    const self = this;
+    self.input.each(function () {
+      var elem = $(this);
+      elem.on({
+        'change.counter.input.value': self._handleInputChange
+      });
+    });
   }
 
   _incrementsEvents() {
@@ -83,9 +127,12 @@ class Counter {
       var elem = $(this);
       var input = elem.prev().get()[0];
       elem.on({
-        'click': function (event) {
+        'click.counter.increment': function (event) {
           input.stepUp();
           $(input).attr('value', input.value);
+        },
+        'change.counter.increment': (event, data) => {
+          self.toggleDisabled($(input), data.incr, data.decr);
         }
       });
     });
@@ -97,9 +144,12 @@ class Counter {
       var elem = $(this);
       var input = elem.next().get()[0];
       elem.on({
-        'click': function (event) {
+        'click.counter.decrement': function (event) {
           input.stepDown();
           $(input).attr('value', input.value);
+        },
+        'change.counter.decrement': (event, data) => {
+          self.toggleDisabled($(input), data.incr, data.decr);
         }
       });
     });
@@ -110,27 +160,9 @@ const ready = async () => {
   try {
     document.addEventListener('DOMContentLoaded', () => {
       const counter = new Counter();
-      counter.init();
+      counter.connectedCallback();
       console.info('Counter init');
-
-      // var targetNodes = document.querySelectorAll('.counter__input_spy');
-
-      // const config = {
-      //   subtree: true,
-      //   childList: true,
-      //   characterData: true,
-      //   attributes: true,
-      // };
-
-      // const callback = function (mutationsList, observer) {
-      //   console.log(mutationsList);
-      //   console.log(observer);
-      // };
-
-      // const observerInput = new MutationObserver(callback);
-      // Array.map(targetNodes, (node) => {
-      //   observerInput.observe(node, config);
-      // });
+      console.clear();
     });
   } catch (e) {
     throw new Error(`DOM not loaded: ${e}`);
@@ -138,9 +170,6 @@ const ready = async () => {
 };
 
 ready();
-
-
-
 
 export {
   Counter
