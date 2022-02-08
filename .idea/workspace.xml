@@ -5,14 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d28de73d-af60-40e3-a0ee-d473dcd33590" name="dropdown" comment="Update dropdown.scss counter.scss - fix style">
-      <change afterPath="$PROJECT_DIR$/src/components/counter/mdc-based-components.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/toxin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/toxin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/codeql-analysis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/codeql-analysis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_07_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_07_[Last_change]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_07_[new_Input]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_07__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_07__Last_change_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_07__new_Input_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_09_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_09_[Last_change]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_09_[new_Input]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_09__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_09__Last_change_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_09__new_Input_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.jshintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.jshintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.pretitterignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.stylelintignore" beforeDir="false" afterPath="$PROJECT_DIR$/.stylelintignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.stylelintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.stylelintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.stylelintrc.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/tasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/tasks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/toxin.code-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/toxin.code-workspace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/favicons/site.webmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/favicons/site.webmanifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/fonts/fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/fonts/fonts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/color-and-type/color-and-type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/color-and-type/color-and-type.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/color-palette/color-palette.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/color-palette/color-palette.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/color-palette/color-palette.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/color-palette/color-palette.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/counter/counter.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/counter/counter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/counter/counter.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dropdown/dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/logo/logo.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logo/logo.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/text-field/text-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text-field/text-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/text-field/text-field.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text-field/text-field.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/text-field/text-field.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text-field/text-field.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/text/text.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text/text.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/js/worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/text/text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/text/text.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/typography/typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typography/typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/style/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/style/_main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/style/_vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/style/_vars.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <list id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update index.scss index.pug - fix class names" />
@@ -106,8 +152,8 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/components/dropdown/dropdown.pug" root0="SKIP_HIGHLIGHTING" />
     <setting file="http://localhost:8080/js/scripts.d5f6d2b23ec2d0e76b53.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/dropdown/dropdown.pug" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="JsBowerSettings">
     <bower-package value="" />
@@ -160,7 +206,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\vo0\WebstormProjects\toxin\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -461,6 +507,7 @@
       <workItem from="1643313882886" duration="2857000" />
       <workItem from="1643326599276" duration="1095000" />
       <workItem from="1643366811521" duration="20664000" />
+      <workItem from="1644328618061" duration="3276000" />
     </task>
     <task id="LOCAL-00062" summary="Update .prettierrc.cjs - fix code style">
       <created>1642969387338</created>
