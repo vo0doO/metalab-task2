@@ -20,12 +20,14 @@ class CustomCounter extends HTMLElement {
 		this._decrementsEvents = this._decrementsEvents.bind(this);
 		this._inputsEvents = this._inputsEvents.bind(this);
 		this._handleInputChange = this._handleInputChange.bind(this);
+		this.toggleDisabled = this.toggleDisabled.bind(this);
 	}
 
 	connectedCallback() {
 		this._decrementsEvents();
 		this._incrementsEvents();
 		this._inputsEvents();
+		// this.toggleDisabled();
 		this.observe();
 	}
 
@@ -86,32 +88,35 @@ class CustomCounter extends HTMLElement {
 		item.removeAttr('disabled');
 	}
 
-	toggleDisabled(input, incr, decr) {
-		const max = parseInt(input.attr('max'), 10);
-		const min = parseInt(input.attr('min'), 10);
-		const val = parseInt(input.val(), 10);
+	toggleDisabled(event, data) {
+		const max = parseInt(data.input.attr('max'), 10);
+		const min = parseInt(data.input.attr('min'), 10);
+		const val = parseInt(data.input.val(), 10);
 		if (val < max && val >= min) {
-			this.removeDisabled(incr);
+			this.removeDisabled(data.incr);
 		}
 		if (val >= max) {
-			this.setDisabled(incr);
+			this.setDisabled(data.incr);
 		}
 		if (val > min) {
-			this.removeDisabled(decr);
+			this.removeDisabled(data.decr);
 		}
 		if (val <= min) {
-			this.setDisabled(decr);
+			this.setDisabled(data.decr);
 		}
 	}
 
-	_handleInputChange(event, elem) {
+	_handleInputChange(event) {
 		const incr = $(event.target).next();
 		const decr = $(event.target).prev();
+		const input = $(event.target);
 		incr.triggerHandler('change.counter.increment', {
+			input,
 			incr,
 			decr
 		});
 		decr.triggerHandler('change.counter.decrement', {
+			input,
 			incr,
 			decr
 		});
@@ -129,13 +134,11 @@ class CustomCounter extends HTMLElement {
 		const elem = $(this.increment);
 		const input = elem.prev().get()[0];
 		elem.on({
-			'click.counter.increment': function (event) {
+			'click.counter.increment': () => {
 				input.stepUp();
 				$(input).attr('value', input.value);
 			},
-			'change.counter.increment': (event, data) => {
-				self.toggleDisabled($(input), data.incr, data.decr);
-			}
+			'change.counter.increment': this.toggleDisabled
 		});
 	}
 
@@ -144,31 +147,15 @@ class CustomCounter extends HTMLElement {
 		const elem = $(this.decrement);
 		const input = elem.next().get()[0];
 		elem.on({
-			'click.counter.decrement': function (event) {
+			'click.counter.decrement': () => {
 				input.stepDown();
 				$(input).attr('value', input.value);
 			},
-			'change.counter.decrement': (event, data) => {
-				self.toggleDisabled($(input), data.incr, data.decr);
-			}
+			'change.counter.decrement': self.toggleDisabled
 		});
 	}
 }
+
 window.customElements.define('custom-counter', CustomCounter);
-
-// const ready = async () => {
-// 	try {
-// 		document.addEventListener('DOMContentLoaded', () => {
-// 			const counter = new CustomCounter();
-// 			counter.connectedCallback();
-// 			console.info('Counter init');
-// 			console.clear();
-// 		});
-// 	} catch (e) {
-// 		throw new Error(`DOM not loaded: ${e}`);
-// 	}
-// };
-
-ready();
 
 export { CustomCounter };
