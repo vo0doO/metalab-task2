@@ -39,6 +39,13 @@
       <option name="KEEP_SINGLE_LINE_BLOCKS" value="true" />
       <option name="ENFORCE_QUOTES_ON_FORMAT" value="true" />
     </ScssCodeStyleSettings>
+    <TypeScriptCodeStyleSettings version="0">
+      <option name="JSDOC_INCLUDE_TYPES" value="true" />
+      <option name="USE_DOUBLE_QUOTES" value="false" />
+      <option name="FORCE_QUOTE_STYlE" value="true" />
+      <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
+      <option name="USE_CHAINED_CALLS_GROUP_INDENTS" value="true" />
+    </TypeScriptCodeStyleSettings>
     <editorconfig>
       <option name="ENABLED" value="false" />
     </editorconfig>
@@ -49,10 +56,15 @@
         <option name="TAB_SIZE" value="2" />
       </indentOptions>
     </codeStyleSettings>
+    <codeStyleSettings language="JSON">
+      <indentOptions>
+        <option name="INDENT_SIZE" value="4" />
+        <option name="CONTINUATION_INDENT_SIZE" value="4" />
+        <option name="USE_TAB_CHARACTER" value="true" />
+      </indentOptions>
+    </codeStyleSettings>
     <codeStyleSettings language="Jade">
       <indentOptions>
-        <option name="INDENT_SIZE" value="2" />
-        <option name="TAB_SIZE" value="2" />
         <option name="USE_TAB_CHARACTER" value="true" />
       </indentOptions>
     </codeStyleSettings>
@@ -84,11 +96,7 @@
       <option name="FOR_BRACE_FORCE" value="1" />
       <option name="WRAP_ON_TYPING" value="1" />
       <indentOptions>
-        <option name="INDENT_SIZE" value="2" />
-        <option name="CONTINUATION_INDENT_SIZE" value="2" />
-        <option name="TAB_SIZE" value="2" />
         <option name="USE_TAB_CHARACTER" value="true" />
-        <option name="SMART_TABS" value="true" />
       </indentOptions>
       <arrangement>
         <groups>
@@ -1109,6 +1117,26 @@
           </section>
         </rules>
       </arrangement>
+    </codeStyleSettings>
+    <codeStyleSettings language="TypeScript">
+      <option name="BLOCK_COMMENT_ADD_SPACE" value="true" />
+      <option name="BLANK_LINES_AFTER_IMPORTS" value="2" />
+      <option name="BLANK_LINES_AROUND_CLASS" value="2" />
+      <option name="ELSE_ON_NEW_LINE" value="true" />
+      <option name="CATCH_ON_NEW_LINE" value="true" />
+      <option name="FINALLY_ON_NEW_LINE" value="true" />
+      <option name="ALIGN_MULTILINE_EXTENDS_LIST" value="true" />
+      <option name="TERNARY_OPERATION_WRAP" value="1" />
+      <option name="TERNARY_OPERATION_SIGNS_ON_NEXT_LINE" value="true" />
+      <option name="WRAP_COMMENTS" value="true" />
+      <option name="DOWHILE_BRACE_FORCE" value="3" />
+      <option name="WHILE_BRACE_FORCE" value="3" />
+      <option name="FOR_BRACE_FORCE" value="3" />
+      <indentOptions>
+        <option name="USE_TAB_CHARACTER" value="true" />
+        <option name="SMART_TABS" value="true" />
+        <option name="KEEP_INDENTS_ON_EMPTY_LINES" value="true" />
+      </indentOptions>
     </codeStyleSettings>
   </code_scheme>
 </component>

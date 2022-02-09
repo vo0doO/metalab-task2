@@ -4,26 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d28de73d-af60-40e3-a0ee-d473dcd33590" name="dropdown" comment="Update dropdown.scss counter.scss - fix style">
+    <list default="true" id="d28de73d-af60-40e3-a0ee-d473dcd33590" name="dropdown" comment="Update vsc files save development history">
       <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintrc.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/codeql-analysis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/codeql-analysis.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_07_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_07_[Last_change]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_07_[new_Input]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_07__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_07__Last_change_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_07__new_Input_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_09_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_09_[Last_change]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_09_[new_Input]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_09__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_09__Last_change_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_01_2022_21_09__new_Input_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.jshintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.jshintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.pretitterignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.stylelintignore" beforeDir="false" afterPath="$PROJECT_DIR$/.stylelintignore" afterDir="false" />
@@ -278,13 +265,6 @@
       <workItem from="1642947615650" duration="9821000" />
       <workItem from="1642959490074" duration="9543000" />
     </task>
-    <task id="LOCAL-00030" summary="Update .prettierrc and created .prettierrc.cjs for new code style configuration">
-      <created>1642710129656</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1642710129656</updated>
-    </task>
     <task id="LOCAL-00031" summary="Update .eslintrc for js code style config">
       <created>1642710160480</created>
       <option name="number" value="00031" />
@@ -507,7 +487,7 @@
       <workItem from="1643313882886" duration="2857000" />
       <workItem from="1643326599276" duration="1095000" />
       <workItem from="1643366811521" duration="20664000" />
-      <workItem from="1644328618061" duration="3276000" />
+      <workItem from="1644328618061" duration="3514000" />
     </task>
     <task id="LOCAL-00062" summary="Update .prettierrc.cjs - fix code style">
       <created>1642969387338</created>
@@ -638,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643392090657</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Update vsc files save development history">
+      <created>1644334419456</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1644334419460</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <option name="trackContextForNewChangelist" value="true" />
     <servers />
   </component>
@@ -700,11 +687,11 @@
     <MESSAGE value="Updated text.pug, text.scss - fix styles" />
     <MESSAGE value="Updated index.*** - refactoring" />
     <MESSAGE value="Updated dropdown.***, counter.scss - refactoring styles,template and scripts" />
-    <MESSAGE value="Update vsc files save development history" />
     <MESSAGE value="Update index.js - fix import" />
     <MESSAGE value="Update dropdown.scss - fix style" />
     <MESSAGE value="Update dropdown.scss counter.scss - fix style" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update dropdown.scss counter.scss - fix style" />
+    <MESSAGE value="Update vsc files save development history" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update vsc files save development history" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
