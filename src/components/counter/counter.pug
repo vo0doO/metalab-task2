@@ -2,7 +2,7 @@ include ../../components/text/text
 
 mixin counter(name='', label='', id='', form='', value=1, min=0, max=0, ...items)
   
-  .counter(id=id)
+  custom-counter.counter(id=id)
     .counter__field(id=id)
       label.counter__label(for=id)
         +text({

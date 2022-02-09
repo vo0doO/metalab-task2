@@ -7,8 +7,8 @@
 		'input input'
 		'counter counter'
 		'reset-btn added-btn';
-	grid-template-rows: 25px 43px auto;
 	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 25px 43px auto;
 	align-items: center;
 
 	&__label {
