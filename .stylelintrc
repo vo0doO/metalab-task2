@@ -68,6 +68,7 @@ rules:
     scss/operator-no-unspaced: true
     font-family-no-missing-generic-family-keyword: null
     shorthand-property-no-redundant-values: true
+    at-rule-no-unknown: fase
     # TODO: Включите этот параметр, если это не конфликтует с другими изменениями файлов SASS.
     string-quotes: single
     unit-case: lower

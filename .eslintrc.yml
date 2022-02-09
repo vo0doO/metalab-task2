@@ -11,9 +11,9 @@ env:
     jquery: true
 rules:
     no-tabs: [error, allowIndentationTabs: true]
-    linebreak-style: [warn, windows]
+    linebreak-style: [off, windows, unix]
     indent: [error, tab]
-    comma-dangle: error
+    comma-dangle: off
     prefer-destructuring: 1
     arrow-spacing: 1
     symbol-description: 1
