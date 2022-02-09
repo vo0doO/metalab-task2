@@ -9,18 +9,18 @@
 	}
 
 	&__input {
-		font-family: Montserrat;
-		font-size: 14px;
-		font-weight: normal;
-		font-style: normal;
-		line-height: 18px;
 		box-sizing: border-box;
 		width: inherit;
 		height: 44px;
-		text-indent: 12px;
-		color: rgba(31, 32, 65, 0.75);
-		border: 1px solid rgba(31, 32, 65, 0.25);
+		border: 1px solid rgb(31 32 65 / 0.25);
 		border-radius: 4px;
+		color: rgb(31 32 65 / 0.75);
+		font-weight: normal;
+		font-style: normal;
+		font-size: 14px;
+		font-family: Montserrat;
+		line-height: 18px;
+		text-indent: 12px;
 
 		&:hover {
 			animation-name: hover-focus;
@@ -35,24 +35,24 @@
 		}
 
 		&:focus-visible {
+			outline: 0;
 			animation-name: hover-focus;
 			animation-duration: 300ms;
-			outline: 0;
 			animation-fill-mode: forwards;
 		}
 
 		&::placeholder {
-			font-family: Montserrat;
-			font-size: 14px;
+			color: rgb(31 32 65 / 0.25);
 			font-weight: normal;
 			font-style: normal;
+			font-size: 14px;
+			font-family: Montserrat;
 			line-height: 18px;
 			text-indent: 12px;
-			color: rgba(31, 32, 65, 0.25);
 		}
 
 		&_with-focus {
-			border: 1px solid rgba(31, 32, 65, 0.5);
+			border: 1px solid rgb(31 32 65 / 0.5);
 			animation-name: hover-focus;
 			animation-duration: unset;
 			animation-fill-mode: unset;
@@ -61,21 +61,23 @@
 }
 
 .im-caret {
-	-webkit-animation: 0;
-	-moz-animation: 0;
-	-ms-animation: 0;
-	-o-animation: 0;
+	animation: 0;
+	animation: 0;
+	animation: 0;
+	animation: 0;
 	animation: 0;
 }
 
 @keyframes hover-focus {
 	100% {
-		border: 1px solid rgba(31, 32, 65, 0.5);
+		border: 1px solid rgb(31 32 65 / 0.5);
 	}
+
 	50% {
-		border: 1px solid rgba(31, 32, 65, 0.35);
+		border: 1px solid rgb(31 32 65 / 0.35);
 	}
+
 	0% {
-		border: 1px solid rgba(31, 32, 65, 0.25);
+		border: 1px solid rgb(31 32 65 / 0.25);
 	}
 }

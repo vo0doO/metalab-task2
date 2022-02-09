@@ -11,13 +11,14 @@
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.jshintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.jshintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.pretitterignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.stylelintignore" beforeDir="false" afterPath="$PROJECT_DIR$/.stylelintignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.stylelintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.stylelintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.stylelintrc.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vscode/tasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/tasks.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vscode/toxin.code-workspace" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/toxin.code-workspace" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
@@ -50,7 +51,7 @@
     </list>
     <list id="30763d2f-8cb2-4424-bf98-5a9630af3d70" name="Changes" comment="Update index.scss index.pug - fix class names" />
     <list id="17c4e1f6-1690-4856-bc7c-14b64652f1fd" name="codestyle" comment="codestyle">
-      <change beforePath="$PROJECT_DIR$/.prettierrc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc.cjs" beforeDir="false" />
     </list>
     <list id="6a2efea7-8cf0-4777-b8f1-82fb40e4c70e" name="head" comment="Update Update head.pug - added new metadata in block">
       <change beforePath="$PROJECT_DIR$/src/components/head/head.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/head/head.pug" afterDir="false" />
@@ -139,8 +140,8 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="http://localhost:8080/js/scripts.d5f6d2b23ec2d0e76b53.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/components/dropdown/dropdown.pug" root0="SKIP_HIGHLIGHTING" />
+    <setting file="http://localhost:8080/js/scripts.d5f6d2b23ec2d0e76b53.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JsBowerSettings">
     <bower-package value="" />
@@ -193,7 +194,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\vo0\WebstormProjects\toxin\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Linters.JSHint" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -488,6 +489,7 @@
       <workItem from="1643326599276" duration="1095000" />
       <workItem from="1643366811521" duration="20664000" />
       <workItem from="1644328618061" duration="3514000" />
+      <workItem from="1644346246961" duration="257000" />
     </task>
     <task id="LOCAL-00062" summary="Update .prettierrc.cjs - fix code style">
       <created>1642969387338</created>

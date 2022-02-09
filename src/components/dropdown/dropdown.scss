@@ -1,173 +1,177 @@
 @import 'src/utils/style/vars';
 
 .dropdown {
-  display: grid;
-  align-items: center;
-  grid-template-areas:
-    'label label'
-    'input input'
-    'counter counter'
-    'reset-btn added-btn';
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 25px 43px auto;
+	display: grid;
+	grid-template-areas:
+		'label label'
+		'input input'
+		'counter counter'
+		'reset-btn added-btn';
+	grid-template-rows: 25px 43px auto;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
 
-  &__label {
-    display: flex;
-    align-items: self-start;
-    justify-content: space-between;
-    grid-area: label;
-  }
+	&__label {
+		display: flex;
+		grid-area: label;
+		align-items: self-start;
+		justify-content: space-between;
+	}
 
-  &__input {
-    font-family: 'Montserrat', serif;
-    font-size: 14px;
-    box-sizing: border-box;
-    width: inherit;
-    height: 100%;
-    border-collapse: collapse;
-    cursor: pointer;
-    color: $dark-shade-75;
-    border: 1px inset $dark-shade-25;
-    border-radius: 4px;
-    background: #ffffff;
-    box-shadow: 0 10px 20px 0 $dark-shade-5;
-    grid-area: input;
-    text-indent: 12px;
+	&__input {
+		@keyframes dropdown-hover-focus {
+			100% {
+				border: 1px inset $dark-shade-50;
+			}
 
-    &::placeholder {
-      text-indent: 12px;
-    }
+			75% {
+				border: 1px inset rgb(31 32 65 / 40%);
+			}
 
-    &:hover {
-      animation-name: dropdown-hover-focus;
-      animation-duration: 300ms;
-      animation-fill-mode: forwards;
-    }
+			50% {
+				border: 1px inset rgb(31 32 65 / 35%);
+			}
 
-    &:focus {
-      animation-name: dropdown-hover-focus;
-      animation-duration: 300ms;
-      outline: 0;
-      animation-fill-mode: forwards;
-    }
+			25% {
+				border: 1px inset rgb(31 32 65 / 30%);
+			}
 
-    &:focus-visible {
-      animation-name: dropdown-hover-focus;
-      animation-duration: 300ms;
-      animation-fill-mode: forwards;
-    }
+			0% {
+				border: 1px inset $dark-shade-25;
+			}
+		}
 
-    @keyframes dropdown-hover-focus {
-      100% {
-        border: 1px inset $dark-shade-50;
-      }
-      75% {
-        border: 1px inset rgb(31 32 65 / 40%);
-      }
-      50% {
-        border: 1px inset rgb(31 32 65 / 35%);
-      }
-      25% {
-        border: 1px inset rgb(31 32 65 / 30%);
-      }
-      0% {
-        border: 1px inset $dark-shade-25;
-      }
-    }
+		grid-area: input;
+		box-sizing: border-box;
+		width: inherit;
+		height: 100%;
+		border: 1px inset $dark-shade-25;
+		border-collapse: collapse;
+		border-radius: 4px;
+		background: #fff;
+		color: $dark-shade-75;
+		box-shadow: 0 10px 20px 0 $dark-shade-5;
+		font-size: 14px;
+		font-family: 'Montserrat', serif;
+		text-indent: 12px;
+		cursor: pointer;
 
-    &_opened {
-      cursor: pointer;
-      animation-name: dropdown-hover-focus;
-      //animation-timing-function: ease-in;
-      animation-duration: 300ms;
-      border: 1px inset $dark-shade-50;
-      border-radius: 4px 4px 0 0;
-      animation-fill-mode: forwards;
-    }
-  }
+		&::placeholder {
+			text-indent: 12px;
+		}
 
-  &__arrow-button {
-    font-family: 'Materialicons', serif;
-    font-size: 24px;
-    padding: 9px;
-    cursor: pointer;
-    color: $dark-shade-50;
-    grid-area: input;
-    justify-self: self-end;
+		&:hover {
+			animation-name: dropdown-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
 
-    &_opened {
-      animation-name: arrow-hover-focus;
-      animation-duration: 300ms;
-      //animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
-    }
+		&:focus {
+			outline: 0;
+			animation-name: dropdown-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
 
-    &:hover {
-      animation-name: arrow-hover-focus;
-      animation-duration: 300ms;
-      animation-fill-mode: forwards;
-    }
+		&:focus-visible {
+			animation-name: dropdown-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
 
-    &:focus {
-      animation-name: arrow-hover-focus;
-      animation-duration: 300ms;
-      animation-fill-mode: forwards;
-    }
+		&_opened {
+			border: 1px inset $dark-shade-50;
+			border-radius: 4px 4px 0 0;
+			cursor: pointer;
+			animation-name: dropdown-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+			//animation-timing-function: ease-in;
+		}
+	}
 
-    &:focus-visible {
-      animation-name: arrow-hover-focus;
-      animation-duration: 300ms;
-      outline: 0;
-      animation-fill-mode: forwards;
-    }
+	&__arrow-button {
+		@keyframes arrow-hover-focus {
+			100% {
+				color: rgb(31 32 65 / 75%);
+			}
 
-    @keyframes arrow-hover-focus {
-      100% {
-        color: rgb(31 32 65 / 75%);
-      }
+			50% {
+				color: rgb(31 32 65 / 65%);
+			}
 
-      50% {
-        color: rgb(31 32 65 / 65%);
-      }
+			0% {
+				color: rgb(31 32 65 / 50%);
+			}
+		}
 
-      0% {
-        color: rgb(31 32 65 / 50%);
-      }
-    }
-  }
+		grid-area: input;
+		justify-self: self-end;
+		padding: 9px;
+		color: $dark-shade-50;
+		font-size: 24px;
+		font-family: 'Materialicons', serif;
+		cursor: pointer;
 
-  &__items {
-    display: none;
-    animation-name: close;
-    animation-duration: 300ms;
-    animation-fill-mode: forwards;
+		&_opened {
+			animation-name: arrow-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+			//animation-timing-function: ease-in-out;
+		}
 
-    &_opened {
-      display: grid;
-      align-items: center;
-      box-sizing: border-box;
-      padding: 2px 6px 9px 14px;
-      border: 1px solid $dark-shade-50;
-      border-top: 0 none;
-      border-radius: 0 0 4px 4px;
-      background: #ffffff;
-      box-shadow: 0 10px 20px 0 $dark-shade-5;
-      grid-area: counter;
-      grid-template-rows: repeat(3, 37px) auto;
-    }
+		&:hover {
+			animation-name: arrow-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
 
-    @keyframes close {
-      100% {
-        opacity: 1;
-      }
+		&:focus {
+			animation-name: arrow-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
 
-      50% {
-        opacity: 0.5;
-      }
+		&:focus-visible {
+			outline: 0;
+			animation-name: arrow-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
+	}
 
-      0% {
-        opacity: 0.25;
-      }
-    }
-  }
+	&__items {
+		@keyframes close {
+			100% {
+				opacity: 1;
+			}
+
+			50% {
+				opacity: 0.5;
+			}
+
+			0% {
+				opacity: 0.25;
+			}
+		}
+
+		display: none;
+		animation-name: close;
+		animation-duration: 300ms;
+		animation-fill-mode: forwards;
+
+		&_opened {
+			display: grid;
+			grid-area: counter;
+			grid-template-rows: repeat(3, 37px) auto;
+			align-items: center;
+			box-sizing: border-box;
+			padding: 2px 6px 9px 14px;
+			border: 1px solid $dark-shade-50;
+			border-top: 0 none;
+			border-radius: 0 0 4px 4px;
+			background: #fff;
+			box-shadow: 0 10px 20px 0 $dark-shade-5;
+		}
+	}
 }

@@ -3,7 +3,9 @@ node_modules/**
 .idea/**
 dist/**
 .github/**
-.github/*
 *.webp
 *.svg
-*/assets/**
+# *.js
+# *.ts
+# *.css
+# *.scss

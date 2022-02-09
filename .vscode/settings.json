@@ -1,7 +1,4 @@
 {
-    "cSpell.words": [
-        "работник",
-        "работника",
-        "Сообщение"
-    ]
+	"eslint.format.enable": true,
+	"prettier.useEditorConfig": false
 }

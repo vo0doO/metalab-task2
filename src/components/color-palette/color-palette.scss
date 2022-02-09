@@ -17,9 +17,9 @@
 
 	&-wrapper {
 		display: flex;
-		align-items: center;
 		flex-direction: row;
 		flex-wrap: nowrap;
+		align-items: center;
 	}
 
 	&-rectangle {
@@ -68,9 +68,9 @@
 	}
 
 	&-description {
+		margin: 0;
 		font-weight: 400;
 		font-size: 19px;
 		line-height: 28px;
-		margin: 0;
 	}
 }

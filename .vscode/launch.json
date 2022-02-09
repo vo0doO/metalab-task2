@@ -1,31 +1,47 @@
 {
-    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
-    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
-    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "command": "npm start",
-            "name": "NpmStart",
-            "request": "launch",
-            "type": "node-terminal",
-            "outFiles": [
-                "${workspaceFolder}/dist/**/*.js",
-                "!**/node_modules/**"
-            ]
-        },
-        {
-            "name": "LaunchChrome",
-            "request": "launch",
-            "type": "pwa-chrome",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        },
-    ],
-    "compounds": [
-        {
-            "name": "Npm ==>> Chrome",
-            "configurations": ["NpmStart", "LaunchChrome"]
-        }
-    ]
+  // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
+  // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
+  // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
+  // Other optional launch config fields
+  //  trace:                ==>>     When true, the adapter logs its own diagnostic info to a file. The file path will be printed in the Debug Console. This is often useful info to include when filing an issue on GitHub. If you set it to "verbose", it will also log to the console.
+  //  runtimeExecutable:    ==>>     Workspace relative or absolute path to the runtime executable to be used. If not specified, Chrome will be used from the default install location.
+  //  runtimeArgs:          ==>>     Optional arguments passed to the runtime executable.
+  //  env:                  ==>>     Optional dictionary of environment key/value pairs.
+  //  cwd:                  ==>>     Optional working directory for the runtime executable.
+  //  userDataDir:          ==>>     Normally, if Chrome is already running when you start debugging with a launch config, then the new instance won't start in remote debugging mode. So by default, the extension launches Chrome with a separate user profile in a temp folder. Use this option to set a different path to use, or set to false to launch with your default user profile.
+  //  url:                  ==>>     On a 'launch' config, it will launch Chrome at this URL.
+  //  urlFilter:            ==>>     On an 'attach' config, or a 'launch' config with no 'url' set, search for a page with this url and attach to it. It can also contain wildcards, for example, "localhost:*/app" will match either "http://localhost:123/app" or "http://localhost:456/app", but not "https://stackoverflow.com".
+  //  targetTypes:          ==>>     On an 'attach' config, or a 'launch' config with no 'url' set, set a list of acceptable target types from the default ["page"]. For example, if you are attaching to an Electron app, you might want to set this to ["page", "webview"]. A value of null disables filtering by target type.
+  //  sourceMaps            ==>>     By default, the adapter will use sourcemaps and your original sources whenever possible. You can disable this by setting sourceMaps to false.
+  //  pathMapping:          ==>>     This property takes a mapping of URL paths to local paths, to give you more flexibility in how URLs are resolved to local files. "webRoot": "${workspaceFolder}" is just shorthand for a pathMapping like { "/": "${workspaceFolder}" }.
+  //  smartStep:            ==>>     Automatically steps over code that doesn't map to source files. Especially useful for debugging with async/await.
+  //  disableNetworkCache:  ==>>     If true, the network cache will be disabled.
+  //  showAsyncStacks:      ==>>     If true, callstacks across async calls (like setTimeout, fetch, resolved Promises, etc) will be shown.
+
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "command": "npm start",
+      "name": "NpmStart",
+      "request": "launch",
+      "type": "node-terminal",
+      "outFiles": ["${workspaceFolder}/dist/**/*.js", "!**/node_modules/**"]
+    },
+    {
+      "showAsyncStacks": true,
+      "sourceMaps": true,
+      "name": "LaunchChrome",
+      "request": "launch",
+      "type": "pwa-chrome",
+      "runtimeExecutable": "canary",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Npm ==>> Chrome",
+      "configurations": ["NpmStart", "LaunchChrome"]
+    }
+  ]
 }

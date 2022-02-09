@@ -1,76 +1,77 @@
 @import './src/utils/style/vars';
 
 .counter {
-  &__field {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 30%;
-  }
+	&__field {
+		display: flex;
+		flex-direction: row;
+		gap: 30%;
+		align-items: center;
+		justify-content: space-between;
+	}
 
-  &__decrement,
-  &__increment {
-    font-size: 18px;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 22px;
-    width: 30px;
-    height: 30px;
-    padding-right: 6px;
-    padding-left: 6px;
-    color: rgba(31, 32, 65, 0.5);
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    &[disabled] {
-      opacity: 0.38;
-      cursor: not-allowed;
-    }
-  }
+	&__decrement,
+	&__increment {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+		padding-right: 6px;
+		padding-left: 6px;
+		border: 1px solid rgb(31 32 65 / 0.25);
+		border-radius: 22px;
+		color: rgb(31 32 65 / 0.5);
+		font-weight: normal;
+		font-style: normal;
+		font-size: 18px;
+		line-height: 22px;
+		cursor: pointer;
 
-  &__increment {
-    padding-top: 3px;
-  }
+		&[disabled] {
+			opacity: 0.38;
+			cursor: not-allowed;
+		}
+	}
 
-  &__input {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 15px;
-    display: flex;
-    color: $dark-shade-100;
+	&__increment {
+		padding-top: 3px;
+	}
 
-    &_spy {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
-      font-weight: bold;
-      line-height: 15px;
-      width: 32px;
-      padding-bottom: 1px;
-      cursor: default;
-      text-align: center;
-      color: #1f2041;
-      border: none;
-      background: transparent;
+	&__input {
+		display: flex;
+		color: $dark-shade-100;
+		font-weight: bold;
+		font-size: 12px;
+		font-family: 'Montserrat', sans-serif;
+		line-height: 15px;
 
-      &:focus-visible {
-        outline: none;
-      }
-    }
-  }
+		&_spy {
+			width: 32px;
+			padding-bottom: 1px;
+			border: none;
+			background: transparent;
+			color: #1f2041;
+			font-weight: bold;
+			font-size: 12px;
+			font-family: 'Montserrat', sans-serif;
+			line-height: 15px;
+			text-align: center;
+			cursor: default;
+
+			&:focus-visible {
+				outline: none;
+			}
+		}
+	}
 }
 
 input::-webkit-inner-spin-button {
-  display: none;
-  -webkit-appearance: none;
+	display: none;
+	appearance: none;
 }
 
 input::-webkit-outer-spin-button {
-  display: none;
-  margin: 0;
-  -webkit-appearance: none;
+	display: none;
+	margin: 0;
+	appearance: none;
 }

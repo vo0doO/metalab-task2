@@ -1,12 +1,12 @@
 @import 'vars';
 
 html {
-	font-family: $font-family;
-	font-size: 14px;
 	box-sizing: border-box;
 	height: 100vh;
-	color: $dark-shade-100;
 	background-color: $background-color-body;
+	color: $dark-shade-100;
+	font-size: 14px;
+	font-family: $font-family;
 }
 
 body {

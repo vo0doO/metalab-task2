@@ -1,11 +1,12 @@
-import './assets/fonts/fonts.scss';
-import './index.scss';
-import './components/text-field/text-field.js';
-import './components/text/text.scss';
-import './components/counter/counter.scss';
-import './components/text-field/text-field.scss';
-import './components/dropdown/dropdown.scss';
-import './components/typography/typography.scss';
-import './components/color-palette/color-palette.scss';
-import './components/dropdown/dropdown.js';
-import './components/counter/counter.js';
+import './assets/fonts/fonts.scss'
+import './index.scss'
+import './components/text-field/text-field'
+import './components/text/text.scss'
+import './components/counter/counter.scss'
+import './components/text-field/text-field.scss'
+import './components/dropdown/dropdown.scss'
+import './components/typography/typography.scss'
+import './components/color-palette/color-palette.scss'
+import './components/dropdown/dropdown'
+import './components/counter/counter'
+// import './components/counter/customcounterelement.js';

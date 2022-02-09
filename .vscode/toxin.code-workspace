@@ -1,12 +1,7 @@
 {
-	"folders": [
-		{
-			"path": ".."
-		}
-	],
-	"settings": {
-		"livePreview.defaultPreviewPath": "/dist/index.html",
-		"liveServer.settings.multiRootWorkspaceName": "toxin",
-		"cSpell.enabled": false
-	}
+    "folders": [
+        {
+            "path": ".."
+        }
+    ]
 }

@@ -7,4 +7,4 @@ mixin logo(options)
 		let logoFileName = 'logo'
 		logoFileName += options.isGrey ? '-grey' : ''
 
-	img(src=`./assets/img/${logoFileName}.svg` alt=`${logoAlt} ${logoFileName}`)
+	img(alt=`${logoAlt} ${logoFileName}` src=`./assets/img/${logoFileName}.svg`)

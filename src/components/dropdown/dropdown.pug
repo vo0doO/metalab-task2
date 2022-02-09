@@ -1,34 +1,26 @@
 include ../text/text
 
 mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=false, form=false, value=false, counters=false)
-	section.dropdown(form=form)
-		if label
-			label.dropdown__label(for=id)
-				+text({
-					withTag: 'h3',
-					withContent: label
-				})
-				if sublabel
-					+text({
-						withTag: 'h3',
-						withContent: sublabel,
-						withWeight: 'normal',
-						withColor: 'dark-shade-50'
-					})
-		input.dropdown__input(
-			list=id
-			value=value
-			type="text"
-			placeholder=`${placeholder}`
-			name=name
-			form=form
-			readonly=true
-			role="combobox"
-			aria-owns="dropitems"
-			aria-expanded="false"
-		)
-		span.dropdown__arrow-button= 'expand_more'
-		if counters
-			if block
-				datalist#dropitems.dropdown__items
-					block
+  section.dropdown(form=form)
+    if label
+      label.dropdown__label(for=id)
+        +text({ withTag: 'h3', withContent: label })
+        if sublabel
+          +text({ withTag: 'h3', withContent: sublabel, withWeight: 'normal', withColor: 'dark-shade-50' })
+    input.dropdown__input(
+      list=id,
+      value=value,
+      type="text",
+      placeholder=`${placeholder}`,
+      name=name,
+      form=form,
+      readonly,
+      role="combobox",
+      aria-owns="dropitems",
+      aria-expanded="false"
+    )
+    span.dropdown__arrow-button= "expand_more"
+    if counters
+      if block
+        datalist#dropitems.dropdown__items
+          block

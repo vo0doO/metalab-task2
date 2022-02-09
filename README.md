@@ -13,6 +13,7 @@ npm install
 ```cmd
 npm run build
 ```
+
 ## Локальный сервер разработки
 
 ```cmd
