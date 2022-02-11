@@ -1,5 +1,5 @@
-// Add extensions as necessary make sure you remember to add the corresponding
-// aliases in the webpack config
+// Добавляйте расширения по мере необходимости, убедитесь, что вы не забыли добавить соответствующие
+// псевдонимы в конфигурации webpack
 // import from 'jquery';
 // import 'jquery.inputmask';
 
