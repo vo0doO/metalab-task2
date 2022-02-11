@@ -1,48 +1,39 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-underscore-dangle */
 import $ from 'jquery';
+import intern from 'intern';
+import { log } from '../../utils/js/log';
 
-class CustomCounter extends HTMLElement {
-	static get observedAttributes() {
-		return ['value', 'disabled'];
+export default class CustomCounter extends HTMLElement {
+	static get classList() {
+		return {
+			FIELD: 'counter__field',
+			DECREMENT: 'counter__decrement',
+			INCREMENT: 'counter__increment-button',
+			INPUT: 'counter__input',
+			HIDDEN: 'counter__input_hidden'
+		};
 	}
 
-	constructor() {
-		super();
-
-		this.input = $('.counter__input_spy#' + this.id.toString());
-		this.increment = $('.counter__increment#' + this.id.toString());
-		this.decrement = $('.counter__decrement#' + this.id.toString());
-		this.observer = new MutationObserver(this.observerCallback);
-		this.connectedCallback = this.connectedCallback.bind(this);
-		this.disconnectedCallback = this.disconnectedCallback.bind(this);
-		this._incrementsEvents = this._incrementsEvents.bind(this);
-		this._decrementsEvents = this._decrementsEvents.bind(this);
-		this._inputsEvents = this._inputsEvents.bind(this);
-		this._handleInputChange = this._handleInputChange.bind(this);
-		this.toggleDisabled = this.toggleDisabled.bind(this);
+	static setDisabled(element) {
+		const disabled = CustomCounter.getDisabled(element);
+		if (disabled === 'disabled') {
+			return;
+		}
+		$(element).attr('disabled', '');
 	}
 
-	connectedCallback() {
-		this._decrementsEvents();
-		this._incrementsEvents();
-		this._inputsEvents();
-		// this.toggleDisabled();
-		this.observe();
+	static getDisabled(element) {
+		return $(element).attr('disabled');
 	}
 
-	disconnectedCallback() {
-		this.input.off('change.counter.input.value');
-		this.increment.off('click.counter.increment');
-		this.increment.off('change.counter.increment');
-		this.decrement.off('change.counter.decrement');
-		this.decrement.off('click.counter.decrement');
-		this.observer.takeRecords();
+	static removeDisabled(element) {
+		const disabled = CustomCounter.getDisabled(element);
+		if (disabled !== 'disabled') {
+			return;
+		}
+		element.removeAttr('disabled');
 	}
 
-	attributeChangedCallback(name, oldValue, newValue) {}
-
-	get observerConfig() {
+	get counterObserverConfig() {
 		return {
 			attributes: true,
 			attributeOldValue: true,
@@ -50,7 +41,136 @@ class CustomCounter extends HTMLElement {
 		};
 	}
 
-	observerCallback(mutations) {
+	static get observedAttributes() {
+		return ['value', 'disabled'];
+	}
+
+	constructor() {
+		super();
+
+		this.counterInput = $(`.counter__input_hidden#${this.id}`);
+		this.counterIncrementButton = $(`.counter__increment-button#${this.id}`);
+		this.counterDecrementButton = $(`.counter__decrement#${this.id}`);
+		this.connectedCallback = this.connectedCallback.bind(this);
+		this.disconnectedCallback = this.disconnectedCallback.bind(this);
+		this.counterIncrementEvents = this.counterIncrementEvents.bind(this);
+		this.counterDecrementEvents = this.counterDecrementEvents.bind(this);
+		this.counterInputEvents = this.counterInputEvents.bind(this);
+		this.handleChangeCounterInputValue = this.handleChangeCounterInputValue.bind(this);
+		this.handleClickCounterButton = this.handleClickCounterButton.bind(this);
+		this.counterObserver = new MutationObserver(this.counterObserverCallback);
+	}
+
+	connectedCallback() {
+		this.counterDecrementEvents();
+		this.counterIncrementEvents();
+		this.counterInputEvents();
+		this.observe();
+	}
+
+	disconnectedCallback() {
+		this.counterInput.off('change.counter.input.value');
+		this.counterIncrementButton.off('click.counter.increment-button');
+		this.counterIncrementButton.off('change.counter.increment-button.style');
+		this.counterDecrementButton.off('change.counter.decrement-button.style');
+		this.counterDecrementButton.off('click.counter.decrement');
+		this.counterObserver.takeRecords();
+	}
+
+	attributeChangedCallback(element, newValue, oldValue) {
+		log(`${[element, newValue, oldValue]}`);
+	}
+
+	handleChangeCounterInputValue(event) {
+		const input = this.counterInput;
+		if (event.target !== this.counterInput.get(0)) {
+			throw new Error(`Ошибка обработчика события ${event}`);
+		}
+
+		const incr = this.counterIncrementButton;
+		const decr = this.counterDecrementButton;
+
+		incr.triggerHandler('change.counter.increment-button.style', {
+			input,
+			incr,
+			decr
+		});
+
+		decr.triggerHandler('change.counter.decrement-button.style', {
+			input,
+			incr,
+			decr
+		});
+	}
+
+	handleChangeCounterButtonState(_event, data) {
+		const max = parseInt(data.input.attr('max'), 10);
+		const min = parseInt(data.input.attr('min'), 10);
+		const val = parseInt(data.input.val(), 10);
+		if (val < max && val >= min) {
+			CustomCounter.removeDisabled(data.incr);
+		}
+		if (val >= max) {
+			CustomCounter.setDisabled(data.incr);
+		}
+		if (val > min) {
+			CustomCounter.removeDisabled(data.decr);
+		}
+		if (val <= min) {
+			CustomCounter.setDisabled(data.decr);
+		}
+	}
+
+	counterInputEvents() {
+		this.counterInput.on({
+			'change.counter.input.value': this.handleChangeCounterInputValue
+		});
+	}
+
+	handleClickCounterButton(event) {
+		const element = event.target;
+		const input = element.nextSibling || element.previousSibling;
+		const cl = element.className;
+		switch (cl) {
+			case 'counter__increment-button': {
+				input.stepUp();
+				$(input).attr('value', input.value);
+				break;
+			}
+			case 'counter__decrement': {
+				input.stepDown();
+				$(input).attr('value', input.value);
+				break;
+			}
+			default: {
+				throw new Error(`Ошибка обработки события: ${event}`);
+			}
+		}
+	}
+
+	counterIncrementEvents() {
+		const element = $(this.counterIncrementButton);
+		element.on({
+			'click.counter.increment-button': this.handleClickCounterButton,
+			'change.counter.increment-button.style ': this.handleChangeCounterButtonState
+		});
+	}
+
+	counterDecrementEvents() {
+		const element = $(this.counterDecrementButton);
+		element.on({
+			'click.counter.decrement': this.handleClickCounterButton,
+			'change.counter.decrement-button.style': this.handleChangeCounterButtonState
+		});
+	}
+
+	observe() {
+		Array.map(this.counterInput.get(), (node) => {
+			this.counterObserver.observe(node, this.counterObserverConfig);
+		});
+	}
+
+	counterObserverCallback(mutations) {
 		mutations.forEach((mutation) => {
 			if (mutation.type === 'attributes') {
 				const { value } = mutation.target;
@@ -61,101 +181,9 @@ class CustomCounter extends HTMLElement {
 			}
 		});
 	}
-
-	observe() {
-		Array.map(this.input.get(), (node) => {
-			this.observer.observe(node, this.observerConfig);
-		});
-	}
-
-	getDisabled(item) {
-		return $(item).attr('disabled');
-	}
-
-	setDisabled(item) {
-		const disabled = this.getDisabled(item);
-		if (disabled === 'disabled') {
-			return;
-		}
-		$(item).attr('disabled', '');
-	}
-
-	removeDisabled(item) {
-		const disabled = this.getDisabled(item);
-		if (disabled !== 'disabled') {
-			return;
-		}
-		item.removeAttr('disabled');
-	}
-
-	toggleDisabled(event, data) {
-		const max = parseInt(data.input.attr('max'), 10);
-		const min = parseInt(data.input.attr('min'), 10);
-		const val = parseInt(data.input.val(), 10);
-		if (val < max && val >= min) {
-			this.removeDisabled(data.incr);
-		}
-		if (val >= max) {
-			this.setDisabled(data.incr);
-		}
-		if (val > min) {
-			this.removeDisabled(data.decr);
-		}
-		if (val <= min) {
-			this.setDisabled(data.decr);
-		}
-	}
-
-	_handleInputChange(event) {
-		const incr = $(event.target).next();
-		const decr = $(event.target).prev();
-		const input = $(event.target);
-		incr.triggerHandler('change.counter.increment', {
-			input,
-			incr,
-			decr
-		});
-		decr.triggerHandler('change.counter.decrement', {
-			input,
-			incr,
-			decr
-		});
-	}
-
-	_inputsEvents() {
-		const self = this;
-		self.input.on({
-			'change.counter.input.value': self._handleInputChange
-		});
-	}
-
-	_incrementsEvents() {
-		const self = $(this);
-		const elem = $(this.increment);
-		const input = elem.prev().get()[0];
-		elem.on({
-			'click.counter.increment': () => {
-				input.stepUp();
-				$(input).attr('value', input.value);
-			},
-			'change.counter.increment': this.toggleDisabled
-		});
-	}
-
-	_decrementsEvents() {
-		const self = this;
-		const elem = $(this.decrement);
-		const input = elem.next().get()[0];
-		elem.on({
-			'click.counter.decrement': () => {
-				input.stepDown();
-				$(input).attr('value', input.value);
-			},
-			'change.counter.decrement': self.toggleDisabled
-		});
-	}
 }
 
-window.customElements.define('custom-counter', CustomCounter);
-
-export { CustomCounter };
+window.customElements.define('guests-counter', CustomCounter);
+log();
+intern.configure({ suites: './counter.spec.js' });
+intern.run();
