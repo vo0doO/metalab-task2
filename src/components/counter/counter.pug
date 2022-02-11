@@ -1,8 +1,8 @@
 include ../../components/text/text
 
 mixin counter(name='', label='', id='', form='', value=1, min=0, max=0, ...items)
-  
-  custom-counter.counter(id=id)
+
+  guests-counter.counter(id=id)
     .counter__field(id=id)
       label.counter__label(for=id)
         +text({
@@ -10,8 +10,12 @@ mixin counter(name='', label='', id='', form='', value=1, min=0, max=0, ...items
           withContent: `${ label }`
         })
       .counter__input(id=id)
-        span.counter__decrement(id=id disabled) -
-        input.counter__input_spy(
+        span.counter__decrement(
+          id=id
+          readonly: true
+          disabled
+          ) -
+        input.counter__input_hidden(
           toggled=true
           type='number'
           readonly=true
@@ -22,4 +26,7 @@ mixin counter(name='', label='', id='', form='', value=1, min=0, max=0, ...items
           min=min
           max=max
         )
-        span.counter__increment(id=id) +
+        span.counter__increment-button(
+          id=id
+          readonly: true
+          ) +
