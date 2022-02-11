@@ -1,12 +1,10 @@
 import $ from 'jquery';
-import intern from 'intern';
-import { log } from '../../utils/js/log';
 
 export default class CustomCounter extends HTMLElement {
 	static get classList() {
 		return {
 			FIELD: 'counter__field',
-			DECREMENT: 'counter__decrement',
+			DECREMENT: 'counter__decrement-button',
 			INCREMENT: 'counter__increment-button',
 			INPUT: 'counter__input',
 			HIDDEN: 'counter__input_hidden'
@@ -50,9 +48,10 @@ export default class CustomCounter extends HTMLElement {
 
 		this.counterInput = $(`.counter__input_hidden#${this.id}`);
 		this.counterIncrementButton = $(`.counter__increment-button#${this.id}`);
-		this.counterDecrementButton = $(`.counter__decrement#${this.id}`);
+		this.counterDecrementButton = $(`.counter__decrement-button#${this.id}`);
 		this.connectedCallback = this.connectedCallback.bind(this);
 		this.disconnectedCallback = this.disconnectedCallback.bind(this);
+		this.attributeChangedCallback = this.attributeChangedCallback.bind(this);
 		this.counterIncrementEvents = this.counterIncrementEvents.bind(this);
 		this.counterDecrementEvents = this.counterDecrementEvents.bind(this);
 		this.counterInputEvents = this.counterInputEvents.bind(this);
@@ -65,7 +64,7 @@ export default class CustomCounter extends HTMLElement {
 		this.counterDecrementEvents();
 		this.counterIncrementEvents();
 		this.counterInputEvents();
-		this.observe();
+		this.counterObserve();
 	}
 
 	disconnectedCallback() {
@@ -78,7 +77,7 @@ export default class CustomCounter extends HTMLElement {
 	}
 
 	attributeChangedCallback(element, newValue, oldValue) {
-		log(`${[element, newValue, oldValue]}`);
+		console.log(`${[element, newValue, oldValue]}`);
 	}
 
 	handleChangeCounterInputValue(event) {
@@ -137,7 +136,7 @@ export default class CustomCounter extends HTMLElement {
 				$(input).attr('value', input.value);
 				break;
 			}
-			case 'counter__decrement': {
+			case 'counter__decrement-button': {
 				input.stepDown();
 				$(input).attr('value', input.value);
 				break;
@@ -164,7 +163,7 @@ export default class CustomCounter extends HTMLElement {
 		});
 	}
 
-	observe() {
+	counterObserve() {
 		Array.map(this.counterInput.get(), (node) => {
 			this.counterObserver.observe(node, this.counterObserverConfig);
 		});
@@ -184,6 +183,3 @@ export default class CustomCounter extends HTMLElement {
 }
 
 window.customElements.define('guests-counter', CustomCounter);
-log();
-intern.configure({ suites: './counter.spec.js' });
-intern.run();
