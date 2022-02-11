@@ -115,7 +115,7 @@ const ready = async () => {
 		document.addEventListener('DOMContentLoaded', () => {
 			const dropdown = new DropDown()
 			dropdown.connectedCallback()
-			console.clear()
+			// console.clear()
 		})
 		return true
 	} catch (e) {
