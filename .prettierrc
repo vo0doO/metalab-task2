@@ -1,6 +1,6 @@
 {
 	"plugins": ["./node_modules/plugin-pug"],
-	"pugPrintWidth": 80,
+	"pugPrintWidth": 120,
 	"pugUseTabs": "true",
 	"pugSemi": "true",
 	"pugBracketSpacing": "true",
@@ -22,7 +22,7 @@
 	"htmlWhitespaceSensitivity": "css",
 	"insertPragma": false,
 	"jsxSingleQuote": false,
-	"printWidth": 80,
+	"printWidth": 120,
 	"proseWrap": "preserve",
 	"quoteProps": "as-needed",
 	"requirePragma": false,
@@ -30,6 +30,5 @@
 	"singleQuote": true,
 	"tabWidth": 4,
 	"trailingComma": "none",
-	"useTabs": true,
-	"vueIndentScriptAndStyle": false
+	"useTabs": true
 }
