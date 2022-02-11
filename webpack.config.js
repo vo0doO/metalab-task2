@@ -1,18 +1,20 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
-const PugPlugin = require('pug-plugin')
-const autoprefixer = require('autoprefixer')
-const postcssFlexBugsFixes = require('postcss-flexbugs-fixes')
-const postcssCombineMediaQuery = require('postcss-combine-media-query')
-const cssMqpacker = require('css-mqpacker')
-const cssnano = require('cssnano')
-// require('babel-polyfill');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const PugPlugin = require('pug-plugin');
+const autoprefixer = require('autoprefixer');
+const postcssFlexBugsFixes = require('postcss-flexbugs-fixes');
+const postcssCombineMediaQuery = require('postcss-combine-media-query');
+const cssMqpacker = require('css-mqpacker');
+const cssnano = require('cssnano');
+const { library } = require('webpack');
+require('babel-polyfill');
 
 const paths = {
 	src: path.resolve(__dirname, 'src'),
 	dist: path.resolve(__dirname, 'dist'),
+	intern: path.join(__dirname, './node_modules/intern/browser/intern.js'),
 	inputmaskdependencyLib: path.join(
 		__dirname,
 		'./node_modules/jquery.inputmask/extra/dependencyLibs/inputmask.dependencyLib.js'
@@ -21,30 +23,34 @@ const paths = {
 		__dirname,
 		'./node_modules/jquery.inputmask/dist/inputmask/inputmask.js'
 	)
-}
+};
 
 const pugLoaderOptions = {
 	method: 'render',
 	esModule: true
-}
+};
 
-let mode = 'development'
+let mode = 'development';
 if (process.env.NODE_ENV === 'production') {
-	mode = 'production'
+	mode = 'production';
 }
-
-console.log(`${mode} mode`)
 
 module.exports = {
 	mode,
+
+	externals: [
+		/^(intern)/i,
+		/^(jquery|\$)$/i,
+	],
+
 	resolve: {
 		alias: {
-			Components: path.join(paths.src, '/components/'),
-			Images: path.join(paths.src, '/assets/img/'),
+			intern: paths.intern,
 			'inputmask.dependencyLib': paths.inputmaskdependencyLib,
 			inputmask: paths.inputmask
 		}
 	},
+
 	resolveLoader: {
 		alias: {
 			'pug-loader2': PugPlugin.loader
@@ -52,16 +58,24 @@ module.exports = {
 	},
 
 	devtool: mode === 'production' ? false : 'source-map', // 'eval-cheap-module-source-map',
+
 	entry: {
-		scripts: ['babel-polyfill', '/src/index.js']
+		main: ['babel-polyfill', '/src/index.js'],
 	},
 
 	output: {
 		path: paths.dist,
 		publicPath: '/',
-		sourceMapFilename: '[name].[contenthash:8].map',
-		chunkFilename: '[id].[contenthash:8].js',
-		clean: true
+		asyncChunks: true,
+		filename: 'js/[name]/[contenthash:8].bundle.js',
+		sourceMapFilename: 'js/[name]/[contenthash:8].js.map',
+		chunkFilename: 'js/[name]/[contenthash:8].js',
+		clean: true,
+		library: {
+			name: 'toxin',
+			type: 'umd',
+			umdNamedDefine: true
+		}
 	},
 	module: {
 		rules: [
@@ -91,7 +105,7 @@ module.exports = {
 				test: /\.(png|svg|jpg|jpeg|gif|bmp)$/i,
 				type: 'asset/resource',
 				generator: {
-					filename: 'assets/img/[name][ext][query]'
+					filename: 'assets/img/[name].[contenthash].[ext]'
 				}
 			},
 			{
@@ -193,6 +207,10 @@ module.exports = {
 				{
 					from: path.resolve(__dirname, 'src/assets/img'),
 					to: './assets/img'
+				},
+				{
+					from: path.resolve(__dirname, 'node_modules/intern/loaders'),
+					to: './loaders'
 				}
 			]
 		}),
@@ -208,8 +226,8 @@ module.exports = {
 	optimization: {
 		splitChunks: {
 			chunks: 'all',
-			minSize: 20000,
-			maxSize: 50000
+			minSize: 1000,
+			maxSize: 30000
 		}
 	},
 	devServer: {
@@ -225,6 +243,7 @@ module.exports = {
 		}
 	},
 	experiments: {
-		topLevelAwait: true
+		topLevelAwait: true,
+		// outputModule: true,
 	}
-}
+};
