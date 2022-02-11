@@ -10,9 +10,10 @@ env:
     serviceworker: true
     jquery: true
 rules:
+    class-methods-use-this: off
     no-tabs: [error, allowIndentationTabs: true]
     linebreak-style: [off, windows, unix]
-    indent: [error, tab]
+    indent: [error, tab, SwitchCase: 1 ]
     comma-dangle: off
     prefer-destructuring: 1
     arrow-spacing: 1
@@ -27,4 +28,4 @@ rules:
     space-before-function-paren: 1
     prefer-template: 1
     unicode-bom: 1
-    default-case: 'off'
+    default-case: 'warn'
