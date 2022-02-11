@@ -1,4 +1,4 @@
-@import './src/utils/style/vars';
+@import "./src/utils/style/vars";
 
 .counter {
 	&__field {
@@ -10,9 +10,9 @@
 	}
 
 	&__decrement,
-	&__increment {
-		display: flex;
+	&__increment-button {
 		align-items: center;
+		display: flex;
 		justify-content: center;
 		width: 30px;
 		height: 30px;
@@ -26,14 +26,19 @@
 		font-size: 18px;
 		line-height: 22px;
 		cursor: pointer;
-
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
 		&[disabled] {
 			opacity: 0.38;
 			cursor: not-allowed;
 		}
 	}
 
-	&__increment {
+	&__increment-button {
 		padding-top: 3px;
 	}
 
@@ -42,10 +47,10 @@
 		color: $dark-shade-100;
 		font-weight: bold;
 		font-size: 12px;
-		font-family: 'Montserrat', sans-serif;
+		font-family: "Montserrat", sans-serif;
 		line-height: 15px;
 
-		&_spy {
+		&_hidden {
 			width: 32px;
 			padding-bottom: 1px;
 			border: none;
@@ -53,7 +58,7 @@
 			color: #1f2041;
 			font-weight: bold;
 			font-size: 12px;
-			font-family: 'Montserrat', sans-serif;
+			font-family: "Montserrat", sans-serif;
 			line-height: 15px;
 			text-align: center;
 			cursor: default;
