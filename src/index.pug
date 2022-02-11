@@ -1,6 +1,4 @@
 include components/head/head
-include components/logo/logo
-include components/text-field/text-field
 include components/dropdown/dropdown
 include components/counter/counter
 
@@ -9,6 +7,7 @@ html(lang='ru')
 	+head('UI-KIT - TOXIN', 'Frontend компоненты в фирменном стиле TOXIN', 'фронтенд, компоненты, дизайн, стиль, toxin')
 	body.ui-kit__body
 		main.ui-kit__main
+			img.logo(src=require("./assets/img/logo.svg"), alt="Logo")
 			section.sandbox
 				container.sandbox__item-wrapper
 					.sandbox__item
