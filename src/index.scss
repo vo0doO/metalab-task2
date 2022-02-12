@@ -20,8 +20,8 @@
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: center;
-	width: 600px;
-	height: 300px;
+	width: 380px;
+	height: 270px;
 	padding: 20px;
 	background: rgb(255 255 255 / 1);
 	box-shadow: 0 10px 20px rgb(0 0 0 / 0.19), 0 6px 6px rgb(0 0 0 / 0.23);
@@ -40,5 +40,19 @@
 .sandbox__dropdown-wrapper {
 	width: 320px;
 	height: fit-content;
-	margin: 40px;
+
 }
+
+.sandbox__logo {
+	height: 25px;
+	align-self: flex-start;
+	backdrop-filter: blur(5px);
+	background-color: rgba(0, 166, 255, 0.3);
+	background: rgba(255, 255, 255, 0.1);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0.1) 0%,
+		rgba(255, 255, 255, 0) 20%
+	);
+}
+
