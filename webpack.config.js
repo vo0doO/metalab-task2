@@ -42,7 +42,9 @@ module.exports = {
 			intern: paths.intern,
 			'inputmask.dependencyLib': paths.inputmaskdependencyLib,
 			inputmask: paths.inputmask
-		}
+		},
+		extensions: ['.ts', '.js'],
+		modules: ['src', 'node_modules']
 	},
 
 	resolveLoader: {
@@ -69,6 +71,15 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.ts$/i,
+				use: [
+					{
+						loader: 'ts-loader'
+					}
+				],
+				exclude: /node_modules/
+			},
+			{
 				test: /\.pug$/,
 				loader: 'pug-loader',
 				options: pugLoaderOptions
@@ -87,7 +98,7 @@ module.exports = {
 						plugins: ['@babel/plugin-proposal-class-properties'],
 						sourceMap: true
 					}
-				}
+				},
 			},
 
 			{
