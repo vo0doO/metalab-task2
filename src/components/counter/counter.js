@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 export default class Counter extends HTMLElement {
-	static get classes() {
+	static get counterClassList() {
 		return {
 			INPUT: 'counter__input',
 			FIELD: 'counter__field',
@@ -11,7 +11,7 @@ export default class Counter extends HTMLElement {
 		};
 	}
 
-	static get events() {
+	static get counterEventsList() {
 		return {
 			CHANGE_INPUT_VALUE: 'change.counter.input.value',
 			CLICK_INCREMENT_BUTTON: 'click.counter.increment-button',
@@ -57,17 +57,21 @@ export default class Counter extends HTMLElement {
 		super();
 
 		this.counterInput = $(`.counter__input_hidden#${this.id}`);
-		this.connectedCallback = this.connectedCallback.bind(this);
-		this.counterInputEvents = this.counterInputEvents.bind(this);
-		this.disconnectedCallback = this.disconnectedCallback.bind(this);
-		this.counterIncrementEvents = this.counterIncrementEvents.bind(this);
-		this.counterDecrementEvents = this.counterDecrementEvents.bind(this);
-		this.counterIncrementButton = $(`.counter__increment-button#${this.id}`);
 		this.counterDecrementButton = $(`.counter__decrement-button#${this.id}`);
+		this.counterIncrementButton = $(`.counter__increment-button#${this.id}`);
+
+		this.connectedCallback = this.connectedCallback.bind(this);
+		this.disconnectedCallback = this.disconnectedCallback.bind(this);
+
+		this.counterInputEvents = this.counterInputEvents.bind(this);
+		this.counterDecrementEvents = this.counterDecrementEvents.bind(this);
+		this.counterIncrementEvents = this.counterIncrementEvents.bind(this);
+
 		this.attributeChangedCallback = this.attributeChangedCallback.bind(this);
 		this.handleClickCounterButton = this.handleClickCounterButton.bind(this);
-		this.counterObserver = new MutationObserver(this.counterObserverCallback);
 		this.handleChangeCounterInputValue = this.handleChangeCounterInputValue.bind(this);
+
+		this.counterObserver = new MutationObserver(this.counterObserverCallback);
 	}
 
 	connectedCallback() {
