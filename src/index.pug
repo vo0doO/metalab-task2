@@ -7,9 +7,10 @@ html(lang='ru')
 	+head('UI-KIT - TOXIN', 'Frontend компоненты в фирменном стиле TOXIN', 'фронтенд, компоненты, дизайн, стиль, toxin')
 	body.ui-kit__body
 		main.ui-kit__main
-			img.logo(src=require("./assets/img/logo.svg"), alt="Logo")
 			section.sandbox
+				
 				container.sandbox__item-wrapper
+					img.sandbox__logo(src="./assets/img/logo.svg", alt="Logo")
 					.sandbox__item
 						.sandbox__dropdown-wrapper
 							+dropdown('guestscounter', 'dropdown', 'counter', 'Сколько гостей', 'listbox', 'guests', '', true)
