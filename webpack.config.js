@@ -37,12 +37,6 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
 	mode,
-
-	externals: [
-		/^(intern)/i,
-		/^(jquery|\$)$/i,
-	],
-
 	resolve: {
 		alias: {
 			intern: paths.intern,
@@ -70,12 +64,7 @@ module.exports = {
 		filename: 'js/[name]/[contenthash:8].bundle.js',
 		sourceMapFilename: 'js/[name]/[contenthash:8].js.map',
 		chunkFilename: 'js/[name]/[contenthash:8].js',
-		clean: true,
-		library: {
-			name: 'toxin',
-			type: 'umd',
-			umdNamedDefine: true
-		}
+		clean: true
 	},
 	module: {
 		rules: [
@@ -104,6 +93,7 @@ module.exports = {
 			{
 				test: /\.(png|svg|jpg|jpeg|gif|bmp)$/i,
 				type: 'asset/resource',
+				exclude: '/assets/fonts',
 				generator: {
 					filename: 'assets/img/[name].[contenthash].[ext]'
 				}
@@ -111,6 +101,7 @@ module.exports = {
 			{
 				test: /\.(woff|svg|woff2|eot|ttf|otf)$/i,
 				type: 'asset/resource',
+				exclude: '/assets/img',
 				generator: {
 					filename: 'assets/fonts/[name][ext][query]'
 				}
@@ -224,6 +215,11 @@ module.exports = {
 	],
 
 	optimization: {
+		usedExports: 'global',
+		mergeDuplicateChunks: true,
+		flagIncludedChunks: true,
+		concatenateModules: true,
+		removeAvailableModules: true,
 		splitChunks: {
 			chunks: 'all',
 			minSize: 1000,
