@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+      // "pretty": true,
+      "target": "ES2017",
+      "module": "es2022",
+      "forceConsistentCasingInFileNames": true,
+      "moduleResolution": "node",
+      "importHelpers": true,
+      "experimentalDecorators": true,
+      "declaration": true,
+      "declarationMap": true,
+      "sourceMap": true,
+      "noEmitOnError": true,
+      "strict": true,
+      // "allowJs": true ,
+      "outDir": "dist/build",
+      "rootDir": "src",
+      "allowSyntheticDefaultImports":true,
+      "lib": [
+        "dom",
+        "esnext"
+      ]
+    },
+    "files": ["./src/index.ts", "src/index.d.ts"],
+    "include": [
+      "src"
+    ],
+  }  
