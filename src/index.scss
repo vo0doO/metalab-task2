@@ -43,16 +43,36 @@
 
 }
 
+
 .sandbox__logo {
 	height: 25px;
 	align-self: flex-start;
-	backdrop-filter: blur(5px);
-	background-color: rgba(0, 166, 255, 0.3);
-	background: rgba(255, 255, 255, 0.1);
-	background: linear-gradient(
-		90deg,
-		rgba(255, 255, 255, 0.1) 0%,
-		rgba(255, 255, 255, 0) 20%
-	);
+
+
+	&:hover {
+		z-index:9999;
+		box-shadow: 0.1 0.1 0.3 0.2 gray;
+		text-align: left;
+		text-size-adjust: 300%;
+		animation-delay: 0s;
+		animation-direction: normal;
+		animation-duration: 0s;
+		animation-fill-mode: none;
+		animation-iteration-count: 1;
+		animation-name: none;
+		animation-play-state: running;
+		animation-timeline: auto;
+		animation-timing-function: ease;
+		-webkit-transition: 0.4s;
+		transition: 0.4s;
+		transition-property: all;
+		transition-duration: 0.4s;
+		transition-timing-function: ease;
+		transition-delay: 0s;
+		transition-delay: 0s;
+		transition-duration: 0s;
+		transition-property: all;
+		transition-timing-function: ease;
+	}
 }
 
