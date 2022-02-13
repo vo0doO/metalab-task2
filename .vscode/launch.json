@@ -33,7 +33,7 @@
       "name": "LaunchChrome",
       "request": "launch",
       "type": "pwa-chrome",
-      "runtimeExecutable": "canary",
+      "runtimeExecutable": "stable",
       "url": "http://localhost:8080",
       "webRoot": "${workspaceFolder}"
     }
