@@ -187,7 +187,7 @@ export default class Counter extends HTMLElement {
 	}
 
 	counterObserve() {
-		Array.map(this.counterInput.get(), (node) => {
+		this.counterInput.get().map((node) => {
 			this.counterObserver.observe(node, this.counterObserverConfig);
 		});
 	}
