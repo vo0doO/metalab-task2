@@ -1,6 +1,6 @@
-include components/head/head
-include components/dropdown/dropdown
-include components/counter/counter
+include ./components/head/head
+include ./components/dropdown/dropdown
+include ./components/counter/counter
 
 doctype html
 html(lang='ru')
@@ -10,7 +10,8 @@ html(lang='ru')
 			section.sandbox
 				
 				container.sandbox__item-wrapper
-					img.sandbox__logo(src="./assets/img/logo.svg", alt="Logo")
+					.sandbox__logo-wrapper
+						img.sandbox__logo(src="./assets/img/logo.svg", alt="Logo")
 					.sandbox__item
 						.sandbox__dropdown-wrapper
 							+dropdown('guestscounter', 'dropdown', 'counter', 'Сколько гостей', 'listbox', 'guests', '', true)
