@@ -7,7 +7,6 @@ const cssnano = require('cssnano');
 const path = require('path');
 const postcssCombineMediaQuery = require('postcss-combine-media-query');
 const postcssFlexBugsFixes = require('postcss-flexbugs-fixes');
-const TsConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 require('babel-polyfill');
 
 const paths = {
@@ -33,8 +32,6 @@ module.exports = {
 	mode,
 
 	resolve: {
-
-		plugins: [new TsConfigPathsPlugin({ configFile: path.join(__dirname, 'tsconfig.json') })],
 
 		alias: {
 
@@ -85,7 +82,7 @@ module.exports = {
 					loader: 'babel-loader',
 					options: {
 						presets: ['@babel/preset-env'],
-						plugins: ['@babel/plugin-proposal-class-properties'],
+						plugins: ['@babel/plugin-syntax-top-level-await', '@babel/plugin-proposal-class-properties'],
 						sourceMap: true
 					}
 				},
