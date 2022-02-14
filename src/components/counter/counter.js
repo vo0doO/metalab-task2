@@ -3,11 +3,11 @@ import $ from 'jquery';
 export default class Counter extends HTMLElement {
 	static get counterClassList() {
 		return {
-			INPUT: 'counter__input',
-			FIELD: 'counter__field',
-			HIDDEN: 'counter__input_hidden',
-			INCREMENT: 'counter__increment-button',
-			DECREMENT: 'counter__decrement-button',
+			INPUT: 'js-counter__input',
+			FIELD: 'js-counter__field',
+			HIDDEN: 'js-counter__input_hidden',
+			INCREMENT: 'js-counter__increment-button',
+			DECREMENT: 'js-counter__decrement-button',
 		};
 	}
 
@@ -56,9 +56,9 @@ export default class Counter extends HTMLElement {
 	constructor() {
 		super();
 
-		this.counterInput = $(`.counter__input_hidden#${this.id}`);
-		this.counterDecrementButton = $(`.counter__decrement-button#${this.id}`);
-		this.counterIncrementButton = $(`.counter__increment-button#${this.id}`);
+		this.counterInput = $(`.js-counter__input_hidden#${this.id}`);
+		this.counterDecrementButton = $(`.js-counter__decrement-button#${this.id}`);
+		this.counterIncrementButton = $(`.js-counter__increment-button#${this.id}`);
 
 		this.connectedCallback = this.connectedCallback.bind(this);
 		this.disconnectedCallback = this.disconnectedCallback.bind(this);
@@ -150,13 +150,13 @@ export default class Counter extends HTMLElement {
 		const input = element.nextSibling || element.previousSibling;
 
 		switch (cl) {
-			case 'counter__increment-button': {
+			case 'js-counter__increment-button': {
 				input.stepUp();
 				$(input).attr('value', input.value);
 				break;
 			}
 
-			case 'counter__decrement-button': {
+			case 'js-counter__decrement-button': {
 				input.stepDown();
 				$(input).attr('value', input.value);
 				break;
