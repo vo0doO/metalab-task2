@@ -28,14 +28,20 @@
       "outFiles": ["${workspaceFolder}/dist/**/*.js", "!**/node_modules/**"]
     },
     {
-      "showAsyncStacks": true,
-      "sourceMaps": true,
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "name": "Firefox Launch localhost",
+      "url": "http://localhost:8080/",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
       "name": "LaunchChrome",
       "request": "launch",
       "type": "pwa-chrome",
-      "runtimeExecutable": "stable",
+      "runtimeExecutable": "canary",
       "url": "http://localhost:8080",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}",      
     }
   ],
   "compounds": [
