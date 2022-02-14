@@ -1,6 +1,6 @@
 @import "./src/utils/style/vars";
 
-.counter {
+.js-counter {
 	&__field {
 		display: flex;
 		flex-direction: row;
@@ -49,7 +49,7 @@
 		font-size: 12px;
 		font-family: "Montserrat", sans-serif;
 		line-height: 15px;
-
+		-moz-appearance: none;
 		&_hidden {
 			width: 32px;
 			padding-bottom: 1px;
@@ -62,6 +62,8 @@
 			line-height: 15px;
 			text-align: center;
 			cursor: default;
+			appearance: textfield;
+			-moz-appearance: textfield;
 
 			&:focus-visible {
 				outline: none;
@@ -73,6 +75,7 @@
 input::-webkit-inner-spin-button {
 	display: none;
 	appearance: none;
+	margin: 0;
 }
 
 input::-webkit-outer-spin-button {
