@@ -10,9 +10,9 @@ registerSuite('компонент/дропдаун', {
 		this.dd = dropdown;
 		this.dd.br = this.dd.css('border-radius');
 		this.dd.ae = this.dd.attr('aria-expanded');
-		this.ab = this.dd.siblings('.js-dropdown__arrow-button');
+		this.ab = $('.js-dropdown__arrow-button');
 		this.ab.c = this.ab.css('color');
-		this.dl = this.dd.siblings('.js-dropdown__items');
+		this.dl = $('.js-dropdown__items');
 		return this;
 	},
 	tests: {

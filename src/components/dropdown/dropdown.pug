@@ -1,7 +1,7 @@
 include ../text/text
 
 mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=false, form=false, value=false, counters=false)
-  section.js-dropdown(form=form)
+  drop-down.js-dropdown(form=form value='' placeholder=`${placeholder}` aria-expanded="false" data-values={})
     if label
       label.js-dropdown__label(for=id)
         +text({ withTag: 'h3', withContent: label })
@@ -9,7 +9,7 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
           +text({ withTag: 'h3', withContent: sublabel, withWeight: 'normal', withColor: 'dark-shade-50' })
     input.js-dropdown__input(
       list=id,
-      value=value,
+      value=`${placeholder}`,
       type="text",
       placeholder=`${placeholder}`,
       name=name,
