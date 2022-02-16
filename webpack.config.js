@@ -253,7 +253,7 @@ module.exports = {
 		liveReload: true,
 		hot: true,
 		client: {
-			progress: true
+			progress: false
 		}
 	},
 
