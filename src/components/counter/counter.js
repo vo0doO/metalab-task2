@@ -3,6 +3,7 @@ import $ from 'jquery';
 export default class Counter extends HTMLElement {
 	static get counterClassList() {
 		return {
+			COUNTER: 'js-counter',
 			INPUT: 'js-counter__input',
 			FIELD: 'js-counter__field',
 			HIDDEN: 'js-counter__input_hidden',
@@ -15,7 +16,7 @@ export default class Counter extends HTMLElement {
 		return {
 			CHANGE_INPUT_VALUE: 'change.counter.input.value',
 			CLICK_INCREMENT_BUTTON: 'click.counter.increment-button',
-			CLICK_DECREMENT_BUTTON: 'click.counter.decrement',
+			CLICK_DECREMENT_BUTTON: 'click.counter.decrement-button',
 			CHANGE_INCREMENT_BUTTON_STYLE: 'change.counter.increment-button.style',
 			CHANGE_DECREMENT_BUTTON_STYLE: 'change.counter.decrement-button.style'
 		};
@@ -50,12 +51,13 @@ export default class Counter extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		return ['value', 'disabled'];
+		return ['value'];
 	}
 
 	constructor() {
 		super();
 
+		this.counter = $(`.js-counter#${this.id}`);
 		this.counterInput = $(`.js-counter__input_hidden#${this.id}`);
 		this.counterDecrementButton = $(`.js-counter__decrement-button#${this.id}`);
 		this.counterIncrementButton = $(`.js-counter__increment-button#${this.id}`);
@@ -63,6 +65,7 @@ export default class Counter extends HTMLElement {
 		this.connectedCallback = this.connectedCallback.bind(this);
 		this.disconnectedCallback = this.disconnectedCallback.bind(this);
 
+		this.counterEvents = this.counterEvents.bind(this);
 		this.counterInputEvents = this.counterInputEvents.bind(this);
 		this.counterDecrementEvents = this.counterDecrementEvents.bind(this);
 		this.counterIncrementEvents = this.counterIncrementEvents.bind(this);
@@ -76,6 +79,7 @@ export default class Counter extends HTMLElement {
 
 	connectedCallback() {
 		this.counterObserve();
+		this.counterEvents();
 		this.counterInputEvents();
 		this.counterDecrementEvents();
 		this.counterIncrementEvents();
@@ -84,14 +88,26 @@ export default class Counter extends HTMLElement {
 	disconnectedCallback() {
 		this.counterObserver.takeRecords();
 		this.counterInput.off('change.counter.input.value');
-		this.counterDecrementButton.off('click.counter.decrement');
+		this.counterDecrementButton.off('click.counter.decrement-button');
 		this.counterIncrementButton.off('click.counter.increment-button');
 		this.counterIncrementButton.off('change.counter.increment-button.style');
 		this.counterDecrementButton.off('change.counter.decrement-button.style');
 	}
 
 	attributeChangedCallback(element, newValue, oldValue) {
-		console.log(`${[element, newValue, oldValue]}`);
+		console.log(`Element: ${element} \n New value: ${newValue} \n Old value ${oldValue}`);
+	}
+
+	counterObserverCallback(mutations) {
+		mutations.forEach((mutation) => {
+			if (mutation.type === 'attributes') {
+				const { oldValue } = mutation;
+				const { value } = mutation.target;
+				if (value !== oldValue) {
+					$(mutation.target).trigger('change.counter.input.value');
+				}
+			}
+		});
 	}
 
 	handleChangeCounterInputValue(event) {
@@ -138,6 +154,17 @@ export default class Counter extends HTMLElement {
 		}
 	}
 
+	counterEvents() {
+		this.counter.on(
+			'click.counter.increment.button',
+			'.js-counter__increment-button',
+			{ name: 'increment' },
+			(_event, data) => {
+				console.log(`Element: ${_event.target} Data: ${data}`);
+			}
+		);
+	}
+
 	counterInputEvents() {
 		this.counterInput.on({
 			'change.counter.input.value': this.handleChangeCounterInputValue
@@ -181,7 +208,7 @@ export default class Counter extends HTMLElement {
 		const element = $(this.counterDecrementButton);
 
 		element.on({
-			'click.counter.decrement': this.handleClickCounterButton,
+			'click.counter.decrement-button': this.handleClickCounterButton,
 			'change.counter.decrement-button.style': this.handleChangeCounterButtonState
 		});
 	}
@@ -189,18 +216,6 @@ export default class Counter extends HTMLElement {
 	counterObserve() {
 		this.counterInput.get().map((node) => {
 			this.counterObserver.observe(node, this.counterObserverConfig);
-		});
-	}
-
-	counterObserverCallback(mutations) {
-		mutations.forEach((mutation) => {
-			if (mutation.type === 'attributes') {
-				const { oldValue } = mutation;
-				const { value } = mutation.target;
-				if (value !== oldValue) {
-					$(mutation.target).trigger('change.counter.input.value');
-				}
-			}
 		});
 	}
 }

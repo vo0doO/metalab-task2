@@ -2,10 +2,10 @@ import $, { event } from 'jquery';
 
 class DropDown {
 	constructor() {
-		this.root = $('.dropdown');
-		this.arrowBtn = $('.dropdown__arrow-button');
-		this.items = $('.dropdown__items');
-		this.input = $('.dropdown__input');
+		this.root = $('.js-dropdown');
+		this.arrowBtn = $('.js-dropdown__arrow-button');
+		this.items = $('.js-dropdown__items');
+		this.input = $('.js-dropdown__input');
 		this._arrowBtnEvents = this._arrowBtnEvents.bind(this);
 		this._inputEvents = this._inputEvents.bind(this);
 		this._itemsEvents = this._itemsEvents.bind(this);
@@ -72,15 +72,15 @@ class DropDown {
 		const elem = $(event.target);
 		const KJIACC = elem.attr('class').split(' ')[0];
 		switch (KJIACC) {
-			case 'dropdown__items':
-				elem.toggleClass('dropdown__items_opened');
+			case 'js-dropdown__items':
+				elem.toggleClass('js-dropdown__items_opened');
 				break;
-			case 'dropdown__input':
-				elem.toggleClass('dropdown__input_opened');
+			case 'js-dropdown__input':
+				elem.toggleClass('js-dropdown__input_opened');
 				this.ariaExpandedToggle(elem);
 				break;
-			case 'dropdown__arrow-button':
-				elem.toggleClass('dropdown__arrow-button_opened');
+			case 'js-dropdown__arrow-button':
+				elem.toggleClass('js-dropdown__arrow-button_opened');
 				break;
 			default:
 				break;

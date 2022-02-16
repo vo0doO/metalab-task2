@@ -1,13 +1,13 @@
 include ../text/text
 
 mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=false, form=false, value=false, counters=false)
-  section.dropdown(form=form)
+  section.js-dropdown(form=form)
     if label
-      label.dropdown__label(for=id)
+      label.js-dropdown__label(for=id)
         +text({ withTag: 'h3', withContent: label })
         if sublabel
           +text({ withTag: 'h3', withContent: sublabel, withWeight: 'normal', withColor: 'dark-shade-50' })
-    input.dropdown__input(
+    input.js-dropdown__input(
       list=id,
       value=value,
       type="text",
@@ -19,8 +19,8 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
       aria-owns="dropitems",
       aria-expanded="false"
     )
-    span.dropdown__arrow-button= "expand_more"
+    span.js-dropdown__arrow-button= "expand_more"
     if counters
       if block
-        datalist#dropitems.dropdown__items
+        datalist#dropitems.js-dropdown__items
           block

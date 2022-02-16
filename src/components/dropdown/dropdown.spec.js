@@ -1,25 +1,25 @@
 /* eslint-disable object-shorthand */
 const { registerSuite } = intern.getPlugin('interface.object');
-const { expect, should, assert } = intern.getPlugin('chai');
+const { expect } = intern.getPlugin('chai');
 const $ = require('jquery');
 const { sleep, domReady } = require('../../utils/js');
 
 registerSuite('компонент/дропдаун', {
 	beforeEach() {
-		const dropdown = $('.dropdown__input');
+		const dropdown = $('.js-dropdown__input');
 		this.dd = dropdown;
 		this.dd.br = this.dd.css('border-radius');
 		this.dd.ae = this.dd.attr('aria-expanded');
-		this.ab = this.dd.siblings('.dropdown__arrow-button');
+		this.ab = this.dd.siblings('.js-dropdown__arrow-button');
 		this.ab.c = this.ab.css('color');
-		this.dl = this.dd.siblings('.dropdown__items');
+		this.dl = this.dd.siblings('.js-dropdown__items');
 		return this;
 	},
 	tests: {
 
 		async 'Dropdown имеет ожидаемые классы: загруженный'() {
 			const { dd } = await this.parent;
-			await expect(dd.hasClass('dropdown__input_opened')).equal(false);
+			await expect(dd.hasClass('js-dropdown__input_opened')).equal(false);
 		},
 
 		async 'Aria expanded имеет значение false: загруженный'() {
@@ -38,7 +38,7 @@ registerSuite('компонент/дропдаун', {
 		},
 
 		async 'Border сolor имеет ожидаемый цвет: загруженный'() {
-			const bc = $('.dropdown__input').css('border-color');
+			const bc = $('.js-dropdown__input').css('border-color');
 			await expect(bc).equal('rgba(31, 32, 65, 0.25)');
 		},
 
@@ -50,7 +50,7 @@ registerSuite('компонент/дропдаун', {
 
 		async 'Dropdown имеет ожидаемые классы: открытый'() {
 			const { dd } = await this.parent;
-			await expect(dd.hasClass('dropdown__input_opened')).equal(true);
+			await expect(dd.hasClass('js-dropdown__input_opened')).equal(true);
 		},
 
 		async 'Aria expanded имеет значение true: открытый'() {
@@ -69,7 +69,7 @@ registerSuite('компонент/дропдаун', {
 		},
 
 		async 'Border сolor имеет ожидаемый цвет: открытый'() {
-			const bc = $('.dropdown__input.dropdown__input_opened').css('border-color');
+			const bc = $('.js-dropdown__input.js-dropdown__input_opened').css('border-color');
 			await expect(bc).equal('rgba(31, 32, 65, 0.5)');
 		},
 
@@ -81,7 +81,7 @@ registerSuite('компонент/дропдаун', {
 
 		async 'Dropdown имеет ожидаемые классы: закрытый'() {
 			const { dd } = await this.parent;
-			await expect(dd.hasClass('dropdown__input_opened')).equal(false);
+			await expect(dd.hasClass('js-dropdown__input_opened')).equal(false);
 		},
 
 		async 'Aria expanded имеет значение false: закрытый'() {
@@ -100,7 +100,7 @@ registerSuite('компонент/дропдаун', {
 		},
 
 		async 'Border сolor имеет ожидаемый цвет: закрытый'() {
-			const bc = $('.dropdown__input').css('border-color');
+			const bc = $('.js-dropdown__input').css('border-color');
 			await expect(bc).equal('rgba(31, 32, 65, 0.25)');
 		},
 	}
