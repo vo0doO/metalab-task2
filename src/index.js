@@ -12,3 +12,4 @@ import './components/color-palette/color-palette.scss';
 import './components/dropdown/dropdown';
 import './components/counter/counter';
 import './components/dropdown/dropdown.spec';
+import './components/counter/counter.spec';
