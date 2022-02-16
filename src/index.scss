@@ -40,17 +40,14 @@
 .sandbox__dropdown-wrapper {
 	width: 320px;
 	height: fit-content;
-
 }
-
 
 .sandbox__logo {
 	height: 25px;
 	align-self: flex-start;
 
-
 	&:hover {
-		z-index:9999;
+		z-index: 9999;
 		box-shadow: 0.1 0.1 0.3 0.2 gray;
 		text-align: left;
 		text-size-adjust: 300%;
@@ -75,4 +72,3 @@
 		transition-timing-function: ease;
 	}
 }
-
