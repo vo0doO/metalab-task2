@@ -1,9 +1,12 @@
 import $ from 'jquery';
+import {
+	words, wordOfNum, getDisabled, setDisabled, removeDisabled
+} from '../../utils/js/index';
 
 export default class Counter extends HTMLElement {
-	static get counterClassList() {
+	static get classes() {
 		return {
-			COUNTER: 'js-counter',
+			ROOT: 'js-counter',
 			INPUT: 'js-counter__input',
 			FIELD: 'js-counter__field',
 			HIDDEN: 'js-counter__input_hidden',
@@ -12,41 +15,15 @@ export default class Counter extends HTMLElement {
 		};
 	}
 
-	static get counterEventsList() {
+	static get events() {
 		return {
+			CHANGE_ROOT_TITLE: 'change.counter.root.title',
+			CHANGE_ROOT_VALUE: 'change.counter.root.value',
 			CHANGE_INPUT_VALUE: 'change.counter.input.value',
 			CLICK_INCREMENT_BUTTON: 'click.counter.increment-button',
 			CLICK_DECREMENT_BUTTON: 'click.counter.decrement-button',
-			CHANGE_INCREMENT_BUTTON_STYLE: 'change.counter.increment-button.style',
-			CHANGE_DECREMENT_BUTTON_STYLE: 'change.counter.decrement-button.style'
-		};
-	}
-
-	static setDisabled(element) {
-		const disabled = Counter.getDisabled(element);
-		if (disabled === 'disabled') {
-			return;
-		}
-		$(element).attr('disabled', '');
-	}
-
-	static getDisabled(element) {
-		return $(element).attr('disabled');
-	}
-
-	static removeDisabled(element) {
-		const disabled = Counter.getDisabled(element);
-		if (disabled !== 'disabled') {
-			return;
-		}
-		element.removeAttr('disabled');
-	}
-
-	get counterObserverConfig() {
-		return {
-			attributes: true,
-			attributeOldValue: true,
-			attributeFilter: Counter.observedAttributes
+			CHANGE_INCREMENT_BUTTON_STATE: 'change.counter.increment-button.state',
+			CHANGE_DECREMENT_BUTTON_STATE: 'change.counter.decrement-button.state'
 		};
 	}
 
@@ -57,133 +34,172 @@ export default class Counter extends HTMLElement {
 	constructor() {
 		super();
 
-		this.counter = $(`.js-counter#${this.id}`);
-		this.counterInput = $(`.js-counter__input_hidden#${this.id}`);
-		this.counterDecrementButton = $(`.js-counter__decrement-button#${this.id}`);
-		this.counterIncrementButton = $(`.js-counter__increment-button#${this.id}`);
+		this.root = $(`.js-counter#${this.id}`);
+		this.input = $(`.js-counter__input_hidden#${this.id}`);
+		this.decrementButton = $(`.js-counter__decrement-button#${this.id}`);
+		this.incrementButton = $(`.js-counter__increment-button#${this.id}`);
 
 		this.connectedCallback = this.connectedCallback.bind(this);
 		this.disconnectedCallback = this.disconnectedCallback.bind(this);
 
-		this.counterEvents = this.counterEvents.bind(this);
-		this.counterInputEvents = this.counterInputEvents.bind(this);
-		this.counterDecrementEvents = this.counterDecrementEvents.bind(this);
-		this.counterIncrementEvents = this.counterIncrementEvents.bind(this);
+		this.rootEvents = this.rootEvents.bind(this);
+		this.inputEvents = this.inputEvents.bind(this);
+		this.decrementButtonEvents = this.decrementButtonEvents.bind(this);
+		this.incrementButtonEvents = this.incrementButtonEvents.bind(this);
 
 		this.attributeChangedCallback = this.attributeChangedCallback.bind(this);
-		this.handleClickCounterButton = this.handleClickCounterButton.bind(this);
-		this.handleChangeCounterInputValue = this.handleChangeCounterInputValue.bind(this);
-
-		this.counterObserver = new MutationObserver(this.counterObserverCallback);
+		this.handleClickButton = this.handleClickButton.bind(this);
+		this.handleChangeRootValue = this.handleChangeRootValue.bind(this);
+		this.handleChangeInputValue = this.handleChangeInputValue.bind(this);
+		this.handleChangeButtonState = this.handleChangeButtonState.bind(this);
+		this.inputObserver = new MutationObserver(this.inputObserverCallback);
 	}
 
 	connectedCallback() {
-		this.counterObserve();
-		this.counterEvents();
-		this.counterInputEvents();
-		this.counterDecrementEvents();
-		this.counterIncrementEvents();
+		this.inputObserve();
+		this.rootEvents();
+		this.inputEvents();
+		this.decrementButtonEvents();
+		this.incrementButtonEvents();
 	}
 
 	disconnectedCallback() {
-		this.counterObserver.takeRecords();
-		this.counterInput.off('change.counter.input.value');
-		this.counterDecrementButton.off('click.counter.decrement-button');
-		this.counterIncrementButton.off('click.counter.increment-button');
-		this.counterIncrementButton.off('change.counter.increment-button.style');
-		this.counterDecrementButton.off('change.counter.decrement-button.style');
+		this.inputObserver.takeRecords();
+		this.input.off(Counter.events.CHANGE_INPUT_VALUE);
+		this.decrementButton.off(Counter.events.CHANGE_DECREMENT_BUTTON_STATE);
+		this.incrementButton.off(Counter.events.CHANGE_INCREMENT_BUTTON_STATE);
+		this.incrementButton.off(Counter.events.CLICK_INCREMENT_BUTTON);
+		this.decrementButton.off(Counter.events.CLICK_DECREMENT_BUTTON);
 	}
 
-	attributeChangedCallback(element, newValue, oldValue) {
-		console.log(`Element: ${element} \n New value: ${newValue} \n Old value ${oldValue}`);
+	attributeChangedCallback(element, oldValue, newValue) {
+		const oldV = parseInt(oldValue, 10);
+		const newV = parseInt(newValue, 10);
+
+		if (oldV === newV && newV < 0) {
+			return;
+		}
+
+		this.handleChangeRootValue(null, { value: newV, id: this.id });
 	}
 
-	counterObserverCallback(mutations) {
+	inputObserve() {
+		Array.map(this.input.get(), (node) => {
+			this.inputObserver.observe(node, this.inputObserverConfig);
+		});
+	}
+
+	get inputObserverConfig() {
+		return {
+			attributes: true,
+			attributeOldValue: true,
+			attributeFilter: Counter.observedAttributes
+		};
+	}
+
+	inputObserverCallback(mutations) {
 		mutations.forEach((mutation) => {
 			if (mutation.type === 'attributes') {
 				const { oldValue } = mutation;
 				const { value } = mutation.target;
 				if (value !== oldValue) {
-					$(mutation.target).trigger('change.counter.input.value');
+					$(mutation.target).trigger(Counter.events.CHANGE_INPUT_VALUE);
+					$(this.root).attr('value', mutation.target.value);
 				}
 			}
 		});
 	}
 
-	handleChangeCounterInputValue(event) {
-		const input = this.counterInput;
-		if (event.target !== this.counterInput.get(0)) {
+	rootEvents() {
+		this.root.on(
+			Counter.events.CHANGE_ROOT_TITLE,
+			(event, data) => [event, ...data],
+		);
+	}
+
+	inputEvents() {
+		this.input.on({
+			'change.counter.input.value': this.handleChangeInputValue
+		});
+	}
+
+	incrementButtonEvents() {
+		this.incrementButton.on({
+			'click.counter.increment-button': this.handleClickButton,
+			'change.counter.increment-button.state': this.handleChangeButtonState
+		});
+	}
+
+	decrementButtonEvents() {
+		this.decrementButton.on({
+			'click.counter.decrement-button': this.handleClickButton,
+			'change.counter.decrement-button.state': this.handleChangeButtonState
+		});
+	}
+
+	handleChangeInputValue(_event) {
+		const { input } = this;
+		if (_event.target !== this.input.get(0)) {
 			throw new Error(`Ошибка обработчика события ${event}`);
 		}
 
-		const incr = this.counterIncrementButton;
-		const decr = this.counterDecrementButton;
+		const incr = this.incrementButton;
+		const decr = this.decrementButton;
 
-		incr.triggerHandler('change.counter.increment-button.style', {
+		incr.triggerHandler(Counter.events.CHANGE_INCREMENT_BUTTON_STATE, {
 			input,
 			incr,
 			decr
 		});
 
-		decr.triggerHandler('change.counter.decrement-button.style', {
+		decr.triggerHandler(Counter.events.CHANGE_DECREMENT_BUTTON_STATE, {
 			input,
 			incr,
 			decr
 		});
 	}
 
-	handleChangeCounterButtonState(_event, data) {
+	handleChangeRootValue(_event, data) {
+		const title = wordOfNum(data.value, words[data.id]);
+		this.root.attr('title', title);
+		this.root.trigger(Counter.events.CHANGE_ROOT_TITLE, [data.id, title, data.value]);
+	}
+
+	handleChangeButtonState(_event, data) {
 		const val = parseInt(data.input.val(), 10);
 		const max = parseInt(data.input.attr('max'), 10);
 		const min = parseInt(data.input.attr('min'), 10);
 
 		if (val < max && val >= min) {
-			Counter.removeDisabled(data.incr);
+			removeDisabled(data.incr);
 		}
 
 		if (val >= max) {
-			Counter.setDisabled(data.incr);
+			setDisabled(data.incr);
 		}
 
 		if (val > min) {
-			Counter.removeDisabled(data.decr);
+			removeDisabled(data.decr);
 		}
 
 		if (val <= min) {
-			Counter.setDisabled(data.decr);
+			setDisabled(data.decr);
 		}
 	}
 
-	counterEvents() {
-		this.counter.on(
-			'click.counter.increment.button',
-			'.js-counter__increment-button',
-			{ name: 'increment' },
-			(_event, data) => {
-				console.log(`Element: ${_event.target} Data: ${data}`);
-			}
-		);
-	}
-
-	counterInputEvents() {
-		this.counterInput.on({
-			'change.counter.input.value': this.handleChangeCounterInputValue
-		});
-	}
-
-	handleClickCounterButton(event) {
-		const element = event.target;
+	handleClickButton(_event) {
+		const element = _event.target;
 		const cl = element.className;
 		const input = element.nextSibling || element.previousSibling;
 
 		switch (cl) {
-			case 'js-counter__increment-button': {
+			case Counter.classes.INCREMENT: {
 				input.stepUp();
 				$(input).attr('value', input.value);
 				break;
 			}
 
-			case 'js-counter__decrement-button': {
+			case Counter.classes.DECREMENT: {
 				input.stepDown();
 				$(input).attr('value', input.value);
 				break;
@@ -193,30 +209,6 @@ export default class Counter extends HTMLElement {
 				throw new Error(`Ошибка обработки события: ${event}`);
 			}
 		}
-	}
-
-	counterIncrementEvents() {
-		const element = $(this.counterIncrementButton);
-
-		element.on({
-			'click.counter.increment-button': this.handleClickCounterButton,
-			'change.counter.increment-button.style ': this.handleChangeCounterButtonState
-		});
-	}
-
-	counterDecrementEvents() {
-		const element = $(this.counterDecrementButton);
-
-		element.on({
-			'click.counter.decrement-button': this.handleClickCounterButton,
-			'change.counter.decrement-button.style': this.handleChangeCounterButtonState
-		});
-	}
-
-	counterObserve() {
-		this.counterInput.get().map((node) => {
-			this.counterObserver.observe(node, this.counterObserverConfig);
-		});
 	}
 }
 

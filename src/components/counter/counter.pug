@@ -2,7 +2,7 @@ include ../../components/text/text
 
 mixin counter(name='', label='', id='', form='', value=0, min=0, max=0, ...items)
 
-  guests-counter.js-counter(id=id value=value)
+  guests-counter.js-counter(id=id title='' value=value)
     label.js-counter__label(for=id)
       +text({
         withTag: 'h3',

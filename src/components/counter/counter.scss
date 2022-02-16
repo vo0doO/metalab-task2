@@ -1,4 +1,4 @@
-@import "./src/utils/style/vars";
+@import './src/utils/style/vars';
 
 .js-counter {
 	display: flex;
@@ -45,7 +45,7 @@
 		color: $dark-shade-100;
 		font-weight: bold;
 		font-size: 12px;
-		font-family: "Montserrat", sans-serif;
+		font-family: 'Montserrat', sans-serif;
 		line-height: 15px;
 		-moz-appearance: none;
 		&_hidden {
@@ -56,7 +56,7 @@
 			color: #1f2041;
 			font-weight: bold;
 			font-size: 12px;
-			font-family: "Montserrat", sans-serif;
+			font-family: 'Montserrat', sans-serif;
 			line-height: 15px;
 			text-align: center;
 			cursor: default;
