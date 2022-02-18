@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"scripts": {
-		"start": "set NODE_ENV=development&&npx webpack serve --stats-children --stats-error-details",
+		"start": "set NODE_ENV=development&&npx chrome --debugging-port=9222&&webpack serve --stats-children --stats-error-details",
 		"test": "set NODE_ENV=development&&npx webpack serve --config test.config.js --open --stats-children --stats-error-details",
 		"dev": "set NODE_ENV=development&&npx webpack",
 		"build": "set NODE_ENV=production&&npx webpack --stats-children --stats-error-details",
@@ -49,6 +49,7 @@
 		"html-loader": "^3.0.1",
 		"html-webpack-plugin": "^5.5.0",
 		"mini-css-extract-plugin": "^2.4.5",
+		"npmp": "^0.1.1",
 		"postcss": "^8.4.5",
 		"postcss-combine-media-query": "^1.0.1",
 		"postcss-flexbugs-fixes": "^5.0.2",

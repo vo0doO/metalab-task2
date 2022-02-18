@@ -4,3 +4,4 @@ external/
 test/
 src/components/**.json
 package-lock.json
+swing/*

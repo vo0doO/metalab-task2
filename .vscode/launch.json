@@ -20,11 +20,20 @@
 
   "version": "0.2.0",
   "configurations": [
+  {
+    "type": "chrome",
+    "request": "attach",
+    "name": "Attach to Chrome",
+    "runtimeExecutable": "stable",
+    "port": 9222,
+    "webRoot": "${workspaceFolder}"
+  },
     {
       "command": "npm start",
       "name": "NpmStart",
       "request": "launch",
       "type": "node-terminal",
+      
       "outFiles": ["${workspaceFolder}/dist/**/*.js", "!**/node_modules/**"]
     },
     {
@@ -32,16 +41,16 @@
       "request": "launch",
       "reAttach": true,
       "name": "Firefox Launch localhost",
-      "url": "http://localhost:8080/",
+      "url": "https://localhost:8080/",
       "webRoot": "${workspaceFolder}"
     },
     {
-      "name": "LaunchChrome",
+      "type": "chrome",
       "request": "launch",
-      "type": "pwa-chrome",
-      "runtimeExecutable": "canary",
-      "url": "http://localhost:8080",
-      "webRoot": "${workspaceFolder}",      
+      "name": "LaunchChrome",
+      "runtimeExecutable": "stable",
+      "url": "https://localhost:8080",
+      "webRoot": "${workspaceFolder}"
     }
   ],
   "compounds": [
