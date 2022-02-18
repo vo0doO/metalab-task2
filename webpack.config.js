@@ -1,13 +1,7 @@
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const autoprefixer = require('autoprefixer');
-const cssMqpacker = require('css-mqpacker');
-const cssnano = require('cssnano');
 const path = require('path');
-const postcssCombineMediaQuery = require('postcss-combine-media-query');
-const postcssFlexBugsFixes = require('postcss-flexbugs-fixes');
-require('babel-polyfill');
 
 const paths = {
 	src: path.resolve(__dirname, 'src'),
@@ -30,7 +24,17 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
 	mode,
+	cache: {
+		type: 'filesystem',
 
+		buildDependencies: {
+		// 2. Добавьте конфигурацию как buildDependency, чтобы получить недействительность кэша при изменении конфигурации
+			config: [__filename],
+
+		//  3. Если у вас есть другие вещи, от которых зависит сборка, вы можете добавить их здесь
+		// Обратите внимание, что веб-пакет, загрузчики и все модули, на которые ссылается ваша конфигурация, добавляются автоматически.
+		},
+	},
 	resolve: {
 
 		alias: {
@@ -47,8 +51,8 @@ module.exports = {
 	devtool: mode === 'production' ? false : 'source-map', // 'eval-cheap-module-source-map',
 
 	entry: {
-
-		index: ['babel-polyfill', 'intern', './src/index.js']
+		// './node_modules/webpack/hot/only-dev-server.js', 
+		index: ['./src/index.js']
 
 	},
 
@@ -56,12 +60,13 @@ module.exports = {
 		path: paths.dist,
 		publicPath: '/',
 		asyncChunks: true,
-		filename: 'js/[name]/[contenthash:8].bundle.js',
-		sourceMapFilename: 'js/[name]/[contenthash:8].js.map',
-		chunkFilename: 'js/[name]/[contenthash:8].js',
+		filename: 'js/[name]/[contenthash].bundle.js',
+		hotUpdateChunkFilename: '[id].[fullhash].bundle-update.js',
+		sourceMapFilename: 'js/[name]/[contenthash].js.map',
+		chunkFilename: 'js/[name]/[contenthash].js',
 		clean: true
 	},
-
+	recordsPath: path.join(__dirname, '/records.json'), // this is not required for the webpack-dev-server, but when compiled.
 	module: {
 
 		rules: [
@@ -80,11 +85,6 @@ module.exports = {
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader',
-					options: {
-						presets: ['@babel/preset-env'],
-						plugins: ['@babel/plugin-syntax-top-level-await', '@babel/plugin-proposal-class-properties'],
-						sourceMap: true
-					}
 				},
 			},
 
@@ -102,99 +102,24 @@ module.exports = {
 				type: 'asset/resource',
 				exclude: '/assets/img',
 				generator: {
-					filename: 'assets/fonts/[name][ext][query]'
+					filename: 'assets/fonts/[name].[contenthash].[ext]'
 				}
 			},
 
 			{
-				test: /\.scss$/,
+				test: /\.(sa|sc|c)ss$/,
 				use: [
-					process.env.NODE_ENV === 'production'
-						? MiniCssExtractPlugin.loader
-						: 'style-loader',
-					{
-						loader: 'css-loader',
-						options: {
-							sourceMap: true
-						}
-					},
-
-					{
-						loader: 'postcss-loader',
-						options: {
-							sourceMap: true,
-							postcssOptions: {
-								plugins: [
-									autoprefixer,
-									postcssFlexBugsFixes,
-									postcssCombineMediaQuery,
-									cssMqpacker,
-									cssnano({
-										preset: [
-											'default',
-											{
-												discardComments: {
-													removeAll: true
-												}
-											}
-										]
-									})
-								]
-							}
-						}
-					},
-
-					{
-						loader: 'sass-loader',
-						options: {
-							sourceMap: true
-						}
-					}
-				]
-			},
-
-			{
-				test: /\.css$/,
-				use: [
-					'style-loader',
-					{
-						loader: 'css-loader',
-						options: {
-							sourceMap: true
-						}
-					},
-
-					{
-						loader: 'postcss-loader',
-						options: {
-							sourceMap: true,
-							postcssOptions: {
-								plugins: [
-									autoprefixer,
-									postcssFlexBugsFixes,
-									postcssCombineMediaQuery,
-									cssMqpacker,
-									cssnano({
-										preset: [
-											'default',
-											{
-												discardComments: {
-													removeAll: true
-												}
-											}
-										]
-									})
-								]
-							}
-						}
-					}
-				]
+					MiniCssExtractPlugin.loader,
+					'css-loader',
+					'postcss-loader',
+					'sass-loader',
+				],
 			}
 		]
 	},
 
 	plugins: [
-
+		// new HotModuleReplacementPlugin(),
 		new CopyPlugin({
 			patterns: [
 
@@ -221,43 +146,44 @@ module.exports = {
 			}
 		),
 
-		new MiniCssExtractPlugin(
-			{
-				filename: '[name].css'
-			}
-		)
+		new MiniCssExtractPlugin({
+			filename: 'css/[name]/[contenthash].bundle.css',
+			chunkFilename: 'css/[name]/[contenthash].css',
+		}),
 	],
-
 	optimization: {
-
-		minimize: false,
-
-		usedExports: 'global',
-		mergeDuplicateChunks: true,
-		flagIncludedChunks: true,
-		concatenateModules: true,
-		removeAvailableModules: true,
 		splitChunks: {
-			chunks: 'all',
-			minSize: 1000,
-			maxSize: 30000
+			chunks: 'all'
 		}
 	},
-
 	devServer: {
-		static: {
-			directory: path.join(__dirname, '')
-		},
-		https: false,
+		static: [
+			{
+				directory: path.join(__dirname, 'assest')
+			},
+			// {
+			// 	directory: path.join(__dirname, 'loaders')
+			// },
+		],
+		https: true,
 		port: 8080,
-		liveReload: true,
-		hot: true,
+		// watchFiles: './src',
+		liveReload: false,
+		hot: 'only',
+		// open: {
+		// 	app: 'chrome',
+		// },
 		client: {
-			progress: false
-		}
+			progress: false,
+			logging: 'info',
+
+		},
 	},
 
 	experiments: {
 		topLevelAwait: true,
+		layers: true,
+		futureDefaults: true,
+		cacheUnaffected: true
 	}
 };
