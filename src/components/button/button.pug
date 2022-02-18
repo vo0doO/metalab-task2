@@ -1,0 +1,10 @@
+template#btn-template
+	button(is="icon-button")
+
+mixin btn(dress=false, slot=false, caller=false)
+	-
+		const className = `js-icon-button__${dress}`
+
+	case dress
+		when 'arrow'
+			icon-button(class=`${className}` slot=`${slot}`)="expand_more"

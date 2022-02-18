@@ -1,0 +1,58 @@
+@import "../../utils/style/apperace.scss";
+@import '../../utils/style/vars';
+
+.js-icon-button {
+	@include button;
+	
+	@keyframes arrow-hover-focus {
+			100% {
+				color: $dark-shade-75;
+			}
+
+			75% {
+				color: rgb(31 32 65 / 71%);
+			}
+
+			50% {
+				color: rgb(31 32 65 / 64%);
+			}
+
+			25% {
+				color: rgb(31 32 65 / 57%);
+			}
+
+			0% {
+				color: $dark-shade-50;
+			}
+	}
+	&__arrow {
+		grid-area: input;
+		justify-self: self-end;
+		padding: 9px;
+		color: $dark-shade-50;
+		font-size: 24px;
+		font-family: 'Materialicons', serif;
+		cursor: pointer;
+		&_opened {
+			animation-name: arrow-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+			animation-timing-function: ease-in-out;
+		}
+		&:hover {
+			animation-name: arrow-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
+		&:focus {
+			animation-name: arrow-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
+		&:focus-visible {
+			outline: 0;
+			animation-name: arrow-hover-focus;
+			animation-duration: 300ms;
+			animation-fill-mode: forwards;
+		}
+		}}
