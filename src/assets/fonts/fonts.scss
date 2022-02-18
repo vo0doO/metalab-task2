@@ -2,26 +2,26 @@
 	font-weight: normal;
 	font-style: normal;
 	font-family: 'Montserrat';
-	src: url('montserrat/montserrat-regular.woff2') format('woff2'),
-		url('montserrat/montserrat-regular.woff') format('woff'),
-		url('montserrat/montserrat-regular.svg#webfont') format('svg');
+	src: url('assets/fonts/montserrat/montserrat-regular.woff2') format('woff2'),
+		url('assets/fonts/montserrat/montserrat-regular.woff') format('woff'),
+		url('assets/fonts/montserrat/montserrat-regular.svg#webfont') format('svg');
 }
 
 @font-face {
 	font-weight: bold;
 	font-style: normal;
 	font-family: 'Montserrat';
-	src: url('montserrat/montserrat-bold.woff2') format('woff2'), url('montserrat/montserrat-bold.woff') format('woff'),
-		url('montserrat/montserrat-bold.svg#webfont') format('svg');
+	src: url('assets/fonts/montserrat/montserrat-bold.woff2') format('woff2'), url('assets/fonts/montserrat/montserrat-bold.woff') format('woff'),
+		url('assets/fonts/montserrat/montserrat-bold.svg#webfont') format('svg');
 }
 
 @font-face {
 	font-weight: normal;
 	font-style: normal;
 	font-family: 'Materialicons';
-	src: url('materialicons/MaterialIcons-Regular.ttf') format('ttf'),
-		url('materialicons/MaterialIcons-Regular.otf') format('otf'),
-		url('materialicons/MaterialIcons-Regular.svg') format('svg'),
-		url('materialicons/MaterialIcons-Regular.woff') format('woff'),
-		url('materialicons/MaterialIcons-Regular.eot') format('eot');
+	src: url('assets/fonts/materialicons/MaterialIcons-Regular.ttf') format('ttf'),
+		url('assets/fonts/materialicons/MaterialIcons-Regular.otf') format('otf'),
+		url('assets/fonts/materialicons/MaterialIcons-Regular.svg') format('svg'),
+		url('assets/fonts/materialicons/MaterialIcons-Regular.woff') format('woff'),
+		url('assets/fonts/materialicons/MaterialIcons-Regular.eot') format('eot');
 }
