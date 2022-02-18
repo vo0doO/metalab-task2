@@ -1,15 +1,21 @@
 include ../../components/text/text
 
-mixin counter(name='', label='', id='', form='', value=0, min=0, max=0, ...items)
+mixin counter(name='', label='', id='', form='', value=0, min=0, max=0, slot='', role='')
 
-  guests-counter.js-counter(id=id title='' value=value)
+  guests-counter.js-counter(
+    id=id
+    title=''
+    value=value
+    slot=slot
+    role=role
+    )
     label.js-counter__label(for=id)
       +text({
         withTag: 'h3',
         withContent: `${ label }`
       })
     .js-counter__input(id=id)
-      span.js-counter__decrement-button(
+      div.js-counter__decrement-button(
         id=id
         readonly: true
         disabled
@@ -25,7 +31,7 @@ mixin counter(name='', label='', id='', form='', value=0, min=0, max=0, ...items
         min=min
         max=max
       )
-      span.js-counter__increment-button(
+      div.js-counter__increment-button(
         id=id
         readonly: true
         ) +

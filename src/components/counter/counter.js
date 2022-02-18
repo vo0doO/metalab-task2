@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import {
-	words, wordOfNum, getDisabled, setDisabled, removeDisabled
+	words, wordOfNum, setDisabled, removeDisabled, sleep
 } from '../../utils/js/index';
 
 export default class Counter extends HTMLElement {
@@ -84,7 +84,8 @@ export default class Counter extends HTMLElement {
 	}
 
 	inputObserve() {
-		Array.map(this.input.get(), (node) => {
+		// eslint-disable-next-line array-callback-return
+		this.input.get().map((node) => {
 			this.inputObserver.observe(node, this.inputObserverConfig);
 		});
 	}
@@ -187,27 +188,31 @@ export default class Counter extends HTMLElement {
 		}
 	}
 
-	handleClickButton(_event) {
+	async handleClickButton(_event) {
 		const element = _event.target;
 		const cl = element.className;
 		const input = element.nextSibling || element.previousSibling;
 
-		switch (cl) {
-			case Counter.classes.INCREMENT: {
-				input.stepUp();
-				$(input).attr('value', input.value);
-				break;
-			}
+		try {
+			switch (cl) {
+				case Counter.classes.INCREMENT: {
+					input.stepUp();
+					$(input).attr('value', input.value);
+					break;
+				}
 
-			case Counter.classes.DECREMENT: {
-				input.stepDown();
-				$(input).attr('value', input.value);
-				break;
-			}
+				case Counter.classes.DECREMENT: {
+					input.stepDown();
+					$(input).attr('value', input.value);
+					break;
+				}
 
-			default: {
-				throw new Error(`Ошибка обработки события: ${event}`);
+				default: {
+					throw new Error(`Ошибка обработки события: ${_event}`);
+				}
 			}
+		} catch (error) {
+			throw new Error(`Ошибка обработки события: ${element}, ${_event.offsetX}, ${_event.offsetY}`);
 		}
 	}
 }
