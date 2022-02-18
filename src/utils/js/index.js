@@ -3,7 +3,7 @@ import { domReady } from './domReady';
 import { sleep } from './sleep';
 import { words, wordOfNum } from './morph';
 import { getDisabled, setDisabled, removeDisabled } from './disabled';
-
+const c = console;
 export {
-	domReady, sleep, words, wordOfNum, getDisabled, setDisabled, removeDisabled
+	domReady, sleep, words, wordOfNum, getDisabled, setDisabled, removeDisabled, c
 };
