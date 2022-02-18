@@ -1,4 +1,4 @@
-@import 'src/utils/style/vars';
+@import '../../utils/style/vars';
 
 .js-dropdown {
 	display: grid;
@@ -90,55 +90,7 @@
 		}
 	}
 
-	&__arrow-button {
-		@keyframes arrow-hover-focus {
-			100% {
-				color: rgb(31 32 65 / 75%);
-			}
-
-			50% {
-				color: rgb(31 32 65 / 65%);
-			}
-
-			0% {
-				color: rgb(31 32 65 / 50%);
-			}
-		}
-
-		grid-area: input;
-		justify-self: self-end;
-		padding: 9px;
-		color: $dark-shade-50;
-		font-size: 24px;
-		font-family: 'Materialicons', serif;
-		cursor: pointer;
-
-		&_opened {
-			animation-name: arrow-hover-focus;
-			animation-duration: 300ms;
-			animation-fill-mode: forwards;
-			//animation-timing-function: ease-in-out;
-		}
-
-		&:hover {
-			animation-name: arrow-hover-focus;
-			animation-duration: 300ms;
-			animation-fill-mode: forwards;
-		}
-
-		&:focus {
-			animation-name: arrow-hover-focus;
-			animation-duration: 300ms;
-			animation-fill-mode: forwards;
-		}
-
-		&:focus-visible {
-			outline: 0;
-			animation-name: arrow-hover-focus;
-			animation-duration: 300ms;
-			animation-fill-mode: forwards;
-		}
-	}
+	
 
 	&__items {
 		@keyframes close {

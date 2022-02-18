@@ -1,13 +1,31 @@
 include ../text/text
+include ../button/button
+
+template#drop-down-template
+  slot(name="label")
+    slot(name="sublabel")
+  slot(name="input")
+  slot(name="arrow-button")
+  slot(name="items")
+
 
 mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=false, form=false, value=false, counters=false)
-  drop-down.js-dropdown(form=form value='' placeholder=`${placeholder}` aria-expanded="false" data-values={})
+  
+  drop-down.js-dropdown(
+    id="drop-down-template"
+    form=form
+    value=''
+    placeholder=`${placeholder}`
+    aria-expanded="false"
+    data-values={}
+    )
     if label
-      label.js-dropdown__label(for=id)
+      label.js-dropdown__label(for=id slot="label")
         +text({ withTag: 'h3', withContent: label })
         if sublabel
-          +text({ withTag: 'h3', withContent: sublabel, withWeight: 'normal', withColor: 'dark-shade-50' })
+          +text({ withTag: 'h3', withContent: sublabel, withWeight: 'normal', withColor: 'dark-shade-50' }, slot="sublabel")
     input.js-dropdown__input(
+      slot="input"
       list=id,
       value=`${placeholder}`,
       type="text",
@@ -19,8 +37,21 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
       aria-owns="dropitems",
       aria-expanded="false"
     )
-    span.js-dropdown__arrow-button= "expand_more"
+    +btn('arrow', "arrow-button", "js-dropdown")
     if counters
-      if block
-        datalist#dropitems.js-dropdown__items
-          block
+      datalist#dropitems.js-dropdown__items(slot="items", role='datalist')
+        block
+
+
+  //- template.js-dropdown(id="drop-down-template" form=form value='' placeholder=`${placeholder}` aria-expanded="false" data-values={})
+  //-   if label
+  //-     slot(name="label")
+  //-       if sublabel
+  //-         slot(name="sublabel")
+  //-   slot(name="input")
+  //-   slot(name="arrow-button")
+  //-   if counters
+  //-     slot(name="items")
+  //-     if block
+  //-       while(counters--)
+  //-         slot(mane="options")
