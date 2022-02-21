@@ -48,11 +48,14 @@ module.exports = {
 		},
 	},
 
-	devtool: mode === 'production' ? false : 'source-map', // 'eval-cheap-module-source-map',
+	devtool: mode === 'production' ? false : 'cheap-module-source-map', // 'eval-cheap-module-source-map',
 
 	entry: {
 		// './node_modules/webpack/hot/only-dev-server.js', 
-		index: ['./src/index.js']
+		index: [
+			'intern',
+			'./src/index.js'
+		]
 
 	},
 
@@ -168,7 +171,7 @@ module.exports = {
 		https: true,
 		port: 8080,
 		// watchFiles: './src',
-		liveReload: false,
+		liveReload: true,
 		hot: 'only',
 		// open: {
 		// 	app: 'chrome',
