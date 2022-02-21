@@ -51,7 +51,6 @@ module.exports = {
 	devtool: mode === 'production' ? false : 'cheap-module-source-map', // 'eval-cheap-module-source-map',
 
 	entry: {
-		// './node_modules/webpack/hot/only-dev-server.js', 
 		index: [
 			'intern',
 			'./src/index.js'
@@ -122,7 +121,6 @@ module.exports = {
 	},
 
 	plugins: [
-		// new HotModuleReplacementPlugin(),
 		new CopyPlugin({
 			patterns: [
 
@@ -164,18 +162,11 @@ module.exports = {
 			{
 				directory: path.join(__dirname, 'assest')
 			},
-			// {
-			// 	directory: path.join(__dirname, 'loaders')
-			// },
 		],
 		https: true,
 		port: 8080,
-		// watchFiles: './src',
 		liveReload: true,
-		hot: 'only',
-		// open: {
-		// 	app: 'chrome',
-		// },
+		hot: true,
 		client: {
 			progress: false,
 			logging: 'info',
