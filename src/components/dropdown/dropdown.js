@@ -1,9 +1,12 @@
 import $ from 'jquery';
-import { IconButton } from '../button/button';
+import { IButton } from '../button/button';
+
 import.meta.webpackHot.accept(
-	'./../../index.js'
-	);
-class DropDown extends HTMLElement {
+	'./../../index.js',
+	'./../../**/**/*.js'
+);
+
+class TDropDown extends HTMLElement {
 	static get classes() {
 		return {
 			ROOT: 'js-dropdown',
@@ -45,7 +48,7 @@ class DropDown extends HTMLElement {
 		this.root = $('.js-dropdown');
 		this.items = $('.js-dropdown__items');
 		this.input = $('.js-dropdown__input');
-		this.arrowButton = $(`.${IconButton.classes.ICON_BUTTON__ARROW}`);
+		this.arrowButton = $( `.${IButton.classes.IBUTTON__ARROW}` );
 
 		this.inputEvents = this.inputEvents.bind(this);
 		this.itemsEvents = this.itemsEvents.bind(this);
@@ -87,9 +90,9 @@ class DropDown extends HTMLElement {
 	}
 
 	handleClick() {
-		this.items.triggerHandler('toggle.dropdown.items.opened');
-		this.input.triggerHandler('toggle.dropdown.input.opened');
-		this.arrowButton.triggerHandler('toggle.dropdown.arrow-button.opened');
+		this.items.trigger( 'toggle.dropdown.items.opened' );
+		this.input.trigger( 'toggle.dropdown.input.opened' );
+		this.arrowButton.trigger( 'toggle.dropdown.arrow-button.opened' );
 	}
 
 	handleKeyPress(event) {
@@ -118,14 +121,14 @@ class DropDown extends HTMLElement {
 				elem.toggleClass('js-dropdown__input_opened');
 				this.ariaExpandedToggle(elem);
 				break;
-			case IconButton.classes.ICON_BUTTON__ARROW:
-				elem.toggleClass(IconButton.classes.ICON_BUTTON__ARROW_OPENED);
+			case IButton.classes.IBUTTON__ARROW:
+				elem.toggleClass( IButton.classes.IBUTTON__ARROW_OPENED );
 				break;
 			default:
 				break;
 		}
 	}
-	
+
 	itemsEvents() {
 		this.items.on({
 			'toggle.dropdown.items.opened': this.toggleOpened
@@ -148,4 +151,5 @@ class DropDown extends HTMLElement {
 	}
 }
 
-window.customElements.define('drop-down', DropDown);
+window.customElements.define( 'drop-down', TDropDown );
+export { TDropDown };

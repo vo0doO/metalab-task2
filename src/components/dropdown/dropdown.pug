@@ -2,17 +2,16 @@ include ../text/text
 include ../button/button
 
 template#drop-down-template
-  slot(name="label")
-    slot(name="sublabel")
-  slot(name="input")
-  slot(name="arrow-button")
-  slot(name="items")
+    slot(name="label")
+      slot(name="sublabel")
+    slot(name="input")
+    slot(name="arrow-button")
+    slot(name="items")
 
 
 mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=false, form=false, value=false, counters=false)
   
   drop-down.js-dropdown(
-    id="drop-down-template"
     form=form
     value=''
     placeholder=`${placeholder}`
