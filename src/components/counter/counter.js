@@ -1,14 +1,12 @@
-import $ from 'jquery';
-import {
-	words, wordOfNum, setDisabled, removeDisabled, sleep
-} from '../../utils/js/index';
+const $ = require( 'jquery' );
+const { words, wordOfNum, setDisabled, removeDisabled, sleep } = require( '../../utils/js/index' );
 
-export default class Counter extends HTMLElement {
+
+class TCounter extends HTMLElement {
 	static get classes() {
 		return {
 			ROOT: 'js-counter',
 			INPUT: 'js-counter__input',
-			FIELD: 'js-counter__field',
 			HIDDEN: 'js-counter__input_hidden',
 			INCREMENT: 'js-counter__increment-button',
 			DECREMENT: 'js-counter__decrement-button',
@@ -65,11 +63,11 @@ export default class Counter extends HTMLElement {
 
 	disconnectedCallback() {
 		this.inputObserver.takeRecords();
-		this.input.off(Counter.events.CHANGE_INPUT_VALUE);
-		this.decrementButton.off(Counter.events.CHANGE_DECREMENT_BUTTON_STATE);
-		this.incrementButton.off(Counter.events.CHANGE_INCREMENT_BUTTON_STATE);
-		this.incrementButton.off(Counter.events.CLICK_INCREMENT_BUTTON);
-		this.decrementButton.off(Counter.events.CLICK_DECREMENT_BUTTON);
+		this.input.off( TCounter.events.CHANGE_INPUT_VALUE );
+		this.decrementButton.off( TCounter.events.CHANGE_DECREMENT_BUTTON_STATE );
+		this.incrementButton.off( TCounter.events.CHANGE_INCREMENT_BUTTON_STATE );
+		this.incrementButton.off( TCounter.events.CLICK_INCREMENT_BUTTON );
+		this.decrementButton.off( TCounter.events.CLICK_DECREMENT_BUTTON );
 	}
 
 	attributeChangedCallback(element, oldValue, newValue) {
@@ -80,7 +78,7 @@ export default class Counter extends HTMLElement {
 			return;
 		}
 
-		this.handleChangeRootValue(null, { value: newV, id: this.id });
+		this.handleChangeRootValue( event, { value: newV, id: this.id } );
 	}
 
 	inputObserve() {
@@ -90,11 +88,11 @@ export default class Counter extends HTMLElement {
 		});
 	}
 
-	get inputObserverConfig() {
+	get inputObserverConfig () {
 		return {
 			attributes: true,
 			attributeOldValue: true,
-			attributeFilter: Counter.observedAttributes
+			attributeFilter: TCounter.observedAttributes
 		};
 	}
 
@@ -104,7 +102,7 @@ export default class Counter extends HTMLElement {
 				const { oldValue } = mutation;
 				const { value } = mutation.target;
 				if (value !== oldValue) {
-					$(mutation.target).trigger(Counter.events.CHANGE_INPUT_VALUE);
+					$( mutation.target ).trigger( TCounter.events.CHANGE_INPUT_VALUE );
 					$(this.root).attr('value', mutation.target.value);
 				}
 			}
@@ -113,7 +111,7 @@ export default class Counter extends HTMLElement {
 
 	rootEvents() {
 		this.root.on(
-			Counter.events.CHANGE_ROOT_TITLE,
+			TCounter.events.CHANGE_ROOT_TITLE,
 			(event, data) => [event, ...data],
 		);
 	}
@@ -138,35 +136,35 @@ export default class Counter extends HTMLElement {
 		});
 	}
 
-	handleChangeInputValue(_event) {
+	handleChangeInputValue ( event ) {
 		const { input } = this;
-		if (_event.target !== this.input.get(0)) {
+		if( event.target !== this.input.get( 0 ) ) {
 			throw new Error(`Ошибка обработчика события ${event}`);
 		}
 
 		const incr = this.incrementButton;
 		const decr = this.decrementButton;
 
-		incr.triggerHandler(Counter.events.CHANGE_INCREMENT_BUTTON_STATE, {
+		incr.triggerHandler( TCounter.events.CHANGE_INCREMENT_BUTTON_STATE, {
 			input,
 			incr,
 			decr
 		});
 
-		decr.triggerHandler(Counter.events.CHANGE_DECREMENT_BUTTON_STATE, {
+		decr.triggerHandler( TCounter.events.CHANGE_DECREMENT_BUTTON_STATE, {
 			input,
 			incr,
 			decr
 		});
 	}
 
-	handleChangeRootValue(_event, data) {
+	handleChangeRootValue ( event, data ) {
 		const title = wordOfNum(data.value, words[data.id]);
 		this.root.attr('title', title);
-		this.root.trigger(Counter.events.CHANGE_ROOT_TITLE, [data.id, title, data.value]);
+		this.root.trigger( TCounter.events.CHANGE_ROOT_TITLE, [data.id, title, data.value] );
 	}
 
-	handleChangeButtonState(_event, data) {
+	handleChangeButtonState ( event, data ) {
 		const val = parseInt(data.input.val(), 10);
 		const max = parseInt(data.input.attr('max'), 10);
 		const min = parseInt(data.input.attr('min'), 10);
@@ -188,33 +186,36 @@ export default class Counter extends HTMLElement {
 		}
 	}
 
-	async handleClickButton(_event) {
-		const element = _event.target;
+	async handleClickButton ( event ) {
+		const element = event.target;
 		const cl = element.className;
 		const input = element.nextSibling || element.previousSibling;
 
 		try {
 			switch (cl) {
-				case Counter.classes.INCREMENT: {
-					input.stepUp();
-					$(input).attr('value', input.value);
+				case TCounter.classes.INCREMENT: {
+					await input.stepUp();
+					await $( input ).attr( 'value', input.value );
+					Promise.resolve();
 					break;
 				}
 
-				case Counter.classes.DECREMENT: {
-					input.stepDown();
-					$(input).attr('value', input.value);
+				case TCounter.classes.DECREMENT: {
+					await input.stepDown();
+					await $( input ).attr( 'value', input.value );
+					Promise.resolve();
 					break;
 				}
 
 				default: {
-					throw new Error(`Ошибка обработки события: ${_event}`);
+					throw new Error( `Ошибка обработки события: ${event}` );
 				}
 			}
 		} catch (error) {
-			throw new Error(`Ошибка обработки события: ${element}, ${_event.offsetX}, ${_event.offsetY}`);
+			throw new Error( `Ошибка обработки события: ${element}, ${event.offsetX}, ${event.offsetY}` );
 		}
 	}
 }
 
-window.customElements.define('guests-counter', Counter);
+window.customElements.define( 'guests-counter', TCounter );
+module.exports = TCounter;

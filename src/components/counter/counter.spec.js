@@ -4,7 +4,7 @@ const { expect } = intern.getPlugin('chai');
 const $ = require('jquery');
 const { domReady } = require('../../utils/js');
 
-registerSuite('компонент/counter/dropdown', {
+export const counterTestSuite = registerSuite( 'компонент/counter/dropdown', {
 	beforeEach() {
 		const counters = document.querySelectorAll('guests-counter');
 		const counterInputs = document.querySelectorAll('.js-counter__input');
