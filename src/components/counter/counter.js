@@ -71,6 +71,7 @@ class TCounter extends HTMLElement {
 	}
 
 	attributeChangedCallback(element, oldValue, newValue) {
+		console.log( `attribute changed: \n Element: ${element} \n oldvalue ${oldValue} \n newValue ${newValue}` );
 		const oldV = parseInt(oldValue, 10);
 		const newV = parseInt(newValue, 10);
 
@@ -97,13 +98,13 @@ class TCounter extends HTMLElement {
 	}
 
 	inputObserverCallback(mutations) {
+		console.log( 'counter changed' );
 		mutations.forEach((mutation) => {
 			if (mutation.type === 'attributes') {
 				const { oldValue } = mutation;
 				const { value } = mutation.target;
 				if (value !== oldValue) {
-					$( mutation.target ).trigger( TCounter.events.CHANGE_INPUT_VALUE );
-					$(this.root).attr('value', mutation.target.value);
+					$( mutation.target ).trigger( TCounter.events.CHANGE_INPUT_VALUE, { value: mutation.target.value } );
 				}
 			}
 		});
@@ -136,14 +137,16 @@ class TCounter extends HTMLElement {
 		});
 	}
 
-	handleChangeInputValue ( event ) {
-		const { input } = this;
+	handleChangeInputValue ( event, data ) {
+		const { input, root } = this;
 		if( event.target !== this.input.get( 0 ) ) {
 			throw new Error(`Ошибка обработчика события ${event}`);
 		}
 
 		const incr = this.incrementButton;
 		const decr = this.decrementButton;
+
+		root.attr( 'value', data.value )
 
 		incr.triggerHandler( TCounter.events.CHANGE_INCREMENT_BUTTON_STATE, {
 			input,
@@ -160,8 +163,7 @@ class TCounter extends HTMLElement {
 
 	handleChangeRootValue ( event, data ) {
 		const title = wordOfNum(data.value, words[data.id]);
-		this.root.attr('title', title);
-		this.root.trigger( TCounter.events.CHANGE_ROOT_TITLE, [data.id, title, data.value] );
+		this.root.attr( 'title', title );
 	}
 
 	handleChangeButtonState ( event, data ) {
