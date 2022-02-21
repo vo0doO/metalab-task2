@@ -1,21 +1,10 @@
-import './index.scss';
-import intern from 'intern';
-import './components/text-field/text-field';
-import './components/dropdown/dropdown';
-import './components/counter/counter';
-import './components/button/button';
-import './components/dropdown/dropdown.spec';
-import './components/counter/counter.spec';
-import './components/button/button.spec';
-import.meta.webpackHot.accept(
-	intern,
-	'intern',
-	'./index.js',
-	'./components/text-field/text-field',
-	'./components/dropdown/dropdown',
-	'./components/counter/counter',
-	'./components/button/button',
-	'./components/dropdown/dropdown.spec',
-	'./components/counter/counter.spec',
-	'./components/button/button.spec',
-);
+window.onload = async () => {
+	const { default: index } = await import( './index.scss' );
+	const { default: textField } = await import( './components/text-field/text-field.js' );
+	const { default: dropdown } = await import( './components/dropdown/dropdown.js' );
+	const { default: counter } = await import( './components/counter/counter.js' );
+	const { default: button } = await import( './components/button/button.js' );
+	const { default: dropdownTestSuite } = await import( './components/dropdown/dropdown.spec' );
+	const { default: buttonTestSuite } = await import( './components/button/button.spec' );
+	const { default: counterTestSuite } = await import( './components/counter/counter.spec' );
+}
