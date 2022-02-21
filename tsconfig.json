@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"module": "ES2020",
+		"allowJs": true,
+		"checkJs": false,
+		"target": "ES5",
+		"lib": ["DOM","DOM.Iterable","ESNext.Array","ES2017.SharedMemory","ESNext.WeakRef","WebWorker.ImportScripts","ESNext.Promise","ESNext.Intl","ESNext.AsyncIterable","ES2020", "ES2020.Intl"],
+		"types": ["intern", "tslib"],
+		"rootDir": "./src/",
+		"outDir": "./dist/js/types",
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+	},
+	"exclude": [
+		"node_modules"
+	]
+}
