@@ -15,13 +15,13 @@ class TCounter extends HTMLElement {
 
 	static get events() {
 		return {
-			CHANGE_ROOT_TITLE: 'change.counter.root.title',
-			CHANGE_ROOT_VALUE: 'change.counter.root.value',
-			CHANGE_INPUT_VALUE: 'change.counter.input.value',
+			CHANGE_ROOT_TITLE: 'change:counter:root.title',
+			CHANGE_ROOT_VALUE: 'change:counter:root.value',
+			CHANGE_INPUT_VALUE: 'change:counter:input.value',
 			CLICK_INCREMENT_BUTTON: 'click.counter.increment-button',
 			CLICK_DECREMENT_BUTTON: 'click.counter.decrement-button',
-			CHANGE_INCREMENT_BUTTON_STATE: 'change.counter.increment-button.state',
-			CHANGE_DECREMENT_BUTTON_STATE: 'change.counter.decrement-button.state'
+			CHANGE_INCREMENT_BUTTON_STATE: 'change:counter:increment-button.state',
+			CHANGE_DECREMENT_BUTTON_STATE: 'change:counter:decrement-button.state'
 		};
 	}
 
@@ -40,7 +40,6 @@ class TCounter extends HTMLElement {
 		this.connectedCallback = this.connectedCallback.bind(this);
 		this.disconnectedCallback = this.disconnectedCallback.bind(this);
 
-		this.rootEvents = this.rootEvents.bind(this);
 		this.inputEvents = this.inputEvents.bind(this);
 		this.decrementButtonEvents = this.decrementButtonEvents.bind(this);
 		this.incrementButtonEvents = this.incrementButtonEvents.bind(this);
@@ -55,7 +54,6 @@ class TCounter extends HTMLElement {
 
 	connectedCallback() {
 		this.inputObserve();
-		this.rootEvents();
 		this.inputEvents();
 		this.decrementButtonEvents();
 		this.incrementButtonEvents();
@@ -110,30 +108,23 @@ class TCounter extends HTMLElement {
 		});
 	}
 
-	rootEvents() {
-		this.root.on(
-			TCounter.events.CHANGE_ROOT_TITLE,
-			(event, data) => [event, ...data],
-		);
-	}
-
 	inputEvents() {
 		this.input.on({
-			'change.counter.input.value': this.handleChangeInputValue
+			'change:counter:input.value': this.handleChangeInputValue
 		});
 	}
 
 	incrementButtonEvents() {
 		this.incrementButton.on({
 			'click.counter.increment-button': this.handleClickButton,
-			'change.counter.increment-button.state': this.handleChangeButtonState
+			'change:counter:increment-button.state': this.handleChangeButtonState
 		});
 	}
 
 	decrementButtonEvents() {
 		this.decrementButton.on({
 			'click.counter.decrement-button': this.handleClickButton,
-			'change.counter.decrement-button.state': this.handleChangeButtonState
+			'change:counter:decrement-button.state': this.handleChangeButtonState
 		});
 	}
 
@@ -164,6 +155,7 @@ class TCounter extends HTMLElement {
 	handleChangeRootValue ( event, data ) {
 		const title = wordOfNum(data.value, words[data.id]);
 		this.root.attr( 'title', title );
+		this.root.trigger( 'change:counter:root.value' )
 	}
 
 	handleChangeButtonState ( event, data ) {
@@ -220,4 +212,4 @@ class TCounter extends HTMLElement {
 }
 
 window.customElements.define( 'guests-counter', TCounter );
-module.exports = TCounter;
+export { TCounter };
