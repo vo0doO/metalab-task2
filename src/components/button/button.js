@@ -37,30 +37,13 @@ class TButton extends HTMLButtonElement {
 
 	constructor() {
 		super();
-		this.drawRipple = this.drawRipple.bind(this);
 	}
 
-	listenClick ( element ) {
-		element.addEventListener(
-			new MouseEvent( 'click' ),
-			(event) => this.drawRipple(event, event.target, event.offsetX, event.offsetY),
-			{ bubbles: true, cancelable: true, composed: true }
-		);
-	}
-
-	dispatchClick ( element ) {
-		document.dispatchEvent( new MouseEvent( 'click' ), { bubbles: true, cancelable: true, composed: true } )
-	}
-
-	connectedCallBack() {
-		this.handleClick();
-		this.drawRipple();
-		this.tabIndex.set(1);
-		this.ariaPressed.set('true');
+	connectedCallBack () {
 	}
 
 	disconnectedCallBack() {
-		this.removeEventListener('click', this.drawRipple);
+
 	}
 
 	attributesChangedCallback(element, oldValue, newValue) {
