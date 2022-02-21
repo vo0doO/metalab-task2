@@ -48,7 +48,7 @@ module.exports = {
 		},
 	},
 
-	devtool: mode === 'production' ? false : 'cheap-module-source-map', // 'eval-cheap-module-source-map',
+	devtool: mode === 'production' ? false : 'source-map', // 'eval-cheap-module-source-map',
 
 	entry: {
 		index: [
