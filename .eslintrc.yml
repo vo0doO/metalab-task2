@@ -10,10 +10,15 @@ env:
     serviceworker: true
     jquery: true
 rules:
+    space-in-parens: off
+    no-sparse-arrays: off
+    space-before-blocks: off
     class-methods-use-this: off
-    no-tabs: [error, allowIndentationTabs: true]
+    keyword-spacing:
+        - after: false
+    no-tabs: [error, allowIndentationTabs: false]
     linebreak-style: [off, windows, unix]
-    indent: [error, tab, SwitchCase: 1 ]
+    indent: [error, 4, SwitchCase: 1 ]
     comma-dangle: off
     prefer-destructuring: 1
     arrow-spacing: 1
