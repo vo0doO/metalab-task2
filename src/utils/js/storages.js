@@ -413,10 +413,10 @@ const reloadAllOpenedTabs = function () {
 	});
 };
 
-// selected attaches a click and keydown event handler to the matching selector and calls
-// the handler if a click or keydown event occurs (with a CR or space is pressed). We support
-// both mouse and keyboard events to increase accessibility of the popup menu.
-// Returns a reference to the keydown handler for future removal.
+// Выбранный присоединяет обработчик событий щелчка и нажатия клавиш к соответствующему селектору и вызовам
+// обработчик при возникновении события щелчка или нажатия клавиши (при нажатии CR или пробела). Мы поддерживаем
+// события мыши и клавиатуры для повышения доступности всплывающего меню.
+// Возвращает ссылку на обработчик keydown для последующего удаления.
 const selected = function (selector, handler) {
 	const $matched = $(selector);
 	$matched.on('click', handler);

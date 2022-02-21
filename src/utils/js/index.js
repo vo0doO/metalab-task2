@@ -1,9 +1,8 @@
 import { domReady } from './domReady';
-// eslint-disable-next-line import/named
 import { sleep } from './sleep';
-import { words, wordOfNum } from './morph';
+import { wordOfNum, words } from './morph';
 import { getDisabled, setDisabled, removeDisabled } from './disabled';
-const c = console;
+
 export {
-	domReady, sleep, words, wordOfNum, getDisabled, setDisabled, removeDisabled, c
+	domReady, sleep, wordOfNum, words, getDisabled, setDisabled, removeDisabled
 };

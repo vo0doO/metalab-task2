@@ -1,10 +1,10 @@
-import $ from 'jquery';
+const $ = require( 'jquery' );
 
-export function getDisabled(element) {
+function getDisabled ( element ) {
 	return $(element).attr('disabled');
 }
 
-export function removeDisabled(element) {
+function removeDisabled ( element ) {
 	const disabled = getDisabled(element);
 	if (disabled !== 'disabled') {
 		return;
@@ -12,10 +12,12 @@ export function removeDisabled(element) {
 	element.removeAttr('disabled');
 }
 
-export function setDisabled(element) {
+function setDisabled ( element ) {
 	const disabled = getDisabled(element);
 	if (disabled === 'disabled') {
 		return;
 	}
 	$(element).attr('disabled', '');
 }
+
+module.exports = { getDisabled, removeDisabled, setDisabled };

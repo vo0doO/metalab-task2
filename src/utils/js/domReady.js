@@ -14,4 +14,4 @@ async function domReady(fn1, fn2) {
 	}
 }
 
-export { domReady };
+module.exports = { domReady };
