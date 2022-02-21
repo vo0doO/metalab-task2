@@ -58,7 +58,7 @@ export const buttonTestSuite = registerSuite( 'компонент/arrow-button/�
 
 domReady(
 	intern.configure( {
-		reporters: ['console', 'html'],
+		reporters: ['console'],
 		functionalCoverage: true,
 		benchmark: true,
 		bail: true,
