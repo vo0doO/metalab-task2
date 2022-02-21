@@ -1,47 +1,24 @@
 /* eslint-disable max-classes-per-file */
-import { c } from '../../utils/js/index';
+import $ from 'jquery';
 
-class ToxinButton extends HTMLButtonElement {
+/**
+ * @vo0doO
+ * @interface(TButton)
+ * TODO: Observerd attr -> handleChangeAttributes
+ * TODO: Sync property values in attributes and DOM
+ **/
+
+class TButton extends HTMLButtonElement {
 	static get observedAttributes() {
-		return [
-			'class',
-			'aria-role',
-			'tabindex',
-			'hidden',
-			'disabled',
-			'value',
-			'innerText',
-			'outerText',
-			'accessKey',
-			'lang',
-			'title',
-			'translate',
-			'offsetHeight',
-			'offsetLeft',
-			'offsetParent',
-			'offsetTop',
-			'offsetWidth',
-			'form',
-			'formAction',
-			'formEnctype',
-			'formMethod',
-			'formNoValidate',
-			'formTarget',
-			'labels',
-			'name',
-			'type',
-			'validationMessage',
-			'validity',
-			'willValidate',
-		];
+		return getRootProps( root );
 	}
 
 	static get classes() {
 		return {
-			ICON_BUTTON__ARROW: 'js-icon-button__arrow',
+			IBUTTON__ARROW: 'js-i-button__arrow',
 			CLEAR_BUTTON: 'js-clear-button',
 			CONFIRM_BUTTON: 'js-confirm-button',
-			ICON_BUTTON__ARROW_OPENED: 'js-icon-button__arrow_opened',
+			IBUTTON__ARROW_OPENED: 'js-i-button__arrow_opened',
 			CLEAR_BUTTON_OPENED: 'js-clear-button_opened',
 			CONFIRM_BUTTON_OPENED: 'js-confirm-button_opened',
 		};
@@ -60,16 +37,19 @@ class ToxinButton extends HTMLButtonElement {
 
 	constructor() {
 		super();
-		this.handleClick = this.handleClick.bind(this);
 		this.drawRipple = this.drawRipple.bind(this);
 	}
 
-	handleClick() {
-		this.addEventListener(
-			'click',
+	listenClick ( element ) {
+		element.addEventListener(
+			new MouseEvent( 'click' ),
 			(event) => this.drawRipple(event, event.target, event.offsetX, event.offsetY),
 			{ bubbles: true, cancelable: true, composed: true }
 		);
+	}
+
+	dispatchClick ( element ) {
+		document.dispatchEvent( new MouseEvent( 'click' ), { bubbles: true, cancelable: true, composed: true } )
 	}
 
 	connectedCallBack() {
@@ -84,7 +64,7 @@ class ToxinButton extends HTMLButtonElement {
 	}
 
 	attributesChangedCallback(element, oldValue, newValue) {
-		c.info(element, oldValue, newValue);
+		console.info( element, oldValue, newValue );
 	}
 
 	drawRipple(event, element, x, y) {
@@ -101,12 +81,19 @@ class ToxinButton extends HTMLButtonElement {
 	}
 
 	transition() {
-		document.querySelector('.run').dispatchEvent(new TransitionEvent('transitionend', { elapsedTime: 500, propertyName: 'backgroundColor' }));
+		document.querySelector( '.run' )
+			.dispatchEvent( new TransitionEvent(
+				'transitionend',
+				{
+					elapsedTime: 500,
+					propertyName: 'backgroundColor'
+				}
+			) );
 	}
 }
-window.customElements.define('toxin-button', ToxinButton, { extends: 'button' });
 
-class IconButton extends ToxinButton {
+
+class IButton extends TButton {
 	constructor() {
 		super();
 		this.wrapper = document.createElement('div');
@@ -115,30 +102,55 @@ class IconButton extends ToxinButton {
 		this.content = this.template.content.cloneNode(true);
 		this.attachShadow({ mode: 'open', delegatesFocus: true });
 		this.shadowRoot.innerHTML = this.content.outerHtml;
-		// this.handleClick = this.handleClick.bind(this);
-		// this.toggleOpened = this.toggleOpened.bind(this);
+		// this.handleClick = this.handleClick.bind( this );
 	}
 
-	handleClick() {
-		this.button.dispatchEvent('click', (event) => { c.log('click', event); });
-		this.onclick = (event) => { c.log('click', event); };
-		this.addEventListener('click', (event) => { c.log('click', event); });
-	}
+	// handleClick () {
+	// 	console.log( "CLICK !" )
+	// 	this.addEventListener( 'click', ( new MouseEvent( 'click' ), { bubbles: true, composed: true } ) );
+	// 	this.dispatchEvent( 'click', ( event ) => { c.log( 'click', event ); } );
+	// 	this.onclick = ( event ) => { c.log( 'click', event ); };
+	// }
 
-	toggleOpened() {
-		const cls = this.classList('class').split(' ')[0];
-		switch (cls) {
-			case ToxinButton.classes.ARROW_BUTTON:
-				$(this).toggleClass(ToxinButton.classes.ARROW_BUTTON_OPENED);
-				break;
-			default:
-				throw new Error("Ошибка замены класса - 'opened'");
-		}
-	}
-
-	connectedCallBack() {
-		this.toggleOpened();
+	connectedCallBack () {
+		this.handleClick();
 	}
 }
-window.customElements.define('icon-button', IconButton, { extends: 'button' });
-export { ToxinButton, IconButton };
+window.customElements.define( 't-button', TButton, { extends: 'button' } );
+window.customElements.define( 'i-button', IButton, { extends: 'button' } );
+
+export { TButton, IButton }
+
+function getRootProps () {
+	return [
+		'class',
+		'aria-role',
+		'tabindex',
+		'hidden',
+		'disabled',
+		'value',
+		'innerText',
+		'outerText',
+		'accessKey',
+		'lang',
+		'title',
+		'translate',
+		'offsetHeight',
+		'offsetLeft',
+		'offsetParent',
+		'offsetTop',
+		'offsetWidth',
+		'form',
+		'formAction',
+		'formEnctype',
+		'formMethod',
+		'formNoValidate',
+		'formTarget',
+		'labels',
+		'name',
+		'type',
+		'validationMessage',
+		'validity',
+		'willValidate',
+	];
+}

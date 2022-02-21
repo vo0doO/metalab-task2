@@ -1,29 +1,33 @@
-@import "../../utils/style/apperace.scss";
+/* stylelint-disable indentation */
+/* stylelint-disable linebreaks */
+/* stylelint-disable prettier/prettier */
+/* stylelint-disable order/properties-alphabetical-order */
+@import '../../utils/style/apperace';
 @import '../../utils/style/vars';
 
 .js-i-button {
-	@include button;
-	
+	@include·button;
+
 	@keyframes arrow-hover-focus {
-			100% {
-				color: $dark-shade-75;
-			}
+		100% {
+			color: $dark-shade-75;
+		}
 
-			75% {
-				color: rgb(31 32 65 / 71%);
-			}
+		75% {
+			color: rgb(31 32 65 / 71%);
+		}
 
-			50% {
-				color: rgb(31 32 65 / 64%);
-			}
+		50% {
+			color: rgb(31 32 65 / 64%);
+		}
 
-			25% {
-				color: rgb(31 32 65 / 57%);
-			}
+		25% {
+			color: rgb(31 32 65 / 57%);
+		}
 
-			0% {
-				color: $dark-shade-50;
-			}
+		0% {
+			color: $dark-shade-50;
+		}
 	}
 	&__arrow {
 		grid-area: input;
@@ -36,8 +40,8 @@
 		&_opened {
 			animation-name: arrow-hover-focus;
 			animation-duration: 300ms;
-			animation-fill-mode: forwards;
 			animation-timing-function: ease-in-out;
+			animation-fill-mode: forwards;
 		}
 		&:hover {
 			animation-name: arrow-hover-focus;
@@ -55,4 +59,5 @@
 			animation-duration: 300ms;
 			animation-fill-mode: forwards;
 		}
-		}}
+	}
+}

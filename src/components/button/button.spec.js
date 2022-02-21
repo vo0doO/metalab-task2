@@ -1,41 +1,68 @@
 /* eslint-disable object-shorthand */
-const { registerSuite } = intern.getPlugin('interface.object');
-const { expect } = intern.getPlugin('chai');
-const $ = require('jquery');
-const { sleep, domReady } = require('../../utils/js');
+const { registerSuite } = intern.getPlugin( 'interface.object' );
+const { expect } = intern.getPlugin( 'chai' );
+import $ from 'jquery';
+const { sleep, domReady } = require( '../../utils/js' );
 
-registerSuite('компонент/arrow-button/дропдаун/', {
-	beforeEach() {
-		this.ab = $('.js-icon-button__arrow');
-		this.ab.c = this.ab.css('color');
+export const buttonTestSuite = registerSuite( 'компонент/arrow-button/дропдаун/', {
+	beforeEach () {
+		this.ab = $( '.js-i-button__arrow' );
+		this.ab.c = this.ab.css( 'color' );
 		return this;
 	},
 	tests: {
-		async 'Arrow button имеет ожидаемый цвет: загруженный'() {
-			const { ab } = await this.parent;
-			await expect(ab.c).equal('rgba(31, 32, 65, 0.5)');
+		async 'Arrow button имеет ожидаемый цвет: загруженный' () {
+			try {
+				const { ab } = await this.parent;
+				await expect( ab.c ).equal( 'rgba(31, 32, 65, 0.5)' );
+			} catch( error ) {
+				throw new Error( "Ошибка в 1 тесте кнопки: " + error );
+			}
 		},
-	async 'Клик: Далее кнопка зажата'() {
-		const { ab } = await this.parent;
-		await ab.click();
-		await sleep(1000);
-	},
-	async 'Arrow button имеет ожидаемый цвет: открытый'() {
-		const { ab } = await this.parent;
-		await expect(ab.c).equal('rgba(31, 32, 65, 0.75)');
-	},
-	async 'Клик: Далее кнопка отжата'() {
-		const { ab } = await this.parent;
-		await ab.click();
-		await sleep(1000);
-	},
-	async 'Arrow button имеет ожидаемый цвет: закрытый'() {
-		const { ab } = await this.parent;
-		await expect(ab.c).equal('rgba(31, 32, 65, 0.5)');
-	},
-}});
+		async 'Клик 1: Далее кнопка зажата' () {
+			try {
+				const { ab } = await this.parent;
+				await ab.click();
+				await sleep( 1000 );
+			} catch( error ) {
+				throw new Error( "Ошибка в 1 тесте кнопки" + error );
+			}
+		},
+		async 'Arrow button имеет ожидаемый цвет: открытый' () {
+			try {
+				const { ab } = await this.parent;
+				await expect( ab.c ).equal( 'rgba(31, 32, 65, 0.75)' );
+			} catch( error ) {
+				throw new Error( "Ошибка в 1 тесте кнопки" + error );
+			}
+		},
+		async 'Клик 2: Далее кнопка отжата' () {
+			try {
+				const { ab } = await this.parent;
+				await ab.click();
+				await sleep( 1000 );
+			} catch( error ) {
+				throw new Error( "Ошибка в 1 тесте кнопки" + error );
+			}
+		},
+		async 'Arrow button имеет ожидаемый цвет: закрытый' () {
+			try {
+				const { ab } = await this.parent;
+				await expect( ab.c ).equal( 'rgba(31, 32, 65, 0.5)' );
+			} catch( error ) {
+				throw new Error( "Ошибка в 1 тесте кнопки" + error );
+			}
+		},
+	}
+} );
 
 domReady(
-	intern.configure({ reporters: ['console'] }),
+	intern.configure( {
+		reporters: ['console', 'html'],
+		functionalCoverage: true,
+		benchmark: true,
+		bail: true,
+		filterErrorStack: true,
+	} ),
 	intern.run()
 );
