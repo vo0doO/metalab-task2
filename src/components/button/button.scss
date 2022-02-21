@@ -1,7 +1,7 @@
 @import "../../utils/style/apperace.scss";
 @import '../../utils/style/vars';
 
-.js-icon-button {
+.js-i-button {
 	@include button;
 	
 	@keyframes arrow-hover-focus {

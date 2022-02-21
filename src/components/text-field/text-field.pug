@@ -3,14 +3,14 @@ include ../text/text
 mixin text-field(args= {withType: null, withLabel:false, withSublabel:false, withName:null, withId:null, withValue:null, withPlaceholder:null, withPattern:null, withFocus: false, withMask: false})
   -
     var args = args
-    var inputClass = 'text-field__input'
+    var className = 'text-field__input'
 
     if (args.withFocus) {
-        inputClass += ` text-field__input_with-focus`
+        className += ` text-field__input_with-focus`
 
     }
     if (args.withMask) {
-        inputClass += ` text-field__input_with-mask`
+        className += ` text-field__input_with-mask`
     }
 
   .text-field
@@ -21,7 +21,7 @@ mixin text-field(args= {withType: null, withLabel:false, withSublabel:false, wit
           if args.withSublabel
             +text({ withTag: 'h3', withContent: args.withSublabel, withWeight: 'normal', withColor: 'dark-shade-50' })
     input(
-      class=inputClass,
+      class=className,
       type=args.withType,
       name=args.withName,
       id=args.withId,
