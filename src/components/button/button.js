@@ -50,29 +50,6 @@ class TButton extends HTMLButtonElement {
 		console.info( element, oldValue, newValue );
 	}
 
-	drawRipple(event, element, x, y) {
-		console.log(`Element: ${element}, ${event.composedPath}`);
-		const div = document.createElement('div');
-		div.style = 'align-items: center;display: flex;justify-content: center;width: 30px;height: 30px;padding-right: 6px;padding-left: 6px;border: 1px solid rgb(31 32 65 / 0.25);border-radius: 22px;color: rgb(31 32 65 / 0.5);font-weight: normal;font-style: normal;font-size: 18px;line-height: 22px;cursor: pointer; background-color: red; z-index:999!important; position:absolute; opacity: 0.5';
-		div.classList.add('ripple');
-		element.appendChild(div);
-		div.style.top = `${y}px`;
-		div.style.left = `${x}px`;
-		div.style.backgroundColor = 'red';
-		div.classList.add('run');
-		div.addEventListener('transitionend', () => div.remove());
-	}
-
-	transition() {
-		document.querySelector( '.run' )
-			.dispatchEvent( new TransitionEvent(
-				'transitionend',
-				{
-					elapsedTime: 500,
-					propertyName: 'backgroundColor'
-				}
-			) );
-	}
 }
 
 
@@ -85,18 +62,6 @@ class IButton extends TButton {
 		this.content = this.template.content.cloneNode(true);
 		this.attachShadow({ mode: 'open', delegatesFocus: true });
 		this.shadowRoot.innerHTML = this.content.outerHtml;
-		// this.handleClick = this.handleClick.bind( this );
-	}
-
-	// handleClick () {
-	// 	console.log( "CLICK !" )
-	// 	this.addEventListener( 'click', ( new MouseEvent( 'click' ), { bubbles: true, composed: true } ) );
-	// 	this.dispatchEvent( 'click', ( event ) => { c.log( 'click', event ); } );
-	// 	this.onclick = ( event ) => { c.log( 'click', event ); };
-	// }
-
-	connectedCallBack () {
-		this.handleClick();
 	}
 }
 window.customElements.define( 't-button', TButton, { extends: 'button' } );
