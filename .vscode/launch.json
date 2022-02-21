@@ -25,6 +25,7 @@
     "request": "attach",
     "name": "Attach to Chrome",
     "runtimeExecutable": "stable",
+    "showAsyncStacks": true,
     "port": 9222,
     "webRoot": "${workspaceFolder}"
   },
@@ -48,6 +49,7 @@
       "type": "chrome",
       "request": "launch",
       "name": "LaunchChrome",
+      "showAsyncStacks": true,
       "runtimeExecutable": "stable",
       "url": "https://localhost:8080",
       "webRoot": "${workspaceFolder}"
