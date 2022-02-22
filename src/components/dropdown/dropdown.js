@@ -36,11 +36,10 @@ class DropDown extends HTMLElement {
 	constructor() {
 		super();
 
-		const template = document.getElementById('drop-down-template');
+		const template = document.getElementById( this.nodeName );
 		const templateContent = template.content;
 
-		const shadowRoot = this.attachShadow({ mode: 'open' });
-		shadowRoot.appendChild(templateContent);
+		this.attachShadow( { mode: 'open' } ).appendChild( templateContent.cloneNode( true ) );
 
 		this.root = $('.js-dropdown');
 		this.items = $('.js-dropdown__items');
@@ -171,8 +170,8 @@ class DropDown extends HTMLElement {
 
 	toggleOpened(event) {
 		const elem = $(event.target);
-		const cls = elem.attr('class').split(' ')[0];
-		switch (cls) {
+		const cls = elem.attr( 'class' ).split( ' ' );
+		switch( ( ( cls[1] || cls[0] ) || ( cls[1] && cls[0] ) ).replace( '_opened', '' ) ) {
 			case 'js-dropdown__items':
 				elem.toggleClass('js-dropdown__items_opened');
 				break;

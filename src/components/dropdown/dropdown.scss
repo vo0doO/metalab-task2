@@ -6,7 +6,7 @@
 		'label label'
 		'input input'
 		'counter counter'
-		'reset-btn added-btn';
+		'footer1 footer2';
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 25px 43px auto;
 	align-items: center;
@@ -90,7 +90,23 @@
 		}
 	}
 
-	
+	&__arrow-button {
+		grid-area: input;
+		justify-self: self-end;
+		align-self: baseline;
+	}
+
+	&__accept-button {
+		display: none;
+		grid-area: footer2;
+		justify-self: end;
+	}
+
+	&__reset-button {
+		display: none;
+		grid-area: footer1;
+		justify-self: start;
+	}
 
 	&__items {
 		@keyframes close {
