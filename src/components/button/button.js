@@ -56,12 +56,10 @@ class Button extends HTMLButtonElement {
 class ButtonIcon extends Button {
 	constructor() {
 		super();
-		this.wrapper = document.createElement('div');
-		this.template = document.querySelector('template#btn-template');
-		$(this.template.content).wrap(this.template.content, this.wrapper);
-		this.content = this.template.content.cloneNode(true);
-		this.attachShadow({ mode: 'open', delegatesFocus: true });
-		this.shadowRoot.innerHTML = this.content.outerHtml;
+		const template = document.querySelector( 'template#btn-template' );
+		const templateContent = this.template.content.cloneNode( true );
+		let shadowRoot = this.attachShadow( { mode: 'open', delegatesFocus: true } );
+		shadowRoot.appendChild( templateContent );
 	}
 }
 window.customElements.define( 'toxin-button', Button, { extends: 'button' } );

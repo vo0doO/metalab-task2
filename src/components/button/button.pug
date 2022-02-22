@@ -1,12 +1,19 @@
-template#btn-template
-	button(is="button-icon")
-
-mixin btn(variant=false, dress=false, slot=false, caller=false)
+mixin btn(variant=false, dress=false, slot=false, caller=false, text=false)
 	-
-		const className = `js-button-${variant}__${dress}`
+		let className = 'js-button'
+	
+		if (dress)
+			className += ` js-button-${variant}__${dress}`
+		if (!dress)
+			className += ` js-button-${variant}`
+
 
 	case variant
 		when 'icon'
 			case dress
 				when 'arrow_color_gray'
-					button-icon(class=`${className}` slot=`${slot}`)="expand_more"
+					button(is='button-icon' class=`${className}` slot=`${slot}`)="expand_more"
+		when 'text'
+			case dress
+				when false
+					button(is='button-text' class=`${className}` slot=`${slot}`)=text
