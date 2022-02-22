@@ -71,41 +71,44 @@ class TDropDown extends HTMLElement {
 		this.arrowButton.off('toggle.dropdown.arrow-button.opened');
 	}
 
+	getGuestsInputString () {
+		let guests = 0;
+		let babys = 0;
+		const elements = $( `.${TCounter.classes.ROOT}` )
+		elements.each( ( index ) => {
+			const id = $( elements[index] ).attr( 'id' );
+			let value = $( elements[index] ).attr( 'value' );
+			if( id === "взрослые" ) {
+				guests += parseInt( value, 10 );
+			}
+			if( id === "дети" ) {
+				guests += parseInt( value, 10 );
+			}
+			if( id === "младенцы" ) {
+				babys += parseInt( value, 10 );
+			}
+		} );
+		if( guests <= 0 ) {
+			return 'Сколько гостей'
+		}
+		if( guests > 0 && babys > 0 ) {
+			const stringGuests = wordOfNum( guests, words['гости'] );
+			const stringBabys = wordOfNum( babys, words['младенцы'] );
+			return `${guests} ${stringGuests}, ${babys} ${stringBabys}`;
+		}
+		if( guests > 0 && babys <= 0 ) {
+			const stringGuests = wordOfNum( guests, words['гости'] );
+			return `${guests} ${stringGuests}`;
+		}
+	}
+
 	setInputString ( event ) {
 		let resultString = "";
 		const node = event.target.nodeName
 		switch( node ) {
 			case 'GUESTS-COUNTER':
-				let guests = 0;
-				let babys = 0;
-				const elements = $( `.${TCounter.classes.ROOT}` )
-				elements.each( ( index ) => {
-					const id = $( elements[index] ).attr( 'id' );
-					let value = $( elements[index] ).attr( 'value' );
-					if( id === "взрослые" ) {
-						guests += parseInt( value, 10 );
-					}
-					if( id === "дети" ) {
-						guests += parseInt( value, 10 );
-					}
-					if( id === "младенцы" ) {
-						babys += parseInt( value, 10 );
-					}
-				} );
-				if( guests <= 0 ) {
-					resultString = 'Сколько гостей'
-				}
-				if( guests > 0 && babys > 0 ) {
-					const stringGuests = wordOfNum( guests, words['гости'] );
-					const stringBabys = wordOfNum( babys, words['младенцы'] );
-					resultString = `${guests} ${stringGuests}, ${babys} ${stringBabys}`;
-				}
-				if( guests > 0 && babys <= 0 ) {
-					const stringGuests = wordOfNum( guests, words['гости'] );
-					resultString = `${guests} ${stringGuests}`;
-				}
+				resultString = this.getGuestsInputString();
 				this.input.attr( 'value', resultString );
-				const s = ''
 				break;
 			default:
 				break;
