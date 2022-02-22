@@ -71,7 +71,7 @@ class TDropDown extends HTMLElement {
 		this.arrowButton.off('toggle.dropdown.arrow-button.opened');
 	}
 
-	getResultString ( event ) {
+	setInputString ( event ) {
 		let resultString = "";
 		const node = event.target.nodeName
 		switch( node ) {
@@ -119,7 +119,7 @@ class TDropDown extends HTMLElement {
 			( event ) => {
 				const target = $( event.target );
 				console.log( `Value: ${target.attr( 'value' )} \n Title: ${target.attr( 'title' )}` );
-				this.getResultString( event );
+				this.setInputString( event );
 			}
 		)
 	}
