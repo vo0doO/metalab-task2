@@ -68,8 +68,7 @@ class TCounter extends HTMLElement {
 		this.decrementButton.off( TCounter.events.CLICK_DECREMENT_BUTTON );
 	}
 
-	attributeChangedCallback(element, oldValue, newValue) {
-		console.log( `attribute changed: \n Element: ${element} \n oldvalue ${oldValue} \n newValue ${newValue}` );
+	attributeChangedCallback ( element, oldValue, newValue ) {
 		const oldV = parseInt(oldValue, 10);
 		const newV = parseInt(newValue, 10);
 
@@ -95,8 +94,7 @@ class TCounter extends HTMLElement {
 		};
 	}
 
-	inputObserverCallback(mutations) {
-		console.log( 'counter changed' );
+	inputObserverCallback ( mutations ) {
 		mutations.forEach((mutation) => {
 			if (mutation.type === 'attributes') {
 				const { oldValue } = mutation;

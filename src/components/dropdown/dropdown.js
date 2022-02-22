@@ -1,10 +1,7 @@
 import $ from 'jquery';
 import { IButton } from '../button/button';
-
-import.meta.webpackHot.accept(
-	'./../../index.js',
-	'./../../**/**/*.js'
-);
+import { TCounter } from '../counter/counter';
+import { words, wordOfNum } from '../../utils/js/index';
 
 class TDropDown extends HTMLElement {
 	static get classes() {
@@ -56,12 +53,14 @@ class TDropDown extends HTMLElement {
 		this.toggleOpened = this.toggleOpened.bind(this);
 		this.arrowButtonEvents = this.arrowButtonEvents.bind(this);
 		this.handleKeyPress = this.handleKeyPress.bind(this);
+		this.rootEvents = this.rootEvents.bind( this );
 	}
 
 	connectedCallback() {
 		this.itemsEvents();
 		this.inputEvents();
 		this.arrowButtonEvents();
+		this.rootEvents();
 	}
 
 	disconnectedCallback() {
@@ -70,6 +69,63 @@ class TDropDown extends HTMLElement {
 		this.items.off('toggle.dropdown.items.opened');
 		this.arrowButton.off('click.arrow-button.dropdown');
 		this.arrowButton.off('toggle.dropdown.arrow-button.opened');
+	}
+
+	getResultString ( event ) {
+		let resultString = "";
+		const node = event.target.nodeName
+		switch( node ) {
+			case 'GUESTS-COUNTER':
+				let guests = 0;
+				let babys = 0;
+				const elements = $( `.${TCounter.classes.ROOT}` )
+				elements.each( ( index ) => {
+					const id = $( elements[index] ).attr( 'id' );
+					let value = $( elements[index] ).attr( 'value' );
+					if( id === "взрослые" ) {
+						guests += parseInt( value, 10 );
+					}
+					if( id === "дети" ) {
+						guests += parseInt( value, 10 );
+					}
+					if( id === "младенцы" ) {
+						babys += parseInt( value, 10 );
+					}
+				} );
+				if( guests <= 0 ) {
+					resultString = 'Сколько гостей'
+				}
+				if( guests > 0 && babys > 0 ) {
+					const stringGuests = wordOfNum( guests, words['гости'] );
+					const stringBabys = wordOfNum( babys, words['младенцы'] );
+					resultString = `${guests} ${stringGuests}, ${babys} ${stringBabys}`;
+				}
+				if( guests > 0 && babys <= 0 ) {
+					const stringGuests = wordOfNum( guests, words['гости'] );
+					resultString = `${guests} ${stringGuests}`;
+				}
+				this.input.attr( 'value', resultString );
+				const s = ''
+				break;
+			default:
+				break;
+		}
+	}
+
+	rootEvents () {
+		$( this.root ).on(
+			TCounter.events.CHANGE_ROOT_VALUE,
+			`.${TCounter.classes.ROOT}`,
+			( event ) => {
+				const target = $( event.target );
+				console.log( `Value: ${target.attr( 'value' )} \n Title: ${target.attr( 'title' )}` );
+				this.getResultString( event );
+			}
+		)
+	}
+
+	attributeChangedCallBack ( value, oldValue, newValue ) {
+		console.log( `Dropdown attribute changed: \n Element: ${element} \n oldvalue ${oldValue} \n newValue ${newValue}` );
 	}
 
 	ariaExpandedToggle(elem) {
@@ -141,6 +197,7 @@ class TDropDown extends HTMLElement {
 			'click.dropdown.input': this.handleClick,
 			'toggle.dropdown.input.opened': this.toggleOpened,
 		});
+		this.input.on( 'change', 'js-counter__input_hidden', function () { console.log( 'im changed' ); } )
 	}
 
 	arrowButtonEvents() {
