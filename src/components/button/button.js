@@ -15,10 +15,10 @@ class Button extends HTMLButtonElement {
 
 	static get classes() {
 		return {
-			IBUTTON__ARROW: 'js-button-icon__arrow',
+			IBUTTON__ARROW: 'js-button-icon__arrow_color_gray',
 			CLEAR_BUTTON: 'js-clear-button',
 			CONFIRM_BUTTON: 'js-confirm-button',
-			IBUTTON__ARROW_OPENED: 'js-button-icon__arrow_opened',
+			IBUTTON__ARROW_OPENED: 'js-button-icon__arrow_color_gray_opened',
 			CLEAR_BUTTON_OPENED: 'js-clear-button_opened',
 			CONFIRM_BUTTON_OPENED: 'js-confirm-button_opened',
 		};

@@ -5,6 +5,8 @@ mixin btn(variant=false, dress=false, slot=false, caller=false)
 	-
 		const className = `js-button-${variant}__${dress}`
 
-	case dress
-		when 'arrow'
-			button-icon(class=`${className}` slot=`${slot}`)="expand_more"
+	case variant
+		when 'icon'
+			case dress
+				when 'arrow_color_gray'
+					button-icon(class=`${className}` slot=`${slot}`)="expand_more"

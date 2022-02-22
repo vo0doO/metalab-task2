@@ -5,7 +5,7 @@
 @import '../../utils/style/apperace';
 @import '../../utils/style/vars';
 
-.js-button-icon {
+.js-button {
 	@include·button;
 
 	@keyframes arrow-hover-focus {
@@ -29,7 +29,8 @@
 			color: $dark-shade-50;
 		}
 	}
-	&__arrow {
+	&-icon {
+	&__arrow_color_gray {
 		grid-area: input;
 		justify-self: self-end;
 		padding: 9px;
@@ -60,4 +61,5 @@
 			animation-fill-mode: forwards;
 		}
 	}
+}
 }
