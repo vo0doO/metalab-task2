@@ -43,11 +43,11 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
     if counters
       datalist#dropitems.js-dropdown__items(slot="items", role='datalist')
         block
-    if buttons
-      .js-dropdown__reset-button(slot='reset-button')
-        +btn('text', false, 'reset-button', 'js-dropdown-reset', 'очистить')
-      .js-dropdown__accept-button(slot='accept-button')
-        +btn('text', false, 'accept-button', 'js-dropdown-accept', 'применить')
+      //- .js-dropdown__footer-buttons(slot="footer-buttons")
+      //-   .js-dropdown__reset-button(slot='reset-button')
+      //-     +btn('text', false, 'reset-button', 'js-dropdown-reset', 'очистить')
+      //-   .js-dropdown__accept-button(slot='accept-button')
+      //-     +btn('text', false, 'accept-button', 'js-dropdown-accept', 'применить')
         
 
   template#DROP-DOWN
@@ -59,8 +59,9 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
     slot(name="arrow-button")
     if counters
       slot(name="items")
-    if buttons
-      slot(name='reset-button')
-      slot(name='accept-button')
+    //- if buttons
+    //-   slot(name="footer-buttons")
+    //-     slot(name='reset-button')
+    //-     slot(name='accept-button')
         
         

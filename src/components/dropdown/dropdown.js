@@ -9,9 +9,9 @@ class DropDown extends HTMLElement {
 			ROOT: 'js-dropdown',
 			INPUT: 'js-dropdown__input',
 			ITEMS: 'js-dropdown__items',
-			ROOT_OPENED: 'js-dropdown',
-			INPUT_OPENED: 'js-dropdown__input_opened',
-			ITEMS_OPENED: 'js-dropdown__items_opened',
+			ROOT_OPENED: `js-dropdown_opened`,
+			INPUT_OPENED: `js-dropdown__input_opened`,
+			ITEMS_OPENED: `js-dropdown__items_opened`,
 		};
 	}
 
@@ -33,19 +33,17 @@ class DropDown extends HTMLElement {
 		return ['value', 'class', 'aria-expanded', 'placeholder', 'data-values'];
 	}
 
-	constructor() {
+	constructor () {
 		super();
 
 		const template = document.getElementById( this.nodeName );
 		const templateContent = template.content;
-
 		this.attachShadow( { mode: 'open' } ).appendChild( templateContent.cloneNode( true ) );
-
-		this.root = $('.js-dropdown');
-		this.items = $('.js-dropdown__items');
-		this.input = $('.js-dropdown__input');
+		this.classes = DropDown.classes;
+		this.root = $( `.${DropDown.classes.ROOT}` );
+		this.items = $( `.${DropDown.classes.ITEMS}` );
+		this.input = $( `.${DropDown.classes.INPUT}` );
 		this.arrowButton = $( `.${Button.classes.IBUTTON__ARROW}` );
-
 		this.inputEvents = this.inputEvents.bind(this);
 		this.itemsEvents = this.itemsEvents.bind(this);
 		this.handleClick = this.handleClick.bind(this);
@@ -210,5 +208,13 @@ class DropDown extends HTMLElement {
 	}
 }
 
+class DropDownWithButtons extends DropDown {
+	constructor () {
+		super();
+		DropDown.classes.ITEMS = 'js-dropdown__items-with-buttons'
+	}
+}
+
 window.customElements.define( 'drop-down', DropDown );
-export { DropDown };
+window.customElements.define( 'drop-down-with-buttons', DropDownWithButtons )
+export { DropDown, DropDownWithButtons };
