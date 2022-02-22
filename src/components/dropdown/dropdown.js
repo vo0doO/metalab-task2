@@ -1,9 +1,9 @@
 import $ from 'jquery';
-import { IButton } from '../button/button';
-import { TCounter } from '../counter/counter';
+import { Button } from '../button/button';
+import { Counter } from '../counter/counter';
 import { words, wordOfNum } from '../../utils/js/index';
 
-class TDropDown extends HTMLElement {
+class DropDown extends HTMLElement {
 	static get classes() {
 		return {
 			ROOT: 'js-dropdown',
@@ -45,7 +45,7 @@ class TDropDown extends HTMLElement {
 		this.root = $('.js-dropdown');
 		this.items = $('.js-dropdown__items');
 		this.input = $('.js-dropdown__input');
-		this.arrowButton = $( `.${IButton.classes.IBUTTON__ARROW}` );
+		this.arrowButton = $( `.${Button.classes.IBUTTON__ARROW}` );
 
 		this.inputEvents = this.inputEvents.bind(this);
 		this.itemsEvents = this.itemsEvents.bind(this);
@@ -74,7 +74,7 @@ class TDropDown extends HTMLElement {
 	getGuestsInputString () {
 		let guests = 0;
 		let babys = 0;
-		const elements = $( `.${TCounter.classes.ROOT}` )
+		const elements = $( `.${Counter.classes.ROOT}` )
 		elements.each( ( index ) => {
 			const id = $( elements[index] ).attr( 'id' );
 			let value = $( elements[index] ).attr( 'value' );
@@ -117,8 +117,8 @@ class TDropDown extends HTMLElement {
 
 	rootEvents () {
 		$( this.root ).on(
-			TCounter.events.CHANGE_ROOT_VALUE,
-			`.${TCounter.classes.ROOT}`,
+			Counter.events.CHANGE_ROOT_VALUE,
+			`.${Counter.classes.ROOT}`,
 			( event ) => {
 				const target = $( event.target );
 				console.log( `Value: ${target.attr( 'value' )} \n Title: ${target.attr( 'title' )}` );
@@ -180,8 +180,8 @@ class TDropDown extends HTMLElement {
 				elem.toggleClass('js-dropdown__input_opened');
 				this.ariaExpandedToggle(elem);
 				break;
-			case IButton.classes.IBUTTON__ARROW:
-				elem.toggleClass( IButton.classes.IBUTTON__ARROW_OPENED );
+			case Button.classes.IBUTTON__ARROW:
+				elem.toggleClass( Button.classes.IBUTTON__ARROW_OPENED );
 				break;
 			default:
 				break;
@@ -211,5 +211,5 @@ class TDropDown extends HTMLElement {
 	}
 }
 
-window.customElements.define( 'drop-down', TDropDown );
-export { TDropDown };
+window.customElements.define( 'drop-down', DropDown );
+export { DropDown };

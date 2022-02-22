@@ -6,7 +6,7 @@ const { sleep, domReady } = require( '../../utils/js' );
 
 export const buttonTestSuite = registerSuite( 'компонент/arrow-button/дропдаун/', {
 	beforeEach () {
-		this.ab = $( '.js-i-button__arrow' );
+		this.ab = $( '.js-button-icon__arrow' );
 		this.ab.c = this.ab.css( 'color' );
 		return this;
 	},

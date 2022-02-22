@@ -1,10 +1,10 @@
 template#btn-template
-	button(is="i-button")
+	button(is="button-icon")
 
-mixin btn(dress=false, slot=false, caller=false)
+mixin btn(variant=false, dress=false, slot=false, caller=false)
 	-
-		const className = `js-i-button__${dress}`
+		const className = `js-button-${variant}__${dress}`
 
 	case dress
 		when 'arrow'
-			i-button(class=`${className}` slot=`${slot}`)="expand_more"
+			button-icon(class=`${className}` slot=`${slot}`)="expand_more"

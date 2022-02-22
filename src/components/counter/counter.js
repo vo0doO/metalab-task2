@@ -2,7 +2,7 @@ const $ = require( 'jquery' );
 const { words, wordOfNum, setDisabled, removeDisabled, sleep } = require( '../../utils/js/index' );
 
 
-class TCounter extends HTMLElement {
+class Counter extends HTMLElement {
 	static get classes() {
 		return {
 			ROOT: 'js-counter',
@@ -61,11 +61,11 @@ class TCounter extends HTMLElement {
 
 	disconnectedCallback() {
 		this.inputObserver.takeRecords();
-		this.input.off( TCounter.events.CHANGE_INPUT_VALUE );
-		this.decrementButton.off( TCounter.events.CHANGE_DECREMENT_BUTTON_STATE );
-		this.incrementButton.off( TCounter.events.CHANGE_INCREMENT_BUTTON_STATE );
-		this.incrementButton.off( TCounter.events.CLICK_INCREMENT_BUTTON );
-		this.decrementButton.off( TCounter.events.CLICK_DECREMENT_BUTTON );
+		this.input.off( Counter.events.CHANGE_INPUT_VALUE );
+		this.decrementButton.off( Counter.events.CHANGE_DECREMENT_BUTTON_STATE );
+		this.incrementButton.off( Counter.events.CHANGE_INCREMENT_BUTTON_STATE );
+		this.incrementButton.off( Counter.events.CLICK_INCREMENT_BUTTON );
+		this.decrementButton.off( Counter.events.CLICK_DECREMENT_BUTTON );
 	}
 
 	attributeChangedCallback ( element, oldValue, newValue ) {
@@ -90,7 +90,7 @@ class TCounter extends HTMLElement {
 		return {
 			attributes: true,
 			attributeOldValue: true,
-			attributeFilter: TCounter.observedAttributes
+			attributeFilter: Counter.observedAttributes
 		};
 	}
 
@@ -100,7 +100,7 @@ class TCounter extends HTMLElement {
 				const { oldValue } = mutation;
 				const { value } = mutation.target;
 				if (value !== oldValue) {
-					$( mutation.target ).trigger( TCounter.events.CHANGE_INPUT_VALUE, { value: mutation.target.value } );
+					$( mutation.target ).trigger( Counter.events.CHANGE_INPUT_VALUE, { value: mutation.target.value } );
 				}
 			}
 		});
@@ -137,13 +137,13 @@ class TCounter extends HTMLElement {
 
 		root.attr( 'value', data.value )
 
-		incr.triggerHandler( TCounter.events.CHANGE_INCREMENT_BUTTON_STATE, {
+		incr.triggerHandler( Counter.events.CHANGE_INCREMENT_BUTTON_STATE, {
 			input,
 			incr,
 			decr
 		});
 
-		decr.triggerHandler( TCounter.events.CHANGE_DECREMENT_BUTTON_STATE, {
+		decr.triggerHandler( Counter.events.CHANGE_DECREMENT_BUTTON_STATE, {
 			input,
 			incr,
 			decr
@@ -185,14 +185,14 @@ class TCounter extends HTMLElement {
 
 		try {
 			switch (cl) {
-				case TCounter.classes.INCREMENT: {
+				case Counter.classes.INCREMENT: {
 					await input.stepUp();
 					await $( input ).attr( 'value', input.value );
 					Promise.resolve();
 					break;
 				}
 
-				case TCounter.classes.DECREMENT: {
+				case Counter.classes.DECREMENT: {
 					await input.stepDown();
 					await $( input ).attr( 'value', input.value );
 					Promise.resolve();
@@ -209,5 +209,5 @@ class TCounter extends HTMLElement {
 	}
 }
 
-window.customElements.define( 'guests-counter', TCounter );
-export { TCounter };
+window.customElements.define( 'guests-counter', Counter );
+export { Counter };

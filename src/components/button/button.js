@@ -3,22 +3,22 @@ import $ from 'jquery';
 
 /**
  * @vo0doO
- * @interface(TButton)
+ * @interface(Button)
  * TODO: Observerd attr -> handleChangeAttributes
  * TODO: Sync property values in attributes and DOM
  **/
 
-class TButton extends HTMLButtonElement {
+class Button extends HTMLButtonElement {
 	static get observedAttributes() {
 		return getRootProps( root );
 	}
 
 	static get classes() {
 		return {
-			IBUTTON__ARROW: 'js-i-button__arrow',
+			IBUTTON__ARROW: 'js-button-icon__arrow',
 			CLEAR_BUTTON: 'js-clear-button',
 			CONFIRM_BUTTON: 'js-confirm-button',
-			IBUTTON__ARROW_OPENED: 'js-i-button__arrow_opened',
+			IBUTTON__ARROW_OPENED: 'js-button-icon__arrow_opened',
 			CLEAR_BUTTON_OPENED: 'js-clear-button_opened',
 			CONFIRM_BUTTON_OPENED: 'js-confirm-button_opened',
 		};
@@ -53,7 +53,7 @@ class TButton extends HTMLButtonElement {
 }
 
 
-class IButton extends TButton {
+class ButtonIcon extends Button {
 	constructor() {
 		super();
 		this.wrapper = document.createElement('div');
@@ -64,10 +64,10 @@ class IButton extends TButton {
 		this.shadowRoot.innerHTML = this.content.outerHtml;
 	}
 }
-window.customElements.define( 't-button', TButton, { extends: 'button' } );
-window.customElements.define( 'i-button', IButton, { extends: 'button' } );
+window.customElements.define( 'toxin-button', Button, { extends: 'button' } );
+window.customElements.define( 'button-icon', ButtonIcon, { extends: 'button' } );
 
-export { TButton, IButton }
+export { Button, ButtonIcon }
 
 function getRootProps () {
 	return [
