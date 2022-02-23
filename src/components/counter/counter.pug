@@ -15,7 +15,7 @@ mixin counter(name='', label='', id='', form='', value=0, min=0, max=0, slot='',
         withContent: `${ label }`
       })
     .js-counter__input(id=id)
-      div.js-counter__decrement-button(
+      button.js-counter__decrement-button(
         id=id
         readonly: true
         disabled
@@ -31,7 +31,7 @@ mixin counter(name='', label='', id='', form='', value=0, min=0, max=0, slot='',
         min=min
         max=max
       )
-      div.js-counter__increment-button(
+      button.js-counter__increment-button(
         id=id
         readonly: true
         ) +
