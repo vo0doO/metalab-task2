@@ -71,14 +71,15 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
           role="combobox",
           aria-owns="dropitems",
           aria-expanded="false"
+          buttons=buttons
         )
         .js-dropdown__arrow-button(slot="arrow-button")
           +btn('icon', 'arrow_color_gray', "arrow-button", "js-dropdown", false)
         if counters
-          datalist#dropitems.js-dropdown__items(slot="items", role='datalist')
+          datalist#dropitems.js-dropdown__items(slot="items", role='datalist', buttons)
             block
-        .js-dropdown__footer-buttons(slot="footer-buttons")
-          .js-dropdown__reset-button(slot='reset-button')
+        .js-dropdown__footer-buttons(slot="footer-buttons", buttons=buttons)
+          .js-dropdown__reset-button(slot='reset-button', buttons=buttons)
             +btn('text', false, 'reset-button', 'js-dropdown-reset', 'очистить')
           .js-dropdown__accept-button(slot='accept-button')
             +btn('text', false, 'accept-button', 'js-dropdown-accept', 'применить')

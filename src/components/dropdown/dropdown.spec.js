@@ -7,6 +7,8 @@ const { sleep, domReady } = require( '../../utils/js' );
 export const dropdownTestSuite = registerSuite( 'компонент/дропдаун', {
     beforeEach() {
         const dropdown = $( '.js-dropdown__input' );
+        const nodeName = $( ".js-dropdown" ).get( 0 ).nodeName;
+        this.nodeName = nodeName;
         this.dd = dropdown;
         this.dd.br = this.dd.css( 'border-radius' );
         this.dd.ae = this.dd.attr( 'aria-expanded' );
@@ -14,6 +16,27 @@ export const dropdownTestSuite = registerSuite( 'компонент/дропда
         return this;
     },
     tests: {
+
+        'Наличие кнопок в Dropdown с разными nodeName': async function () {
+
+            try {
+                const { nodeName } = await this.parent;
+                if( nodeName.includes( "WITH-BUTTONS" ) ) {
+                    const buttons = document.querySelector( '.js-dropdown__footer-buttons' ).children;
+                    expect( true ).equal( buttons.length >= 2 );
+                    for( const button of buttons ) {
+                        expect( true ).equal( button.className.includes( "-button" ) );
+                    }
+                }
+                else if( !nodeName.includes( "WITH-BUTTONS" ) ) {
+                    const buttons = document.querySelector( '.js-dropdown__footer-buttons' );
+                    expect( buttons ).equal( null );
+                }
+            } catch( error ) {
+                throw Error( "Ошибка в Dropwdown, при проверке вариации nodeName: " + error );
+            }
+        },
+
         'Dropdown имеет ожидаемые классы: загруженный': async function () {
             const { dd } = this.parent;
             expect( dd.hasClass( 'js-dropdown__input_opened' ) ).equal( false );

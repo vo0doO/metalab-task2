@@ -1,6 +1,6 @@
 @import '../../utils/style/vars';
 
-.js-dropdown {
+@mixin js-dropdown {
 	display: grid;
 	grid-template-areas:
 		'label label'
@@ -104,6 +104,10 @@
 		border: 1px solid rgba(31, 32, 65, 0.5);
 		border-top: 0 none;
 		border-radius: 0 0 4px 4px;
+
+		&[disabled] {
+			display: none;
+		}
 	}
 
 	&__accept-button {
@@ -156,34 +160,7 @@
 			border-radius: 0 0 4px 4px;
 			border-top: 0 none;
 		}
-	}
-
-	&__items[buttons="true"] {
-		@keyframes close {
-			100% {
-				opacity: 1;
-			}
-
-			50% {
-				opacity: 0.5;
-			}
-
-			0% {
-				opacity: 0.25;
-			}
-		}
-
-		display: none;
-		animation-name: close;
-		animation-duration: 300ms;
-		animation-fill-mode: forwards;
-
-		// &-with-buttons {
-		// 	border-radius: 0 none;
-		// 	border-bottom: 0 none;
-		// }
-
-		&_opened {
+		&_opened[buttons] {
 			display: grid;
 			grid-area: counter;
 			grid-template-rows: repeat(3, 37px) auto;
@@ -191,8 +168,17 @@
 			box-sizing: border-box;
 			padding: 2px 6px 9px 14px;
 			border: 1px solid rgba(31, 32, 65, 0.5);
-			border-radius: 0 0 4px 4px;
+			border-radius: 0;
 			border-top: 0 none;
+			border-bottom: 0 none;
 		}
+
 	}
+}
+
+.js-dropdown {
+	@include js-dropdown;
+}
+.js-dropdown_with_buttons {
+	@include js-dropdown
 }

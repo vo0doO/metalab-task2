@@ -210,11 +210,21 @@ class DropDown extends HTMLElement {
 
 class DropDownWithButtons extends DropDown {
 	constructor () {
-		super();
-		DropDown.classes.ITEMS = 'js-dropdown__items-with-buttons'
+		self = super();
+		this.footerButtons = $( '.js-dropdown__footer-buttons' )
 	}
-}
+	connectedCallback () {
+		self.itemsEvents();
+		self.inputEvents();
+		self.arrowButtonEvents();
+		self.rootEvents();
+		if( this.footerButtons.attr( 'disabled' ) ) {
+			return;
+		}
+		this.footerButtons.attr( "disabled", "" );
+	}
 
+}
 window.customElements.define( 'drop-down', DropDown );
-window.customElements.define( 'drop-down-with-buttons', DropDownWithButtons )
+window.customElements.define( 'drop-down-with-buttons', DropDownWithButtons );
 export { DropDown, DropDownWithButtons };
