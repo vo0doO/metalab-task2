@@ -14,6 +14,7 @@ include ../button/button
 mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=false, form=false, value=false, counters=false, buttons=false)
 
   case buttons
+
     when false
       drop-down.js-dropdown(
         form=form
@@ -45,6 +46,7 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
         if counters
           datalist#dropitems.js-dropdown__items(slot="items", role='datalist')
             block
+
     when true
       drop-down-with-buttons.js-dropdown(
         form=form
@@ -83,9 +85,8 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
             +btn('text', false, 'reset-button', 'js-dropdown-reset', 'очистить')
           .js-dropdown__accept-button(slot='accept-button')
             +btn('text', false, 'accept-button', 'js-dropdown-accept', 'применить')
-        
 
-  
+
   template#DROP-DOWN
     if label
       slot(name="label")
@@ -95,7 +96,7 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
     slot(name="arrow-button")
     if counters
       slot(name="items")
-  
+
   template#DROP-DOWN-WITH-BUTTONS
     if label
       slot(name="label")
@@ -109,5 +110,3 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
       slot(name="footer-buttons")
         slot(name='reset-button')
         slot(name='accept-button')
-        
-        

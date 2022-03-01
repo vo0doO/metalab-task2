@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { Button, ButtonIcon, ButtonText } from '../button/button.js';
+import { Button } from '../button/button.js';
 import { Counter } from '../counter/counter';
 import { words, wordOfNum } from '../../utils/js/index';
 
@@ -34,7 +34,7 @@ class DropDown extends HTMLElement {
 	}
 
 	constructor () {
-		self = super();
+		super();
 
 		const template = document.getElementById( this.nodeName );
 		const templateContent = template.content;
@@ -209,23 +209,51 @@ class DropDown extends HTMLElement {
 }
 
 class DropDownWithButtons extends DropDown {
-	constructor () {
-		self = super();
-		this.footerButtons = $( '.js-dropdown__footer-buttons' )
-		this.rootEvents = self.rootEvents.bind( this );
+
+	static get elements() {
+		return {
+			ROOT: 'drop-down-with-buttons',
+			FOOTER_BUTTONS: 'js-dropdown__footer-buttons',
+			RESET_BUTTON: 'js-dropdown__reset-button',
+			ACCEPT_BUTTON: 'js-dropdown__accept-button'
+		}
 	}
+
+	constructor () {
+		super();
+		this.root = $( `.${DropDownWithButtons.elements.ROOT}` );
+		this.footerButtons = $( `.${DropDownWithButtons.elements.FOOTER_BUTTONS}` );
+		this.resetButton = $( `.${DropDownWithButtons.elements.RESET_BUTTON}` );
+		this.acceptButton = $(`.${DropDownWithButtons.elements.ACCEPT_BUTTON}`);
+		this.buttonsEvents = this.buttonsEvents.bind(this);
+	}
+
 	connectedCallback () {
-		self.itemsEvents();
-		self.inputEvents();
-		self.arrowButtonEvents();
-		self.rootEvents();
+		super.itemsEvents();
+		super.inputEvents();
+		super.arrowButtonEvents();
+		super.rootEvents();
 		if( this.footerButtons.attr( 'disabled' ) ) {
 			return;
 		}
 		this.footerButtons.attr( "disabled", "" );
+		this.buttonsEvents();
+		this.rootEvents();
 	}
 
+	buttonsEvents() {
+		$(this.root).on(
+			'toggle',
+			'.js-dropdown__items',
+			(event) => {
+				console.log('Items opened for buttons events')
+			}
+		)
+	}
+
+
 }
+
 window.customElements.define( 'drop-down', DropDown );
 window.customElements.define( 'drop-down-with-buttons', DropDownWithButtons );
 export { DropDown, DropDownWithButtons };
