@@ -221,10 +221,12 @@ class DropDownWithButtons extends DropDown {
 
 	constructor () {
 		super();
+		super.rootEvents();
 		this.root = $( `.${DropDownWithButtons.elements.ROOT}` );
 		this.footerButtons = $( `.${DropDownWithButtons.elements.FOOTER_BUTTONS}` );
 		this.resetButton = $( `.${DropDownWithButtons.elements.RESET_BUTTON}` );
 		this.acceptButton = $(`.${DropDownWithButtons.elements.ACCEPT_BUTTON}`);
+		// this.rootEvents = super.rootEvents.bind(this);
 		this.buttonsEvents = this.buttonsEvents.bind(this);
 	}
 
@@ -232,13 +234,11 @@ class DropDownWithButtons extends DropDown {
 		super.itemsEvents();
 		super.inputEvents();
 		super.arrowButtonEvents();
-		super.rootEvents();
 		if( this.footerButtons.attr( 'disabled' ) ) {
 			return;
 		}
 		this.footerButtons.attr( "disabled", "" );
 		this.buttonsEvents();
-		this.rootEvents();
 	}
 
 	buttonsEvents() {
