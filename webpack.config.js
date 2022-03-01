@@ -63,7 +63,7 @@ module.exports = {
 		publicPath: '/',
 		asyncChunks: true,
 		filename: 'js/[name]/[contenthash].bundle.js',
-		hotUpdateChunkFilename: '[id].[contenthash].bundle-update.js',
+		hotUpdateChunkFilename: '[id].[hash].bundle-update.js',
 		sourceMapFilename: 'js/[name]/[contenthash].js.map',
 		chunkFilename: 'js/[name]/[contenthash].js',
 		clean: true
