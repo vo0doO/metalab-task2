@@ -2,12 +2,11 @@ import './index.scss';
 import './components/dropdown/dropdown.js';
 import './components/counter/counter.js';
 import './components/button/button.js';
-
-console.clear();
-
 import './components/dropdown/dropdown.spec';
 import './components/button/button.spec';
 import './components/counter/counter.spec';
+
+// console.clear();
 // window.onload = async () => {
 // 	const { default: index } = await import( './index.scss' );
 // 	const { default: textField } = await import( './components/text-field/text-field.js' );
