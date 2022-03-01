@@ -16,8 +16,7 @@ export class Button extends HTMLButtonElement {
 	static get elements () {
 		return {
 			ARROW: 'js-button-icon__arrow_color_gray',
-			TEXT_RESET: 'js-clear-button',
-			TEXT_ACCEPT: 'js-confirm-button',
+			TEXT: 'js-button-text',
 		};
 	}
 
@@ -31,7 +30,7 @@ export class Button extends HTMLButtonElement {
 	}
 
 	constructor() {
-		self = super();
+		super();
 	}
 
 	connectedCallBack () {
@@ -49,19 +48,13 @@ export class Button extends HTMLButtonElement {
 
 export class ButtonIcon extends Button {
 	constructor() {
-		self = super();
-		const template = document.getElementById( this.nodeName );
-		const templateContent = template.content;
-		this.attachShadow( { mode: 'open', delegatesFocus: true } ).appendChild( templateContent.cloneNode( true ) );
+		super();
 	}
 }
 
 export class ButtonText extends Button {
 	constructor () {
-		self = super();
-		const template = document.getElementById( this.nodeName );
-		const templateContent = template.content;
-		this.attachShadow( { mode: 'open', delegatesFocus: true } ).appendChild( templateContent.cloneNode( true ) );
+		super();
 	}
 }
 
