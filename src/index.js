@@ -1,8 +1,10 @@
 import './index.scss';
-import './components/text-field/text-field.js';
 import './components/dropdown/dropdown.js';
 import './components/counter/counter.js';
 import './components/button/button.js';
+
+console.clear();
+
 import './components/dropdown/dropdown.spec';
 import './components/button/button.spec';
 import './components/counter/counter.spec';

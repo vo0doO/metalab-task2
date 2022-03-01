@@ -1,4 +1,9 @@
 {
 	"eslint.format.enable": true,
-	"prettier.useEditorConfig": false
+	"prettier.useEditorConfig": false,
+	"debug.inlineValues": true,
+	"livePreview.defaultPreviewPath": "/dist/index.html",
+	"liveFrame.url": "http://localhost:8000",
+	"liveFrame.title": "Local Development",
+	"liveFrame.pane": "Beside", 
 }

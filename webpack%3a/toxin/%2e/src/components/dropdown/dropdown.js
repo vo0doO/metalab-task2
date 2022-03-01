@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { Button, ButtonIcon, ButtonText } from '../button/button.js';
+import { Button } from '../button/button';
 import { Counter } from '../counter/counter';
 import { words, wordOfNum } from '../../utils/js/index';
 
@@ -43,7 +43,7 @@ class DropDown extends HTMLElement {
 		this.root = $( `.${DropDown.elements.ROOT}` );
 		this.items = $( `.${DropDown.elements.ITEMS}` );
 		this.input = $( `.${DropDown.elements.INPUT}` );
-		this.arrowButton = $( `.${Button.elements.ARROW}` );
+		this.arrowButton = $( `.${Button.elements.ICON_ARROW}` );
 		this.inputEvents = this.inputEvents.bind(this);
 		this.itemsEvents = this.itemsEvents.bind(this);
 		this.handleClick = this.handleClick.bind(this);
@@ -177,8 +177,8 @@ class DropDown extends HTMLElement {
 				elem.toggleClass('js-dropdown__input_opened');
 				this.ariaExpandedToggle(elem);
 				break;
-			case 'js-button-icon__arrow_color_gray':
-				elem.get( 0 ).toggleAttribute( "pressed" );
+			case Button.elements.ICON_ARROW:
+				elem.get( 0 ).toogleAttribute( pressed );
 				break;
 			default:
 				break;

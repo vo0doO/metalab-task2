@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable import/prefer-default-export */
-async function domReady(fn1, fn2) {
+export async function domReady ( fn1, fn2 ) {
 	try {
 		document.addEventListener('readystatechange', (event) => {
 			if (event.target.readyState === 'interactive') {
@@ -13,5 +13,3 @@ async function domReady(fn1, fn2) {
 		throw new Error('Document not loaded');
 	}
 }
-
-module.exports = { domReady };

@@ -20,45 +20,44 @@
 
   "version": "0.2.0",
   "configurations": [
-  {
-    "type": "chrome",
-    "request": "attach",
-    "name": "Attach to Chrome",
-    "runtimeExecutable": "stable",
-    "showAsyncStacks": true,
-    "port": 9222,
-    "webRoot": "${workspaceFolder}"
-  },
     {
       "command": "npm start",
       "name": "NpmStart",
       "request": "launch",
       "type": "node-terminal",
-      
-      "outFiles": ["${workspaceFolder}/dist/**/*.js", "!**/node_modules/**"]
-    },
-    {
-      "type": "firefox",
-      "request": "launch",
-      "reAttach": true,
-      "name": "Firefox Launch localhost",
-      "url": "https://localhost:8080/",
-      "webRoot": "${workspaceFolder}"
     },
     {
       "type": "chrome",
       "request": "launch",
       "name": "LaunchChrome",
-      "showAsyncStacks": true,
-      "runtimeExecutable": "stable",
-      "url": "https://localhost:8080",
+      "url": "http://localhost:8080",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "chrome",
+      "request": "attach",
+      "name": "Attach to Chrome",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "name": "nodemon",
+      "program": "${workspaceFolder}/mn.js",
+      "request": "launch",
+      "restart": true,
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon.cmd",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "pwa-node"
     }
   ],
   "compounds": [
     {
       "name": "Npm ==>> Chrome",
-      "configurations": ["NpmStart", "LaunchChrome"]
+      "configurations": [ "NpmStart", "LaunchChrome" ]
     }
   ]
 }

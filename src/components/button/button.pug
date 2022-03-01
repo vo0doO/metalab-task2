@@ -1,4 +1,4 @@
-mixin btn(variant=false, dress=false, slot=false, caller=false, text=false)
+mixin btn(variant=false, dress=false, slot=false, caller=false, text=false, ...items)
 	-
 		let className = 'js-button'
 	
@@ -12,8 +12,8 @@ mixin btn(variant=false, dress=false, slot=false, caller=false, text=false)
 		when 'icon'
 			case dress
 				when 'arrow_color_gray'
-					button(is='button-icon' class=`${className}` slot=`${slot}`)="expand_more"
+					button(is='button-icon', class=`${className}`, slot=`${slot}`, aria-pressed='false')="expand_more"
 		when 'text'
 			case dress
 				when false
-					button(is='button-text' class=`${className}` slot=`${slot}`)=text
+					button(is='button-text', class=`${className}`, slot=`${slot}`)=text

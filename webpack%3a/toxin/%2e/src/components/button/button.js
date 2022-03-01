@@ -8,25 +8,30 @@ import $ from 'jquery';
  * TODO: Sync property values in attributes and DOM
  **/
 
-export class Button extends HTMLButtonElement {
+class Button extends HTMLButtonElement {
 	static get observedAttributes() {
 		return getRootProps( root );
 	}
 
-	static get elements () {
+	static get classes() {
 		return {
-			ARROW: 'js-button-icon__arrow_color_gray',
-			TEXT_RESET: 'js-clear-button',
-			TEXT_ACCEPT: 'js-confirm-button',
+			IBUTTON__ARROW: 'js-button-icon__arrow_color_gray',
+			CLEAR_BUTTON: 'js-clear-button',
+			CONFIRM_BUTTON: 'js-confirm-button',
+			IBUTTON__ARROW_OPENED: 'js-button-icon__arrow_color_gray_opened',
+			CLEAR_BUTTON_OPENED: 'js-clear-button_opened',
+			CONFIRM_BUTTON_OPENED: 'js-confirm-button_opened',
 		};
 	}
 
 	static get events() {
 		return {
-			CLICK_ARROW: 'click.arrow-button',
-			CLICK_TEXT_RESET: 'click.clear-button',
-			CLICK_TEXT_ACCEPT: 'click.confirm-button',
-			TOGGLE_TEXT_RESET: "", 
+			CLICK_ARROW_BUTTON: 'click.arrow-button',
+			CLICK_CLEAR_BUTTON: 'click.clear-button',
+			CLICK_CONFIRM_BUTTON: 'click.confirm-button',
+			TOGGLE_ARROW_BUTTON_OPENED: 'toggle.arrow-button.opened',
+			TOGGLE_CLEAR_BUTTON_OPENED: 'toggle.clear-button.opened',
+			TOGGLE_CONFIRM_BUTTON_OPENED: 'toggle.confirm-button.opened',
 		};
 	}
 
@@ -47,7 +52,8 @@ export class Button extends HTMLButtonElement {
 
 }
 
-export class ButtonIcon extends Button {
+
+class ButtonIcon extends Button {
 	constructor() {
 		self = super();
 		const template = document.getElementById( this.nodeName );
@@ -56,8 +62,8 @@ export class ButtonIcon extends Button {
 	}
 }
 
-export class ButtonText extends Button {
-	constructor () {
+class ButtonText extends Button {
+	constructor() {
 		self = super();
 		const template = document.getElementById( this.nodeName );
 		const templateContent = template.content;
@@ -68,6 +74,8 @@ export class ButtonText extends Button {
 window.customElements.define( 'toxin-button', Button, { extends: 'button' } );
 window.customElements.define( 'button-icon', ButtonIcon, { extends: 'button' } );
 window.customElements.define( 'button-text', ButtonText, { extends: 'button' } );
+
+export { Button, ButtonIcon }
 
 function getRootProps () {
 	return [

@@ -3,7 +3,7 @@ const { words, wordOfNum, setDisabled, removeDisabled, sleep } = require( '../..
 
 
 class Counter extends HTMLElement {
-	static get classes() {
+	static get elements () {
 		return {
 			ROOT: 'js-counter',
 			INPUT: 'js-counter__input',
@@ -153,7 +153,7 @@ class Counter extends HTMLElement {
 	handleChangeRootValue ( event, data ) {
 		const title = wordOfNum(data.value, words[data.id]);
 		this.root.attr( 'title', title );
-		this.root.trigger( 'change:counter:root.value' )
+		this.root.trigger( Counter.events.CHANGE_ROOT_VALUE )
 	}
 
 	handleChangeButtonState ( event, data ) {
@@ -185,14 +185,14 @@ class Counter extends HTMLElement {
 
 		try {
 			switch (cl) {
-				case Counter.classes.INCREMENT: {
+				case Counter.elements.INCREMENT: {
 					await input.stepUp();
 					await $( input ).attr( 'value', input.value );
 					Promise.resolve();
 					break;
 				}
 
-				case Counter.classes.DECREMENT: {
+				case Counter.elements.DECREMENT: {
 					await input.stepDown();
 					await $( input ).attr( 'value', input.value );
 					Promise.resolve();

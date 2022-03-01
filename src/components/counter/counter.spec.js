@@ -102,6 +102,12 @@ export const counterTestSuite = registerSuite( 'компонент/counter/dropd
 });
 
 domReady(
-	intern.configure({ reporters: ['console'] }),
+	intern.configure( {
+		reporters: ['console'],
+		functionalCoverage: true,
+		benchmark: true,
+		bail: true,
+		filterErrorStack: true,
+	} ),
 	intern.run()
 );

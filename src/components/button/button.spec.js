@@ -25,7 +25,7 @@ export const buttonTestSuite = registerSuite( 'компонент/arrow-button/�
 				await ab.click();
 				await sleep( 1000 );
 			} catch( error ) {
-				throw new Error( "Ошибка в 1 тесте кнопки" + error );
+				throw new Error( "Ошибка в 1 тесте кнопки: " + error );
 			}
 		},
 		async 'Arrow button имеет ожидаемый цвет: открытый' () {
@@ -64,5 +64,5 @@ domReady(
 		bail: true,
 		filterErrorStack: true,
 	} ),
-	intern.run()
+	await intern.run()
 );

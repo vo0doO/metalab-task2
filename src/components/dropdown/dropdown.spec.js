@@ -15,6 +15,7 @@ export const dropdownTestSuite = registerSuite( 'компонент/дропда
         this.dl = $( '.js-dropdown__items' );
         return this;
     },
+
     tests: {
 
         'Наличие кнопок в Dropdown с разными nodeName': async function () {
@@ -121,6 +122,12 @@ export const dropdownTestSuite = registerSuite( 'компонент/дропда
 });
 
 domReady(
-    intern.configure( { reporters: ['console'] } ),
+    intern.configure( {
+        reporters: ['console'],
+        functionalCoverage: true,
+        benchmark: true,
+        bail: true,
+        filterErrorStack: true
+    } ),
     intern.run()
 );
