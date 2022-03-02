@@ -6,11 +6,7 @@ include components/dropdown/dropdown
 
 doctype html
 html(lang='ru')
-	+head({
-		title: "UI-KIT - TOXIN",
-		description: "Frontend компоненты в фирменном стиле TOXIN",
-		keywords: "фронтенд, компоненты, дизайн, стиль, toxin"
-	})
+	+head('UI-KIT - TOXIN', 'Frontend компоненты в фирменном стиле TOXIN', 'фронтенд, компоненты, дизайн, стиль, toxin')
 	body.ui-kit__body
 		main.ui-kit__main
 			include components/color-and-type/color-and-type
@@ -49,14 +45,7 @@ html(lang='ru')
 								withFocus: true,
 							})
 						.form-elements__dropdown_default-wrapper
-							+dropdown({
-								withLabel: "dropdown",
-								withSublabel: false,
-								withName: "guest",
-								withId: "guest",
-								withValue: null,
-								withPlaceholder: "Сколько гостей"
-							})
+							+dropdown('guestscounter', 'dropdown', '', 'Сколько гостей', 'listbox', 'guests', '', false, false)
 						.form-elements__text-field_with-mask-wrapper
 							+text-field({
 								withType: "text",

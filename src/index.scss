@@ -1,5 +1,13 @@
-@import "utils/style/vars";
-
+@use './assets/fonts/fonts.scss';
+@use './components/text/text.scss';
+@use './components/button/button.scss';
+@use './components/counter/counter.scss';
+@use './components/text-field/text-field.scss';
+@use './components/dropdown/dropdown.scss';
+@use './components/typography/typography.scss';
+@use './components/color-palette/color-palette.scss';
+@use 'utils/style/vars' as *;
+@use 'utils/style/main';
 
 .form-elements {
 	&__title {

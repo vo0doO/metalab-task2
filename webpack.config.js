@@ -53,7 +53,7 @@ module.exports = {
 
 	entry: {
 		index: [
-			'intern',
+			// 'intern',
 			'./src/index.js'
 		]
 	},

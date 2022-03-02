@@ -1,5 +1,5 @@
-@use "../../utils/style/_vars.scss"as *;
-@use "../../utils/style/apperance.scss"as apperance;
+@use "../../utils/style/vars" as *;
+@use "../../utils/style/apperance" as apperance;
 
 .js-button {
 	@include apperance.buttonReset;
