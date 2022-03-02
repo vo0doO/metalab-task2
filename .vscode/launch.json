@@ -21,12 +21,21 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Launch Edge",
+      "request": "launch",
+      "type": "pwa-msedge",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "console": "integratedTerminal",
       "command": "npm start",
       "name": "NpmStart",
       "request": "launch",
       "type": "node-terminal",
     },
     {
+      "console": "integratedTerminal",
       "type": "chrome",
       "request": "launch",
       "name": "LaunchChrome",
@@ -34,6 +43,7 @@
       "webRoot": "${workspaceFolder}"
     },
     {
+      "console": "integratedTerminal",
       "type": "chrome",
       "request": "attach",
       "name": "Attach to Chrome",
