@@ -1,20 +1,68 @@
-include ./components/head/head
-include ./components/dropdown/dropdown
-include ./components/counter/counter
+include components/head/head
+include components/logo/logo
+include components/text/text
+include components/text-field/text-field
+include components/dropdown/dropdown
 
 doctype html
 html(lang='ru')
-	+head('UI-KIT - TOXIN', 'Frontend компоненты в фирменном стиле TOXIN', 'фронтенд, компоненты, дизайн, стиль, toxin')
+	+head({
+		title: "UI-KIT - TOXIN",
+		description: "Frontend компоненты в фирменном стиле TOXIN",
+		keywords: "фронтенд, компоненты, дизайн, стиль, toxin"
+	})
 	body.ui-kit__body
 		main.ui-kit__main
-			section.sandbox
-				container.sandbox__item-wrapper
-					.sandbox__logo-wrapper
-						img.sandbox__logo(src="./assets/img/logo.svg", alt="Logo")
-					.sandbox__item
-						.sandbox__dropdown-wrapper
-							+dropdown('guestscounter', 'dropdown', 'counter', 'Сколько гостей', 'listbox', 'guests', '', 3, true)
-								+counter('взрослые', 'взрослые', 'взрослые', 'guests', 0, 0, 10, 'options', 'options')
-								+counter('дети', 'дети', 'дети', 'guests', 0, 0, 10, 'options', 'options')
-								+counter('младенцы', 'младенцы', 'младенцы', 'guests', 0, 0, 10, 'options', 'options')
-
+			include components/color-and-type/color-and-type
+			section.form-elements
+				.form-elements__body
+					.form-elements__header
+						.form-elements__title
+							+text({
+								withTag: "small",
+								withContent: "Form Elements"
+							})
+						.form-elements__logo-wrapper
+							+logo({
+								isGrey: true,
+								alt: "Toxin logo"
+							})
+					.form-elements__main
+						.form-elements__text-field-wrapper
+							+text-field({
+								withType: "text",
+								withLabel: "text field",
+								withSublabel: "default",
+								withName: "text-field",
+								withId: "text-field",
+								withPlaceholder: "Email",
+							})
+						.form-elements__text-field_with-focus-wrapper
+							+text-field({
+								withType: "text",
+								withLabel: "text field",
+								withSublabel: "Hover / Focus",
+								withName: "text-field-focus-hover",
+								withId: "text-field-focus-hover",
+								withPlaceholder: "Email",
+								withValue: "This is pretty awesome",
+								withFocus: true,
+							})
+						.form-elements__dropdown_default-wrapper
+							+dropdown({
+								withLabel: "dropdown",
+								withSublabel: false,
+								withName: "guest",
+								withId: "guest",
+								withValue: null,
+								withPlaceholder: "Сколько гостей"
+							})
+						.form-elements__text-field_with-mask-wrapper
+							+text-field({
+								withType: "text",
+								withLabel: "masked text field",
+								withName: "masked-text-field",
+								withId: "masked-text-field",
+								withPlaceholder: "ДД.ММ.ГГГГ",
+								withMask: "ДД.ММ.ГГГГ",
+							})

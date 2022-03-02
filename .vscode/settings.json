@@ -20,7 +20,6 @@
 	"scss.lint.float": "warning",
 	"scss.lint.idSelector": "error",
 	"scss.lint.zeroUnits": "warning",
-	"git.alwaysShowStagedChangesResourceGroup": true,
 	"git.autoStash": true,
 	"git.enableCommitSigning": true,
 	"git.followTagsWhenSync": true,

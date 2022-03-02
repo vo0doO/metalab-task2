@@ -1,81 +1,52 @@
-@use 'utils/style/vars';
-@use 'utils/style/main';
-@use './assets/fonts/fonts.scss';
-@use './components/text/text.scss';
-@use './components/button/button.scss';
-@use './components/counter/counter.scss';
-@use './components/text-field/text-field.scss';
-@use './components/dropdown/dropdown.scss';
-@use './components/typography/typography.scss';
-@use './components/color-palette/color-palette.scss';
-.ui-kit__body {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	max-width: 100vm;
-	max-height: 100vm;
-}
+@import "utils/style/vars";
 
-.ui-kit__main {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
 
-.sandbox {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	justify-content: center;
-	width: 380px;
-	height: 380px;
-	padding: 20px;
-	background: rgb(255 255 255 / 1);
-	box-shadow: 0 10px 20px rgb(0 0 0 / 0.19), 0 6px 6px rgb(0 0 0 / 0.23);
-}
-
-.sandbox__item-wrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-.sandbox__item {
-	position: relative;
-}
-
-.sandbox__dropdown-wrapper {
-	width: 320px;
-	height: fit-content;
-}
-
-.sandbox__logo {
-	height: 25px;
-	align-self: flex-start;
-
-	&:hover {
-		z-index: 9999;
-		box-shadow: 0.1 0.1 0.3 0.2 gray;
-		text-align: left;
-		text-size-adjust: 300%;
-		animation-delay: 0s;
-		animation-direction: normal;
-		animation-duration: 0s;
-		animation-fill-mode: none;
-		animation-iteration-count: 1;
-		animation-name: none;
-		animation-play-state: running;
-		animation-timeline: auto;
-		animation-timing-function: ease;
-		-webkit-transition: 0.4s;
-		transition: 0.4s;
-		transition-property: all;
-		transition-duration: 0.4s;
-		transition-timing-function: ease;
-		transition-delay: 0s;
-		transition-delay: 0s;
-		transition-duration: 0s;
-		transition-property: all;
-		transition-timing-function: ease;
+.form-elements {
+	&__title {
+		display: flex;
+		align-items: flex-end;
+		height: 50px;
+		background-color: $background-color-body;
+	}
+	
+	&__logo-wrapper {
+		display: inline-block;
+		margin: 30px 0 0 30px;
+	}
+	
+	&__body {
+		height: 1903px;
+		background-color: $background-color-html;
+	}
+	
+	&__main {
+		padding: 62px 141px 131px 140px;
+	}
+	
+	&__text-field-wrapper {
+		width: 320px;
+		left: 141px;
+		top: 143px;
+	}
+	
+	&__text-field_with-focus-wrapper {
+		width: 320px;
+		left: 141px;
+		top: 227px;
+		margin-top: 20px;
+	}
+	
+	&__dropdown_default-wrapper {
+		width: 320px;
+		left: 141px;
+		top: 311px;
+		margin-top: 20px;
+	}
+	
+	&__text-field_with-mask-wrapper {
+		width: 320px;
+		left: 141px;
+		top: 395px;
+		margin-top: 23px;
 	}
 }
