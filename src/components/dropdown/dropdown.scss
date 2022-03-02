@@ -121,6 +121,9 @@
 		display: block;
 	    grid-area: reset;
 	    justify-self: start;
+		&[disabled]{
+			display: none;
+		}
 	}
 
 	&__items {
