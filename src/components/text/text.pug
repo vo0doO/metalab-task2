@@ -1,4 +1,4 @@
-mixin text(args={withTag: '', withColor: '', withWeight: '', withTransform: '', withAlign: '', withSize: '', withLineHeight: '', withContent: '',})
+mixin text(args={gridTarget: '', withTag: '', withColor: '', withWeight: '', withTransform: '', withAlign: '', withSize: '', withLineHeight: '', withContent: ''})
   -
     let textClasses = ['text']
     let textClass = 'text';
@@ -12,26 +12,32 @@ mixin text(args={withTag: '', withColor: '', withWeight: '', withTransform: '', 
 
     if (colors.includes(args.withColor)) {
       textClass += ` text_with-color_${args.withColor}`
+
     }
 
     if (weights.includes(args.withWeight)) {
       textClass += ` text_with-weight_${args.withWeight}`
+
     }
 
     if (transformations.includes(args.withTransform)) {
       textClass += ` text_with-transform_${args.withTransform}`
+
     }
 
     if (alignments.includes(args.withAlign)) {
       textClass += ` text_with-align_${args.withAlign}`
+
     }
 
     if (sizes.includes(args.withSize)) {
       textClass += ` text_with-size_${args.withSize}`
+
     }
 
     if (lineHeights.includes(args.withLineHeight)) {
       textClass += ` text_with-line-height_${args.withLineHeight}`
+
     }
 
   case args.withTag

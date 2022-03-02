@@ -1,2 +1,9 @@
-_reset.scss
-index.js
+node_modules/**
+.vscode/**
+.idea/**
+dist/**
+.github/**
+.github/*
+*.webp
+*.svg
+*/assets/**

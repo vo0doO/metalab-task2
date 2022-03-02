@@ -1,0 +1,83 @@
+@use "../../utils/style/_vars.scss"as *;
+@use "../../utils/style/apperance.scss"as apperance;
+
+.js-button {
+	@include apperance.buttonReset;
+
+	&-icon {
+		&__arrow_color_gray {
+			@keyframes arrow-hover-focus {
+				100% {
+					color: $dark-shade-75;
+				}
+
+				75% {
+					color: rgb(31 32 65 / 71%);
+				}
+
+				50% {
+					color: rgb(31 32 65 / 64%);
+				}
+
+				25% {
+					color: rgb(31 32 65 / 57%);
+				}
+
+				0% {
+					color: $dark-shade-50;
+				}
+			}
+
+			color: $dark-shade-50;
+			font-size: 24px;
+			font-family: "Materialicons",
+			serif;
+			cursor: pointer;
+			padding: 9px;
+
+			&[pressed] {
+				animation-name: arrow-hover-focus;
+				animation-duration: 300ms;
+				animation-timing-function: ease-in-out;
+				animation-fill-mode: forwards;
+			}
+
+			&:hover {
+				animation-name: arrow-hover-focus;
+				animation-duration: 300ms;
+				animation-fill-mode: forwards;
+			}
+
+			&:focus {
+				animation-name: arrow-hover-focus;
+				animation-duration: 300ms;
+				animation-fill-mode: forwards;
+			}
+
+			&:focus-visible {
+				outline: 0;
+				animation-name: arrow-hover-focus;
+				animation-duration: 300ms;
+				animation-fill-mode: forwards;
+			}
+		}
+	}
+
+	&-text {
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: $purple;
+		cursor: pointer;
+		&:hover {
+			color: $dark-shade-50;
+		}
+
+		&:disabled {
+			opacity: 0;
+		}
+	}
+}

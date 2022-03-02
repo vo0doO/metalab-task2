@@ -1,21 +1,19 @@
-// Add extensions as necessary make sure you remember to add the corresponding
-// aliases in the webpack config
+// Добавляйте расширения по мере необходимости, убедитесь, что вы не забыли добавить соответствующие
+// псевдонимы в конфигурации webpack
+// import from 'jquery';
+// import 'jquery.inputmask';
 
-import $ from 'jquery'
-import 'jquery.inputmask'
-
-
-window.onload = (event) => {
+window.onload = async function () {
+	const { default: jQuery } = await import('jquery');
+	const $ = jQuery.noConflict();
+	const { default: inputmask } = await import('jquery.inputmask');
 	$(() => {
-		let input = $('.text-field__input.text-field__input_with-mask')
-		console.log(input)
+		const input = $('.text-field__input.text-field__input_with-mask');
 		input.inputmask('dd.mm.yyyy', {
 			alias: 'date',
 			placeholder: 'ДД.ММ.ГГГГ',
 			showMaskOnFocus: false,
 			showMaskOnHover: false
-			
-		})
-	})
+		});
+	});
 };
-

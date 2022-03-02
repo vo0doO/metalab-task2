@@ -1,0 +1,55 @@
+<component name="libraryTable">
+  <library name="jq" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="jQuery" />
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/node_modules/jquery" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.slim.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/external/sizzle/dist/sizzle.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/jsonp.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/load.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/script.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/var/location.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/var/nonce.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/var/rquery.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/xhr.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/attributes/attr.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/attributes/classes.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/attributes/prop.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/attributes/support.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/attributes/val.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/core/access.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/jquery/src/core/camelCase.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/node_modules/jquery" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.slim.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/dist/jquery.slim.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/external/sizzle/dist/sizzle.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/external/sizzle/dist/sizzle.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/jsonp.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/load.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/script.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/var/location.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/var/nonce.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/var/rquery.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/ajax/xhr.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/attributes/attr.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/attributes/classes.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/attributes/prop.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/attributes/support.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/attributes/val.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/core/DOMEval.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/core/access.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/core/camelCase.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/core/init.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/core/var/rsingleTag.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/jquery/src/css/addGetHookIf.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,37 +1,37 @@
-- let withAria = { role: false };
+include ../../components/text/text
 
-mixin counter(args = [withType, withName, withLabel, withId, withAria, nowValue, minValue, maxValue, withForm, withArray, withReadonly])
-	-
-		let withType,
-						withName,
-						withLabel,
-						withId,
-						withRole,
-						withForm,
-						withArray,
-						withReadonly
+mixin counter(name='', label='', id='', form='', value=0, min=0, max=0, slot='', role='')
 
-		let count = 0
-		count = args.flatMap((value, index, arr) => {
-			console.log(value, index, arr)
-			return arr.push({index: [arr]})
-		})
-		if (typeof Array === count[1]) console.log("Array in Array")
-
-	.counter.counter_hidden
-		.counter__field
-			label(for=`${withId}`)
-				+text({ withTag: 'h3', withContent: `${withLabel}` })
-			.counter__input
-				input.counter__input_spy(
-					value='0'
-					type='number'
-					role=`aria-${withAria.role}`
-					readonly=withReadonly ? true : false
-					name=`${withName}`
-					id=`${withId}`
-					form=`${withForm}`
-					aria-nowvalue=`${withAria.nowValue}`
-					aria-minvalue=`${withAria.minValue}`
-					aria-maxvalue=`${withAria.maxValue}`
-				)
+  guests-counter.js-counter(
+    id=id
+    title=''
+    value=value
+    slot=slot
+    role=role
+    )
+    label.js-counter__label(for=id)
+      +text({
+        withTag: 'h3',
+        withContent: `${ label }`
+      })
+    .js-counter__input(id=id)
+      button.js-counter__decrement-button(
+        id=id
+        readonly: true
+        disabled
+        ) -
+      input.js-counter__input_hidden(
+        toggled=true
+        type='number'
+        readonly=true
+        name=name
+        id=id
+        form=form
+        value=value
+        min=min
+        max=max
+      )
+      button.js-counter__increment-button(
+        id=id
+        readonly: true
+        ) +

@@ -1,27 +1,112 @@
 include ../text/text
+include ../button/button
 
-mixin dropdown(args = {withLabel:false, withSublabel:false, withType: null, withForm:null, withName:null, withId:null, withValue:null, withPlaceholder:null})
-	-
-		var args = args
-		var inputClass = 'dropdown__input'
+//- template#drop-down-template
+//-     slot(name="label")
+//-       slot(name="sublabel")
+//-     slot(name="input")
+//-     slot(name="arrow-button")
+//-     slot(name="items")
+//-     slot(name="accept-button")
+//-     slot(name='clear-button')
 
-	.dropdown
-		if args.withLabel
-		label.dropdown_with-label(for=args.withId)
-			.dropdown__label-wrapper
-				+text({withTag: 'h3', withContent: args.withLabel})
-				if args.withSublabel
-					+text({withTag: 'h3', withContent: args.withSublabel, withWeight: 'normal', withColor: 'dark-shade-50'})
-		.dropdown__input-wrapper
-			input(
-				value=args.withValue
-				type="hidden"
-				placeholder=args.withPlaceholder
-				name=args.withName
-				id=args.withId
-				form=args.withForm
-				class=inputClass
-			)
-			span Сколько гостей
-			.dropdown__input
-				.dropdown__button_arrow= 'expand_more'
+
+mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=false, form=false, value=false, counters=false, buttons=false)
+
+  case buttons
+
+    when false
+      drop-down.js-dropdown(
+        form=form
+        value=''
+        placeholder=`${placeholder}`
+        aria-expanded="false"
+        data-values={}
+        )
+        if label
+          label.js-dropdown__label(for=id slot="label")
+            +text({ withTag: 'h3', withContent: label })
+            if sublabel
+              +text({ withTag: 'h3', withContent: sublabel, withWeight: 'normal', withColor: 'dark-shade-50' }, slot="sublabel")
+        input.js-dropdown__input(
+          slot="input"
+          list=id,
+          value=`${placeholder}`,
+          type="text",
+          placeholder=`${placeholder}`,
+          name=name,
+          form=form,
+          readonly,
+          role="combobox",
+          aria-owns="dropitems",
+          aria-expanded="false"
+        )
+        .js-dropdown__arrow-button(slot="arrow-button")
+          +btn('icon', 'arrow_color_gray', "arrow-button", "js-dropdown", false)
+        if counters
+          datalist#dropitems.js-dropdown__items(slot="items", role='datalist')
+            block
+
+    when true
+      drop-down-with-buttons.js-dropdown(
+        form=form
+        value=''
+        placeholder=`${placeholder}`
+        aria-expanded="false"
+        data-values={}
+        buttons=buttons
+        )
+        if label
+          label.js-dropdown__label(for=id slot="label")
+            +text({ withTag: 'h3', withContent: label })
+            if sublabel
+              +text({ withTag: 'h3', withContent: sublabel, withWeight: 'normal', withColor: 'dark-shade-50' }, slot="sublabel")
+        input.js-dropdown__input(
+          slot="input"
+          list=id,
+          value=`${placeholder}`,
+          type="text",
+          placeholder=`${placeholder}`,
+          name=name,
+          form=form,
+          readonly,
+          role="combobox",
+          aria-owns="dropitems",
+          aria-expanded="false"
+          buttons=buttons
+        )
+        .js-dropdown__arrow-button(slot="arrow-button")
+          +btn('icon', 'arrow_color_gray', "arrow-button", "js-dropdown", false)
+        if counters
+          datalist#dropitems.js-dropdown__items(slot="items", role='datalist', buttons)
+            block
+        .js-dropdown__footer-buttons(slot="footer-buttons", buttons=buttons)
+          .js-dropdown__reset-button(slot='reset-button', buttons=buttons)
+            +btn('text', false, 'reset-button', 'js-dropdown-reset', 'очистить')
+          .js-dropdown__accept-button(slot='accept-button')
+            +btn('text', false, 'accept-button', 'js-dropdown-accept', 'применить')
+
+
+  template#DROP-DOWN
+    if label
+      slot(name="label")
+      if sublabel
+        slot(name="sublabel")
+    slot(name="input")
+    slot(name="arrow-button")
+    if counters
+      slot(name="items")
+
+  template#DROP-DOWN-WITH-BUTTONS
+    if label
+      slot(name="label")
+      if sublabel
+        slot(name="sublabel")
+    slot(name="input")
+    slot(name="arrow-button")
+    if counters
+      slot(name="items")
+    if buttons
+      slot(name="footer-buttons")
+        slot(name='reset-button')
+        slot(name='accept-button')

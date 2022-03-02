@@ -1,0 +1,9 @@
+{
+	"$schema": "./node_modules/intern/schemas/config.json",
+	"suites": "./src/components/button/button.spec.js",
+	"functionalSuites": "./tests/counter.functional.spec.js",
+	"loaders": "browser",
+	"plugins":[
+	],
+	"environments": ["chrome", "node"]
+}

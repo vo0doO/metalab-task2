@@ -1,17 +1,17 @@
 mixin color-and-type
-  section.color-and-type
-    .color-and-type__body
-      .color-and-type__header
-        .color-and-type__title
-          include ../text/text
-          +text({ withTag: 'small', withContent: 'Color&Type' })
-        .color-and-type__logo-wrapper
-          include ../logo/logo
-          +logo({ isGrey: true, alt: 'Toxin logo' })
-      .color-and-type__main
-        .color-and-type__container
-          .color-and-type__wrapper
-            include ../color-palette/color-palette
-            +color-palette({ colors: [ { name: 'dark-shade100', title: 'Dark Shade 100%', rgb: '#1F2041' }, { name: 'dark-shade75', title: 'Dark Shade 75%', rgb: '#1F2041' }, { name: 'dark-shade50', title: 'Dark Shade 50%', rgb: '#1F2041' }, { name: 'dark-shade25', title: 'Dark Shade 25%', rgb: '#1F2041' }, { name: 'dark-shade5', title: 'Dark Shade 5%', rgb: '#1F2041' }, { name: 'purple', title: 'Purple', rgb: '#BC9CFF' }, { name: 'green', title: 'Green', rgb: '#6FCF97' } ] })
-            include ../typography/typography
-            +typography
+	section.color-and-type
+		.color-and-type__body
+			.color-and-type__header
+				.color-and-type__title
+					include ../text/text
+					+text({ withTag: 'small', withContent: 'Color&Type' })
+				.color-and-type__logo-wrapper
+					include ../logo/logo
+					+logo({ isGrey: true, alt: 'Toxin logo' })
+			.color-and-type__main
+				.color-and-type__container
+					.color-and-type__wrapper
+						include ../color-palette/color-palette
+						+color-palette({ colors: [ { name: 'dark-shade100', title: 'Dark Shade 100%', rgb: '#1F2041' }, { name: 'dark-shade75', title: 'Dark Shade 75%', rgb: '#1F2041' }, { name: 'dark-shade50', title: 'Dark Shade 50%', rgb: '#1F2041' }, { name: 'dark-shade25', title: 'Dark Shade 25%', rgb: '#1F2041' }, { name: 'dark-shade5', title: 'Dark Shade 5%', rgb: '#1F2041' }, { name: 'purple', title: 'Purple', rgb: '#BC9CFF' }, { name: 'green', title: 'Green', rgb: '#6FCF97' } ] })
+						include ../typography/typography
+						+typography

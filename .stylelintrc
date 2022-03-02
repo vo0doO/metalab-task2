@@ -1,39 +1,77 @@
-{
-  "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-sass-guidelines",
-    "stylelint-config-hudochenkov/full",
-    "stylelint-prettier/recommended"
-  ],
-  "plugins": [
-    "stylelint-scss",
-    "stylelint-order"
-  ],
-  "rules": {
-    "selector-class-pattern": null,
-    "selector-pseudo-class-no-unknown": [
-      true,
-      {
-        "ignorePseudoClasses": [
-          "export"
-        ]
-      }
-    ],
-    "order/properties-alphabetical-order": null,
-    "indentation": 2,
-    "max-nesting-depth": 3,
-    "selector-max-type": 1,
-    "at-rule-no-unknown": null,
-    "selector-no-qualifying-type": [
-      true,
-      {
-        "ignore": [
-          "attribute"
-        ]
-      }
-    ],
-    "scss/at-extend-no-missing-placeholder": [false],
-    "font-family-no-missing-generic-family-keyword": null,
-    "scss/dollar-variable-colon-newline-after": null
-  }
-}
+# Синхронизация этого файла с внутренним
+extends:
+    - stylelint-config-standard
+    - stylelint-prettier/recommended
+    - stylelint-config-sass-guidelines
+    - stylelint-config-hudochenkov/full
+plugins:
+    - stylelint-scss
+    - stylelint-prettier
+    - stylelint-order
+rules:
+    prettier/prettier: true
+    # Этот список должен быть проверен с помощью тестов в 'e2e_test.js', чтобы убедиться, что каждое правило
+    # функционирует, и что этот файл не содержит опечаток.
+    block-closing-brace-newline-after:
+        - always
+        - ignoreAtRules:
+              - if
+              - else
+    indentation: tab
+    max-nesting-depth: 3
+    selector-max-type: 1
+    block-no-empty: true
+    color-hex-case: lower
+    color-hex-length: short
+    color-no-invalid-hex: true
+    declaration-block-no-duplicate-properties: true
+    declaration-block-no-redundant-longhand-properties: true
+    declaration-block-no-shorthand-property-overrides: true
+    declaration-block-trailing-semicolon: always
+    function-calc-no-unspaced-operator: true
+    function-url-no-scheme-relative: true
+    function-url-quotes: never
+    # Необходимо проверить, требуются ли единицы измерения для некоторых свойств flex в некоторых браузерах.
+    # длина-ноль-без единицы
+    no-duplicate-at-import-rules: true
+    no-eol-whitespace: true
+    no-extra-semicolons: true
+    # @keyframe's определены в отдельном файле.
+    # no-unknown-animations: true
+    # Требуется известный css-parser, еще не импортированный в third_party.
+    # property-no-unknown: true
+    rule-empty-line-before:
+        - always
+        - ignore:
+              - after-comment
+              - first-nested
+              - inside-block
+    selector-pseudo-class-no-unknown: true
+    selector-no-qualifying-type:
+        - false
+        - ignore: [attribute]
+    selector-pseudo-element-no-unknown:
+        - true
+        - ignorePseudoElements:
+              - ng-deep
+    # Конфигурация не позволяет этого:
+    #
+    # ```scss
+    # $long-varaible-name:
+    #     (long, list, of, strings, that, is, too, wide, for, good, formatting);
+    # ```
+    #
+    # Возможно решается с запросом на https://github.com/kristerkari/stylelint-scss/issues/172.
+    # scss/dollar-variable-colon-space-after: always
+    scss/dollar-variable-colon-space-before: never
+    scss/operator-no-unspaced: true
+    font-family-no-missing-generic-family-keyword: null
+    shorthand-property-no-redundant-values: true
+    # TODO: Включите этот параметр, если это не конфликтует с другими изменениями файлов SASS.
+    string-quotes: single
+    unit-case: lower
+    unit-no-unknown:
+        - true
+        - ignoreUnits:
+              - /^[-+][\d$(]/
+    value-keyword-case: lower

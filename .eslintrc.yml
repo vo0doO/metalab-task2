@@ -1,0 +1,36 @@
+extends: ['./node_modules/eslint-config-airbnb-base/.eslintrc']
+
+parserOptions:
+    ecmaVersion: 13
+    sourceType: module
+env:
+    worker: true
+    browser: true
+    commonjs: true
+    serviceworker: true
+    jquery: true
+rules:
+    space-in-parens: off
+    no-sparse-arrays: off
+    space-before-blocks: off
+    class-methods-use-this: off
+    keyword-spacing:
+        - after: false
+    no-tabs: [error, allowIndentationTabs: false]
+    linebreak-style: [off, windows, unix]
+    indent: [error, 4, SwitchCase: 1 ]
+    comma-dangle: off
+    prefer-destructuring: 1
+    arrow-spacing: 1
+    symbol-description: 1
+    for-direction: 1
+    generator-star-spacing: 0
+    jsx: 0
+    rest-spread-spacing: 1
+    wrap-regex: 1
+    prefer-rest-params: 1
+    prefer-spread: 1
+    space-before-function-paren: 1
+    prefer-template: 1
+    unicode-bom: 1
+    default-case: 'warn'

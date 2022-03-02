@@ -1,41 +1,53 @@
-mixin head(options)
-  -
-    let title = 'Page title'
-    title = options.title
-    let description = 'Page description'
-    description = options.description
-    let keywords = 'Page keywords'
-    keywords = options.keywords
-
+//- appleTouchIconPrecomposed= '', msapplicationTileImage= '', icon192x192= '', dnsPrefetch= '', twitterCard= '', twitterSite= '', twitterImage= '', ogImage= '', ogUrl= '', canonical= '', title= '', description= '', keywords= '', themeColor= '', titleColor= '', safariPinnedTabColor= ''
+mixin head(title= 'Page title', description= 'Page description', keywords= 'Page keywords', themeColor= 'Page keywords', titleColor= 'Title color', safariPinnedTabColor= 'Safari pined message color',)
   head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    meta(http-equiv='X-UA-Compatible', content='ie=edge')
-    meta(name='description', content=description)
-    meta(name='keywords', content=keywords)
-    meta(name='msapplication-TileColor', content='#da532c')
-    meta(name='theme-color', content='#ffffff')
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="description", content=description)
+    meta(name="keywords", content=keywords)
+    meta(name="msapplication-TileColor", content="#3372DF")
     link(
-      rel='apple-touch-icon',
-      sizes='180x180',
-      href='assets/favicons/apple-touch-icon.png'
+      sizes="180x180",
+      rel="apple-touch-icon",
+      href="assets/favicons/apple-touch-icon.png"
     )
     link(
-      rel='icon',
-      type='image/png',
-      sizes='32x32',
-      href='assets/favicons/favicon-32x32.png'
+      type="image/png",
+      sizes="32x32",
+      rel="icon",
+      href="assets/favicons/favicon-32x32.png"
     )
     link(
-      rel='icon',
-      type='image/png',
-      sizes='16x16',
-      href='assets/favicons/favicon-16x16.png'
+      type="image/png",
+      sizes="16x16",
+      rel="icon",
+      href="assets/favicons/favicon-16x16.png"
     )
-    link(rel='manifest', href='assets/favicons/site.webmanifest')
+    link(rel="manifest", href="assets/favicons/site.webmanifest")
     link(
-      rel='mask-icon',
-      href='assets/favicons/safari-pinned-tab.svg',
-      color='#5bbad5'
+      rel="mask-icon",
+      href="assets/favicons/safari-pinned-tab.svg",
+      color="FIX_ME!!!"
     )
+    meta(name="mobile-web-app-capable", content="yes")
+    link(rel="icon", sizes="192x192", href="FIX_ME!!!")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style", content="black")
+    meta(name="apple-mobile-web-app-title", content="FIX_ME!!!")
+    meta(name="msapplication-TileImage", content="FIX_ME!!!-FIX_ME!!!")
+    meta(name="msapplication-TileColor", content="#3372DF")
+    link#canonical(rel="canonical", href="FIX_ME!!!!")
+    link(rel="dns-prefetch", href="FIX_ME!!!!")
+    meta(name="twitter=card", content="FIX_ME!!!!")
+    meta(name="twitter=site", content="FIX_ME!!!!")
+    meta(name="twitter=title", content=title)
+    meta(name="twitter=description", content=description)
+    meta(name="twitter=image", content="FIX_MEE!!!")
+    meta(property="og=image", content="FIX_MEE!!!", thumbnailUrl)
+    meta(property="og=title", content=title)
+    meta(property="og=url", content="FIX_MEE!!!")
+    meta(property="og=site_name", content=title)
+    meta(property="og=description", content=description)
     title= title
+    block

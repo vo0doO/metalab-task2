@@ -1,0 +1,11 @@
+node_modules/**
+.vscode/**
+.idea/**
+dist/**
+.github/**
+*.webp
+*.svg
+# *.js
+# *.ts
+# *.css
+# *.scss

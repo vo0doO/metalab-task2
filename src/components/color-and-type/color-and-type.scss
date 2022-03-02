@@ -1,5 +1,4 @@
-@import "../../utils/style/vars";
-
+@import '../../utils/style/vars';
 
 .color-and-type {
 	&__title {
@@ -8,21 +7,21 @@
 		height: 50px;
 		background-color: $background-color-body;
 	}
-	
+
 	&__logo-wrapper {
 		display: inline-block;
 		margin: 30px 0 0 30px;
 	}
-	
+
 	&__body {
 		height: 950px;
 		background-color: $background-color-html;
 	}
-	
+
 	&__main {
 		padding: 63px 150px 166px;
 	}
-	
+
 	&__container {
 		position: relative;
 		width: 1140px;
@@ -30,7 +29,7 @@
 		max-width: 1160px;
 		height: 100%;
 	}
-	
+
 	&__wrapper {
 		display: flex;
 		flex-direction: row;
