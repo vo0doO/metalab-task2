@@ -16,7 +16,7 @@
 		"type": "git",
 		"url": "git+https://github.com/vo0doO/metalab-task2.git"
 	},
-	"keywords": ['фронтенд', 'компоненты', 'дизайн', 'стиль', 'toxin'],
+	"keywords": ["фронтенд", "компоненты", "дизайн", "стиль", "toxin"],
 	"author": "vo0doo",
 	"license": "ISC",
 	"bugs": {
