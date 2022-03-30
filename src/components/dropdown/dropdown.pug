@@ -16,7 +16,19 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
   case buttons
 
     when false
+
+      template#DROP-DOWN
+        if label
+          slot(name="label")
+          if sublabel
+            slot(name="sublabel")
+        slot(name="input")
+        slot(name="arrow-button")
+        if counters
+          slot(name="items")
+
       drop-down.js-dropdown(
+        id=id
         form=form
         value=''
         placeholder=`${placeholder}`
@@ -29,6 +41,7 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
             if sublabel
               +text({ withTag: 'h3', withContent: sublabel, withWeight: 'normal', withColor: 'dark-shade-50' }, slot="sublabel")
         input.js-dropdown__input(
+          id=id
           slot="input"
           list=id,
           value=`${placeholder}`,
@@ -41,14 +54,30 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
           aria-owns="dropitems",
           aria-expanded="false"
         )
-        .js-dropdown__arrow-button(slot="arrow-button")
+        .js-dropdown__arrow-button(id=id, slot="arrow-button")
           +btn('icon', 'arrow_color_gray', "arrow-button", "js-dropdown", false)
         if counters
-          datalist#dropitems.js-dropdown__items(slot="items", role='datalist')
+          datalist.js-dropdown__items(id=id, slot="items", role='datalist')
             block
 
     when true
+
+      template#DROP-DOWN-WITH-BUTTONS
+        if label
+          slot(name="label")
+          if sublabel
+            slot(name="sublabel")
+        slot(name="input")
+        slot(name="arrow-button")
+        if counters
+          slot(name="items")
+        if buttons
+          slot(name="footer-buttons")
+            slot(name='reset-button')
+            slot(name='accept-button')
+
       drop-down-with-buttons.js-dropdown(
+        id=id
         form=form
         value=''
         placeholder=`${placeholder}`
@@ -62,6 +91,7 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
             if sublabel
               +text({ withTag: 'h3', withContent: sublabel, withWeight: 'normal', withColor: 'dark-shade-50' }, slot="sublabel")
         input.js-dropdown__input(
+          id=id
           slot="input"
           list=id,
           value=`${placeholder}`,
@@ -75,10 +105,10 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
           aria-expanded="false"
           buttons=buttons
         )
-        .js-dropdown__arrow-button(slot="arrow-button")
+        .js-dropdown__arrow-button(id=id, slot="arrow-button")
           +btn('icon', 'arrow_color_gray', "arrow-button", "js-dropdown", false)
         if counters
-          datalist#dropitems.js-dropdown__items(slot="items", role='datalist', buttons)
+          datalist.js-dropdown__items(id=id, slot="items", role='datalist', buttons)
             block
         .js-dropdown__footer-buttons(slot="footer-buttons", buttons=buttons)
           .js-dropdown__reset-button(slot='reset-button', buttons=buttons)
@@ -87,26 +117,6 @@ mixin dropdown(id=false, label=false, sublabel=false, placeholder=false, name=fa
             +btn('text', false, 'accept-button', 'js-dropdown-accept', 'применить')
 
 
-  template#DROP-DOWN
-    if label
-      slot(name="label")
-      if sublabel
-        slot(name="sublabel")
-    slot(name="input")
-    slot(name="arrow-button")
-    if counters
-      slot(name="items")
 
-  template#DROP-DOWN-WITH-BUTTONS
-    if label
-      slot(name="label")
-      if sublabel
-        slot(name="sublabel")
-    slot(name="input")
-    slot(name="arrow-button")
-    if counters
-      slot(name="items")
-    if buttons
-      slot(name="footer-buttons")
-        slot(name='reset-button')
-        slot(name='accept-button')
+
+
