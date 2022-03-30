@@ -5,12 +5,19 @@
 			"DOM",
 			"ESNext",
 		],
-		"types": ["tslib", "node"],
+		"types": [
+			"tslib",
+			"node"
+		],
 		"forceConsistentCasingInFileNames": true,
 		"module": "commonjs",
 		"emitDeclarationOnly": true,
 		"declaration": true,
-		"esModuleInterop": true,		
-		},
-		"exclude": ["./dist", "./src/utils/js/gog/**/**/*", "webpack.config.оы"]
+		"esModuleInterop": true,
+	},
+	"exclude": [
+		"./dist",
+		"./src/utils/js/gog/**/**/*",
+		"webpack.config.js"
+	]
 }

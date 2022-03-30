@@ -3,6 +3,7 @@ include components/logo/logo
 include components/text/text
 include components/text-field/text-field
 include components/dropdown/dropdown
+include components/counter/counter
 
 doctype html
 html(lang='ru')
@@ -10,6 +11,7 @@ html(lang='ru')
 	body.ui-kit__body
 		main.ui-kit__main
 			include components/color-and-type/color-and-type
+			//- +color-and-type()
 			section.form-elements
 				.form-elements__body
 					.form-elements__header
@@ -45,7 +47,11 @@ html(lang='ru')
 								withFocus: true,
 							})
 						.form-elements__dropdown_default-wrapper
-							+dropdown('guestscounter', 'dropdown', '', 'Сколько гостей', 'listbox', 'guests', '', false, false)
+							+dropdown('zero', 'dropdown', '', 'Сколько гостей', 'listbox', 'guests', '', false, false)
+							+dropdown('guestscounter1', 'dropdown', 'counter', 'Сколько гостей', 'listbox1', 'guests1', '', 3, true)
+								+counter('взрослые1', 'взрослые', 'взрослые1', 'guests', 0, 0, 10, 'options', 'options')
+								+counter('дети1', 'дети', 'дети1', 'guests', 0, 0, 10, 'options', 'options')
+								+counter('младенцы1', 'младенцы', 'младенцы1', 'guests', 0, 0, 10, 'options', 'options')
 						.form-elements__text-field_with-mask-wrapper
 							+text-field({
 								withType: "text",
@@ -55,3 +61,8 @@ html(lang='ru')
 								withPlaceholder: "ДД.ММ.ГГГГ",
 								withMask: "ДД.ММ.ГГГГ",
 							})
+						.form-elements__guest-dropdown_with-zero-values-wrapper
+							+dropdown('guestscounter2', 'dropdown', 'counter', 'Сколько гостей', 'listbox2', 'guests2', '', 3, true)
+								+counter('взрослые', 'взрослые', 'взрослые', 'guests', 0, 0, 10, 'options', 'options')
+								+counter('дети', 'дети', 'дети', 'guests', 0, 0, 10, 'options', 'options')
+								+counter('младенцы', 'младенцы', 'младенцы', 'guests', 0, 0, 10, 'options', 'options')
