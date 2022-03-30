@@ -1,7 +1,7 @@
 {
 	"name": "toxin",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Frontend компоненты в фирменном стиле TOXIN",
 	"scripts": {
 		"start": "set NODE_ENV=development&&npx webpack serve --stats-children --stats-error-details",
 		"test": "set NODE_ENV=development&&npx webpack serve --config test.config.js --open --stats-children --stats-error-details",
@@ -16,8 +16,8 @@
 		"type": "git",
 		"url": "git+https://github.com/vo0doO/metalab-task2.git"
 	},
-	"keywords": [],
-	"author": "",
+	"keywords": ['фронтенд', 'компоненты', 'дизайн', 'стиль', 'toxin'],
+	"author": "vo0doo",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/vo0doO/metalab-task2/issues"
