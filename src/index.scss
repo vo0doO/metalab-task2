@@ -29,6 +29,7 @@
 	}
 	
 	&__main {
+		height: min-content;
 		padding: 62px 141px 131px 140px;
 	}
 	
@@ -57,6 +58,14 @@
 		left: 141px;
 		top: 395px;
 		margin-top: 23px;
+	}
+
+	&__guest-dropdown_with-zero-values-wrapper {
+		position: absolute;
+		width: 320px;
+		height: 221.56px;
+		left: 141px;
+		top: 876px;
 	}
 }
 

@@ -40,10 +40,10 @@ class DropDown extends HTMLElement {
 		const templateContent = template.content
 		this.attachShadow( { mode: 'open' } ).appendChild( templateContent.cloneNode( true ) )
 		this.elements = DropDown.elements
-		this.root = $( `.${ DropDown.elements.ROOT }` )
-		this.items = $( `.${ DropDown.elements.ITEMS }` )
-		this.input = $( `.${ DropDown.elements.INPUT }` )
-		this.arrowButton = $( `.${ Button.elements.ARROW }` )
+		this.root = $( `.${ DropDown.elements.ROOT }#${this.id}` )
+		this.items = this.root.find( `.${ DropDown.elements.ITEMS }` )
+		this.input = this.root.find( `.${ DropDown.elements.INPUT }` )
+		this.arrowButton = this.root.find( `.${ Button.elements.ARROW }` )
 		this.inputEvents = this.inputEvents.bind( this )
 		this.itemsEvents = this.itemsEvents.bind( this )
 		this.handleClick = this.handleClick.bind( this )
@@ -125,7 +125,7 @@ class DropDown extends HTMLElement {
 	}
 
 	attributeChangedCallBack ( value, oldValue, newValue ) {
-		console.log( `Dropdown attribute changed: \n Element: ${ element } \n oldvalue ${ oldValue } \n newValue ${ newValue }` )
+		console.log( `Dropdown attribute changed: \n Element: ${ value } \n oldvalue ${ oldValue } \n newValue ${ newValue }` )
 	}
 
 	ariaExpandedToggle ( elem ) {
@@ -232,7 +232,7 @@ class DropDownWithButtons extends DropDown {
 	constructor () {
 		super()
 		super.rootEvents()
-		this.root = $( DropDownWithButtons.elements.ROOT )
+		// this.root = $( DropDownWithButtons.elements.ROOT )
 		this.footerButtons = this.root.find( `.${ DropDownWithButtons.elements.FOOTER_BUTTONS }` )
 		this.resetButton = this.root.find( `.${ DropDownWithButtons.elements.RESET_BUTTON }` )
 		this.acceptButton = this.root.find( `.${ DropDownWithButtons.elements.ACCEPT_BUTTON }` )
@@ -300,8 +300,8 @@ class DropDownWithButtons extends DropDown {
 		this.resetButton.on(
 			DropDownWithButtons.events.RESET_BUTTON_TOGGLE_DISABLED,
 			( event ) => {
-				const input = this.root.find( `.${ DropDown.elements.INPUT }` )
-				const resetButton = this.root.find( `.${ DropDownWithButtons.elements.RESET_BUTTON }` ).get( 0 )
+				const input = this.input
+				const resetButton = this.resetButton.get(0)
 				if ( input.val() === 'Сколько гостей' ) {
 					if ( resetButton.getAttribute( 'disabled' ) != null ) {
 						return
