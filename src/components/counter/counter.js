@@ -76,7 +76,7 @@ class Counter extends HTMLElement {
 			return;
 		}
 
-		this.handleChangeRootValue( event, { value: newV, id: this.id } );
+		this.handleChangeRootValue( event, { value: newV, id: this.getAttribute('name') } );
 	}
 
 	inputObserve() {

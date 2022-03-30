@@ -3,6 +3,7 @@ include ../../components/text/text
 mixin counter(name='', label='', id='', form='', value=0, min=0, max=0, slot='', role='')
 
   guests-counter.js-counter(
+    name=name
     id=id
     title=''
     value=value
@@ -14,17 +15,21 @@ mixin counter(name='', label='', id='', form='', value=0, min=0, max=0, slot='',
         withTag: 'h3',
         withContent: `${ label }`
       })
-    .js-counter__input(id=id)
+    .js-counter__input(
+      name=name
+      id=id
+      )
       button.js-counter__decrement-button(
+        name=name
         id=id
         readonly: true
         disabled
         ) -
       input.js-counter__input_hidden(
+        name=name
         toggled=true
         type='number'
         readonly=true
-        name=name
         id=id
         form=form
         value=value
@@ -32,6 +37,7 @@ mixin counter(name='', label='', id='', form='', value=0, min=0, max=0, slot='',
         max=max
       )
       button.js-counter__increment-button(
+        name=name
         id=id
         readonly: true
         ) +

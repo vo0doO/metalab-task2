@@ -71,9 +71,9 @@ class DropDown extends HTMLElement {
 	getGuestsInputString () {
 		let guests = 0
 		let babys = 0
-		const elements = $( `.${ Counter.elements.ROOT }` )
+		const elements = this.root.find( `.${ Counter.elements.ROOT }` )
 		elements.each( ( index ) => {
-			const id = $( elements[ index ] ).attr( 'id' )
+			const id = $( elements[ index ] ).attr( 'name' )
 			let value = $( elements[ index ] ).attr( 'value' )
 			if ( id === "взрослые" ) {
 				guests += parseInt( value, 10 )
