@@ -49,8 +49,8 @@
 		border-collapse: collapse;
 		border-radius: 4px;
 		background: #fff;
-		color: $dark-shade-75;
 		box-shadow: 0 10px 20px 0 $dark-shade-5;
+		color: $dark-shade-75;
 		font-size: 14px;
 		font-family: 'Montserrat', serif;
 		text-indent: 12px;
@@ -100,6 +100,9 @@
 	    grid-area: footer;
 	    display: grid;
 	    grid-template-areas: 'reset accept';
+		background: #fff;
+		box-shadow: 0 10px 20px 0 $dark-shade-5;
+		opacity: 0.99;
 		padding: 2px 6px 9px 14px;
 		border: 1px solid rgba(31, 32, 65, 0.5);
 		border-top: 0 none;
@@ -157,6 +160,8 @@
 			grid-template-rows: repeat(3, 37px) auto;
 			align-items: center;
 			box-sizing: border-box;
+			background: #fff;
+			box-shadow: 0 10px 20px 0 $dark-shade-5;
 			padding: 2px 6px 9px 14px;
 			border: 1px solid rgba(31, 32, 65, 0.5);
 			border-radius: 0 0 4px 4px;
@@ -168,6 +173,8 @@
 			grid-template-rows: repeat(3, 37px) auto;
 			align-items: center;
 			box-sizing: border-box;
+			background: #fff;
+			box-shadow: 0 10px 20px 0 $dark-shade-5;
 			padding: 2px 6px 9px 14px;
 			border: 1px solid rgba(31, 32, 65, 0.5);
 			border-radius: 0;
