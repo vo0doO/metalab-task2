@@ -54,7 +54,7 @@
 		
 	}
 	
-	&__dropdown_default-wrapper {
+	&__guest-dropdown_default-wrapper {
 		position: absolute;
 		width: 320px;
 		height: 64px;
@@ -78,12 +78,52 @@
 		top: 876px;
 	}
 
-	&__guest-dropdown-wrapper {
+	&__guest-dropdown_with-values-wrapper {
 		position: absolute;
 		width: 320px;
 		height: 221.56px;
 		left: 979px;
 		top: 876px;
+	}
+
+	&__date-dropdown_default-wrapper {
+		position: absolute;
+		width: 150px;
+		height: 65px;
+		left: 141px;
+		top: 502px;
+	}
+
+	&__date-dropdown_with-values-wrapper {
+		position: absolute;
+		width: 150px;
+		height: 65px;
+		left: 311px;
+		top: 502px;
+	}
+
+	&__filter-date-dropdown-wrapper {
+		position: absolute;
+		width: 266px;
+		height: 65px;
+		left: 141px;
+		top: 607px;
+	}
+
+	&__convenience-dropdown_default-wrapper {
+		position: absolute;
+		width: 266px;
+		height: 64px;
+		left: 140px;
+		top: 876px;
+	}
+
+	&__convenience-dropdown_expanded-wrapper {
+		position: absolute;
+		width: 266px;
+		height: 181.56px;
+		left: 140px;
+		top: 960px;
 	}
 }
 

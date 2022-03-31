@@ -46,7 +46,7 @@ html(lang='ru')
 								withValue: "This is pretty awesome",
 								withFocus: true,
 							})
-						.form-elements__dropdown_default-wrapper
+						.form-elements__guest-dropdown_default-wrapper
 							+dropdown('zero', 'dropdown', '', 'Сколько гостей', 'listbox', 'guests', '', false, false)
 						.form-elements__text-field_with-mask-wrapper
 							+text-field({
@@ -62,8 +62,21 @@ html(lang='ru')
 								+counter('взрослые', 'взрослые', 'взрослые1', 'guests', 0, 0, 10, 'options', 'options')
 								+counter('дети', 'дети', 'дети1', 'guests', 0, 0, 10, 'options', 'options')
 								+counter('младенцы', 'младенцы', 'младенцы1', 'guests', 0, 0, 10, 'options', 'options')
-						.form-elements__guest-dropdown-wrapper
+						.form-elements__guest-dropdown_with-values-wrapper
 							+dropdown('guestscounter', 'dropdown', false, 'Сколько гостей', 'listbox', 'guests', '', 3, true)
 								+counter('взрослые', 'взрослые', 'взрослые', 'guests', 0, 0, 10, 'options', 'options')
 								+counter('дети', 'дети', 'дети', 'guests', 0, 0, 10, 'options', 'options')
 								+counter('младенцы', 'младенцы', 'младенцы', 'guests', 0, 0, 10, 'options', 'options')
+						.form-elements__date-dropdown_default-wrapper
+							+dropdown('date1', 'date dropdown', '', 'ДД.ММ.ГГГГ', 'date', 'date', '', false, false)
+						.form-elements__date-dropdown_with-values-wrapper
+							+dropdown('date2', 'date dropdown', '', '19.08.2019', 'date', 'date', '', false, false)
+						.form-elements__filter-date-dropdown-wrapper
+							+dropdown('filter-date', 'filter date dropdown', '', '19 авг - 23 авг', 'date', 'date', '', false, false)
+						.form-elements__convenience-dropdown_default-wrapper
+							+dropdown('conveniencecounter', 'dropdown', 'default', '2 спальни, 2 кровати...', 'listbox', 'convenience', '', false, false)
+						.form-elements__convenience-dropdown_expanded-wrapper
+							+dropdown('conveniencecounter1', 'dropdown', 'expanded', '2 спальни, 2 кровати...', 'listbox', 'convenience', '', 3, false)
+								+counter('спальни', 'спальни', 'спальни', 'convenience', 0, 0, 10, 'options', 'options')
+								+counter('кровати', 'кровати', 'кровати', 'convenience', 0, 0, 10, 'options', 'options')
+								+counter('ванные комнаты', 'ванные комнаты', 'ванные комнаты', 'convenience', 0, 0, 10, 'options', 'options')
