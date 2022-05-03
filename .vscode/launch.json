@@ -17,7 +17,6 @@
   //  smartStep:            ==>>     Automatically steps over code that doesn't map to source files. Especially useful for debugging with async/await.
   //  disableNetworkCache:  ==>>     If true, the network cache will be disabled.
   //  showAsyncStacks:      ==>>     If true, callstacks across async calls (like setTimeout, fetch, resolved Promises, etc) will be shown.
-
   "version": "0.2.0",
   "configurations": [
     {
@@ -28,11 +27,10 @@
       "webRoot": "${workspaceFolder}"
     },
     {
-      "console": "integratedTerminal",
       "command": "npm start",
       "name": "NpmStart",
       "request": "launch",
-      "type": "node-terminal",
+      "internalConsoleOptions": "openOnSessionStart"
     },
     {
       "console": "integratedTerminal",
@@ -67,7 +65,10 @@
   "compounds": [
     {
       "name": "Npm ==>> Chrome",
-      "configurations": [ "NpmStart", "LaunchChrome" ]
+      "configurations": [
+        "NpmStart",
+        "LaunchChrome"
+      ]
     }
   ]
 }
