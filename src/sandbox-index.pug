@@ -13,8 +13,9 @@ html(lang='ru')
 						img.sandbox__logo(src="./assets/img/logo.svg", alt="Logo")
 					.sandbox__item
 						.sandbox__dropdown-wrapper
-							+dropdown('guestscounter', 'dropdown', 'counter', 'Сколько гостей', 'listbox', 'guests', '', 3, true)
-								+counter('взрослые', 'взрослые', 'взрослые', 'guests', 0, 0, 10, 'options', 'options')
-								+counter('дети', 'дети', 'дети', 'guests', 0, 0, 10, 'options', 'options')
-								+counter('младенцы', 'младенцы', 'младенцы', 'guests', 0, 0, 10, 'options', 'options')
+							+dropdown('guestscounter1', 'dropdown', false, 'Сколько гостей', 'listbox', 'guests', '', 3, true)
+								+counter('взрослые', 'взрослые', 'взрослые1', 'guests', 0, 0, 10, 'options', 'options')
+								+counter('дети', 'дети', 'дети1', 'guests', 0, 0, 10, 'options', 'options')
+								+counter('младенцы', 'младенцы', 'младенцы1', 'guests', 0, 0, 10, 'options', 'options')
+s
 

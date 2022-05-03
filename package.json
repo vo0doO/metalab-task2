@@ -1,6 +1,6 @@
 {
 	"name": "toxin",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"description": "Frontend компоненты в фирменном стиле TOXIN",
 	"scripts": {
 		"start": "set NODE_ENV=development&&npx webpack serve --stats-children --stats-error-details",
@@ -14,9 +14,15 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/vo0doO/metalab-task2.git"
+		"url": "git+https://github.com/vo0doO/toxin.git"
 	},
-	"keywords": ["фронтенд", "компоненты", "дизайн", "стиль", "toxin"],
+	"keywords": [
+		"фронтенд",
+		"компоненты",
+		"дизайн",
+		"стиль",
+		"toxin"
+	],
 	"author": "vo0doo",
 	"license": "ISC",
 	"bugs": {
@@ -39,7 +45,7 @@
 		"babel-polyfill": "^6.26.0",
 		"console-browserify": "^1.2.0",
 		"copy-webpack-plugin": "^10.2.0",
-		"css-loader": "^6.5.1",
+		"css-loader": "^6.7.1",
 		"css-mqpacker": "^7.0.0",
 		"cssnano": "^5.0.14",
 		"eslint": "^8.6.0",

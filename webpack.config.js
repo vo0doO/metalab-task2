@@ -1,31 +1,10 @@
-const CopyPlugin = require( 'copy-webpack-plugin' );
-const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
-const path = require( 'path' );
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const 
+	CopyPlugin = require( 'copy-webpack-plugin' );
+	HtmlWebpackPlugin = require( 'html-webpack-plugin' );
+	path = require( 'path' );
+	MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-
-const paths = {
-	src: path.resolve( __dirname, 'src' ),
-	dist: path.resolve( __dirname, 'dist' ),
-	intern: path.join( __dirname, './node_modules/intern/browser/intern.js' ),
-	inputmaskdependencyLib: path.join(
-		__dirname,
-		'./node_modules/jquery.inputmask/extra/dependencyLibs/inputmask.dependencyLib.js'
-	),
-	inputmask: path.join(
-		__dirname,
-		'./node_modules/jquery.inputmask/dist/inputmask/inputmask.js'
-	)
-};
-
-let mode = 'development';
-if( process.env.NODE_ENV === 'production' ) {
-	mode = 'production';
-}
-
-module.exports = {
-	mode,
-	cache: {
+	cache = {
 		type: 'filesystem',
 
 		buildDependencies: {
@@ -35,30 +14,41 @@ module.exports = {
 			//  3. Если у вас есть другие вещи, от которых зависит сборка, вы можете добавить их здесь
 			// Обратите внимание, что веб-пакет, загрузчики и все модули, на которые ссылается ваша конфигурация, добавляются автоматически.
 		},
-	},
-	resolve: {
+};
+	paths = {
+		src: path.resolve( __dirname, 'src' ),
+		dist: path.resolve( __dirname, 'dist' ),
+		intern: path.resolve( __dirname, './node_modules/intern/browser/intern.js' ),
+		inputmaskdependencyLib: path.resolve(
+			__dirname,
+			'./node_modules/jquery.inputmask/extra/dependencyLibs/inputmask.dependencyLib.js'
+		),
+		inputmask: path.resolve(
+			__dirname,
+			'/node_modules/jquery.inputmask/dist/inputmask/inputmask.js'
+		)
+	};
 
+	resolve = {
 		alias: {
 
 			intern: paths.intern,
 
 			'inputmask.dependencyLib': paths.inputmaskdependencyLib,
 
-			inputmask: paths.inputmask
+			'inputmask': paths.inputmask
 
-		},
-	},
+		}
+};
 
-	devtool: mode === 'production' ? false : 'inline-source-map', // 'eval-cheap-module-source-map',
-
-	entry: {
+	entry = {
 		index: [
-			// 'intern',
+			'intern',
 			'./src/index.js'
 		]
-	},
+	}
 
-	output: {
+	output = {
 		path: paths.dist,
 		publicPath: '/',
 		asyncChunks: true,
@@ -67,8 +57,86 @@ module.exports = {
 		sourceMapFilename: 'js/[name]/[contenthash].js.map',
 		chunkFilename: 'js/[name]/[contenthash].js',
 		clean: true
-	},
-	recordsPath: path.join( __dirname, '/records.json' ), // this is not required for the webpack-dev-server, but when compiled.
+	}
+	
+	recordsPath = path.join( __dirname, '/records.json' )
+
+
+	plugins = [
+		new CopyPlugin( {
+			patterns: [
+
+				{
+					from: path.resolve( __dirname, 'src/assets/favicons' ),
+					to: './assets/favicons'
+				},
+
+				{
+					from: path.resolve( __dirname, 'src/assets/img' ),
+					to: './assets/img'
+				},
+
+				{
+					from: path.resolve( __dirname, 'node_modules/intern/loaders' ),
+					to: './loaders'
+				}
+			]
+		} ),
+
+		new HtmlWebpackPlugin(
+			{
+				template: '!!pug-loader!./src/index.pug'
+			}
+		),
+
+		new MiniCssExtractPlugin( {
+			filename: 'css/[name]/[contenthash].bundle.css',
+			chunkFilename: 'css/[name]/[contenthash].css',
+		} ),
+	]
+	optimization = {
+		splitChunks: {
+			chunks: 'all'
+		}
+	}
+	devServer = {
+		static: [
+			{
+				directory: path.join( __dirname, './' )
+			},
+		],
+		watchFiles: ['src/**/**/*'],
+		liveReload: true,
+		hot: true,
+		client: {
+			progress: false
+
+		},
+		devMiddleware: {
+			writeToDisk: true
+		},
+	}
+
+	experiments = {
+		topLevelAwait: true,
+		layers: true,
+		futureDefaults: true,
+		cacheUnaffected: true,
+	}
+	mode = "development";
+	devtool= mode === 'production' ? false : 'inline-source-map'; // 'eval-cheap-module-source-map',
+
+module.exports = {
+	mode,
+	cache,
+	resolve,
+
+	devtool,
+
+	entry,
+
+	output,
+	recordsPath,
 	module: {
 
 		rules: [
@@ -111,8 +179,7 @@ module.exports = {
 			{
 				test: /\.(sa|sc|c)ss$/,
 				use: [
-					'style-loader',
-					// 'MiniCssExtractPlugin',
+					MiniCssExtractPlugin.loader,
 					'css-loader',
 					'postcss-loader',
 					'sass-loader',
@@ -121,66 +188,9 @@ module.exports = {
 		]
 	},
 
-	plugins: [
-		new CopyPlugin( {
-			patterns: [
+	plugins: plugins,
+	optimization,
+	devServer,
 
-				{
-					from: path.resolve( __dirname, 'src/assets/favicons' ),
-					to: './assets/favicons'
-				},
-
-				{
-					from: path.resolve( __dirname, 'src/assets/img' ),
-					to: './assets/img'
-				},
-
-				{
-					from: path.resolve( __dirname, 'node_modules/intern/loaders' ),
-					to: './loaders'
-				}
-			]
-		} ),
-
-		new HtmlWebpackPlugin(
-			{
-				template: '!!pug-loader!./src/index.pug'
-			}
-		),
-
-		new MiniCssExtractPlugin( {
-			filename: 'css/[name]/[contenthash].bundle.css',
-			chunkFilename: 'css/[name]/[contenthash].css',
-		} ),
-	],
-	optimization: {
-		splitChunks: {
-			chunks: 'all'
-		}
-	},
-	devServer: {
-		static: [
-			{
-				directory: path.join( __dirname, './' )
-			},
-		],
-		watchFiles: ['src/**/**/*'],
-		liveReload: true,
-		hot: true,
-		client: {
-			progress: false,
-			logging: 'info',
-
-		},
-		devMiddleware: {
-			writeToDisk: true
-		},
-	},
-
-	experiments: {
-		topLevelAwait: true,
-		layers: true,
-		futureDefaults: true,
-		cacheUnaffected: true
-	}
+	experiments,
 };
