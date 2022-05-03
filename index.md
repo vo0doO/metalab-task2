@@ -1,37 +1,37 @@
-## Welcome to GitHub Pages
+## Добро пожаловать на страницы GitHub
 
-You can use the [editor on GitHub](https://github.com/vo0doO/toxin/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Вы можете использовать [редактор на github] (https://github.com/vo0doo/toxin/edit/gh-pages/index.md) для поддержания и предварительного просмотра контента для вашего веб-сайта в файлах Markdown.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Всякий раз, когда вы посвятили себя этому репозиторию, GitHub Pages будет запускать [Jekyll] (https://jekyllrb.com/), чтобы восстановить страницы на вашем сайте из контента в ваших файлах разметки.
 
 ### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Markdown-это легкий и простой в использовании синтаксис для стилизации вашего письма. Он включает в себя соглашения для
 
-```markdown
-Syntax highlighted code block
+`` `отметка
+Синтаксис выделенный кодовой блок
 
-# Header 1
-## Header 2
-### Header 3
+# Заголовок 1
+## заголовок 2
+### заголовок 3
 
-- Bulleted
-- List
+- БЕЛОВАЯ
+- Список
 
-1. Numbered
-2. List
+1. пронумеровано
+2. Список
 
-**Bold** and _Italic_ and `Code` text
+** жирным шрифтом ** и _italic_ и `text
 
-[Link](url) and ![Image](src)
-```
+[Ссылка] (URL) и! [Image] (SRC)
+`` `
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+Более подробную информацию см. [Основное написание и форматирование синтаксиса] (https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic- Написание и форматирование-синтаксис).
 
 ### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/vo0doO/toxin/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+На вашем сайте страниц будет использоваться макет и стили из темы Jekyll, которую вы выбрали в своих настройках [репозитория] (https://github.com/vo0doo/toxin/settings/pages). Имя этой темы сохраняется в файле конфигурации Jekyll `_Config.yml`.
 
-### Support or Contact
+### Поддержка или контакт
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+У вас проблемы со страницами? Ознакомьтесь с нашей [документацией] (https://docs.github.com/categories/github-pages-basics/) или [контакт с поддержкой] (https://support.github.com/contact), и мы поможем вам разобраться.
